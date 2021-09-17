@@ -15,3 +15,10 @@
 .override_body .page-title {
     color: var(--white);
 }
+
+.breadcrumb.override_box{
+    background-color: var(--black);
+    color: var(--white);
+    border: 1px solid white;
+    box-shadow: 0px 0px 5px white;
+}
