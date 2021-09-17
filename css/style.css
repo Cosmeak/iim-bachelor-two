@@ -16,13 +16,12 @@
     color: var(--white);
 }
 
-.newalert-info{
-    background-color: #eceff6;
+.override_body .alert.alert-info{
+    background-color: #000000 !important;
     border-color: #006eff;
     color: #ff0000;
     background-color: #1d1d1d;
 }
-
 .breadcrumb.override_box{
     background-color: var(--black);
     color: var(--white);
