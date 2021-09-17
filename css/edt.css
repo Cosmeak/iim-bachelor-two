@@ -9,9 +9,5 @@
 }
 
 .override_body .fc-event .fc-bg {
-    background: black;
-}
-
-.override_body .fc-time-grid .fc-event, .fc-time-grid .fc-bgevent {
-    background-color: rgb(206, 31, 0) !important;
+    background: #565656;
 }
