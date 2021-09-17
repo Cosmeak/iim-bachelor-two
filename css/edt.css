@@ -10,4 +10,5 @@
 
 .override_body .fc-event .fc-bg {
     background: #565656;
+    opacity: 1;
 }
