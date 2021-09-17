@@ -5,5 +5,8 @@
 
 .override_body{
     background-color: #1d1d1d;
+}
+
+.override_body .page-title {
     color: whitesmoke;
 }
