@@ -8,8 +8,8 @@
     "content_scripts": [
         {
             "matches": ["*://*.leonard-de-vinci.net/*"],
-            "js": ["js/main.js, js/abs.js"],
-            "css": ["css/style.css, css/abs.css"]
+            "js": ["js/main.js" , "js/abs.js"],
+            "css": ["css/style.css ", "css/abs.css"]
         }
     ]
 }
