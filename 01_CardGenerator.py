@@ -1,4 +1,5 @@
 import random
+import copy
 
 system = input("Do you want Visa or Mastercard? (wrote the entire word)").lower()
 
@@ -11,11 +12,13 @@ def cardGenerator(system):
     imei = generate_list(14, imei)
     imei.append(0)
     print(imei)
-    if luhn(imei) == True:
+    temp = copy.copy(imei)
+    if luhn(temp) == True:
         print("if", imei)
         return ''.join(str(elem) for elem in imei)
     else:
-        last_number = 10 - luhn(imei)
+        temp = copy.copy(imei)
+        last_number = 10 - luhn(temp)
         imei.pop()
         imei.append(last_number)
         print("else",imei)
