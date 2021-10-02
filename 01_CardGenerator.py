@@ -1,7 +1,7 @@
 import random
 import copy
 
-system = input("Do you want Visa or Mastercard? (wrote the entire word)").lower()
+system = input("Do you want Visa or Mastercard? (write the entire word)").lower()
 
 def cardGenerator(system):
     imei =[]
