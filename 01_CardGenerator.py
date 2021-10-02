@@ -8,7 +8,18 @@ def cardGenerator(system):
         imei.append(4)
     elif system == "mastercard":
         imei.append(5)
-    return ''.join(str(elem) for elem in (generate_list(14, imei)))
+    imei = generate_list(14, imei)
+    imei.append(0)
+    print(imei)
+    if luhn(imei) == True:
+        print("if", imei)
+        return ''.join(str(elem) for elem in imei)
+    else:
+        last_number = 10 - luhn(imei)
+        imei.pop()
+        imei.append(last_number)
+        print("else",imei)
+        return ''.join(str(elem) for elem in imei)
 
 def generate_list(number_demand, list=[]):
     for i in range(0, number_demand):
@@ -32,10 +43,9 @@ def luhn(imei):
             total += temp
             n = 1
     if total%10 == 0:
-        return "IMEI is Ok !"
+        return True
     else:
-        return "IMEI isn't good !"
-
+        return total%10
 
 
 print(f"Your card number is: {cardGenerator(system)}")
