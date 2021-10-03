@@ -12,3 +12,9 @@ At the end, enjoy with you new card number
 
 In a first time you need to run the python script, after that it ask you to choose how many caracters you need in your password. You need to answer with only an integer.
 The script will create you a password with random letters and numbers.
+
+## Pin Code - How to use it:
+
+
+
+## Binary to Hexa - How to use it:
