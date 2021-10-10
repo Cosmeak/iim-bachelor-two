@@ -15,6 +15,7 @@ The script will create you a password with random letters and numbers.
 
 ## Pin Code - How to use it:
 
-
+In first, you need to enter you hashed password only composed by 8 numbers. After that, the script will run and search the unhased password comparing every solution from 00000000 to 99999999 step by step and when it find the same hash as yours it finished.
+Now enjoy and unlock your favorite account.
 
 ## Binary to Hexa - How to use it:

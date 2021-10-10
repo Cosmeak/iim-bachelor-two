@@ -11,17 +11,13 @@ def cardGenerator(system):
         imei.append(5)
     imei = generate_list(14, imei)
     imei.append(0)
-    print(imei)
     temp = copy.copy(imei)
     if luhn(temp) == True:
-        print("if", imei)
         return ''.join(str(elem) for elem in imei)
     else:
-        temp = copy.copy(imei)
         last_number = 10 - luhn(temp)
         imei.pop()
         imei.append(last_number)
-        print("else",imei)
         return ''.join(str(elem) for elem in imei)
 
 def generate_list(number_demand, list=[]):
