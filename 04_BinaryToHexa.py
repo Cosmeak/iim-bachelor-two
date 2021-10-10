@@ -2,7 +2,7 @@ def BinarytoHexa_reduce(binary):
     base10 = int(binary, 2)
     print(base10)
     base16 = hex(base10)
-    return base16
+    return base16.upper()
 
 def BinarytoHexa_complete(binary):
     base16 = []
@@ -26,7 +26,7 @@ def BinarytoHexa_complete(binary):
             base16.append('F')
         else:
             base16.append(result)
-    return ('0x' + (''.join(str(elem) for elem in base16)))
+    return ('0x' + (''.join(str(elem) for elem in base16))) #Add 0x because in python it explain it's in hexadecimal
 
 binary = list(input("What's your binary code you want to convert?"))
 print(BinarytoHexa_complete(binary))
