@@ -1,0 +1,54 @@
+/* Encode */
+
+@charset 'UTF-8'
+
+/* Import SCSS */
+
+
+
+/* Reset CSS */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Nav Bar */
+
+nav {
+    width: 100vw;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: whitesmoke;
+    position: fixed;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 16px;
+
+        li {
+            
+            a {
+                text-decoration: none;
+                color: black;
+
+                &.active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/* Little presentation section */
+
+section:nth-of-type(1) {
+    padding-top: 70px;
+}
