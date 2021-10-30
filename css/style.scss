@@ -10,7 +10,9 @@
 @import 'scss/partials/mixins';
 @import 'scss/partials/reset';
 
-@import 'scss/components/links';
+@import 'scss/partials/grids';
+@import 'scss/components/cards';
+
 @import 'scss/components/buttons';
 
 /* Nav Bar */
@@ -23,6 +25,7 @@ nav {
     justify-content: space-between;
     padding: 0 32px;
     position: fixed;
+    z-index: 1;
     
     p {
         font-size: 1.25rem;
@@ -35,22 +38,46 @@ nav {
         gap: 16px;
 
         li {
-            
+            color: white;
             a {
-                color: white;
                 text-decoration: none;
+                position: relative;
+                color: inherit;
 
                 &.active {
                     text-decoration: underline;
+                }               
+                
+                &::before{
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    background-color: white;
+                    transform: scaleX(0);
+                    transition: transform 0.4s ease;
+                }
+            
+                &:hover::before {
+                    transform: scaleX(1);
                 }
             }
         }
     }
 }
 
-section{
-    width: 100vw;
-    height: 35vh;
+/* All section */
+
+section {
+    padding-bottom: 32px;
+
+    &>h2 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 32px 0;
+    }
 }
 
 /* Little presentation section */
@@ -61,25 +88,68 @@ section:nth-of-type(1) {
     padding-top: 40vh;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 
     div {
-        width: 35vw;
-        padding-left: 5vw;
+
+        &:first-of-type{
+            width: 40vw;
+            padding-left: 10vw;
+            font-size: 1.15rem;
+
+            p {
+                padding-top: 16px;
+                color: $primary;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
 
         &.deco-home {
             width: 45vw;
-            height: 110vh;
+            height: 100vh;
             margin-top: -60vh;
             margin-right: -6vw;
-            background-color: $primary;
             border-radius: 40% 0 0 20%;
             transform: rotate(-70deg);
-            z-index: -1;
+            overflow-x: visible;
+
+            background: $primary;
+            @include bg-gradient($primary);
+
+            img {
+                transform: rotate(70deg);
+                width: 40%;
+                margin-top: -80px;
+                margin-left: -80px;
+                border-radius: 20px;
+            }
         }
         
-        p {
-            padding-top: 8px;
-        }
+        
     }
 }
 
+/* Little About */
+
+.little-about{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    div {
+        width: 30%;
+
+        &:first-of-type {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:last-of-type {
+            gap: 16px;
+        }
+    }
+
+}

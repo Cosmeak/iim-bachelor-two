@@ -11,29 +11,49 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
-  font-size: 16px;
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
-/* animation for all link */
-a {
-  position: relative;
-  text-decoration: none;
+.grid {
+  width: max-content;
+  margin: 0 auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 64px;
+  overflow: initial;
 }
-a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 1px;
-  bottom: 0;
+
+.cards {
+  max-width: 400px;
+  min-height: 500px;
+  background-color: #525ecc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px gray;
+  color: #f0f0f0;
+}
+.cards div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+}
+.cards div:first-of-type {
   background-color: white;
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
 }
-a:hover::before {
-  transform: scaleX(1);
+.cards div:first-of-type img {
+  height: 250px;
+  object-fit: contain;
+}
+.cards div:last-of-type {
+  padding: 16px 32px;
+}
+.cards div:last-of-type a {
+  color: #282828;
+  text-decoration: underline;
 }
 
 /* Nav Bar */
@@ -45,6 +65,7 @@ nav {
   justify-content: space-between;
   padding: 0 32px;
   position: fixed;
+  z-index: 1;
 }
 nav p {
   font-size: 1.25rem;
@@ -55,17 +76,40 @@ nav ul {
   list-style: none;
   gap: 16px;
 }
-nav ul li a {
+nav ul li {
   color: white;
+}
+nav ul li a {
   text-decoration: none;
+  position: relative;
+  color: inherit;
 }
 nav ul li a.active {
   text-decoration: underline;
 }
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+nav ul li a:hover::before {
+  transform: scaleX(1);
+}
 
+/* All section */
 section {
-  width: 100vw;
-  height: 35vh;
+  padding-bottom: 32px;
+}
+section > h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 32px 0;
 }
 
 /* Little presentation section */
@@ -75,23 +119,56 @@ section:nth-of-type(1) {
   padding-top: 40vh;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
-section:nth-of-type(1) div {
-  width: 35vw;
-  padding-left: 5vw;
+section:nth-of-type(1) div:first-of-type {
+  width: 40vw;
+  padding-left: 10vw;
+  font-size: 1.15rem;
+}
+section:nth-of-type(1) div:first-of-type p {
+  padding-top: 16px;
+  color: #525ecc;
+}
+section:nth-of-type(1) div:first-of-type p a {
+  text-decoration: underline;
 }
 section:nth-of-type(1) div.deco-home {
   width: 45vw;
-  height: 110vh;
+  height: 100vh;
   margin-top: -60vh;
   margin-right: -6vw;
-  background-color: #525ecc;
   border-radius: 40% 0 0 20%;
   transform: rotate(-70deg);
-  z-index: -1;
+  overflow-x: visible;
+  background: #525ecc;
+  background: -webkit-gradient(linear, left top, left bottom, #525ecc, #2a348e);
+  background: -moz-gradient(linear, left top, left bottom, #525ecc, #2a348e);
+  background: -ms-gradient(linear, left top, left bottom, #525ecc, #2a348e);
 }
-section:nth-of-type(1) div p {
-  padding-top: 8px;
+section:nth-of-type(1) div.deco-home img {
+  transform: rotate(70deg);
+  width: 40%;
+  margin-top: -80px;
+  margin-left: -80px;
+  border-radius: 20px;
+}
+
+/* Little About */
+.little-about {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.little-about div {
+  width: 30%;
+}
+.little-about div:first-of-type {
+  display: flex;
+  flex-direction: column;
+}
+.little-about div:last-of-type {
+  gap: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */

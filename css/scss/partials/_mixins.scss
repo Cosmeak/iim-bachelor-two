@@ -1,0 +1,5 @@
+@mixin bg-gradient($color){
+    background: -webkit-gradient(linear, left top, left bottom, $color, darken($color, 20%));
+    background: -moz-gradient(linear, left top, left bottom, $color, darken($color, 20%));
+    background: -ms-gradient(linear, left top, left bottom, $color, darken($color, 20%));
+}

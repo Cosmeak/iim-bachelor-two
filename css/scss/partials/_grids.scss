@@ -1,0 +1,10 @@
+.grid{
+    width: max-content;
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 64px;
+    overflow:initial;
+}
