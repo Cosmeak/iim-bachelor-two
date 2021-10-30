@@ -1,19 +1,17 @@
 /* Encode */
 
-@charset 'UTF-8'
+@charset 'UTF-8';
 
-/* Import SCSS */
+/* Import SCSS partial files*/
 
+@import 'scss/partials/fonts';
+@import 'scss/partials/variables';
+@import 'scss/partials/config';
+@import 'scss/partials/mixins';
+@import 'scss/partials/reset';
 
-
-/* Reset CSS */
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    box-sizing: border-box;
-}
+@import 'scss/components/links';
+@import 'scss/components/buttons';
 
 /* Nav Bar */
 
@@ -23,9 +21,12 @@ nav {
     line-height: 60px;
     display: flex;
     justify-content: space-between;
-    padding: 0 16px;
-    background-color: whitesmoke;
+    padding: 0 32px;
     position: fixed;
+    
+    p {
+        font-size: 1.25rem;
+    }
 
     ul {
         display: flex;
@@ -36,8 +37,8 @@ nav {
         li {
             
             a {
+                color: white;
                 text-decoration: none;
-                color: black;
 
                 &.active {
                     text-decoration: underline;
@@ -47,8 +48,38 @@ nav {
     }
 }
 
+section{
+    width: 100vw;
+    height: 35vh;
+}
+
 /* Little presentation section */
 
 section:nth-of-type(1) {
-    padding-top: 70px;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 40vh;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        width: 35vw;
+        padding-left: 5vw;
+
+        &.deco-home {
+            width: 45vw;
+            height: 110vh;
+            margin-top: -60vh;
+            margin-right: -6vw;
+            background-color: $primary;
+            border-radius: 40% 0 0 20%;
+            transform: rotate(-70deg);
+            z-index: -1;
+        }
+        
+        p {
+            padding-top: 8px;
+        }
+    }
 }
+
