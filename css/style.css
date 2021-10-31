@@ -15,6 +15,11 @@
   overflow-x: hidden;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .grid {
   width: max-content;
   margin: 0 auto;
@@ -33,7 +38,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 5px gray;
-  color: #f0f0f0;
+  color: #fff;
 }
 .cards div {
   display: flex;
@@ -56,7 +61,7 @@
   text-decoration: underline;
 }
 
-/* Nav Bar */
+/* Header */
 nav {
   width: 100vw;
   height: 60px;
@@ -66,6 +71,9 @@ nav {
   padding: 0 32px;
   position: fixed;
   z-index: 1;
+  background-color: #fff;
+  color: #282828;
+  box-shadow: 0 0 5px lightgray;
 }
 nav p {
   font-size: 1.25rem;
@@ -76,13 +84,8 @@ nav ul {
   list-style: none;
   gap: 16px;
 }
-nav ul li {
-  color: white;
-}
 nav ul li a {
-  text-decoration: none;
   position: relative;
-  color: inherit;
 }
 nav ul li a.active {
   text-decoration: underline;
@@ -94,12 +97,29 @@ nav ul li a::before {
   width: 100%;
   height: 1px;
   bottom: 0;
-  background-color: white;
+  background-color: #282828;
   transform: scaleX(0);
   transition: transform 0.4s ease;
+  margin-bottom: 1px;
 }
 nav ul li a:hover::before {
   transform: scaleX(1);
+}
+
+.toggle {
+  background-color: #fff;
+  color: #282828;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 5vh;
+  background-color: #282828;
+  color: #fff;
 }
 
 /* All section */
@@ -139,12 +159,16 @@ section:nth-of-type(1) div.deco-home {
   margin-top: -60vh;
   margin-right: -6vw;
   border-radius: 40% 0 0 20%;
-  transform: rotate(-70deg);
   overflow-x: visible;
-  background: #525ecc;
-  background: -webkit-gradient(linear, left top, left bottom, #525ecc, #2a348e);
-  background: -moz-gradient(linear, left top, left bottom, #525ecc, #2a348e);
-  background: -ms-gradient(linear, left top, left bottom, #525ecc, #2a348e);
+  transform: rotate(-70deg);
+  transform: rotate -70deg;
+  -webkit-transform: rotate -70deg;
+  -moz-transform: rotate -70deg;
+  -ms-transform: rotate -70deg;
+  background: linear-gradient(#525ecc, #2a348e);
+  background: -webkit-linear-gradient(left, #525ecc, #2a348e);
+  background: -moz-linear-gradient(left, #525ecc, #2a348e);
+  background: -ms-linear-gradient(left, #525ecc, #2a348e);
 }
 section:nth-of-type(1) div.deco-home img {
   transform: rotate(70deg);
@@ -152,6 +176,7 @@ section:nth-of-type(1) div.deco-home img {
   margin-top: -80px;
   margin-left: -80px;
   border-radius: 20px;
+  box-shadow: -5px 5px 5px lightgray;
 }
 
 /* Little About */
@@ -169,6 +194,14 @@ section:nth-of-type(1) div.deco-home img {
 }
 .little-about div:last-of-type {
   gap: 16px;
+}
+
+/* Projects page */
+.title-page {
+  padding-top: 15vh;
+  padding-bottom: 5vh;
+  text-align: center;
+  font-size: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,7 +15,7 @@
 
 @import 'scss/components/buttons';
 
-/* Nav Bar */
+/* Header */
 
 nav {
     width: 100vw;
@@ -26,6 +26,10 @@ nav {
     padding: 0 32px;
     position: fixed;
     z-index: 1;
+
+    background-color: $white;
+    color: $black;
+    box-shadow: 0 0 5px lightgray;
     
     p {
         font-size: 1.25rem;
@@ -38,11 +42,8 @@ nav {
         gap: 16px;
 
         li {
-            color: white;
             a {
-                text-decoration: none;
                 position: relative;
-                color: inherit;
 
                 &.active {
                     text-decoration: underline;
@@ -55,9 +56,10 @@ nav {
                     width: 100%;
                     height: 1px;
                     bottom: 0;
-                    background-color: white;
+                    background-color: $black;
                     transform: scaleX(0);
                     transition: transform 0.4s ease;
+                    margin-bottom: 1px;
                 }
             
                 &:hover::before {
@@ -66,6 +68,24 @@ nav {
             }
         }
     }
+}
+
+.toggle{
+    background-color: $white;
+    color: $black;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 5vh;
+
+    background-color: $black;
+    color: $white;
 }
 
 /* All section */
@@ -113,10 +133,11 @@ section:nth-of-type(1) {
             margin-top: -60vh;
             margin-right: -6vw;
             border-radius: 40% 0 0 20%;
-            transform: rotate(-70deg);
             overflow-x: visible;
+            transform: rotate(-70deg);
 
-            background: $primary;
+            @include transform(rotate, -70deg);
+            
             @include bg-gradient($primary);
 
             img {
@@ -125,6 +146,7 @@ section:nth-of-type(1) {
                 margin-top: -80px;
                 margin-left: -80px;
                 border-radius: 20px;
+                box-shadow: -5px 5px 5px lightgray;
             }
         }
         
@@ -152,4 +174,13 @@ section:nth-of-type(1) {
         }
     }
 
+}
+
+/* Projects page */
+
+.title-page{
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    font-size: 3rem;
 }
