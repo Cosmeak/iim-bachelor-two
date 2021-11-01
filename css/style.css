@@ -5,6 +5,7 @@
 :root {
   font-size: 16px;
   font-family: "Comfortaa";
+  font-weight: 500;
 }
 
 /* Reset CSS */
@@ -61,54 +62,84 @@ a {
   text-decoration: underline;
 }
 
+button, .button {
+  border: none;
+  font-size: 1rem;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background-color: #525ecc;
+  color: #fff;
+  box-shadow: 0 0 5px aliceblue;
+  border: 2px solid #525ecc;
+  transition: 0.3s;
+  font-family: "Comfortaa";
+  font-weight: bolder;
+}
+button:hover, .button:hover {
+  background-color: aliceblue;
+  color: #525ecc;
+}
+
 /* Header */
-nav {
+header {
   width: 100vw;
   height: 60px;
   line-height: 60px;
-  display: flex;
-  justify-content: space-between;
   padding: 0 32px;
   position: fixed;
   z-index: 1;
-  background-color: #fff;
-  color: #282828;
-  box-shadow: 0 0 5px lightgray;
 }
-nav p {
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+header nav p {
   font-size: 1.25rem;
 }
-nav ul {
+header nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   gap: 16px;
 }
-nav ul li a {
-  position: relative;
+@media screen and (max-width: 600px) {
+  header nav ul {
+    display: none;
+  }
 }
-nav ul li a.active {
+header nav ul li a {
+  position: relative;
+  color: #fff;
+}
+header nav ul li a.active {
   text-decoration: underline;
 }
-nav ul li a::before {
+header nav ul li a::before {
   content: "";
   position: absolute;
   display: block;
   width: 100%;
   height: 1px;
   bottom: 0;
-  background-color: #282828;
+  background-color: #fff;
   transform: scaleX(0);
   transition: transform 0.4s ease;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
-nav ul li a:hover::before {
+header nav ul li a:hover::before {
   transform: scaleX(1);
 }
 
 .toggle {
   background-color: #fff;
+  box-shadow: 0 0 5px lightgray;
+}
+.toggle a {
   color: #282828;
+}
+.toggle a::before {
+  background-color: #282828;
 }
 
 /* Footer */
@@ -143,8 +174,12 @@ section:nth-of-type(1) {
 }
 section:nth-of-type(1) div:first-of-type {
   width: 40vw;
-  padding-left: 10vw;
+  height: max-content;
+  margin-left: 8vw;
   font-size: 1.15rem;
+  padding: 64px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px lightgray;
 }
 section:nth-of-type(1) div:first-of-type p {
   padding-top: 16px;
@@ -183,20 +218,39 @@ section:nth-of-type(1) div.deco-home img {
 .little-about {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 128px;
 }
 .little-about div {
   width: 30%;
+  overflow: visible;
 }
 .little-about div:first-of-type {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  place-items: center;
+  gap: 16px;
+  width: auto;
+}
+.little-about div:first-of-type i {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 100px;
+  background-color: aliceblue;
+  box-shadow: inset 0 0 5px lightgrey;
+  color: #525ecc;
+  transition: 0.3s;
+}
+.little-about div:first-of-type i:hover {
+  transform: scale(115%);
 }
 .little-about div:last-of-type {
   gap: 16px;
 }
 
-/* Projects page */
+/* Title in top of page like blog and projects */
 .title-page {
   padding-top: 15vh;
   padding-bottom: 5vh;

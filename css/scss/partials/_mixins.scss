@@ -1,17 +1,3 @@
-// mixin for mobiles designs
-@mixin mobile() {
-    @media screen and (max-width: 600px) {
-        
-    }
-}
-
-// mixin for tablets designs
-@mixin tablet() {
-    @media screen and (max-width: 1024px) {
-        
-    }
-}
-
 // Mixin for linear gradiant background for all web browser
 @mixin bg-gradient($color) {
     background: linear-gradient($color, darken($color, 20%));
@@ -26,4 +12,18 @@
     -webkit-transform: $property($value);
     -moz-transform: $property($value);
     -ms-transform: $property($value);
+}
+
+// mixin for mobiles designs
+@mixin for-mobiles() {
+    @media screen and (max-width: 600px) {
+        @content
+    }
+}
+
+// mixin for tablets designs
+@mixin for-tablets() {
+    @media screen and (max-width: 1024px) {
+        @content
+    }
 }
