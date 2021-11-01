@@ -1,7 +1,6 @@
 /* Encode */
 /* Import SCSS partial files*/
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 :root {
   font-size: 16px;
   font-family: "Comfortaa";
@@ -38,8 +37,8 @@ a {
   background-color: #525ecc;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 5px gray;
-  color: #fff;
+  box-shadow: 0 0 5px #92949c;
+  color: #f4f5f8;
 }
 .cards div {
   display: flex;
@@ -69,7 +68,7 @@ button, .button {
   margin-top: 8px;
   border-radius: 20px;
   background-color: #525ecc;
-  color: #fff;
+  color: #f4f5f8;
   box-shadow: 0 0 5px aliceblue;
   border: 2px solid #525ecc;
   transition: 0.3s;
@@ -79,6 +78,11 @@ button, .button {
 button:hover, .button:hover {
   background-color: aliceblue;
   color: #525ecc;
+}
+
+/* Body color */
+body {
+  background-color: #f4f5f8;
 }
 
 /* Header */
@@ -110,10 +114,7 @@ header nav ul {
 }
 header nav ul li a {
   position: relative;
-  color: #fff;
-}
-header nav ul li a.active {
-  text-decoration: underline;
+  color: #f4f5f8;
 }
 header nav ul li a::before {
   content: "";
@@ -122,23 +123,30 @@ header nav ul li a::before {
   width: 100%;
   height: 1px;
   bottom: 0;
-  background-color: #fff;
+  background-color: #f4f5f8;
   transform: scaleX(0);
   transition: transform 0.4s ease;
-  margin-bottom: 2px;
 }
 header nav ul li a:hover::before {
   transform: scaleX(1);
 }
 
 .toggle {
-  background-color: #fff;
-  box-shadow: 0 0 5px lightgray;
+  background-color: #f4f5f8;
+  box-shadow: 0 0 5px #92949c;
+  transition: 0.3s;
 }
 .toggle a {
   color: #282828;
 }
 .toggle a::before {
+  background-color: #282828;
+}
+
+.other-page a {
+  color: #282828;
+}
+.other-page a::before {
   background-color: #282828;
 }
 
@@ -150,7 +158,7 @@ footer {
   text-align: center;
   margin-top: 5vh;
   background-color: #282828;
-  color: #fff;
+  color: #f4f5f8;
 }
 
 /* All section */
@@ -179,7 +187,8 @@ section:nth-of-type(1) div:first-of-type {
   font-size: 1.15rem;
   padding: 64px;
   border-radius: 10px;
-  box-shadow: inset 0 0 5px lightgray;
+  box-shadow: inset 0 0 5px #92949c;
+  background-color: #f4f5f8;
 }
 section:nth-of-type(1) div:first-of-type p {
   padding-top: 16px;
@@ -204,6 +213,7 @@ section:nth-of-type(1) div.deco-home {
   background: -webkit-linear-gradient(left, #525ecc, #2a348e);
   background: -moz-linear-gradient(left, #525ecc, #2a348e);
   background: -ms-linear-gradient(left, #525ecc, #2a348e);
+  box-shadow: inset 0 0 5px #242d7a;
 }
 section:nth-of-type(1) div.deco-home img {
   transform: rotate(70deg);
@@ -211,42 +221,42 @@ section:nth-of-type(1) div.deco-home img {
   margin-top: -80px;
   margin-left: -80px;
   border-radius: 20px;
-  box-shadow: -5px 5px 5px lightgray;
+  box-shadow: -3px 3px 8px #92949c;
 }
 
 /* Little About */
-.little-about {
+.about {
   display: flex;
   justify-content: center;
   gap: 128px;
 }
-.little-about div {
+.about div {
   width: 30%;
   overflow: visible;
 }
-.little-about div:first-of-type {
+.about div:first-of-type {
   display: flex;
   flex-direction: row;
   place-items: center;
   gap: 16px;
   width: auto;
 }
-.little-about div:first-of-type i {
+.about div:first-of-type i {
   display: flex;
   justify-content: center;
   place-items: center;
   width: 65px;
   height: 65px;
   border-radius: 100px;
-  background-color: aliceblue;
-  box-shadow: inset 0 0 5px lightgrey;
+  background-color: #f4f5f8;
+  box-shadow: inset 0 0 5px #92949c;
   color: #525ecc;
   transition: 0.3s;
 }
-.little-about div:first-of-type i:hover {
+.about div:first-of-type i:hover {
   transform: scale(115%);
 }
-.little-about div:last-of-type {
+.about div:last-of-type {
   gap: 16px;
 }
 

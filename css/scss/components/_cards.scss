@@ -4,8 +4,8 @@
     background-color: $primary;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 5px gray;
-    color: $white;
+    box-shadow: 0 0 5px $medium;
+    color: $light;
 
     div {
         display: flex;
@@ -26,7 +26,7 @@
             padding: 16px 32px;
             
             a {
-                color: $black;
+                color: $dark;
                 text-decoration: underline;
             }
         }

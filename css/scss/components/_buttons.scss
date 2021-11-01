@@ -5,15 +5,15 @@ button, .button {
     margin-top: 8px;
     border-radius: 20px;
     background-color: $primary;
-    color: $white;
-    box-shadow: 0 0 5px aliceblue;
+    color: $light;
+    box-shadow: 0 0 5px $secondary;
     border: 2px solid $primary;
     transition: 0.3s;
     font-family: 'Comfortaa';
     font-weight: bolder;
 
     &:hover {
-        background-color: aliceblue;
+        background-color: $secondary;
         color: $primary;
     }
 }
