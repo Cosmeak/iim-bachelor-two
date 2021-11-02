@@ -13,10 +13,6 @@
         margin: 0 auto;
     }
 
-    @include for-mobiles{
-        max-height: 300px;
-    }
-
     &:hover {
         transform: scale(102%);
     }
