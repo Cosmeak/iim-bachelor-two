@@ -10,3 +10,23 @@ document.addEventListener('scroll', function() {
         header.classList.remove(className);
     }
 });
+
+$(document).ready( function() {
+    $('.burger').click(function() {
+        $('ul').slideToggle();
+    });
+});
+
+const burger = document.querySelector('.burger');
+var current_rotation = 0;
+
+burger.addEventListener('click', function() {
+    if (current_rotation == 0) {
+        current_rotation += 90;
+        burger.style.transform = 'rotate(' + current_rotation + 'deg)';
+    }
+    else {
+        current_rotation -= 90;
+        burger.style.transform = 'rotate(' + current_rotation + 'deg)';
+    }
+});
