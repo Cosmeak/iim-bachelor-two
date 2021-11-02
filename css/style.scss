@@ -42,15 +42,24 @@ header {
     line-height: 60px;
     padding: 0 32px;
     position: fixed;
-    z-index: 99;    
+    z-index: 5; 
+
+    @include for-tablets {
+        background-color: $light;
+        box-shadow: 0 0 5px $medium;   
+    }
 
     .burger {
         display: none;
+        transition: 0.3s;
 
         @include for-tablets {
             display: flex;
             flex-direction: column;
             gap: 4px;
+
+
+            height: max-content;
 
             margin: auto 0;
 
@@ -89,6 +98,12 @@ header {
             @include for-tablets{
                 display: none;
                 flex-direction: column;
+                position: fixed;
+                background-color: $light;
+                margin-top: 60px;
+                
+                width: 100vw;
+                box-shadow: 0 5px 5px $medium;
             }
     
             li {
@@ -114,8 +129,9 @@ header {
 
                     @include for-tablets {
                         display: block;
-                        text-align: center;
+                        z-index: -1;
                         color: $dark;
+                        width: 100%;
                     }
                 }
             }
