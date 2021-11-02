@@ -129,7 +129,6 @@ header {
 
                     @include for-tablets {
                         display: block;
-                        z-index: -1;
                         color: $dark;
                         width: 100%;
                     }

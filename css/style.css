@@ -219,7 +219,6 @@ header nav ul li a:hover::before {
 @media screen and (max-width: 1024px) {
   header nav ul li a {
     display: block;
-    z-index: -1;
     color: #282828;
     width: 100%;
   }
