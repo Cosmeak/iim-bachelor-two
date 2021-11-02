@@ -14,10 +14,23 @@
 
 @import 'scss/components/buttons';
 
-/* Body color */
+/* Body and scroll bar */
 
 body{
     background-color: $light;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 100px;
 }
 
 /* Header */
@@ -216,6 +229,7 @@ section:nth-of-type(1) {
 
                 &:hover {
                     transform: scale(115%);
+                    box-shadow: 0 0 5px $medium;
                 }
             }
         }

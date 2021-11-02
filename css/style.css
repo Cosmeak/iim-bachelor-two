@@ -56,6 +56,9 @@ a {
 .cards div:last-of-type {
   padding: 16px 32px;
 }
+.cards div:last-of-type p {
+  text-align: justify;
+}
 .cards div:last-of-type a {
   color: #282828;
   text-decoration: underline;
@@ -80,9 +83,22 @@ button:hover, .button:hover {
   color: #525ecc;
 }
 
-/* Body color */
+/* Body and scroll bar */
 body {
   background-color: #f4f5f8;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #525ecc;
+  border-radius: 100px;
 }
 
 /* Header */
@@ -255,6 +271,7 @@ section:nth-of-type(1) div.deco-home img {
 }
 .about div:first-of-type i:hover {
   transform: scale(115%);
+  box-shadow: 0 0 5px #92949c;
 }
 .about div:last-of-type {
   gap: 16px;
