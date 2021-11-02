@@ -29,16 +29,45 @@ a {
   grid-auto-rows: auto;
   grid-gap: 64px;
   overflow: initial;
+  justify-content: center;
+  /* Change coming in futur */
+}
+@media screen and (max-width: 1380px) {
+  .grid {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .grid {
+    grid-template-columns: 90%;
+  }
 }
 
 .cards {
   max-width: 400px;
-  min-height: 500px;
+  height: 500px;
   background-color: #525ecc;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 5px #92949c;
   color: #f4f5f8;
+  opacity: 0;
+  transition: 0.3s;
+}
+@media screen and (max-width: 1380px) {
+  .cards {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cards {
+    max-height: 300px;
+  }
+}
+.cards:hover {
+  transform: scale(102%);
 }
 .cards div {
   display: flex;
@@ -47,17 +76,22 @@ a {
   gap: 16px;
 }
 .cards div:first-of-type {
+  height: 50%;
   background-color: white;
 }
 .cards div:first-of-type img {
-  height: 250px;
   object-fit: contain;
+}
+@media screen and (max-width: 600px) {
+  .cards div:first-of-type img {
+    height: 200px;
+  }
 }
 .cards div:last-of-type {
   padding: 16px 32px;
 }
 .cards div:last-of-type p {
-  text-align: justify;
+  text-align: center;
 }
 .cards div:last-of-type a {
   color: #282828;
@@ -85,6 +119,7 @@ button:hover, .button:hover {
 
 /* Body and scroll bar */
 body {
+  min-height: 100vh;
   background-color: #f4f5f8;
 }
 
@@ -123,7 +158,7 @@ header nav ul {
   list-style: none;
   gap: 16px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   header nav ul {
     display: none;
   }
@@ -159,10 +194,10 @@ header nav ul li a:hover::before {
   background-color: #282828;
 }
 
-.other-page a {
+.other-pages a {
   color: #282828;
 }
-.other-page a::before {
+.other-pages a::before {
   background-color: #282828;
 }
 
@@ -172,9 +207,11 @@ footer {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 32px;
   background-color: #282828;
   color: #f4f5f8;
+  position: sticky;
+  top: 100%;
 }
 
 /* All section */
@@ -214,10 +251,10 @@ section:nth-of-type(1) div:first-of-type p a {
   text-decoration: underline;
 }
 section:nth-of-type(1) div.deco-home {
-  width: 45vw;
-  height: 100vh;
-  margin-top: -60vh;
-  margin-right: -6vw;
+  width: 750px;
+  height: 900px;
+  margin-top: -500px;
+  margin-right: -200px;
   border-radius: 40% 0 0 20%;
   overflow-x: visible;
   transform: rotate(-70deg);
@@ -233,7 +270,7 @@ section:nth-of-type(1) div.deco-home {
 }
 section:nth-of-type(1) div.deco-home img {
   transform: rotate(70deg);
-  width: 40%;
+  width: 35%;
   margin-top: -80px;
   margin-left: -80px;
   border-radius: 20px;
@@ -246,9 +283,22 @@ section:nth-of-type(1) div.deco-home img {
   justify-content: center;
   gap: 128px;
 }
+@media screen and (max-width: 1024px) {
+  .about {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+}
 .about div {
   width: 30%;
   overflow: visible;
+}
+@media screen and (max-width: 1024px) {
+  .about div {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+  }
 }
 .about div:first-of-type {
   display: flex;
@@ -261,8 +311,8 @@ section:nth-of-type(1) div.deco-home img {
   display: flex;
   justify-content: center;
   place-items: center;
-  width: 65px;
-  height: 65px;
+  width: 48px;
+  height: 48px;
   border-radius: 100px;
   background-color: #f4f5f8;
   box-shadow: inset 0 0 5px #92949c;
@@ -274,7 +324,14 @@ section:nth-of-type(1) div.deco-home img {
   box-shadow: 0 0 5px #92949c;
 }
 .about div:last-of-type {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+}
+@media screen and (max-width: 1024px) {
+  .about div:last-of-type {
+    text-align: center;
+  }
 }
 
 /* Title in top of page like blog and projects */
@@ -283,6 +340,39 @@ section:nth-of-type(1) div.deco-home img {
   padding-bottom: 5vh;
   text-align: center;
   font-size: 3rem;
+}
+@media screen and (max-width: 600px) {
+  .title-page {
+    font-size: 2rem;
+  }
+}
+
+/* My last project in index */
+/* My contacts */
+.contact div {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  overflow: visible;
+}
+.contact div a {
+  width: max-content;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  gap: 16px;
+  font-size: 1.2rem;
+  box-shadow: inset 0 0 5px #92949c;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+.contact div a:hover {
+  transform: scale(105%);
+  box-shadow: 0 0 5px #92949c;
+}
+.contact div a i {
+  color: #525ecc;
 }
 
 /*# sourceMappingURL=style.css.map */

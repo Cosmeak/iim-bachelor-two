@@ -3,8 +3,24 @@
     margin: 0 auto;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); // Actually in 3 because i only have 3 projects but in futur, it will be set at 4 because it looks clearly better !
     grid-auto-rows: auto;
     grid-gap: 64px;
     overflow:initial;
+    justify-content: center;
+
+    /* Change coming in futur */
+    // @include query(1820px) {
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
+
+    @include query(1380px){
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    @include query(860px) {
+        grid-template-columns: 90%;
+    }
 }
