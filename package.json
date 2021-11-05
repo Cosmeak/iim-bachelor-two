@@ -1,7 +1,6 @@
 {
   "name": "cours-front",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -21,5 +20,14 @@
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IIM-Creative-Technology/framework-front-guillaume-steven.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IIM-Creative-Technology/framework-front-guillaume-steven/issues"
+  },
+  "homepage": "https://github.com/IIM-Creative-Technology/framework-front-guillaume-steven#readme",
+  "description": ""
 }
