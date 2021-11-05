@@ -9,6 +9,7 @@ module.exports = {
       height: {
         headerTop: '96px',
         headerBottom: '67px',
+        footerTop: '349px',
       },
       colors: {
         'blue-kleber': 'rgba(15, 49, 175, 1)',

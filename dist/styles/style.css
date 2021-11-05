@@ -475,14 +475,14 @@ video {
 .absolute{
 	position: absolute;
 }
-.relative{
-	position: relative;
-}
 .z-neg{
 	z-index: -1;
 }
 .flex{
 	display: flex;
+}
+.h-screen{
+	height: 100vh;
 }
 .h-headerTop{
 	height: 96px;
@@ -490,23 +490,14 @@ video {
 .h-headerBottom{
 	height: 67px;
 }
-.h-screen{
-	height: 100vh;
-}
-.h-auto{
-	height: auto;
-}
 .h-full{
 	height: 100%;
-}
-.w-full{
-	width: 100%;
 }
 .w-screen{
 	width: 100vw;
 }
-.w-auto{
-	width: auto;
+.w-full{
+	width: 100%;
 }
 .flex-col{
 	flex-direction: column;
@@ -529,15 +520,6 @@ video {
 }
 .bg-blue-kleber{
 	background-color: rgba(15, 49, 175, 1);
-}
-.bg-cover{
-	background-size: cover;
-}
-.bg-center{
-	background-position: center;
-}
-.bg-no-repeat{
-	background-repeat: no-repeat;
 }
 .object-cover{
 	-o-object-fit: cover;
