@@ -496,6 +496,9 @@ video {
 .h-auto{
 	height: auto;
 }
+.h-full{
+	height: 100%;
+}
 .w-full{
 	width: 100%;
 }
