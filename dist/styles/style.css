@@ -478,8 +478,14 @@ video {
 .h-header{
 	height: 67px;
 }
-.w-screen{
-	width: 100vw;
+.h-screen{
+	height: 100vh;
+}
+.h-full{
+	height: 100%;
+}
+.h-1\/2{
+	height: 50%;
 }
 .w-full{
 	width: 100%;
@@ -500,13 +506,16 @@ video {
 	gap: 1.5rem;
 }
 .bg-blue-kleber{
-	background-color: rgba(15, 49, 175, 0.9);
+	background-color: rgba(15, 49, 175, 1);
 }
-.bg-texture{
-	background-image: url('/img/texture.jfif');
+.bg-cover{
+	background-size: cover;
 }
-.bg-kleber-team{
-	background-image: url('/img/kine-kleber-team.png');
+.bg-center{
+	background-position: center;
+}
+.bg-no-repeat{
+	background-repeat: no-repeat;
 }
 .text-white{
 	--tw-text-opacity: 1;
