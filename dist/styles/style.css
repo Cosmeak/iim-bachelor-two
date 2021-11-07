@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap);
 /*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
@@ -472,12 +473,6 @@ video {
 [hidden] {
   display: none;
 }
-.absolute{
-	position: absolute;
-}
-.z-neg{
-	z-index: -1;
-}
 .flex{
 	display: flex;
 }
@@ -493,11 +488,26 @@ video {
 .h-full{
 	height: 100%;
 }
-.w-screen{
-	width: 100vw;
+.h-auto{
+	height: auto;
 }
 .w-full{
 	width: 100%;
+}
+.w-2\/5{
+	width: 40%;
+}
+.w-4\/5{
+	width: 80%;
+}
+.w-5\/12{
+	width: 41.666667%;
+}
+.w-9\/12{
+	width: 75%;
+}
+.w-1\/2{
+	width: 50%;
 }
 .flex-col{
 	flex-direction: column;
@@ -514,6 +524,12 @@ video {
 .gap-6{
 	gap: 1.5rem;
 }
+.gap-5{
+	gap: 1.25rem;
+}
+.gap-8{
+	gap: 2rem;
+}
 .bg-white{
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
@@ -521,13 +537,67 @@ video {
 .bg-blue-kleber{
 	background-color: rgba(15, 49, 175, 1);
 }
-.object-cover{
-	-o-object-fit: cover;
-	   object-fit: cover;
+.bg-gray-200{
+	--tw-bg-opacity: 1;
+	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+}
+.bg-opacity-50{
+	--tw-bg-opacity: 0.5;
+}
+.bg-cover{
+	background-size: cover;
+}
+.bg-center{
+	background-position: center;
+}
+.bg-no-repeat{
+	background-repeat: no-repeat;
+}
+.py-4{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.py-20{
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+.pb-6{
+	padding-bottom: 1.5rem;
+}
+.pt-2{
+	padding-top: 0.5rem;
+}
+.text-center{
+	text-align: center;
+}
+.font-title{
+	font-family: Source Sans Pro;
+}
+.text-4xl{
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
+.text-2xl{
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+.font-bold{
+	font-weight: 700;
+}
+.font-semibold{
+	font-weight: 600;
 }
 .text-white{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.text-black{
+	--tw-text-opacity: 1;
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+.text-darkgray-kleber{
+	--tw-text-opacity: 1;
+	color: rgba(56, 60, 67, var(--tw-text-opacity));
 }
 html {
   font-size: 16px;

@@ -20,6 +20,9 @@ module.exports = {
       zIndex: {
         'neg': -1,
       },
+      fontFamily: {
+        'title': 'Source Sans Pro', 
+      }
     },
   },
   variants: {
