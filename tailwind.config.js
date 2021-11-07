@@ -6,10 +6,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: {
+        img: '308px'
+      },
       height: {
         headerTop: '96px',
         headerBottom: '67px',
         footerTop: '349px',
+        map: '737px',
       },
       colors: {
         'blue-kleber': 'rgba(15, 49, 175, 1)',
