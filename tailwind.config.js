@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       width: {
         img: '308px',
-        card: '419px'
+        card: '419px',
+        cercle: '48px',
       },
       height: {
         headerTop: '96px',
@@ -16,6 +17,7 @@ module.exports = {
         footerTop: '349px',
         map: '737px',
         card: '612px',
+        cercle: '48px',
       },
       colors: {
         'blue-kleber': 'rgba(15, 49, 175, 1)',
