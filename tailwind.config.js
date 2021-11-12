@@ -10,6 +10,7 @@ module.exports = {
         img: '308px',
         card: '419px',
         cercle: '48px',
+        reserv:'184px',
       },
       height: {
         headerTop: '96px',
@@ -18,6 +19,7 @@ module.exports = {
         map: '737px',
         card: '612px',
         cercle: '48px',
+        reserv:'75px',
       },
       colors: {
         'blue-kleber': 'rgba(15, 49, 175, 1)',
