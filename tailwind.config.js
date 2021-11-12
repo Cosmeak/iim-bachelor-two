@@ -7,13 +7,15 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        img: '308px'
+        img: '308px',
+        card: '419px'
       },
       height: {
         headerTop: '96px',
         headerBottom: '67px',
         footerTop: '349px',
         map: '737px',
+        card: '612px',
       },
       colors: {
         'blue-kleber': 'rgba(15, 49, 175, 1)',
