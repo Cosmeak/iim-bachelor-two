@@ -1,0 +1,21 @@
+// mixin for mobiles designs
+@mixin for-mobiles() {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+// mixin for tablets designs
+@mixin for-tablets() {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+//mixin for background image 
+@mixin bg-img($url) {
+    background-image: url($url);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
