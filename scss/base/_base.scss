@@ -1,0 +1,73 @@
+:root {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: $dark;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    place-items: center;
+    background-color: $secondary;
+    position: fixed;
+    color: $light;
+
+    nav {
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 71px;
+
+            li {
+                margin: auto;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: 690px;
+    @include bg-img('img/footer_bg.png');
+    color: $light;
+
+    section {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        place-items: normal;
+        
+
+        &:first-of-type {
+            padding-top: 200px;
+        }
+    }
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: $bold;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: $extra-bold;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: $bold;
+}

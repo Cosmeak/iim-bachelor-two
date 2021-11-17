@@ -1,5 +1,51 @@
-.under-section {
-    width: 100%;
-    height: 100vh;
-    
+.under-header {
+    @include bg-img ('img/Hero_BG.png');
+    color: $light;
+    flex-direction: row     ;
+
+    img {
+        width: 40%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.why-us {
+    > div{
+        display: flex;
+        justify-content: center;
+        place-items: center;
+
+        > div {
+            width: 40%;
+        }
+    }
+}
+
+.supports {
+    > div{
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        gap: 106px;
+    }
+}
+
+.services {
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        gap: 56px;
+
+        h3 {
+            margin-top: 36px;
+            margin-bottom: 24px;
+        }
+
+        p{
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
 }

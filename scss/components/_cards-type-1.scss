@@ -1,0 +1,40 @@
+.cards-type-1 {
+    width: 40%;
+    height: auto;
+    padding: 50px;
+    background-color: $primary;
+    color: $light;
+    border-radius: 5px;
+
+
+    div {
+
+        h3{
+            padding-top: 43px;
+            padding-bottom: 24px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        &:first-of-type {
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                object-fit: contain;
+
+                &:last-of-type {
+                    margin-top: -50px;
+                    margin-right: -50px;
+                }
+            }
+        }
+    }
+}
+
+.cards-type-1--alternative {
+    @extend .cards-type-1;
+    background-color: $secondary;
+}
