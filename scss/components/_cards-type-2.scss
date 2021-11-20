@@ -3,8 +3,55 @@
     height: 516px;
     box-shadow: 0 3px 17px  rgba(0, 0, 0, 0.11);
     text-align: center;
+    transition: 0.3s;
+    margin: 0 auto;
+    border-radius: 5px;
 
+    // Inside the card
     img {
         margin-top: 81px;
+    }
+
+    h3 {
+        margin-top: 36px;
+        margin-bottom: 24px;
+    }
+
+    p{
+        width: 80%;
+        margin: 0 auto;
+
+        &:last-of-type {
+            width: 50%;
+            margin-top: 83px;
+        }
+
+        span {
+            font-size: 2rem;
+        }
+    }
+
+    a {
+        display: none;
+        margin-top: 47px;
+
+    }
+
+    // The card carac
+    &:hover {
+        height: 641px;
+        border-top: 11px solid $primary;
+
+        a {
+            display: inline-block;
+        }
+
+        img {
+            margin-top: 70px;
+        }
+    }
+
+    &+ .active {
+        @extend .cards-type-2,:hover;
     }
 }
