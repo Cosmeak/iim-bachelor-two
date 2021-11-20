@@ -5,14 +5,26 @@
     flex-direction: row;
     justify-content: center;
 
+    @include for-tablets {
+    flex-direction: column-reverse;
+    }
+
     img {
         width: 40%;
         height: auto;
         object-fit: contain;
+
+        @include for-tablets {
+            width: 400px;
+        }
     }
 
     .buttons--alternative {
         height: 55px;
+
+        @include for-tablets {
+            margin-top: 15px;
+        }
     }
 }
 
@@ -23,6 +35,10 @@
         place-items: center;
         gap: 10%;
         padding-right: 100px;
+
+        @include for-tablets {
+            padding-right: 0;
+        }
         
         > div {
             width: 40%;
@@ -31,12 +47,12 @@
                 display: flex;
                 flex-direction: column;
                 gap: 60px;
-            }
 
-            article {
-                display: flex;
-                gap: 30px;
-
+                article {
+                    display: flex;
+                    gap: 30px;
+                }
+    
                 img {
                     height: 70px;
                     object-fit: contain;
@@ -45,6 +61,16 @@
                 p {
                     font-size: 1.1rem;
                     margin-top: 24px;
+                }
+
+                @include for-tablets {
+                    width: 90%;
+                }
+            }
+
+            &:last-of-type {
+                @include for-tablets {
+                    display: none;
                 }
             }
 
@@ -57,23 +83,30 @@
 
 .supports {
     background-color: $light-blue;
+
     > div{
         display: flex;
         justify-content: center;
         place-items: center;
         gap: 106px;
+
+        @include for-tablets {
+            flex-direction: column;
+        }
     }
 }
 
 .services {
-    overflow: hidden;
     height: auto;
-    padding-bottom: 100px;
     > div {
         display: flex;
         flex-wrap: wrap;
         margin-top: 80px;
         gap: 56px;
+
+        @include for-tablets {
+            margin-top: 0;
+        }
     }
 }
 
@@ -89,6 +122,7 @@
 
             @include for-tablets {
                 flex-direction: column;
+                margin-top: 0;
             }
 
             article {
@@ -143,7 +177,7 @@
             object-fit: contain;
         }
     }
-    
+
     a {
         margin-top: 70px;
     }

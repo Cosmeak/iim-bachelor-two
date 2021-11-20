@@ -6,6 +6,10 @@
     color: $light;
     border-radius: 5px;
 
+    @include for-tablets {
+        width: 90%;
+    }
+
 
     div {
 
@@ -25,9 +29,17 @@
             img {
                 object-fit: contain;
 
+                @include for-tablets {
+                    margin: 0 auto;
+                }
+
                 &:last-of-type {
                     margin-top: -50px;
                     margin-right: -50px;
+
+                    @include for-tablets {
+                        display: none;
+                    }
                 }
             }
         }

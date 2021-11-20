@@ -55,6 +55,11 @@ table {
   font-size: 20px;
   color: #2E2E2E;
 }
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 16px;
+  }
+}
 
 header {
   width: 100%;
@@ -138,7 +143,8 @@ section {
   section {
     height: auto;
     text-align: center;
-    padding-bottom: 100px;
+    padding: 0 5%;
+    padding-bottom: 80px;
   }
 }
 
@@ -153,6 +159,11 @@ h2 {
   font-weight: bolder;
   padding-top: 100px;
 }
+@media screen and (max-width: 1024px) {
+  h2 {
+    padding-top: 25px;
+  }
+}
 
 h3 {
   font-size: 1.1rem;
@@ -164,7 +175,7 @@ h3 {
   margin-top: 10px;
   margin-bottom: 80px;
   opacity: 80%;
-  z-index: -1;
+  z-index: 0;
 }
 
 .dot, .dot + .dot-active {
@@ -189,6 +200,16 @@ h3 {
   display: inline-block;
   background-color: #343d68;
   border-radius: 5px;
+}
+@media screen and (max-width: 1024px) {
+  .search-bar {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .search-bar {
+    width: 350px;
+  }
 }
 .search-bar input {
   width: 75%;
@@ -242,6 +263,11 @@ h3 {
   color: #fff;
   border-radius: 5px;
 }
+@media screen and (max-width: 1024px) {
+  .cards-type-1, .cards-type-1--alternative {
+    width: 90%;
+  }
+}
 .cards-type-1 div h3, .cards-type-1--alternative div h3 {
   padding-top: 43px;
   padding-bottom: 24px;
@@ -256,9 +282,19 @@ h3 {
 .cards-type-1 div:first-of-type img, .cards-type-1--alternative div:first-of-type img {
   object-fit: contain;
 }
+@media screen and (max-width: 1024px) {
+  .cards-type-1 div:first-of-type img, .cards-type-1--alternative div:first-of-type img {
+    margin: 0 auto;
+  }
+}
 .cards-type-1 div:first-of-type img:last-of-type, .cards-type-1--alternative div:first-of-type img:last-of-type {
   margin-top: -50px;
   margin-right: -50px;
+}
+@media screen and (max-width: 1024px) {
+  .cards-type-1 div:first-of-type img:last-of-type, .cards-type-1--alternative div:first-of-type img:last-of-type {
+    display: none;
+  }
 }
 
 .cards-type-1--alternative {
@@ -284,6 +320,12 @@ h3 {
 .cards-type-2 p, .cards-type-2 + .active p {
   width: 80%;
   margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .cards-type-2 p, .cards-type-2 + .active p {
+    line-height: 2;
+    width: 70%;
+  }
 }
 .cards-type-2 p:last-of-type, .cards-type-2 + .active p:last-of-type {
   width: 50%;
@@ -316,13 +358,28 @@ h3 {
   flex-direction: row;
   justify-content: center;
 }
+@media screen and (max-width: 1024px) {
+  .under-header {
+    flex-direction: column-reverse;
+  }
+}
 .under-header img {
   width: 40%;
   height: auto;
   object-fit: contain;
 }
+@media screen and (max-width: 1024px) {
+  .under-header img {
+    width: 400px;
+  }
+}
 .under-header .buttons--alternative {
   height: 55px;
+}
+@media screen and (max-width: 1024px) {
+  .under-header .buttons--alternative {
+    margin-top: 15px;
+  }
 }
 
 .why-us > div {
@@ -332,6 +389,11 @@ h3 {
   gap: 10%;
   padding-right: 100px;
 }
+@media screen and (max-width: 1024px) {
+  .why-us > div {
+    padding-right: 0;
+  }
+}
 .why-us > div > div {
   width: 40%;
 }
@@ -340,17 +402,27 @@ h3 {
   flex-direction: column;
   gap: 60px;
 }
-.why-us > div > div article {
+.why-us > div > div:first-of-type article {
   display: flex;
   gap: 30px;
 }
-.why-us > div > div article img {
+.why-us > div > div:first-of-type img {
   height: 70px;
   object-fit: contain;
 }
-.why-us > div > div article p {
+.why-us > div > div:first-of-type p {
   font-size: 1.1rem;
   margin-top: 24px;
+}
+@media screen and (max-width: 1024px) {
+  .why-us > div > div:first-of-type {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .why-us > div > div:last-of-type {
+    display: none;
+  }
 }
 .why-us > div > div .dot-square {
   position: absolute;
@@ -365,17 +437,25 @@ h3 {
   place-items: center;
   gap: 106px;
 }
+@media screen and (max-width: 1024px) {
+  .supports > div {
+    flex-direction: column;
+  }
+}
 
 .services {
-  overflow: hidden;
   height: auto;
-  padding-bottom: 100px;
 }
 .services > div {
   display: flex;
   flex-wrap: wrap;
   margin-top: 80px;
   gap: 56px;
+}
+@media screen and (max-width: 1024px) {
+  .services > div {
+    margin-top: 0;
+  }
 }
 
 .testimonials {
@@ -390,6 +470,7 @@ h3 {
 @media screen and (max-width: 1024px) {
   .testimonials > div:first-of-type {
     flex-direction: column;
+    margin-top: 0;
   }
 }
 .testimonials > div:first-of-type article {

@@ -3,7 +3,7 @@
     margin-top: 10px;
     margin-bottom: 80px;
     opacity: 80%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .dot {
@@ -34,6 +34,14 @@
     display: inline-block;
     background-color: darken($secondary, 8);
     border-radius: 5px;
+
+    @include for-tablets {
+        margin-top: 0;
+    }
+
+    @include for-mobiles {
+        width: 350px;
+    }
 
     input {
         width: 75%;
