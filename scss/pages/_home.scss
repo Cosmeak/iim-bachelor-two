@@ -133,11 +133,16 @@
 
                 @include for-tablets {
                     width: 80%;
+                    flex-direction: column;
                 }
 
                 img {
                     object-fit: contain;
                     height: fit-content;
+                    
+                    @include for-tablets {
+                        margin: 0 auto;
+                    }
                 }
 
                 > div {

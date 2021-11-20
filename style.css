@@ -482,11 +482,17 @@ h3 {
 @media screen and (max-width: 1024px) {
   .testimonials > div:first-of-type article {
     width: 80%;
+    flex-direction: column;
   }
 }
 .testimonials > div:first-of-type article img {
   object-fit: contain;
   height: fit-content;
+}
+@media screen and (max-width: 1024px) {
+  .testimonials > div:first-of-type article img {
+    margin: 0 auto;
+  }
 }
 .testimonials > div:first-of-type article > div {
   display: flex;
