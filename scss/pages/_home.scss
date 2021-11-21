@@ -177,6 +177,10 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 148px;
+    
+        @include for-tablets{
+            gap: 50px;
+        }
 
         img {
             object-fit: contain;

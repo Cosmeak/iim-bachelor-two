@@ -20,7 +20,10 @@ header {
     z-index: 99;
 
     @include for-tablets {
-        display: none;
+        height: 50px;
+        justify-content: space-between;
+        place-items: center;
+        padding: 0 20px;
     }
 
     > img {
@@ -28,16 +31,44 @@ header {
         height: 30%;
         margin-top: auto;
         margin-bottom: 13px;
+
+        @include for-tablets {
+            height: 50%;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     }
 
     nav {
         height: auto;
+
+        .burger {
+            display: none;
+
+            @include for-tablets {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .rod {
+                display: block;
+                width: 40px;
+                height: 5px;
+                border-radius: 20px;
+                background-color: white;
+            }
+        }        
         
         ul {
             height: auto;
             display: flex;
             flex-direction: row;
             gap: 25px;
+
+            @include for-tablets {
+                display: none;
+            }
             
 
             li {
@@ -65,7 +96,7 @@ footer {
     color: $light;
 
     @include for-tablets {
-        display: none;
+        height: auto;
     }
 
     section {
@@ -74,6 +105,11 @@ footer {
         flex-direction: row;
         justify-content: space-around;
         place-items: normal;
+
+        @include for-tablets {
+            flex-direction: column;
+            gap: 25px;
+        }
         
 
         &:first-of-type {
