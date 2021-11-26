@@ -26,9 +26,28 @@ $power = get_field('energie');
 			the_post();
 		?>
 
-			<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+			<section class="singles">
+				<!-- Information about -->
+				<div>
+					<?php the_post_thumbnail() ?>
+					
+					<div>
+							<h1> <?php the_title(); ?> </h1>
+							<p>Couleur: <?= $color ?> </p>
+							<p>Épaisseur: <?= $thickness ?> </p>
+							<p>Rapidité: <?= $fast_boi ?> </p>
+							<p>Contrôle: <?= $control ?> </p>
+							<p>Adhérence: <?= $grip ?> </p>
+							<p>Dureté: <?= $hardness ?> </p>
+							<p>Énergie: <?= $power ?> </p>
+					</div>
+				</div>
+				<!-- Description -->
+				<div>
+					<?php the_content() ?>
+				</div>
 
-			<?= $fast_boi ?>
+			</section>
 
 			<?php
 			// If comments are open or we have at least one comment, load up the comment template.

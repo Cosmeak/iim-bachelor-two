@@ -28,10 +28,14 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-				?>
-				<div class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> <img src="<?= get_template_directory_uri();  ?>/img/ping-passion.png" alt=""> </a></h1>
+				<div class="site-logo">
+						<?php
+							if (!empty(get_custom_logo())): //Check if website have a logo, else show title of website
+								the_custom_logo();
+							else: ?>
+								<a href="<?= esc_url( home_url( '/' ) ); ?>" rel="home"><h2> <?php bloginfo( 'name' ) ?> </h2></a>
+						<?php endif; ?>
+			</div><!-- .site-logo -->
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">

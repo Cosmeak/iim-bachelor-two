@@ -26,7 +26,11 @@ get_header();
 						<?= the_post_thumbnail() ?>
 							<div>								
 								<h3> <?= the_title() ?> </h3>
-								<p> <?= substr($content, 0, 200) ?>...</p>
+								<?php if(strlen($content) > 200):?>
+									<p> <?= substr($content, 0, 200) ?>...</p>
+								<?php else: ?>
+									<p> <?= $content ?> </p>
+								<?php endif ?>
 							</div>
 						</article>
 					</a>
