@@ -1,0 +1,28 @@
+// Personnal colors
+$color-primary: #fca311;
+$color-secondary: #14213d;
+
+$light: #f0f0f0;
+$dark: #000000;
+$gray: #e5e5e5;
+
+// Wordpress color class
+$color__background-body: $light;
+$color__background-screen: $light;
+$color__background-hr: $light;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: $color-primary; 
+$color__link-hover: darken($color-primary, 10%); 
+$color__text-main: #404040;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
