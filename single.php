@@ -9,7 +9,7 @@
 
 get_header();
 
-$color = get_field('color');
+$color = get_field('couleur');
 $thickness = get_field('epaisseur');
 $fast_boi = get_field('rapidite');
 $control = get_field('controle');
@@ -33,13 +33,13 @@ $power = get_field('energie');
 					
 					<div>
 							<h1> <?php the_title(); ?> </h1>
-							<p>Couleur: <?= $color ?> </p>
-							<p>Épaisseur: <?= $thickness ?> </p>
-							<p>Rapidité: <?= $fast_boi ?> </p>
-							<p>Contrôle: <?= $control ?> </p>
-							<p>Adhérence: <?= $grip ?> </p>
-							<p>Dureté: <?= $hardness ?> </p>
-							<p>Énergie: <?= $power ?> </p>
+							<p>Couleur: <span><?= $color ?> </p>
+							<p>Épaisseur: <span><?= $thickness ?></span></p>
+							<p>Rapidité: <span><?= $fast_boi ?></span></p>
+							<p>Contrôle: <span><?= $control ?></span></p>
+							<p>Adhérence: <span><?= $grip ?></span></p>
+							<p>Dureté:<span><?= $hardness ?></span></p>
+							<p>Énergie: <span><?= $power ?></span></p>
 					</div>
 				</div>
 				<!-- Description -->
@@ -59,3 +59,5 @@ $power = get_field('energie');
 		?>
 
 	</main><!-- #main -->
+<?php 
+get_footer();

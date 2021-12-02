@@ -51,7 +51,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 // Import variables and mixins.
-@import "abstracts/abstracts";
+@import "abstracts/abstracts",
+				"abstracts/mixins/mixins";
 
 /*--------------------------------------------------------------
 # Generic
@@ -83,6 +84,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "components/components",
 				"components/navigation/navigation",
 				"components/header",
+				"components/footer",
 				"components/cards",
 				"components/singles";
 

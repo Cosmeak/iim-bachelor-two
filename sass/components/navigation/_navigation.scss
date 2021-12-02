@@ -33,6 +33,14 @@
 				
 				> ul.sub-menu {
 					display: none;
+					position: absolute;
+					flex-direction: column;
+					background-color: $dark;
+					padding: 0;
+					border-radius: 10px;
+					// border: 1px solid $color-primary;
+					box-shadow: 0 0 2px opacify($color-primary, 0.9);
+					overflow: hidden;
 
 					> li.menu-item {
 						
@@ -51,15 +59,7 @@
 				
 				&:hover {
 					> ul.sub-menu {
-						position: absolute;
 						display: flex;
-						flex-direction: column;
-						background-color: $color-secondary;
-						padding: 0;
-						border-radius: 10px;
-						// border: 1px solid $color-primary;
-						box-shadow: 0 0 2px opacify($color-primary, 0.9);
-						overflow: hidden;
 					}
 				}
 			}
