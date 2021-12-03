@@ -16,6 +16,8 @@ $control = get_field('controle');
 $grip = get_field('adherence');
 $hardness = get_field('durete');
 $power = get_field('energie');
+$plis = get_field('plis');
+$weight = get_field('poids');
 
 ?>
 
@@ -67,6 +69,14 @@ $power = get_field('energie');
 
 							<?php if( !empty($power) ):?>
 								<p>Énergie: <span><?= $power ?></span></p>
+							<?php endif ?>
+
+							<?php if( !empty($plis) ):?>
+								<p>Énergie: <span><?= $plis ?></span></p>
+							<?php endif ?>
+
+							<?php if( !empty($weight) ):?>
+								<p>Énergie: <span><?= $weight ?></span></p>
 							<?php endif ?>
 					</div>
 				</div>
