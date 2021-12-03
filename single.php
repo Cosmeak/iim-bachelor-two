@@ -33,7 +33,7 @@ $power = get_field('energie');
 					
 					<div>
 							<h1> <?php the_title(); ?> </h1>
-							<p>Couleur: <span><?= $color ?> </p>
+							<p>Couleur: <span><?= $color ?> </span></p>
 							<p>Épaisseur: <span><?= $thickness ?></span></p>
 							<p>Rapidité: <span><?= $fast_boi ?></span></p>
 							<p>Contrôle: <span><?= $control ?></span></p>
