@@ -33,13 +33,41 @@ $power = get_field('energie');
 					
 					<div>
 							<h1> <?php the_title(); ?> </h1>
-							<p>Couleur: <span><?= $color ?> </span></p>
-							<p>Épaisseur: <span><?= $thickness ?></span></p>
-							<p>Rapidité: <span><?= $fast_boi ?></span></p>
-							<p>Contrôle: <span><?= $control ?></span></p>
-							<p>Adhérence: <span><?= $grip ?></span></p>
-							<p>Dureté:<span><?= $hardness ?></span></p>
-							<p>Énergie: <span><?= $power ?></span></p>
+							<?php if( !empty($color) ):?>
+								<p>Couleur:<span>
+									<?php foreach( $color as $value){ ?>
+										<?= $value ?> 
+									<?php } ?>
+								</span></p>
+							<?php endif ?>
+
+							<?php if( !empty($thickness) ):?>
+								<p>Épaisseur:<span>
+									<?php foreach( $thickness as $value){ ?>
+										<?= $value ?>
+									<?php } ?>
+								</span></p>
+							<?php endif ?>
+
+							<?php if( !empty($fast_boi) ):?>
+								<p>Rapidité: <span><?= $fast_boi ?></span></p>
+							<?php endif ?>
+
+							<?php if( !empty($control) ):?>
+								<p>Contrôle: <span><?= $control ?></span></p>
+							<?php endif ?>
+
+							<?php if( !empty($grip) ):?>
+								<p>Adhérence: <span><?= $grip ?></span></p>
+							<?php endif ?>
+
+							<?php if( !empty($hardness) ):?>
+								<p>Dureté:<span><?= $hardness ?></span></p>
+							<?php endif ?>
+
+							<?php if( !empty($power) ):?>
+								<p>Énergie: <span><?= $power ?></span></p>
+							<?php endif ?>
 					</div>
 				</div>
 				<!-- Description -->
