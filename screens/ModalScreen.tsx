@@ -12,10 +12,14 @@ export default function ModalScreen() {
         <Text style={styles.Title} >Règle N°1</Text>
         <Text style={styles.Text} >On ne doit pas faire djoeezjfpozeaf ezoafjpaz fonopanfpzao fean fpzannf nfizafn zpafn naznf zapf az...</Text>
       </View>
+
       <View style={styles.rules}>
         <Text style={styles.Title} >Règle N°2</Text>
         <Text style={styles.Text} >On ne doit pas faire djoeezjfpozeaf...</Text>
       </View>
+
+      {/* Il faut faire la db puis faire les boucles d'insertions des données stocker dedans pour afficher les règles avec le design du dessus */}
+
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
@@ -48,5 +52,6 @@ const styles = StyleSheet.create({
   },
   Text: {
     fontSize: 16,
+    width: '100%',
   }
 });
