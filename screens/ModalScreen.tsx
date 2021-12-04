@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingLeft: 8, 
     paddingRight: 8,
     marginBottom: 16,
-    borderBottomWidth: 1,
+    borderBottomWidth: 1, 
     borderBottomColor: 'white',
   },
   Text: {
