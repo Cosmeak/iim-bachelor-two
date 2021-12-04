@@ -8,10 +8,14 @@ import { Text, View } from '../components/Themed';
 export default function ModalScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Rules / Informations</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      
-
+      <View style={styles.rules}>
+        <Text style={styles.Title} >Règle N°1</Text>
+        <Text style={styles.Text} >On ne doit pas faire djoeezjfpozeaf ezoafjpaz fonopanfpzao fean fpzannf nfizafn zpafn naznf zapf az...</Text>
+      </View>
+      <View style={styles.rules}>
+        <Text style={styles.Title} >Règle N°2</Text>
+        <Text style={styles.Text} >On ne doit pas faire djoeezjfpozeaf ezoafjpaz fonopanfpzao fean fpzannf nfizafn zpafn naznf zapf az...</Text>
+      </View>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
@@ -21,16 +25,27 @@ export default function ModalScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    padding: 16,
   },
-  title: {
+  rules: {
+    alignItems: 'center',
+    backgroundColor: 'gray',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 16,
+  },
+  Title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    paddingBottom: 4,
+    paddingLeft: 8, 
+    paddingRight: 8,
+    marginBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: 'white',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  Text: {
+    fontSize: 16,
+  }
 });
