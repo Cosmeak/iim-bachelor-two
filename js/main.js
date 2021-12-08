@@ -35,7 +35,7 @@ const get_pokemon = async id => { // On cherche dans l'api les pokémons puis on
 };
 
 function show_pokemon(pokemon) {
-	const name = pokemon.name; // On récupère le nom du pokémon en anglais
+	const name = (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1); // On récupère le nom du pokémon en anglais
 	const id = pokemon.id; // On récupère l'id du pokémon
 	const sprite = pokemon.sprites.front_default; // On récupère l'image principal du pokémon
 
@@ -46,12 +46,11 @@ function show_pokemon(pokemon) {
 
 	const wrap = document.querySelector('.container-wrap');
 	const pokediv = document.createElement('div'); // On crée une division qui va contenir le pokémon
-	pokediv.classList.add('pokemon'); // On ajoute une class à la div
+	pokediv.classList.add('pokemon-card'); // On ajoute une class à la div
 	const color_type = colors[types[0]]; // On met dans une variable l'hexa decimal de la couleur du type principal du pokemon
 	pokediv.style.backgroundColor = color_type; // On ajoute la couleur en background de la div
 
 	const card = ` 
-	<div class="pokemon">
 		<div class="img-container">
 			<img src="${sprite}" alt="${name}" />
 		</div>
@@ -59,7 +58,6 @@ function show_pokemon(pokemon) {
 				<h3 class="name">${name} #${id}</h3>
 				<small class="type">Type: <span>${types}</span></small>
 		</div>
-	</div>
 	`; // On ajoute tout les html requis pour l'affichage du pokémon avec ses variables
 
 	pokediv.innerHTML = card; // On ajoute le html que doit contenir la card à notre div qui doit contenir le pokemon

@@ -8,5 +8,10 @@ footer {
   margin-top: 32px;
   a {
     color: red;
+    transition: 0.3s;
+
+    &:hover {
+      color: blue;
+    }
   }
 }
