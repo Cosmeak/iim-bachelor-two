@@ -35,7 +35,8 @@ const get_pokemon = async id => { // On cherche dans l'api les pokémons puis on
 };
 
 function show_pokemon(pokemon) {
-	const name = (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1); // On récupère le nom du pokémon en anglais
+
+	const name = (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1); // On récupère le nom du pokémon en anglais et on met la première lettre en du nom en majuscule
 	const id = pokemon.id; // On récupère l'id du pokémon
 	const sprite = pokemon.sprites.front_default; // On récupère l'image principal du pokémon
 
@@ -56,7 +57,7 @@ function show_pokemon(pokemon) {
 		</div>
 		<div class="info">
 				<h3 class="name">${name} #${id}</h3>
-				<small class="type">Type: <span>${types}</span></small>
+				<p class="type">Type: ${types}</p>
 		</div>
 	`; // On ajoute tout les html requis pour l'affichage du pokémon avec ses variables
 
