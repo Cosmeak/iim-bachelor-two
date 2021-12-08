@@ -1,26 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
-*{
+/* ----------------------------------
+# Abstract
+-----------------------------------*/
+/*-----------------------------------
+# Base
+-----------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, select {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  border: none;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: inherit;
+  color: inherit;
+}
 
-  font-family: 'PT sans', sans-serif;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.25;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* :focus {
+  outline: none;
+}
+
+:root {
+  font-family: "PT sans", sans-serif;
+  font-size: 18px;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
+  background-color: #2e3132;
+  color: aliceblue;
 }
 
-h1 {
+/* ----------------------------------
+# Components
+-----------------------------------*/
+div.pokemon-card {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 32px;
+  transition: 0.3S;
+  cursor: pointer;
+  color: #2e3132;
+  border: 1px solid #2e3132;
+}
+div.pokemon-card:hover {
+  transform: scale(115%);
+}
+div.pokemon-card .img-container {
+  background-color: rgba(240, 248, 255, 0.75);
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  box-shadow: 0 0 5px #2e3132;
+  margin-bottom: 32px;
+}
+div.pokemon-card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+div.pokemon-card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+div.pokemon-card .info .name {
+  color: aliceblue;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 0 0 #2e3132, 1px 1px 0 #2e3132, 0 1px 0 #2e3132, -1px 1px 0 #2e3132, -1px 0 0 #2e3132, -1px -1px 0 #2e3132, 0 -1px 0 #2e3132, 1px -1px 0 #2e3132;
+}
+
+header {
+  background-color: rgba(240, 248, 255, 0.5);
+  width: 100%;
+  height: 80px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
   text-align: center;
 }
-
-.container-wrap {
-  display: flex;
-	flex-wrap: wrap;
-	align-items: space-between;
-	justify-content: center;
-	margin: 0 auto;
+header h1 span {
+  color: red;
 }
+
+footer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  background-color: rgba(240, 248, 255, 0.5);
+  margin-top: 32px;
+}
+footer a {
+  color: red;
+}
+
+/* ----------------------------------
+# Pages
+-----------------------------------*/
+section.container-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
