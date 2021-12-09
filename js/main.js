@@ -21,9 +21,9 @@ const colors = {
 
 const fetch_pokemon = async () => {
 	const pokemon_numbers = 898; // Nombre de pokémon que l'on souhait affiché ( ici le nombre total de pokémon existant )
-	for (let id = 1; id <= pokemon_numbers; id++){ // id démarre à 1, tant que id est <= au nombre de pokémon existant on ajoute un a id 
+	for (let id = 1; id <= pokemon_numbers; id++){ // id démarre à 1, tant que id est <= au nombre de pokémon existant on ajoute 1 a id 
 		await get_pokemon(id); // On récupère le pokémon en appelant la const suivant à chaque i et on attend la réponse avant de passer au prochain
-	}
+	};
 };
 
 const get_pokemon = async id => { // On cherche dans l'api les pokémons puis on récupère leur json
@@ -56,8 +56,8 @@ function show_pokemon(pokemon) {
 			<img src="${sprite}" alt="${name}" />
 		</div>
 		<div class="info">
-				<h3 class="name">${name} #${id}</h3>
-				<p class="type">Type: ${types}</p>
+			<h3 class="name">${name} #${id}</h3>
+			<p class="type">Types: ${types}</p>
 		</div>
 	`; // On ajoute tout les html requis pour l'affichage du pokémon avec ses variables
 
