@@ -65,7 +65,7 @@ function show_pokemon(pokemon) {
 		</div>
 		<div class="info">
 			<h3 class="name">${name} #${id}</h3>
-			<p class="${types}">Types: ${types}</p>
+			<p class="types">Types: ${types}</p>
 		</div>
 	`; // On ajoute tout les html requis pour l'affichage du pokémon avec ses variables
 
