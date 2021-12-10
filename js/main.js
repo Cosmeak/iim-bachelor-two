@@ -35,7 +35,7 @@ const get_pokemon = async id => { // On cherche dans l'api les pokémons puis on
 	const response = await fetch(API_URL); // On demande les infos à l'API
 	const pokemon = await response.json(); // On stock le json du pokémon du pokémon dans une variable
 
-	var list_pokemon = [];
+	let list_pokemon = [];
 	list_pokemon.push(pokemon);
 
 	show_pokemon(pokemon); // On appelle la fonction qui affiche le pokémon dans une card
@@ -55,6 +55,7 @@ function show_pokemon(pokemon) {
 	const wrap = document.querySelector('.container-wrap');
 	const pokediv = document.createElement('div'); // On crée une division qui va contenir le pokémon
 	pokediv.classList.add('pokemon-card'); // On ajoute une class à la div
+	pokediv.classList.add(types) // On ajoute tout les types du pokemon en classe
 	const color_type = colors[types[0]]; // On met dans une variable l'hexa decimal de la couleur du type principal du pokemon
 	pokediv.style.backgroundColor = color_type; // On ajoute la couleur en background de la div
 
@@ -64,7 +65,7 @@ function show_pokemon(pokemon) {
 		</div>
 		<div class="info">
 			<h3 class="name">${name} #${id}</h3>
-			<p class="type">Types: ${types}</p>
+			<p class="${types}">Types: ${types}</p>
 		</div>
 	`; // On ajoute tout les html requis pour l'affichage du pokémon avec ses variables
 
@@ -84,14 +85,35 @@ document.querySelector('.search-pokemon').addEventListener('input', (search) => 
 });
 
 function search_pokemon() {
-	const pokemon_show = document.querySelectorAll('.pokemon-card') // On selection tout les cards de pokemon affiché 
-	pokemon_show.forEach(pokemon => { // Pour chaque card on la display: none
-		pokemon.style.display = none; 
-	});
-	let pokemon_search = document.querySelector('.search-pokemon').value; // On selection le contenu du champ de recherche
-	list_pokemon.forEach( pokemon => { // Pour chaque pokemon dans la liste qui stock tout les pokémon on compare son nom avec avec la recherche
-		if (pokemon.name === pokemon_search) {
-			show_pokemon(pokemon); // On lance la fonction show_pokemon pour afficher le pokemon si son nom correspond à la recherche
+	let pokemon_show = document.querySelectorAll('.pokemon-card'); // On selection tout les cards de pokemon affiché 
+	let pokemon_search = document.querySelector('.search-pokemon').value; // On selection le contenu du champ de recherchepo
+	if ( pokemon_search ) {
+		pokemon_show.forEach( pokemon => {
+			if ( pokemon.querySelector('.name').innerHTML.toLowerCase().includes(pokemon_search) === false ) {
+				pokemon.style.display = 'none';
+			} else {
+				pokemon.style.display = 'block';
+			};
+		});
+	} else {
+		pokemon_show.forEach( pokemon => {
+			pokemon.style.display = 'block';
+		});
+	};
+};
+
+// -------------------------------------------------------------------------------------
+// Filtre par selection
+// -------------------------------------------------------------------------------------
+
+document.querySelector('#types').addEventListener('change', () => {
+	let pokemon_show = document.querySelectorAll('.pokemon-card'); // On selection tout les cards de pokemon affiché 
+	let select_value = document.querySelector('#types').value; // On récupère la value du select
+	pokemon_show.forEach( pokemon => { // Pour chaque pokement on compare les classes avec la value du select et si elle n'est pas comprise on la display none sinon on l'affiche
+		if ( pokemon.className.includes(select_value) === false ) {
+			pokemon.style.display = 'none';
+		} else {
+			pokemon.style.display = 'block';
 		};
 	});
-};
+});
