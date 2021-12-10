@@ -5,6 +5,7 @@ header {
   position: fixed;
   z-index: 99;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   place-items: center;
   backdrop-filter: blur( 4px );

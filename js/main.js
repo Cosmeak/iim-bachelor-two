@@ -1,3 +1,7 @@
+// -------------------------------------------------------------------------------------
+// Affichage des pokémons dans des cards
+// -------------------------------------------------------------------------------------
+
 const colors = {
 	normal: '#A8A77A',
 	fire: '#EE8130',
@@ -30,6 +34,9 @@ const get_pokemon = async id => { // On cherche dans l'api les pokémons puis on
 	const API_URL = "https://pokeapi.co/api/v2/pokemon/" + id ;
 	const response = await fetch(API_URL); // On demande les infos à l'API
 	const pokemon = await response.json(); // On stock le json du pokémon du pokémon dans une variable
+
+	var list_pokemon = [];
+	list_pokemon.push(pokemon);
 
 	show_pokemon(pokemon); // On appelle la fonction qui affiche le pokémon dans une card
 };
@@ -66,3 +73,25 @@ function show_pokemon(pokemon) {
 };
 
 fetch_pokemon(); // On lance le programme
+
+// -------------------------------------------------------------------------------------
+// Filtre par recherche
+// -------------------------------------------------------------------------------------
+
+document.querySelector('.search-pokemon').addEventListener('input', (search) => { // On regarde si quelque chose est ajouté au champs
+	search.preventDefault(); // Evite que si il n'y a rien dans la barre de recherche elle lance la ligne suivante
+	search_pokemon(); // on lance la fonction search_pokemon
+});
+
+function search_pokemon() {
+	const pokemon_show = document.querySelectorAll('.pokemon-card') // On selection tout les cards de pokemon affiché 
+	pokemon_show.forEach(pokemon => { // Pour chaque card on la display: none
+		pokemon.style.display = none; 
+	});
+	let pokemon_search = document.querySelector('.search-pokemon').value; // On selection le contenu du champ de recherche
+	list_pokemon.forEach( pokemon => { // Pour chaque pokemon dans la liste qui stock tout les pokémon on compare son nom avec avec la recherche
+		if (pokemon.name === pokemon_search) {
+			show_pokemon(pokemon); // On lance la fonction show_pokemon pour afficher le pokemon si son nom correspond à la recherche
+		};
+	});
+};
