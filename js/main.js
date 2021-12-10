@@ -87,15 +87,15 @@ document.querySelector('.search-pokemon').addEventListener('input', (search) => 
 function search_pokemon() {
 	let pokemon_show = document.querySelectorAll('.pokemon-card'); // On selection tout les cards de pokemon affiché 
 	let pokemon_search = document.querySelector('.search-pokemon').value; // On selection le contenu du champ de recherchepo
-	if ( pokemon_search ) {
-		pokemon_show.forEach( pokemon => {
+	if ( pokemon_search ) { // Si il y a une recherche
+		pokemon_show.forEach( pokemon => { // Pour chaque pokemon on compare son nom avec la recherche et si le nom ne contient pas la recherche on le displau none sinon display block
 			if ( pokemon.querySelector('.name').innerHTML.toLowerCase().includes(pokemon_search) === false ) {
 				pokemon.style.display = 'none';
 			} else {
 				pokemon.style.display = 'block';
 			};
 		});
-	} else {
+	} else { // Si il n'y a pas de recherche on affiche tout
 		pokemon_show.forEach( pokemon => {
 			pokemon.style.display = 'block';
 		});
