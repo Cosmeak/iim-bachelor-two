@@ -9,13 +9,19 @@ export default function ModalScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.rules}>
-        <Text style={styles.Title} >Règle N°1</Text>
-        <Text style={styles.Text} >On ne doit pas faire djoeezjfpozeaf ezoafjpaz fonopanfpzao fean fpzannf nfizafn zpafn naznf zapf az...</Text>
+        <Text style={styles.Title} >Règle N°1 : Question sur Tuiles</Text>
+        <Text style={styles.Text} >Case contrat : Une question sur chacun des bâtiments en particulier</Text>
+        <Text style={styles.Text} >VS : Une question de rapidité</Text>
+        <Text style={styles.Text} >Multifruit : Une question sur une date (avec un classement à la fin du plus proche au plus loin)</Text>
+        <Text style={styles.Text} >Flèches : Une question de culture général</Text>
       </View>
 
       <View style={styles.rules}>
-        <Text style={styles.Title} >Règle N°2</Text>
-        <Text style={styles.Text} >On ne doit pas faire djoeezjfpozeaf...</Text>
+        <Text style={styles.Title} >Règle N°2 : Action disponible sur les tuiles</Text>
+        <Text style={styles.Text} >Cases contrats : Si l’on a les ressources suffisantes on peut construire le bâtiment associé / le racheter à la personne qui le possède pour 3fois le prix du bâtiment / l’amélioré d’un niveau s’il nous appartient déjà</Text>
+        <Text style={styles.Text} >VS : le gagnant prend des ressources du perdant</Text>
+        <Text style={styles.Text} >Multifruit : Le 1er gagne beaucoup de ressources, le 2eme gagne un peu moins de ressources ect…</Text>
+        <Text style={styles.Text} >Flèches : Le joueur peut changer de place un bâtiment (Attention deux bâtiments doivent être à minimum de cases de distance et ne doivent pas bloquer de joueur sur une case)</Text>
       </View>
 
       {/* Il faut faire la db puis faire les boucles d'insertions des données stocker dedans pour afficher les règles avec le design du dessus */}
