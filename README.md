@@ -45,3 +45,10 @@ INNER JOIN contract ON asset.contract_id = contract.id
 GROUP BY asset.id
 ORDER BY sells DESC
 LIMIT 1;```
+
+```SELECT `attribute`.`value` AS attribute_name, COUNT(attribute_asset.attribute_id) AS nb_use FROM attribute_asset 
+INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id
+WHERE attribute_asset.asset_id <= 131533 AND asset_id >= 24159 
+GROUP BY attribute_asset.attribute_id 
+ORDER BY nb_use DESC 
+LIMIT 1;```
