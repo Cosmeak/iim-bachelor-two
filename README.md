@@ -24,9 +24,9 @@
 
 ```SELECT AVG(asset.score) FROM asset INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'Last Dragons';```
 
-```SELECT `order`.`date` FROM `order` INNER JOIN asset ON order.asset_id = asset.id INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'IMX APES';
+```SELECT `order`.`date` FROM `order` INNER JOIN asset ON order.asset_id = asset.id INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'IMX APES';```
 
-SELECT `attribute`.value FROM attribute_asset
+```SELECT `attribute`.value FROM attribute_asset
 INNER JOIN asset ON attribute_asset.asset_id = asset.id
 INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id
 WHERE asset.name LIKE 'IMXToadz #316';```
