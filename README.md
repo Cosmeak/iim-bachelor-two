@@ -14,13 +14,16 @@
 
 ```SELECT contract.name, COUNT(attribute_category.id) AS nb_contract FROM attribute_category INNER JOIN contract ON attribute_category.contract_id = contract.id GROUP BY contract.id ORDER BY nb_contract DESC LIMIT 1;```
 
-```SELECT contract.name AS contract_name, asset.name AS asset_name FROM asset INNER JOIN contract ON asset.contract_id = contract.id ORDER BY asset.score;``` ------------------
+```SELECT contract.name, MAX(asset.score) AS max_score FROM asset JOIN contract ON asset.contract_id = contract.id GROUP BY contract.name;``` ------------------
 
 ### Partie 2
 
 ```SELECT name FROM asset WHERE rank < 10 ORDER BY rank ASC;```
 
-```SELECT `attribute`.`value`, contract.name AS contract_name FROM `attribute` INNER JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id INNER JOIN contract ON attribute_category.contract_id = contract.id ORDER BY `attribute`.score DESC;``` ----------------------
+```SELECT contract.name, MAX(`attribute`.score) AS max_score FROM `attribute` 
+JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id 
+JOIN contract ON attribute_category.contract_id = contract.id
+GROUP BY contract.name;``` ----------------------
 
 ```SELECT AVG(asset.score) FROM asset INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'Last Dragons';```
 
