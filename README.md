@@ -1,4 +1,4 @@
-# bdd---sql-guillaume-fine
+# Projet à rendre - SQL
 
 ### Partie 1
 
