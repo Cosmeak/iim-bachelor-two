@@ -14,7 +14,7 @@
 
 ```SELECT contract.name, COUNT(attribute_category.id) AS nb_contract FROM attribute_category INNER JOIN contract ON attribute_category.contract_id = contract.id GROUP BY contract.id ORDER BY nb_contract DESC LIMIT 1;```
 
-```SELECT contract.name, MAX(asset.score) AS max_score FROM asset JOIN contract ON asset.contract_id = contract.id GROUP BY contract.name;``` ------------------
+```SELECT contract.name, MAX(asset.score) AS max_score FROM asset JOIN contract ON asset.contract_id = contract.id GROUP BY contract.name;``` --- Pas encore opti
 
 ### Partie 2
 
@@ -23,7 +23,7 @@
 ```SELECT contract.name, MAX(`attribute`.score) AS max_score FROM `attribute` 
 JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id 
 JOIN contract ON attribute_category.contract_id = contract.id
-GROUP BY contract.name;``` ----------------------
+GROUP BY contract.name;``` --- Pas encore Opti
 
 ```SELECT AVG(asset.score) FROM asset INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'Last Dragons';```
 
@@ -54,6 +54,6 @@ INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id
 WHERE attribute_asset.asset_id <= 131533 AND asset_id >= 24159 
 GROUP BY attribute_asset.attribute_id 
 ORDER BY nb_use DESC 
-LIMIT 1;```
+LIMIT 1;``` --- Pas encore Opti
 
 J'avoue c'est un peu de la triche le dernier mais j'ai pas trouver de meilleur solution encore
