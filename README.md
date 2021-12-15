@@ -52,3 +52,5 @@ WHERE attribute_asset.asset_id <= 131533 AND asset_id >= 24159
 GROUP BY attribute_asset.attribute_id 
 ORDER BY nb_use DESC 
 LIMIT 1;```
+
+J'avoue c'est un peu de la triche le dernier mais j'ai pas trouver de meilleur solution encore
