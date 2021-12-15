@@ -18,7 +18,7 @@ g. ```SELECT contract.name, MAX(asset.score) AS max_score FROM asset JOIN contra
 
 ### Partie 2
 
-a.```SELECT name FROM asset WHERE rank < 10 ORDER BY rank ASC;```
+a. ```SELECT name FROM asset WHERE rank < 10 ORDER BY rank ASC;```
 
 b. ```SELECT contract.name, MAX(`attribute`.score) AS max_score FROM `attribute` 
 JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id 
