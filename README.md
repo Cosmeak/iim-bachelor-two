@@ -14,10 +14,27 @@ SELECT contract.name, COUNT(attribute_category.id) AS nb_contract FROM attribute
 
 SELECT contract.name, COUNT(attribute_category.id) AS nb_contract FROM attribute_category INNER JOIN contract ON attribute_category.contract_id = contract.id GROUP BY contract.id ORDER BY nb_contract DESC LIMIT 1;
 
-SELECT contract.name AS contract_name, asset.name AS asset_name FROM asset INNER JOIN contract ON asset.contract_id = contract.id ORDER BY asset.score;
+SELECT contract.name AS contract_name, asset.name AS asset_name FROM asset INNER JOIN contract ON asset.contract_id = contract.id ORDER BY asset.score; ------------------
 
 ### Partie 2
 
+SELECT name FROM asset WHERE rank < 10 ORDER BY rank ASC;
 
+SELECT `attribute`.`value`, contract.name AS contract_name FROM `attribute` INNER JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id INNER JOIN contract ON attribute_category.contract_id = contract.id ORDER BY `attribute`.score DESC; ----------------------
+
+SELECT AVG(asset.score) FROM asset INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'Last Dragons';
+
+SELECT `order`.`date` FROM `order` INNER JOIN asset ON order.asset_id = asset.id INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'IMX APES';
+
+SELECT `attribute`.value FROM attribute_asset
+INNER JOIN asset ON attribute_asset.asset_id = asset.id
+INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id
+WHERE asset.name LIKE 'IMXToadz #316';
+
+SELECT `attribute`.value, attribute_category.name FROM attribute_asset
+INNER JOIN asset ON attribute_asset.asset_id = asset.id
+INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id
+INNER JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id
+WHERE asset.name LIKE 'Utopian Unicorn #934';
 
 ### Partie 3
