@@ -14,7 +14,7 @@ e. ```SELECT contract.name, COUNT(attribute_category.id) AS nb_contract FROM att
 
 f. ```SELECT contract.name, COUNT(attribute_category.id) AS nb_contract FROM attribute_category INNER JOIN contract ON attribute_category.contract_id = contract.id GROUP BY contract.id ORDER BY nb_contract DESC LIMIT 1;```
 
-g. ```SELECT contract.name, MAX(asset.score) AS max_score FROM asset JOIN contract ON asset.contract_id = contract.id GROUP BY contract.name;``` --- Pas encore opti
+g. ```SELECT contract.name, MAX(asset.score) AS max_score FROM asset JOIN contract ON asset.contract_id = contract.id GROUP BY contract.id;``` --- Pas encore opti
 
 ### Partie 2
 
