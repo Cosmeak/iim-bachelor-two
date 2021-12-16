@@ -50,10 +50,10 @@ ORDER BY sells DESC
 LIMIT 1;```
 
 ○ ```SELECT `attribute`.`value` AS attribute_name, COUNT(attribute_asset.attribute_id) AS nb_use FROM attribute_asset 
-INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id
-WHERE attribute_asset.asset_id <= 131533 AND asset_id >= 24159 
+INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id 
+INNER JOIN attribute_category ON attribute.attribute_category_id = attribute_category.id
+INNER JOIN contract ON attribute_category.contract_id = contract_id
+WHERE contract.name LIKE 'Utopian Unicorns' 
 GROUP BY attribute_asset.attribute_id 
 ORDER BY nb_use DESC 
-LIMIT 1;``` --- Pas encore Opti
-
-J'avoue c'est un peu de la triche le dernier mais j'ai pas trouver de meilleur solution encore
+LIMIT 1;```
