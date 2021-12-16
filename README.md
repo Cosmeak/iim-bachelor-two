@@ -20,7 +20,7 @@ g. ```SELECT contract.name, asset.name, MAX(asset.score) AS max_score FROM asset
 
 a. ```SELECT name FROM asset WHERE rank < 10 ORDER BY rank ASC;```
 
-b. ```SELECT contract.name, attribute.value MAX(`attribute`.score) AS max_score FROM `attribute` 
+b. ```SELECT contract.name, attribute.value, MAX(`attribute`.score) AS max_score FROM `attribute` 
 JOIN attribute_category ON `attribute`.attribute_category_id = attribute_category.id 
 JOIN contract ON attribute_category.contract_id = contract.id
 GROUP BY contract.id;``` 
