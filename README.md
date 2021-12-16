@@ -49,11 +49,13 @@ GROUP BY asset.id
 ORDER BY sells DESC
 LIMIT 1;```
 
-○ ```SELECT `attribute`.`value` AS attribute_name, COUNT(attribute_asset.attribute_id) AS nb_use FROM attribute_asset 
-INNER JOIN `attribute` ON attribute_asset.attribute_id = `attribute`.id 
+○ ```SELECT contract.name AS contract_name, attribute.value AS attribute_name, MAX(attribute.total) AS nb_use
+FROM attribute_asset
+INNER JOIN attribute ON attribute_asset.attribute_id = attribute.id
 INNER JOIN attribute_category ON attribute.attribute_category_id = attribute_category.id
-INNER JOIN contract ON attribute_category.contract_id = contract_id
-WHERE contract.name LIKE 'Utopian Unicorns' 
-GROUP BY attribute_asset.attribute_id 
+INNER JOIN contract ON attribute_category.contract_id = contract.id
+WHERE contract.name LIKE "Utopian Unicorns"
+AND attribute.value != "Unrevealed"
+GROUP BY attribute.id 
 ORDER BY nb_use DESC 
 LIMIT 1;```
