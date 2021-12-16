@@ -68,4 +68,4 @@ INNER JOIN contract ON attribute_category.contract_id = contract.id
 WHERE contract.name LIKE "Utopian Unicorns" AND attribute.value != "Unrevealed"
 GROUP BY attribute.id 
 ORDER BY nb_use DESC 
-LIMIT 1;````
+LIMIT 1;```
