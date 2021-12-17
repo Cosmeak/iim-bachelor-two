@@ -27,7 +27,7 @@ GROUP BY contract.id;```
 
 c. ```SELECT AVG(asset.score) FROM asset INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'Last Dragons';```
 
-d. ```SELECT `order`.`date`, contract.name FROM `order` INNER JOIN asset ON order.asset_id = asset.id INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.name LIKE 'IMX APES';```
+d. ```SELECT contract.name, asset.name, MIN(`order`.`date`) AS older_date FROM `order` INNER JOIN asset ON `order`.asset_id = asset.id INNER JOIN contract ON asset.contract_id = contract.id WHERE contract.`name` LIKE 'IMX Apes' GROUP BY asset.id;```
 
 e. ```SELECT `attribute`.value FROM attribute_asset
 INNER JOIN asset ON attribute_asset.asset_id = asset.id
