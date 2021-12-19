@@ -49,7 +49,7 @@ GROUP BY asset.id
 ORDER BY sells DESC
 LIMIT 1;```
 
-○ Si attribute unrevealed comprit : ```SELECT contract.name AS contract_name, attribute.value AS attribute_name, MAX(attribute.total) AS nb_use
+○ Si attribute unrevealed comprit : ```SELECT contract.name AS contract_name, attribute.value AS attribute_name, COUNT(attribute.id) AS nb_use
 FROM attribute_asset
 INNER JOIN attribute ON attribute_asset.attribute_id = attribute.id
 INNER JOIN attribute_category ON attribute.attribute_category_id = attribute_category.id
@@ -59,7 +59,7 @@ GROUP BY attribute.id
 ORDER BY nb_use DESC 
 LIMIT 1;```
 
-Si attribute unrevealed non comprit :```SELECT contract.name AS contract_name, attribute.value AS attribute_name, MAX(attribute.total) AS nb_use
+Si attribute unrevealed non comprit :```SELECT contract.name AS contract_name, attribute.value AS attribute_name, COUNT(attribute.id) AS nb_use
 FROM attribute_asset
 INNER JOIN attribute ON attribute_asset.attribute_id = attribute.id
 INNER JOIN attribute_category ON attribute.attribute_category_id = attribute_category.id
