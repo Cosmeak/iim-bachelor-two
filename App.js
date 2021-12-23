@@ -3,10 +3,10 @@ const bodyparser = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-const playerRoutes = require('./routes/playerController');
+const playerRoutes = require('./routes/playerController'); // Link to all player url
 
 app.use(bodyparser.json());
-app.use(cors()); // to open API
+app.use(cors()); // To open API
 
 app.get('/', (request, response) => { // Home of API => Just to show it's online
   response.json({ status: 'API is online! You can search what you want with /:table/:id'})
@@ -19,3 +19,6 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Serveur running at port: ${port}`);
 });
+
+date = new Date();
+console.log(date);
