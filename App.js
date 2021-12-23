@@ -3,7 +3,8 @@ const bodyparser = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-const playerRoutes = require('./routes/playerController'); // Link to all player url
+const playerRoutes = require('./routes/playerController');
+const pawnRoutes = require('./routes/pawnController');
 
 app.use(bodyparser.json());
 app.use(cors()); // To open API
@@ -13,6 +14,7 @@ app.get('/', (request, response) => { // Home of API => Just to show it's online
 });
 
 app.use('/player', playerRoutes);
+app.use('/pawn', pawnRoutes); 
 
 // Run the application
 const port = 3000;
