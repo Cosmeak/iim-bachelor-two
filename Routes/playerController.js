@@ -2,28 +2,32 @@ const express = require('express');
 const router = express.Router();
 const { database } = require('../models/db-config');
 
-router.get('/', async (request, response) => { // get all players in database => actually work but need to have more option like what table we want and what data
+/* -----------------------------------------------------------------------------
+                              GET PART
+----------------------------------------------------------------------------- */
+
+router.get('/', async (request, response) => { // Get all players in database => actually work but need to have more option like what table we want and what data
   database.query(
     'SELECT * FROM player',
     (error, docs) => {
       if(error) {
         console.log('Error in query => ' + error);
-      } else if (!docs[0]) {
-        response.json({ status: 'No player Found!'});
+      } else if(!docs[0]) { // Check if we have an element in list and if it's not it response failure
+        response.json({ status: 'Failure', reason: 'No players found'});
       } else {
         response.json(docs);
       };
     });
 });
 
-router.get('/:id', async (request, response) => { // get data of a player in database => actually work but need to have more option like what table we want and what data
+router.get('/:id', async (request, response) => { // Get data of a player in database => actually work but need to have more option like what table we want and what data
   database.query(
     'SELECT * FROM player WHERE id = ?',
     [ parseInt(request.params.id) ], // block if the id parameters in url isn't an int
     (error, docs) => {
       if(error) {
         response.json({ status:'Failure', reason: error })
-      } else if(!docs[0]) { // Check if we have an element in list and if it's not it response failure
+      } else if(!docs[0]) { 
         response.json({ status: 'Failure', reason: 'No player with this id was found'});
       } else {
         response.json(docs);
@@ -31,7 +35,11 @@ router.get('/:id', async (request, response) => { // get data of a player in dat
     });
 });
 
-router.post('/', async (request, response) => { // to insert data in the database => actually don't work correctly
+/* -----------------------------------------------------------------------------
+                              INSERT PART
+----------------------------------------------------------------------------- */
+
+router.post('/', async (request, response) => { // Insert data in the database => actually don't work correctly
   const data = { // get the data we want to post in our database
     id: request.body.id,
     name: request.body.name,
@@ -53,7 +61,11 @@ router.post('/', async (request, response) => { // to insert data in the databas
     });
 });
 
-router.put('/:id', async (request, response) => {
+/* -----------------------------------------------------------------------------
+                              UPDATE PART
+----------------------------------------------------------------------------- */
+
+router.put('/:id', async (request, response) => { // Update a player with his id
   const data = {
     id: request.params.id,
     name: request.body.name,
@@ -76,9 +88,13 @@ router.put('/:id', async (request, response) => {
   });
 });
 
-router.delete('/', async (request, response) => {
+/* -----------------------------------------------------------------------------
+                              DELETE PART
+----------------------------------------------------------------------------- */
+
+router.delete('/', async (request, response) => { // This clean all player stock in the database, don't use it stupidly
   database.query(
-    'SET FOREIGN_KEY_CHECKS = 0',
+    'SET FOREIGN_KEY_CHECKS = 0', // remove the check of FK
     (error) => {
       if(error) {
         response.json({ status: 'Failure', reason : error });
@@ -94,11 +110,19 @@ router.delete('/', async (request, response) => {
         response.json({ status: 'Success' });
       };
   });
+
+  database.query(
+    'SET FOREIGN_KEY_CHECKS = 1', // Reapply the check of FK
+    (error) => {
+      if(error) {
+        response.json({ status: 'Failure', reason : error });
+      };
+  });
 });
 
 router.delete('/:id', async (request, response) => {
   database.query(
-  'DELETE * FROM player WHERE id = ?',
+  'DELETE FROM player WHERE id = ?',
   [ parseInt(request.params.id) ],
   (error, docs) => {
     if(error) {
