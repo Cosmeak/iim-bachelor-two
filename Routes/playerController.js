@@ -20,19 +20,36 @@ router.get('/', async (request, response) => { // Get all players in database =>
     });
 });
 
-router.get('/:id', async (request, response) => { // Get data of a player in database => actually work but need to have more option like what table we want and what data
-  database.query(
-    'SELECT * FROM player WHERE id = ?',
-    [ parseInt(request.params.id) ], // block if the id parameters in url isn't an int
-    (error, docs) => {
-      if(error) {
-        response.json({ status:'Failure', reason: error })
-      } else if(!docs[0]) { 
-        response.json({ status: 'Failure', reason: 'No player with this id was found'});
-      } else {
-        response.json(docs);
-      };
+router.get('/:IdOrName', async (request, response) => { // Get data of a player in database => actually work but need to have more option like what data we want
+  if(request.params.IdOrName == parseInt(request.params.IdOrName, 10)) { // check if it's an id 
+    database.query(
+      'SELECT * FROM player WHERE player.id = ?',
+      [ parseInt(request.params.IdOrName, 10) ],
+      (error, docs) => {
+        if(error) {
+          response.json({ status:'Failure', reason: error })
+        } else if(!docs[0]) { 
+          response.json({ status: 'Failure', reason: 'No player with this id was found'});
+        } else {
+          response.json(docs);
+          console.log(docs);
+        };
     });
+  } else { // if it's not an id, it search for a name
+    database.query(
+      'SELECT * FROM player WHERE player.name = ?',
+      [ `${request.params.IdOrName}` ],
+      (error, docs) => {
+        if(error) {
+          response.json({ status:'Failure', reason: error });
+          console.log(error);
+        } else if(!docs[0]) { 
+          response.json({ status: 'Failure', reason: 'No player with this id was found'});
+        } else {
+          response.json(docs);
+        };
+    });
+  };
 });
 
 /* -----------------------------------------------------------------------------
@@ -41,7 +58,7 @@ router.get('/:id', async (request, response) => { // Get data of a player in dat
 
 router.post('/', async (request, response) => { // Insert data in the database => actually don't work correctly
   const data = { // get the data we want to post in our database
-    id: request.body.id,
+    id: 0,
     name: request.body.name,
     money: 0,
     resources: 0,
@@ -120,17 +137,30 @@ router.delete('/', async (request, response) => { // This clean all player stock
   });
 });
 
-router.delete('/:id', async (request, response) => {
-  database.query(
-  'DELETE FROM player WHERE id = ?',
-  [ parseInt(request.params.id) ],
-  (error, docs) => {
-    if(error) {
-      response.json({ status: 'Failure', reason: error });
-    } else {
-      response.json({ status: 'Success' });
-    };
-  });
+router.delete('/:IdOrName', async (request, response) => {
+  if(request.params.IdOrName == parseInt(request.params.IdOrName, 10)){
+    database.query(
+      'DELETE FROM player WHERE id = ?',
+      [ parseInt(request.params.IdOrName) ],
+      (error, docs) => {
+        if(error) {
+          response.json({ status: 'Failure', reason: error });
+        } else {
+          response.json({ status: 'Success' });
+        };
+    });
+  } else {
+    database.query(
+      'DELETE FROM player WHERE name = ?',
+      [ parseInt(request.params.IdOrName) ],
+      (error, docs) => {
+        if(error) {
+          response.json({ status: 'Failure', reason: error });
+        } else {
+          response.json({ status: 'Success' });
+        };
+    });
+  };
 });
 
 module.exports = router;

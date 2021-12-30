@@ -9,7 +9,7 @@ app.use(bodyparser.json());
 app.use(cors()); // To open API
 
 app.get('/', (request, response) => { // Home of API => Just to show it's online
-  response.json({ status: 'API is online! You can search what you want with /:table/:id'})
+  response.json({ status: 'API is online!'})
 });
 
 app.use('/player', playerRoutes);
@@ -19,6 +19,3 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Serveur running at port: ${port}`);
 });
-
-date = new Date();
-console.log(date);
