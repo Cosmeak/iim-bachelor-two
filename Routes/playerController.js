@@ -3,7 +3,7 @@ const router = express.Router();
 const { database } = require('../models/db-config');
 
 /* -----------------------------------------------------------------------------
-                              GET PART
+                                    GET
 ----------------------------------------------------------------------------- */
 
 router.get('/', async (request, response) => { // Get all players in database => actually work but need to have more option like what table we want and what data
@@ -11,7 +11,7 @@ router.get('/', async (request, response) => { // Get all players in database =>
     'SELECT * FROM player',
     (error, docs) => {
       if(error) {
-        console.log('Error in query => ' + error);
+        response.json({ status: 'Failure', reason: error});
       } else if(!docs[0]) { // Check if we have an element in list and if it's not it response failure
         response.json({ status: 'Failure', reason: 'No players found'});
       } else {
@@ -23,7 +23,7 @@ router.get('/', async (request, response) => { // Get all players in database =>
 router.get('/:IdOrName', async (request, response) => { // Get data of a player in database => actually work but need to have more option like what data we want
   if(request.params.IdOrName == parseInt(request.params.IdOrName, 10)) { // check if it's an id 
     database.query(
-      'SELECT * FROM player WHERE player.id = ?',
+      'SELECT * FROM player WHERE id = ?',
       [ parseInt(request.params.IdOrName, 10) ],
       (error, docs) => {
         if(error) {
@@ -32,34 +32,36 @@ router.get('/:IdOrName', async (request, response) => { // Get data of a player 
           response.json({ status: 'Failure', reason: 'No player with this id was found'});
         } else {
           response.json(docs);
-          console.log(docs);
         };
     });
   } else { // if it's not an id, it search for a name
     database.query(
-      'SELECT * FROM player WHERE player.name = ?',
+      'SELECT * FROM player WHERE name = ?',
       [ `${request.params.IdOrName}` ],
       (error, docs) => {
         if(error) {
           response.json({ status:'Failure', reason: error });
-          console.log(error);
         } else if(!docs[0]) { 
           response.json({ status: 'Failure', reason: 'No player with this id was found'});
         } else {
+          console.log(docs);
           response.json(docs);
+          console.log(docs);
         };
     });
   };
 });
 
 /* -----------------------------------------------------------------------------
-                              INSERT PART
+                                INSERT
 ----------------------------------------------------------------------------- */
 
-router.post('/', async (request, response) => { // Insert data in the database => actually don't work correctly
+router.post('/', async (request, response) => { // Insert data in the database
+  const NewName = request.body.name;
+
   const data = { // get the data we want to post in our database
     id: 0,
-    name: request.body.name,
+    name: NewName,
     money: 0,
     resources: 0,
     workforce: 0,
@@ -67,19 +69,33 @@ router.post('/', async (request, response) => { // Insert data in the database =
   };
 
   database.query(
-    'INSERT INTO player VALUES (?, ?, ?, ?, ?, ?, NOW())',
-    Object.values(data), // To return data in array
-    (error) => {
-      if (error) {
-        response.json({ status: 'Failure', reason: error })
+    'SELECT * FROM player WHERE name = ?',
+    [ `${NewName}` ],
+    (error, docs) => {
+      if(error) {
+        response.json({ status:'Failure', reason: error });
       } else {
-        response.json({ status: 'Success', data: data })
+        if(docs[0].name === NewName) { // check if the name exist in db
+          response.json({ status: 'Failure', reason: 'Name already used!' })
+        } else { // if not inset it in db
+          database.query(
+            'INSERT INTO player VALUES (?, ?, ?, ?, ?, ?, NOW())',
+            Object.values(data), // To return data in array
+            (error) => {
+              if (error) {
+                response.json({ status: 'Failure', reason: error });
+              } else {
+                response.json({ status: 'Success', data: data });
+              };
+          });
+        };
       };
-    });
+    }
+  );
 });
 
 /* -----------------------------------------------------------------------------
-                              UPDATE PART
+                                UPDATE
 ----------------------------------------------------------------------------- */
 
 router.put('/:id', async (request, response) => { // Update a player with his id
@@ -106,7 +122,7 @@ router.put('/:id', async (request, response) => { // Update a player with his id
 });
 
 /* -----------------------------------------------------------------------------
-                              DELETE PART
+                                DELETE
 ----------------------------------------------------------------------------- */
 
 router.delete('/', async (request, response) => { // This clean all player stock in the database, don't use it stupidly
@@ -152,7 +168,7 @@ router.delete('/:IdOrName', async (request, response) => {
   } else {
     database.query(
       'DELETE FROM player WHERE name = ?',
-      [ parseInt(request.params.IdOrName) ],
+      [ `${request.params.IdOrName}` ],
       (error, docs) => {
         if(error) {
           response.json({ status: 'Failure', reason: error });
@@ -162,5 +178,8 @@ router.delete('/:IdOrName', async (request, response) => {
     });
   };
 });
+
+
+
 
 module.exports = router;
