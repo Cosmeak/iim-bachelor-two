@@ -27,11 +27,24 @@ router.get('/:IdOrName', async (request, response) => { // Get data of a player 
       [ parseInt(request.params.IdOrName, 10) ],
       (error, docs) => {
         if(error) {
-          response.json({ status:'Failure', reason: error })
+          response.json({ status: 'Failure', reason: error });
         } else if(!docs[0]) { 
-          response.json({ status: 'Failure', reason: 'No player with this id was found'});
+          response.json({ status: 'Failure', reason: 'No player with this id was found' });
         } else {
-          response.json(docs);
+          let playerData = docs[0];
+          console.log(playerData);
+          database.query(
+            `SELECT game_object.* FROM object_to_player 
+            INNER JOIN game_object ON object_to_player.game_object_id = game_object.id
+            INNER JOIN player ON object_to_player.player_id = player.id WHERE player.id = ${playerData.id}`,
+            (error, docs) => {
+              if(error) {
+                response.json({ status:'Failure', reason: error });
+              } else {
+                let gameObjectList = docs;
+                response.json({ playerData, gameObject: gameObjectList});
+              };
+          });
         };
     });
   } else { // if it's not an id, it search for a name
@@ -42,11 +55,9 @@ router.get('/:IdOrName', async (request, response) => { // Get data of a player 
         if(error) {
           response.json({ status:'Failure', reason: error });
         } else if(!docs[0]) { 
-          response.json({ status: 'Failure', reason: 'No player with this id was found'});
+          response.json({ status: 'Failure', reason: 'No player with this name was found'});
         } else {
-          console.log(docs);
           response.json(docs);
-          console.log(docs);
         };
     });
   };
