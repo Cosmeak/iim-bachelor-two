@@ -16,6 +16,7 @@ router.route('/user/:idOrUsername').get(userController.getUserByIdOrName);
 router.route('/user/').post(userController.createUser);
 router.route('/user/:idOrUsername/').put(userController.updateUser);
 router.route('/user/:idOrUsername/').delete(userController.deleteUser);
+router.route('/user/').delete(userController.deleteAllUser);
 
 // Game Object Routes
 router.route('/game-object/').get(gameObjectController.getAllGameObject);

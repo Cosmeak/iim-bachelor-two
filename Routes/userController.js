@@ -90,7 +90,6 @@ module.exports = {
           console.log(error);
           response.status(500).json({ status: 'Failure', reason: error });
         })
-          
       } else {
         response.status(409).json({ status: 'Failure', reason: 'Username already exist!'})
       }
@@ -131,7 +130,6 @@ module.exports = {
           console.log(error);
           response.status(500).json({ status: 'Failure', reason: 'Cannot update this user!' });
         })
-
       } else {
         response.status(404).json({ status: 'Failure', reason: 'User not found!' });
       };
@@ -146,6 +144,7 @@ module.exports = {
     //Params
     const userIdOrName = request.params.idOrUsername;
     
+    // Query
     models.User.destroy({
       where: { [Op.or]: [ { id: userIdOrName }, { username: userIdOrName } ] }
     })
@@ -159,6 +158,24 @@ module.exports = {
     .catch( error => {
       console.log(error);
       response.status(500).json({ status: 'Failure', reason: 'Unable to verify this user!' })
+    })
+  },
+
+  deleteAllUser: (request, response) => {
+    // Query
+    models.User.destroy({
+      where : {}
+    })
+    .then( userDeleted => {
+      if(userDeleted){
+        response.status(200).json({ status: 'Success', Users: 'All users are deleted!' });
+      } else {
+        response.json(404).json({ status: 'Failure', reason: 'No users found!' });
+      }
+    })
+    .catch( error => {
+      console.log(error);
+      response.status(500).json({ status: 'Failure', reason: 'Unable to delete users!'});
     })
   }
   
