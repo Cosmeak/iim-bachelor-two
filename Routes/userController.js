@@ -138,13 +138,28 @@ module.exports = {
     })
     .catch( error => {
       console.log(error);
-      response.status(500).json({ status: 'Failure', reason: 'Unable to verify user!' });
+      response.status(500).json({ status: 'Failure', reason: 'Unable to verify this user!' });
     })
   },
 
   deleteUser: (request, response) => {
     //Params
+    const userIdOrName = request.params.idOrUsername;
     
+    models.User.destroy({
+      where: { [Op.or]: [ { id: userIdOrName }, { username: userIdOrName } ] }
+    })
+    .then( userDeleted => {
+      if(userDeleted === 1) {
+        response.status(200).json({ status: 'Succes', User: 'User deleted!' });
+      } else {
+        response.status(404).json({ status: 'Failure', reason: 'User not found!' })
+      }
+    })
+    .catch( error => {
+      console.log(error);
+      response.status(500).json({ status: 'Failure', reason: 'Unable to verify this user!' })
+    })
   }
   
 };
