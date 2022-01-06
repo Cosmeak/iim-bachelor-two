@@ -18,83 +18,80 @@
     <div class="flex justify-center my-14">
       <iframe class="w-screen xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
     </div>
-    <div class="highlight shadow-md bg-white rounded-lg px-10 py-24 relative m-4">
-      <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute xl:translate-x-1/3 left-48 xl:left-1/3 -top-24 w-sm h-sm ">
-        <img width="170" height="170" class="m-auto" src="./img/logo.png" alt="logo">
+      <div class="highlight shadow-md bg-white rounded-lg px-10 py-24 relative m-14">
+          <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm ">
+              <img width="170" height="170" class="m-auto" src="./img/logo.png" alt="logo">
+          </div>
+
+          <h3 class="font-title uppercase text-center text-3xl font-bold mt-12 ">Easy Apply</h3>
+          <p class="text-center">Application de recrutement pas système de matching</p>
+
+          <h4 class="font-title text-primary text-2xl mt-14">Qui sommes-nous ?</h4>
+          <p class="mt-5 font-title font-bold">Nous sommes un site d’offres d’emploi qui favorise la
+              rencontre entre l’offre et la demande d’emploi.</p>
+          <h4 class="font-title text-primary text-2xl mt-14">Quel-est notre objectif ?</h4>
+          <p class="mt-5 font-title font-bold">Augmenter le taux de candidature à moindre coût.</p>
       </div>
-
-      <h3 class="font-title uppercase text-center text-3xl font-bold mt-12 ">Easy Apply</h3>
-      <p class="text-center">Application de recrutement pas système de matching</p>
-
-      <h4 class="font-title text-primary text-2xl mt-14">Compétences :</h4>
-      <p class="mt-5"><span class="font-title font-bold">Offres illimités :</span> les publications d'offres d'emploi sont illimitées</p>
-      <p class="mt-5"><span class="font-title font-bold">Visibilité de l'offre :</span> votre offre est proposée aux profils que vous cherchez et à ceux intéressés par vos mission</p>
-      <p class="mt-5"><span class="font-title font-bold">Gain de temps :</span> les candidats sont classées automatiquement selon vos critères.</p>
-      <p class="mt-5"><span class="font-title font-bold">Économies :</span> un tarif annuel et unique pour l'utilisation complète et illimitée de tous nos services</p>
-    </div>
   </div>
 </article>
 
 <section class="xl:flex xl:flex-row xl:justify-evenly xl:mt-24 flex flex-col justify-center place-items-center">
-  <div class="shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
-    <div class="flex rounded-full bg-white shadow-md absolute left-1/3 -top-24 w-sm h-sm">
-      <img width="100" height="100" class="m-auto" src="./img/logo.png" alt="logo">
+    <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
+
+        <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
+            <i class="fas fa-infinity fa-4x text-primary"></i>
+        </div>
+
+        <div class="">
+            <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Offres illimitées</h3>
+            <p class="pt-20 text-lg xl:text-xl text-justify">Les publications d’offres d’emplois sont illimitées. Trouvez la personne la plus qualifié pour une mission, ou la mission qui vous correspondra le mieux, dès maintenant !</p>
+        </div>
+
     </div>
 
-    <h3 class="font-title uppercase text-center text-2xl font-bold mt-16">Easy Apply</h3>
-    <p class="text-center">Application de recrutement pas système de matching</p>
+    <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
 
-    <h4 class="font-title text-2xl mt-14">Compétences :</h4>
-    <p class="mt-5"><span class="font-title font-bold">Offres illimités :</span> les publications d'offres d'emploi sont illimitées</p>
-    <p class="mt-5"><span class="font-title font-bold">Visibilité de l'offre :</span> votre offre est proposée aux profils que vous cherchez et à ceux intéressés par vos mission</p>
-    <p class="mt-5"><span class="font-title font-bold">Gain de temps :</span> les candidats sont classées automatiquement selon vos critères.</p>
-    <p class="mt-5"><span class="font-title font-bold">Économies :</span> un tarif annuel et unique pour l'utilisation complète et illimitée de tous nos services</p>
-  </div>
+        <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
+            <i class="fas fa-bullseye fa-4x text-primary"></i>
+        </div>
 
-  <div class="shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
-    <div class="flex rounded-full bg-white shadow-md absolute left-1/3 -top-24 w-sm h-sm">
-      <img width="100" height="100" class="m-auto" src="./img/logo.png" alt="logo">
+        <div class="">
+            <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Visibilité de l’offre</h3>
+            <p class="pt-20 text-lg xl:text-xl text-justify">Votre offre est proposée aux profils recherchés et à ceux intéressés par vos missions. EasyApply se charge de vous mettre en relation le plus facilement possible.</p>
+        </div>
+
     </div>
 
-    <h3 class="font-title uppercase text-center text-2xl font-bold mt-16">Easy Apply</h3>
-    <p class="text-center">Application de recrutement pas système de matching</p>
 
-    <h4 class="font-title text-2xl mt-14">Compétences :</h4>
-    <p class="mt-5"><span class="font-title font-bold">Offres illimités :</span> les publications d'offres d'emploi sont illimitées</p>
-    <p class="mt-5"><span class="font-title font-bold">Visibilité de l'offre :</span> votre offre est proposée aux profils que vous cherchez et à ceux intéressés par vos mission</p>
-    <p class="mt-5"><span class="font-title font-bold">Gain de temps :</span> les candidats sont classées automatiquement selon vos critères.</p>
-    <p class="mt-5"><span class="font-title font-bold">Économies :</span> un tarif annuel et unique pour l'utilisation complète et illimitée de tous nos services</p>
-  </div>
+    <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
 
-  <div class="shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
-    <div class="flex rounded-full bg-white shadow-md absolute left-1/3 -top-24 w-sm h-sm">
-      <img width="100" height="100" class="m-auto" src="./img/logo.png" alt="logo">
+        <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
+            <i class="far fa-clock fa-4x text-primary"></i>
+        </div>
+
+        <div class="">
+            <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Gain de temps</h3>
+            <p class="pt-20 text-lg xl:text-xl text-justify">Les candidatures sont classées automatiquement selon vos critères. Économisez un temps précieux pour vous consacrer à votre productivité.
+            </p>
+        </div>
+
     </div>
 
-    <h3 class="font-title uppercase text-center text-2xl font-bold mt-16">Easy Apply</h3>
-    <p class="text-center">Application de recrutement pas système de matching</p>
 
-    <h4 class="font-title text-2xl mt-14">Compétences :</h4>
-    <p class="mt-5"><span class="font-title font-bold">Offres illimités :</span> les publications d'offres d'emploi sont illimitées</p>
-    <p class="mt-5"><span class="font-title font-bold">Visibilité de l'offre :</span> votre offre est proposée aux profils que vous cherchez et à ceux intéressés par vos mission</p>
-    <p class="mt-5"><span class="font-title font-bold">Gain de temps :</span> les candidats sont classées automatiquement selon vos critères.</p>
-    <p class="mt-5"><span class="font-title font-bold">Économies :</span> un tarif annuel et unique pour l'utilisation complète et illimitée de tous nos services</p>
-  </div>
+    <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
 
-  <div class="shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
-    <div class="flex rounded-full bg-white shadow-md absolute left-1/3 -top-24 w-sm h-sm">
-      <img width="100" height="100" class="m-auto" src="./img/logo.png" alt="logo">
+        <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
+            <i class="far fa-money-bill-alt fa-4x text-primary"></i>
+        </div>
+
+        <div class="">
+            <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Economies</h3>
+            <p class="pt-20 text-lg xl:text-xl text-justify">Un tarif annuel et unique pour l’utilisation complète et illimitée de nos services. Un prix abordable pour un résultat garantie !
+            </p>
+        </div>
+
     </div>
 
-    <h3 class="font-title uppercase text-center text-2xl font-bold mt-16">Easy Apply</h3>
-    <p class="text-center">Application de recrutement pas système de matching</p>
-
-    <h4 class="font-title text-2xl mt-14">Compétences :</h4>
-    <p class="mt-5"><span class="font-title font-bold">Offres illimités :</span> les publications d'offres d'emploi sont illimitées</p>
-    <p class="mt-5"><span class="font-title font-bold">Visibilité de l'offre :</span> votre offre est proposée aux profils que vous cherchez et à ceux intéressés par vos mission</p>
-    <p class="mt-5"><span class="font-title font-bold">Gain de temps :</span> les candidats sont classées automatiquement selon vos critères.</p>
-    <p class="mt-5"><span class="font-title font-bold">Économies :</span> un tarif annuel et unique pour l'utilisation complète et illimitée de tous nos services</p>
-  </div>
 </section>
 
 <article class="bg-primary text-white text-center m-24 xl:m-36 p-10 flex flex-col justify-center place-items-center gap-8">
