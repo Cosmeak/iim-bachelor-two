@@ -15,15 +15,20 @@ class Company extends Model
     use HasFactory;
     protected $fillable = [
         'logo',
-        'id_location',
-        'id_company_size',
-        'id_sector',
         'name',
         'description',
         'phone_number',
         'email',
-        'id_user',
+        'website',
+        'intagram',
+        'facebook',
+        'linkedin',
         'is_completed',
+        
+        'id_user',
+        'id_location',
+        'id_company_size',
+        'id_sector',
     ];
 
     public function location() {
