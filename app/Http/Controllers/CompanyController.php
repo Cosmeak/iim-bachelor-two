@@ -34,28 +34,28 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-      $request-> validate ([
-        'name' => ['required'],
-        'logo' => ['nullable'],
-        'description' => ['required'],
-        'phone_number' => ['nullable', 'numeric'],
-        'email' => ['required'],
-        'website' => ['nullable'],
-        'linkedin' => ['nullable'],
-        'facebook' => ['nullable'],
-        'instagram' => ['nullable'],
+        $request-> validate ([
+            'name' => ['required'],
+            'logo' => ['nullable'],
+            'description' => ['required'],
+            'phone_number' => ['nullable', 'numeric'],
+            'email' => ['required'],
+            'website' => ['nullable'],
+            'linkedin' => ['nullable'],
+            'facebook' => ['nullable'],
+            'instagram' => ['nullable'],
 
-        'id_location' => ['nullable'],
-        'id_company_size' => ['nullable'],
-        'id_sector' => ['nullable'],
-        'id_user' => ['required'],
-      ]);
+            'id_location' => ['nullable'],
+            'id_company_size' => ['nullable'],
+            'id_sector' => ['nullable'],
+            'id_user' => ['required'],
+    ]);
 
-      $attributes = $request;
-  
-      Company::create($attributes);
-  
-      return route('company.show');
+        $attributes = $request;
+    
+        Company::create($attributes);
+    
+        return route('company.show');
     }
 
     /**
