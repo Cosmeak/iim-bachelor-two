@@ -1,29 +1,28 @@
-require('./bootstrap');
 
 
 // Menu Burger
-
-var menu_burger = document.getElementById('menu-burger');
-var close = document.getElementById('x');
-var burger = document.getElementById('burger');
-
-
-
-function displayMenu() {
-    menu_burger.style.transform = 'translateX(0)';
-    burger.style.transform = 'translateX(500px)';
-}
-function displayyMenu() {
-    menu_burger.style.transform = 'translateX(500px)';
-    burger.style.transform = 'translateX(0)';
-}
-
-//events on click
-burger.addEventListener('click', displayMenu);
-close.addEventListener('click', displayyMenu);
+if (window.matchMedia("(max-width: 1280px)").matches) {
+    var menu_burger = document.getElementById('menu-burger');
+    var close = document.getElementById('x');
+    var burger = document.getElementById('burger');
 
 
-require('./bootstrap');
+
+    function displayMenu() {
+        menu_burger.style.transform = 'translateX(0)';
+        burger.style.transform = 'translateX(500px)';
+    }
+    function displayyMenu() {
+        menu_burger.style.transform = 'translateX(500px)';
+        burger.style.transform = 'translateX(0)';
+    }
+
+    //events on click
+    burger.addEventListener('click', displayMenu);
+    close.addEventListener('click', displayyMenu);
+  }
+
+
 document.getElementById('next_inscription').addEventListener('click', () =>{
     document.getElementById('content_inscription_1').style.display = "none";
     document.getElementById('content_inscription_2').style.display = "flex";
@@ -94,3 +93,4 @@ function DltOption(container){
         }
     }
 }
+require('./bootstrap');
