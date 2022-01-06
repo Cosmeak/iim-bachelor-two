@@ -15,11 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::get('search', function () {
-  return view('search');
-});
+})->name('home');
 
 /*------------------------------------------------------------------------ 
                             User pages
@@ -30,7 +26,7 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 Route::group(['middleware' => ['guest']], function() { 
-  Route::resource('user', 'App\Http\Controllers\UserController')->except(['index', 'show']);
+  Route::resource('user', 'App\Http\Controllers\UserController')->except(['show']);
 
   Route::resource('user/login', 'App\Http\Controllers\UserLoginController')->only(['index', 'store']);
 });

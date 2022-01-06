@@ -13,7 +13,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        return view('job.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('job.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('job.show');
     }
 
     /**

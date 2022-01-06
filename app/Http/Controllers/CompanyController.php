@@ -23,7 +23,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.create');
     }
 
     /**
@@ -34,7 +34,20 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $attributes = request()-> validate ([
+        'name' => ['required'],
+        // 'address' => ['required'],
+        'logo' => ['required'],
+        'description' => ['required'],
+        'id_company_size' => ['required'],
+        'id_sector' => ['required'],
+        'id_user' => ['required'],
+        
+      ]);
+  
+      Company::create($attributes);
+  
+      return route('company.show');
     }
 
     /**

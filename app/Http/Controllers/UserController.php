@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //! Don't used
+        return route('user.create');
     }
 
     /**
@@ -23,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-      return view('/user/create');
+      return view('user.create');
     }
 
     /**
@@ -37,8 +38,14 @@ class UserController extends Controller
       $attributes = $request-> validate([
         'email' => [ 'required', 'unique:users,email', 'email', 'max:255' ],
         'password' => [ 'required', 'min:8', 'max:255' ],
-        'password-verify' => [ 'required', 'same:password']
+        'password-verify' => [ 'required', 'same:password'],
       ]);
+
+      if($request['is_company'] == 'on'){
+        $attributes['is_company'] = 1;
+      } else {
+        $attributes['is_company'] = 0;
+      }
   
       $attributes['password'] = bcrypt($attributes['password']);
   
