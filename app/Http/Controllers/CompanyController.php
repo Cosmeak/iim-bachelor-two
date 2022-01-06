@@ -34,15 +34,24 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-      $attributes = request()-> validate ([
+      $request-> validate ([
         'name' => ['required'],
-        // 'address' => ['required'],
-        'logo' => ['required'],
+        'logo' => ['nullable'],
         'description' => ['required'],
-        'id_company_size' => ['required'],
-        'id_sector' => ['required'],
+        'phone_number' => ['nullable', 'numeric'],
+        'email' => ['required'],
+        'website' => ['nullable'],
+        'linkedin' => ['nullable'],
+        'facebook' => ['nullable'],
+        'instagram' => ['nullable'],
+
+        'id_location' => ['nullable'],
+        'id_company_size' => ['nullable'],
+        'id_sector' => ['nullable'],
         'id_user' => ['required'],
       ]);
+
+      $attributes = $request;
   
       Company::create($attributes);
   

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Location;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 
@@ -43,18 +44,17 @@ class CandidateController extends Controller
       'birth_date' => ['date'],
       'phone_number' => ['numeric'],
       'profile_picture' => [''],
-      'cv' => ['max:50'],
-      'website' => [''],
-      'instagram' => ['max:50'],
-      'facebook' => ['max:50'],
-      'linkedin' => ['max:50'],
+      'cv' => ['max:50', 'nullable'],
+      'website' => ['nullable'],
+      'instagram' => ['max:50', 'nullable'],
+      'facebook' => ['max:50', 'nullable'],
+      'linkedin' => ['max:50', 'nullable'],
 
       'id_user' => ['required'],
       'id_status' => ['required'],
-      'id_location' => ['']
+      'id_location' => ['nullable']
     ]);
     
-
     Candidate::create($attributes);
 
     return view('candidate.show');

@@ -31,11 +31,11 @@
             <p class="text-red-500 mt-1">{{ $message }}</p>
           @enderror
         </div>
-  
+
         <div id ="container_form" class=" mx-16 mt-4">
           <label for="company-activity" class="my-2">Secteur d'activité</label>
           <div class=" options flex flex-col items-start mt-4">
-            <select class="btn-primary" type="text" name="business_sector_id"> 
+            <select class="btn-primary" type="text" name="business_sector_id">
               <option value="">--Sélectionnez l'option--</option>
               @php
                 $Sector = App\Models\Sector::all()
@@ -49,11 +49,11 @@
             @enderror
           </div>
         </div>
-  
+
         <div id ="container_form" class="mx-16 mt-4">
           <label for="company-size" class="my-2">Taille de l'entreprise</label>
           <div class=" options flex flex-col items-start mt-4">
-            <select class="btn-primary" type="text" name="company_size_id"> 
+            <select class="btn-primary" type="text" name="company_size_id">
               <option value="">--Sélectionnez l'option--</option>
               @php
                 $companySize = App\Models\CompanySize::all()
@@ -67,22 +67,22 @@
             @enderror
           </div>
         </div>
-  
+
       </section>
-  
+
       <section class="flex flex-col items-start m-auto">
 
-        <div class="flex flex-col items-start mx-16 my-4"> 
+        <div class="flex flex-col items-start mx-16 my-4">
           <label for="img" class="my-4">Logo</label>
-          <input type="file" class="max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white" name="logo">
+          <input type="file" class="dashed-hover max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white" name="logo">
           @error('logo')
             <p class="text-red-500 mt-1">{{ $message }}</p>
           @enderror
-        </div> 
+        </div>
 
         <div class="flex flex-col items-start mx-16 my-4">
           <label for="company-desc"class="my-2" >Description de l'entreprise</label>
-          <textarea class="btn-primary w-full " type="text" name="description" value="{{ old('description')}}"> </textarea>
+          <textarea class="btn-primary max-w-sm xl:max-w-2xl py-4 px-8" type="text" name="description" value="{{ old('description')}}"> </textarea>
           @error('description')
             <p class="text-red-500 mt-1">{{ $message }}</p>
           @enderror
@@ -90,10 +90,10 @@
 
       </section>
     </main>
-    <button type="submit" class="my-12 py-4 px-8 bg-primary text-white rounded-2xl shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer text-center">Créer mon compte</button>
+    <button type="submit" class="my-12 cursor-pointer btn-blue">Créer mon compte</button>
 
   </form>
-  <p>Déjà un compte Easy Apply ? <a href="/login" class=" text-primary">Connexion</a></p>
+  <p>Déjà un compte Easy Apply ? <a href="/login" class="blue-underline font-bold text-primary">Connexion</a></p>
 </section>
 
 @endsection

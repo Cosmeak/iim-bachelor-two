@@ -42,9 +42,9 @@
                     </div>
                     <div class="flex flex-col items-start mx-16 my-4">
                         <label for="status" class="my-2">Status</label>
-                        <select class="btn-primary" type="text" placeholder="Status" name="id_status"> 
+                        <select class="btn-primary" type="text" placeholder="Status" name="id_status">
                             <option value="">--Sélectionnez l'option--</option>
-                            @php 
+                            @php
                                 $status = App\Models\Statu::all()
                                 @endphp
                                 @foreach ($status as $statu)
@@ -59,7 +59,7 @@
                 <div>
                     <div class="flex flex-col items-start">
                         <label for="profile_picture" class="my-4">Photo</label>
-                        <input type="file" class=" max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white " name="profile_picture">
+                        <input type="file" class="dashed-hover max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white " name="profile_picture">
                         @error('profile_picture')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
@@ -88,9 +88,9 @@
                         <label for="id_soft_skill_1">Soft Skills</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
-                                <select class="btn-primary" type="text" name="id_softkill_1"> 
+                                <select class="btn-primary" type="text" name="id_softkill_1">
                                     <option value="">--Sélectionnez l'option--</option>
-                                    @php 
+                                    @php
                                         $softskills = App\Models\Softskill::all()
                                         @endphp
                                         @foreach ($softskills as $softskill)
@@ -108,9 +108,9 @@
                         <label for="id_sector_1" class="my-2">Formation</label>
                         <div class="content">
                             <div class=" options flex flex-col items-start mt-4">
-                                <select class="btn-primary" type="text" placeholder="Site" name="id_sector_1"> 
+                                <select class="btn-primary" type="text" placeholder="Site" name="id_sector_1">
                                     <option value="">--Sélectionnez l'option--</option>
-                                    @php 
+                                    @php
                                       $sectors = App\Models\Sector::all()
                                     @endphp
                                     @foreach ($sectors as $sector)
@@ -128,9 +128,9 @@
                         <label for="diploma" class="my-2" >Diplômes</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
-                                <select class="btn-primary" type="text" placeholder="Diplômes" name="diploma"> 
+                                <select class="btn-primary" type="text" placeholder="Diplômes" name="diploma">
                                     <option value="">--Sélectionnez l'option--</option>
-                                    @php 
+                                    @php
                                       $diplomas = App\Models\Diploma::all()
                                     @endphp
                                     @foreach ($diplomas as $diploma)
@@ -148,20 +148,20 @@
                 <div>
                     <div class="flex flex-col items-start">
                         <label for="cv" class="my-4">CV</label>
-                        <input type="file" class=" max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white " name="cv">
+                        <input type="file" class="dashed-hover max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white " name="cv">
                         @error('cv')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
             </div>
-            <a id="next_inscription" class=" w-sm my-12 py-4 bg-light-blue text-white rounded-2xl shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer text-center">Suivant </a>
+            <a id="next_inscription" class="my-12 cursor-pointer btn-blue ">Suivant </a>
             <div id="submit_inscription" class=" hidden flex-col">
-                <button type="submit" class=" w-sm mt-12 mb-1 py-4 bg-light-blue text-white rounded-2xl shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer text-center">S'incrire</button>
+                <button type="submit" class="mt-12 mb-1 cursor-pointer btn-blue">S'incrire</button>
                 <a id="back_inscription" class=" w-sm cursor-pointer text-gray-500 text-center mb-4 hover:text-black">Retour </a>
             </div>
-            <p>Déjà un compte Easy Apply ? <a href="{{route('login.index')}}" class=" text-light-blue font-bold">Connexion</a></p>
-                
+            <p>Déjà un compte Easy Apply ? <a href="{{route('login.index')}}" class="blue-underline text-light-blue font-bold">Connexion</a></p>
+
         </form>
     </section>
 </body>
