@@ -13,7 +13,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        //! Don't used
     }
 
     /**
@@ -42,7 +42,6 @@ class CompanyController extends Controller
         'id_company_size' => ['required'],
         'id_sector' => ['required'],
         'id_user' => ['required'],
-        
       ]);
   
       Company::create($attributes);

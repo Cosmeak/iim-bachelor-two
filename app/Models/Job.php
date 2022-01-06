@@ -2,8 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\JobTag;
+use App\Models\Sector;
+use App\Models\Company;
+use App\Models\Location;
+use App\Models\WorkingMode;
+use App\Models\ContractType;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Job extends Model
 {
