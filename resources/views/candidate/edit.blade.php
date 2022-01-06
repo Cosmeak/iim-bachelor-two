@@ -24,10 +24,14 @@
         <div class="flex flex-col text-center xl:justify-between place-items-center ">
 
             <div class="flex flex-row my-10">
-                <h2 class="font-title text-3xl xl:text-4xl mx-2 xl:mx-10">@if ($candidate->first_name) {{$candidate->first_name}} @endif <span class="uppercase">@if ($candidate->last_name) {{$candidate->last_name}} @endif</span></h2>
+                <input class="border-2 border-light-blue font-title text-3xl xl:text-4xl mx-2 xl:mx-10" value="@if ($candidate->first_name) {{$candidate->first_name}} @else Non renseigné @endif"> 
+                <input class=" border-2 border-light-blue font-title text-3xl xl:text-4xl mx-2 xl:mx-10 uppercase" value="@if ($candidate->last_name) {{$candidate->last_name}} @else Non renseigné @endif">
                 <img src="../img/overwrite-icon.svg" alt="overwrite" class="w-xxs h-xxs">
             </div>
-            <h3 class="text-2xl xl:text-3xl"> @if ($city->label && $country->label) {{$city->label}}, {{ $country->label }} @else Non renseigné @endif <h3>
+            <div class="flex flex-row my-10">
+                <input class=" border-2 border-light-blue font-title text-3xl xl:text-4xl mx-2 xl:mx-8" value="@if ($city->label) {{$city->label}} @else Non renseigné @endif"> 
+                <input class="border-2 border-light-blue font-title text-3xl xl:text-4xl mx-2 xl:mx-8" value="@if($country->label) {{ $country->label }} @else Non renseigné @endif">
+            </div>
 
         </div>
 
@@ -47,38 +51,33 @@
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2 ">
                     <i class="fas fa-phone-square-alt fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->phone_number) +33{{ $candidate->phone_number}} @else Non renseigné @endif</p>
+                    <input class=" border-2 border-light-blue text-xl xl:text-2xl mx-4" value="@if ($candidate->phone_number){{ $candidate->phone_number}} @else Non renseigné @endif">
                 </div>
                 <div class="flex items-center mb-2 ">
                     <i class="fas fa-envelope fa-2x"></i>
-                    <a href="mailto: project@easyapply.fr" class="link link-underline text-xl xl:text-2xl mx-4">
-                        {{auth()->user()->email}}
-                    </a>
+                    <input class="border-2 border-light-blue text-xl xl:text-2xl mx-4" value="{{auth()->user()->email}}">
                 </div>
                 
             </div>
-
-            
-            
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2 ">
                     <i class="fab fa-internet-explorer fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->website) {{ $candidate->website}} @else Non renseigné @endif</p>
+                    <input class="border-2 border-light-blue text-xl xl:text-2xl mx-4" value="@if ($candidate->website) {{ $candidate->website}} @else Non renseigné @endif">
                 </div>
 
                 <div class="flex items-center mb-2">
                     <i class="fab fa-linkedin fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->linkedin) {{ $candidate->linkedin}} @else Non renseigné @endif</p>
+                    <input class="border-2 border-light-blue text-xl xl:text-2xl mx-4" value="@if ($candidate->linkedin) {{ $candidate->linkedin}} @else Non renseigné @endif">
                 </div>
             </div>
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2">
                     <i class="fab fa-instagram fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->instagram) {{ $candidate->instagram}} @else Non renseigné @endif</p>
+                    <input class="border-2 border-light-blue text-xl xl:text-2xl mx-4" value="@if ($candidate->instagram) {{ $candidate->instagram}} @else Non renseigné @endif">
                 </div>
                 <div class="flex items-center mb-2">
                     <i class="fab fa-facebook-square fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->facebook) {{ $candidate->facebook}} @else Non renseigné @endif</p>
+                    <input class="border-2 border-light-blue text-xl xl:text-2xl mx-4" value="@if ($candidate->facebook) {{ $candidate->facebook}} @else Non renseigné @endif">
                 </div>
 
             </div>

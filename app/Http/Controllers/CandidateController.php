@@ -57,7 +57,7 @@ class CandidateController extends Controller
     
     Candidate::create($attributes);
 
-    return view('candidate.show', compact('candidate'));
+    return view('candidate.show');
     }
 
     /**
