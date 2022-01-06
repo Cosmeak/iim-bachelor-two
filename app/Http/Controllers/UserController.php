@@ -52,11 +52,10 @@ class UserController extends Controller
       auth()->login(User::create($attributes));
       
       if($attributes['is_company'] == 1) {
-        return route('company.create');
+        return view('company.create');
       } else {
-        return route('candidate.create');
+        return view('candidate.create');
       }
-      
     }
 
     /**
