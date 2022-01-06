@@ -91,10 +91,10 @@
                         @enderror
                     </div>
                     <div id ="container_ss" class=" mx-16 mt-4"> <!-- Container Soft skills -->
-                        <label for="soft_skills">Soft Skills</label>
+                        <label for="id_soft_skill_1">Soft Skills</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
-                                <select class="btn-primary" type="text" name="id_softkill"> 
+                                <select class="btn-primary" type="text" name="id_softkill_1"> 
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php 
                                         $softskills = App\Models\Softskill::all()
@@ -111,10 +111,10 @@
                         </div>
                     </div>
                     <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
-                        <label for="formation" class="my-2">Formation</label>
+                        <label for="id_sector_1" class="my-2">Formation</label>
                         <div class="content">
                             <div class=" options flex flex-col items-start mt-4">
-                                <select class="btn-primary" type="text" placeholder="Site" name="formation"> 
+                                <select class="btn-primary" type="text" placeholder="Site" name="id_sector_1"> 
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php 
                                       $sectors = App\Models\Sector::all()
@@ -130,7 +130,7 @@
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
                     </div>
-                    <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Expériences -->
+                    {{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Expériences -->
                         <label for="diploma" class="my-2" >Diplômes</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
@@ -149,7 +149,7 @@
                             <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div>
                     <div class="flex flex-col items-start">
