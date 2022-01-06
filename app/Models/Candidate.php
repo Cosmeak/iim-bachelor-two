@@ -30,19 +30,20 @@ class Candidate extends Model
       'facebook',
       'linkedin',
       'is_completed',
-      'id_status',
-      'id_user',
-      'id_location'
+
+      'status_id',
+      'user_id',
+      'location_id'
     ];
 
     protected $with = ['user', 'status'];
 
     public function user() {
-      return $this->belongsTo(User::class, 'id_user');
+      return $this->belongsTo(User::class, 'user_id');
     }
 
     public function status() {
-      return $this->belongsTo(Statu::class, 'id_status');
+      return $this->belongsTo(Statu::class, 'status_id');
     }
 
     public function location() {

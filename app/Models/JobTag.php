@@ -10,16 +10,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class JobTag extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
-        'id_tag',
-        'id_job',
+        'tag_id',
+        'job_id',
     ];
 
     public function tag() {
-        return $this->belongsTo(Tag::class);
+        return $this->belongsTo(Tag::class, 'tag_id');
     }
 
     public function job() {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Job::class, 'job_id');
     }
 }

@@ -17,8 +17,8 @@ class CreateJobsLanguagesTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('id_language')->constrained('languages');
-            $table->foreignId('id_job')->constrained('jobs');
+            $table->foreignId('language_id')->constrained('languages');
+            $table->foreignId('job_id')->constrained('jobs');
         });
     }
 

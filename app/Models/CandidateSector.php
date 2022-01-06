@@ -12,15 +12,15 @@ class CandidateSector extends Model
     use HasFactory;
 
     protected $fillable = [
-      'id_candidate',
-      'id_sector'
+      'candidate_id',
+      'sector_id'
     ];
 
     public function candidate() {
-      return $this->belongsTo(Candidate::class);
+      return $this->belongsTo(Candidate::class, 'candidate_id');
     }
 
     public function sector() {
-      return $this->belongsTo(Sector::class);
+      return $this->belongsTo(Sector::class, 'sector_id');
     }
 }

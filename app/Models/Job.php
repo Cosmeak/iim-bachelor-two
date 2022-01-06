@@ -14,36 +14,38 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Job extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'label',
-        'id_location',
-        'id_working_mode',
-        'id_contract_mode',
-        'id_company',
-        'id_sector',
         'description',
         'salary',
         'archive_date',
+
+        'location_id',
+        'working_mode_id',
+        'contract_mode_id',
+        'company_id',
+        'sector_id',
     ];
 
     public function location() {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class, 'location_id');
     }
     
     public function workingMode() {
-        return $this->belongsTo(WorkingMode::class);
+        return $this->belongsTo(WorkingMode::class, 'working_mode_id');
     }
     
     public function contractType() {
-        return $this->belongsTo(ContractType::class);
+        return $this->belongsTo(ContractType::class, 'contract_type_id');
     }
     
     public function company() {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(Company::class, 'company_id');
     }
     
     public function sector() {
-        return $this->belongsTo(Sector::class);
+        return $this->belongsTo(Sector::class, 'sector_id');
     }
 
     public function jobTag() {

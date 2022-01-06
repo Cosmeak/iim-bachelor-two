@@ -17,8 +17,8 @@ class CreateCandidateLanguagesTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('id_candidate')->constrained('candidates');
-            $table->foreignId('id_language')->constrained('languages');
+            $table->foreignId('candidate_id')->constrained('candidates');
+            $table->foreignId('language_id')->constrained('languages');
         });
     }
 

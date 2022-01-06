@@ -46,11 +46,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $with = ['candidate', 'company'];
+
     public function candidate() {
-      return $this->hasOne(Candidate::class);
+      return $this->hasOne(Candidate::class, 'id_user');
     }
 
     public function company() {
-      return $this->hasOne(Company::class);
+      return $this->hasOne(Company::class, 'id_user');
     }
 }

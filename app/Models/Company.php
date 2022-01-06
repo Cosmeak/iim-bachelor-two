@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Company extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'logo',
         'name',
@@ -25,22 +26,22 @@ class Company extends Model
         'linkedin',
         'is_completed',
         
-        'id_user',
-        'id_location',
-        'id_company_size',
-        'id_sector',
+        'user_id',
+        'location_id',
+        'company_size_id',
+        'sector_id',
     ];
 
     public function location() {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class, 'location_id');
     }
 
     public function companySize() {
-        return $this->belongsTo(CompanySize::class);
+        return $this->belongsTo(CompanySize::class, 'company_size_id');
     }
 
     public function sector() {
-        return $this->belongsTo(Sector::class);
+        return $this->belongsTo(Sector::class, 'sector_id');
     }
 
     public function job() {
