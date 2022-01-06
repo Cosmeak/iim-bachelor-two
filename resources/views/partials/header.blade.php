@@ -25,7 +25,7 @@
         <a href="{{ route('job.index') }}" class="rounded-full border-2 border-primary text-xl hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">Recherche</a>
       </li>
       <li>
-        <a href="{{ route('login.index') }}" class="w-sm px-6 py-4 bg-primary text-white rounded-2xl shadow-md hover:bg-blue-500 transition duration-150 ease-out hover:ease-in focus:outline-none focus:ring-2 cursor-pointer text-center">Se connecter</a>
+        <a href="{{ route('login.index') }}" class="btn-blue cursor-pointer">Se connecter</a>
       </li>
   @endauth
 
@@ -52,7 +52,7 @@
       </a>
       @else
       <a href="/logout">
-        <li class="py-4 hover:bg-slate-200 w-base text-center transition">Déconnexion</li>
+        <li class="btn-blue w-base">Déconnexion</li>
       </a>
       @endauth
     </ul>
