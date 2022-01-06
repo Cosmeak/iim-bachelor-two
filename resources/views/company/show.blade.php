@@ -31,5 +31,5 @@
 
 
 </section>
-
 @endsection
+@include('partials/footer')

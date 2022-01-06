@@ -47,6 +47,6 @@
         <div class="w-2xl h-lg m-24 bg-primary"></div>
     </div>
 </section>
-
+@include('partials/footer')
 
 @endsection

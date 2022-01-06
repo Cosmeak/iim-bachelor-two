@@ -43,7 +43,6 @@ Route::group(['middleware' => ['auth']], function() {
                           Company pages
 ------------------------------------------------------------------------*/
 Route::group(['middleware' => ['auth']], function() {
-
   Route::resource('company', 'App\Http\Controllers\CompanyController');
 
   Route::resource('job', 'App\Http\Controllers\JobController');
