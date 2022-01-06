@@ -93,4 +93,4 @@ function DltOption(container){
         }
     }
 }
-require('./bootstrap');
+
