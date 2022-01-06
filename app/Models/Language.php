@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\JobLanguage;
+use App\Models\CandidateLanguage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Language extends Model
 {
@@ -14,7 +16,7 @@ class Language extends Model
     ];
 
     public function candidate() {
-      return $this->hasMany(Candidatelanguage::class);
+      return $this->hasMany(CandidateLanguage::class);
     }
     public function job() {
       return $this->hasMany(JobLanguage::class);

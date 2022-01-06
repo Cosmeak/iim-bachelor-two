@@ -2,8 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Statu;
+use App\Models\Location;
+use App\Models\Education;
+use App\Models\Experience;
+use App\Models\CandidateToJob;
+use App\Models\CandidateSector;
+use App\Models\CandidateLanguage;
+use App\Models\CandidateSoftskill;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Candidate extends Model
 {
@@ -23,6 +32,7 @@ class Candidate extends Model
       'is_completed',
       'id_status',
       'id_user',
+      'id_location'
     ];
 
     public function user() {
@@ -31,6 +41,10 @@ class Candidate extends Model
 
     public function status() {
       return $this->belongsTo(Statu::class);
+    }
+
+    public function location() {
+      return $this->belongsTo(Location::class);
     }
 
     public function softskill() {
