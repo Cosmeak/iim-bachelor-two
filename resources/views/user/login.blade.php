@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<section class=" mt-28 text-xl flex items-center flex-col ">
+<section class="mt-28 text-xl flex items-center flex-col ">
     <div class=" w-sm h-sm rounded-full mb-6 bg-white shadow-md">
         <img src="../img/logo.png" alt="logo">
     </div>

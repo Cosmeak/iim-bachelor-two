@@ -544,6 +544,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-0 {
   top: 0px;
 }
+.bottom-\[-30\%\] {
+  bottom: -30%;
+}
 .z-10 {
   z-index: 10;
 }
@@ -621,6 +624,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+.my-60 {
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+}
+.mx-14 {
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mt-12 {
   margin-top: 3rem;
 }
@@ -669,6 +684,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-20 {
   margin-bottom: 5rem;
 }
+.mt-56 {
+  margin-top: 14rem;
+}
+.ml-16 {
+  margin-left: 4rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -713,6 +737,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-base {
   height: 25rem;
+}
+.h-tiny {
+  height: 20rem;
 }
 .w-full {
   width: 100%;
@@ -762,6 +789,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .cursor-pointer {
   cursor: pointer;
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -809,6 +839,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rounded-\[20px\] {
   border-radius: 20px;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 .border-2 {
   border-width: 2px;
@@ -860,6 +893,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-black-mat {
   --tw-bg-opacity: 1;
   background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+}
+.bg-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(112 112 112 / var(--tw-bg-opacity));
 }
 .object-contain {
   -o-object-fit: contain;
@@ -924,6 +961,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
 .pt-24 {
   padding-top: 6rem;
 }
@@ -938,6 +983,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-4 {
   padding-bottom: 1rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .text-center {
   text-align: center;
@@ -1450,6 +1498,14 @@ input:checked + .slider:before {
 }
 @media (min-width: 1280px) {
 
+  .xl\:left-\[10\%\] {
+    left: 10%;
+  }
+
+  .xl\:bottom-\[-40\%\] {
+    bottom: -40%;
+  }
+
   .xl\:m-36 {
     margin: 9rem;
   }
@@ -1483,6 +1539,11 @@ input:checked + .slider:before {
     margin-right: 16rem;
   }
 
+  .xl\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
   .xl\:mb-32 {
     margin-bottom: 8rem;
   }
@@ -1493,6 +1554,14 @@ input:checked + .slider:before {
 
   .xl\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .xl\:ml-96 {
+    margin-left: 24rem;
+  }
+
+  .xl\:mt-14 {
+    margin-top: 3.5rem;
   }
 
   .xl\:flex {
@@ -1517,6 +1586,10 @@ input:checked + .slider:before {
 
   .xl\:h-sm {
     height: 10rem;
+  }
+
+  .xl\:h-lg {
+    height: 30rem;
   }
 
   .xl\:w-\[800px\] {
@@ -1547,6 +1620,10 @@ input:checked + .slider:before {
     width: 33%;
   }
 
+  .xl\:w-lg {
+    width: 30rem;
+  }
+
   .xl\:max-w-2xl {
     max-width: 42rem;
   }
@@ -1559,6 +1636,10 @@ input:checked + .slider:before {
     place-items: center;
   }
 
+  .xl\:items-center {
+    align-items: center;
+  }
+
   .xl\:justify-start {
     justify-content: flex-start;
   }
@@ -1567,12 +1648,28 @@ input:checked + .slider:before {
     justify-content: center;
   }
 
+  .xl\:justify-between {
+    justify-content: space-between;
+  }
+
   .xl\:justify-around {
     justify-content: space-around;
   }
 
   .xl\:justify-evenly {
     justify-content: space-evenly;
+  }
+
+  .xl\:bg-contain {
+    background-size: contain;
+  }
+
+  .xl\:bg-right {
+    background-position: right;
+  }
+
+  .xl\:bg-no-repeat {
+    background-repeat: no-repeat;
   }
 
   .xl\:p-24 {
@@ -1622,6 +1719,16 @@ input:checked + .slider:before {
 
   .xl\:text-6xl {
     font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .xl\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
+  }
+
+  .xl\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
   }
 }

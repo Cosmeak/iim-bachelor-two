@@ -86,5 +86,5 @@
     <input type="submit" value="Valider" class="my-12 btn-blue cursor-pointer">
   </form>
 </section>
-@endsection
 @include('partials/footer')
+@endsection

@@ -3,13 +3,13 @@
 
 <section class="w-full mt-28 text-xl flex items-center flex-col">
 
-  <div class=" w-sm h-sm rounded-full mb-6 bg-white shadow-sm">
+  <div class="w-sm h-sm rounded-full mb-6 bg-white shadow-sm">
     <img src="../img/logo.png" alt="logo">
   </div>
 
   <h1 class=" text-center text-3xl ">Inscrivez-vous</h1>
 
-  <form class="flex flex-col xl:w-5xl xl:px-64 justify-center items-center" method="POST" action="{{route('user.store')}}">
+  <form class="flex flex-col xl:px-64 justify-center items-center" method="POST" action="{{route('user.store')}}">
     @csrf {{-- Token check --}}
 
     <div class="flex flex-col items-start mx-16 my-4">
