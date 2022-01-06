@@ -6,7 +6,7 @@
             <img src="../img/logo.png" alt="logo">
         </div>
         <h1 class=" text-center text-3xl ">Inscrivez-vous</h1>
-        <form class="flex flex-col xl:w-5xl xl:px-64 justify-center items-center" method="POST" action="/candidate/register">
+        <form class="flex flex-col xl:w-5xl xl:px-64 justify-center items-center" method="POST" action="{{route('candidate.store')}}">
           @csrf
           <input type="hidden" name="id_user" value="{{ auth()->user()->id }}">
             <div id="content_inscription_1" class="flex xl:flex-row flex-col justify-center items-center xl:h-xl">
