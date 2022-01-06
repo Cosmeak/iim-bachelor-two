@@ -99,5 +99,5 @@
         <p class="font-bold xl:text-2xl text-xl">Créez votre page d'entreprise en appuyant simplement ici !</p><br>
         <a href="/employer" class="rounded-full border-2 border-white bg-white text-xl xl:text-2xl text-primary py-2 px-4 hover:text-white hover:bg-primary hover:border-2 hover:border-white transition duration-150 ease-out hover:ease-in">Page d'entreprise</a>
     </article>
-
+@include('partials/footer')
 @endsection
