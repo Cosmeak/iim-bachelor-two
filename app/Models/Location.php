@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Job;
 use App\Models\City;
+use App\Models\Company;
 use App\Models\Country;
 use App\Models\Candidate;
 use Illuminate\Database\Eloquent\Model;
@@ -33,5 +34,9 @@ class Location extends Model
 
     public function candidate() {
       return $this->hasOne(Candidate::class);
-  }
+    }
+
+    public function company() {
+      return $this->hasOne(Company::class);
+    }
 }
