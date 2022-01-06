@@ -78,9 +78,23 @@
                         @enderror
                     </div>
                     <div class="flex flex-col items-start mx-16 my-4">
-                        <label for="linkedIn" class="my-2" >LinkedIn</label>
-                        <input class="btn-primary" type="text" placeholder="LinkedIn" name="linkedIn">
+                        <label for="linkedin" class="my-2" >LinkedIn</label>
+                        <input class="btn-primary" type="text" placeholder="LinkedIn" name="linkedin">
                         @error('linkedin')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col items-start mx-16 my-4">
+                        <label for="instagram" class="my-2" >Instagram</label>
+                        <input class="btn-primary" type="text" placeholder="Instagram" name="instagram">
+                        @error('instagram')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col items-start mx-16 my-4">
+                        <label for="facebook" class="my-2" >Facebook</label>
+                        <input class="btn-primary" type="text" placeholder="Facebook" name="facebook">
+                        @error('facebook')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
