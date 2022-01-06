@@ -16,6 +16,8 @@ class JobTag extends Model
         'job_id',
     ];
 
+    protected $with = ['tag', 'job'];
+
     public function tag() {
         return $this->belongsTo(Tag::class, 'tag_id');
     }

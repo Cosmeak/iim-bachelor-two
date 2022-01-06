@@ -28,6 +28,8 @@ class Job extends Model
         'sector_id',
     ];
 
+    protected $with = ['location', 'workingMode', 'contractType', 'company', 'sector'];
+
     public function location() {
         return $this->belongsTo(Location::class, 'location_id');
     }

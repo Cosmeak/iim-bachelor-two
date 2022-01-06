@@ -36,14 +36,14 @@ class Candidate extends Model
       'location_id'
     ];
 
-    protected $with = ['user', 'status'];
+    protected $with = ['user', 'status', 'location', 'softskill', 'education', 'language', 'sector', 'experience', 'job'];
 
     public function user() {
       return $this->belongsTo(User::class, 'user_id');
     }
 
     public function status() {
-      return $this->belongsTo(Statu::class, 'status_id');
+      return $this->belongsTo(Status::class, 'status_id');
     }
 
     public function location() {

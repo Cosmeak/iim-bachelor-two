@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Education extends Model
 {
     use HasFactory;
+    
+    public $table = 'educations';
 
     protected $fillable = [
       'label',
@@ -21,6 +23,8 @@ class Education extends Model
       'candidate_id',
       'diploma_id'
     ];
+
+    protected $with = ['degree', 'diploma'];
 
     public function candidate() {
       return $this->belongsTo(Candidate::class, 'candidate_id');

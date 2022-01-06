@@ -22,6 +22,8 @@ class Location extends Model
         'city_id',
     ];
 
+    protected $with = ['city', 'country'];
+
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }

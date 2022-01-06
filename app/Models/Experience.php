@@ -21,6 +21,8 @@ class Experience extends Model
       'sector_id',
       'candidate_id'
     ];
+
+    protected $with = ['candidate', 'sector'];
     
 
     public function candidate() {

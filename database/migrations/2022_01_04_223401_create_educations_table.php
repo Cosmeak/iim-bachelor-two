@@ -14,15 +14,15 @@ class CreateEducationsTable extends Migration
     public function up()
     {
         Schema::create('educations', function (Blueprint $table) {
-          $table->id();
-          $table->string('label');
-          $table->date('start_date');
-          $table->date('end_date');
-          $table->timestamps();
+            $table->id();
+            $table->string('label');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->timestamps();
 
-          $table->foreignId('degree_id')->constrained('degrees');
-          $table->foreignId('candidate_id')->constrained('candidates');
-          $table->foreignId('diploma_id')->constrained('diplomas');
+            $table->foreignId('degree_id')->constrained('degrees');
+            $table->foreignId('candidate_id')->constrained('candidates');
+            $table->foreignId('diploma_id')->constrained('diplomas');
         });
     }
 

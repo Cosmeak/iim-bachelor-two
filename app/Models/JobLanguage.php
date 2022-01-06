@@ -15,6 +15,8 @@ class JobLanguage extends Model
         'language_id',
         'job_id',
     ];
+    
+    protected $with = ['language', 'job'];
 
     public function language() {
         return $this->belongsTo(Language::class, 'language_id');

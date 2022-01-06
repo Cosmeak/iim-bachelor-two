@@ -19,7 +19,7 @@ class CreateLocationsTable extends Migration
             $table->integer('zipcode')->nullable();
             $table->timestamps();
 
-            $table->foreignId('country')->constrained('countries');
+            $table->foreignId('country_id')->constrained('countries');
             $table->foreignId('city_id')->constrained('cities');
         });
     }

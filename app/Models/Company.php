@@ -32,6 +32,8 @@ class Company extends Model
         'sector_id',
     ];
 
+    protected $with = ['location', 'companySize', 'sector'];
+
     public function location() {
         return $this->belongsTo(Location::class, 'location_id');
     }

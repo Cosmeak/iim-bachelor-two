@@ -924,6 +924,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-20 {
   padding: 5rem;
 }
+.p-24 {
+  padding: 6rem;
+}
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1514,6 +1517,18 @@ input:checked + .slider:before {
 }
 .focus\:ring-opacity-75:focus {
   --tw-ring-opacity: 0.75;
+}
+@media (min-width: 640px) {
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1024px) {
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
 }
 @media (min-width: 1280px) {
 
