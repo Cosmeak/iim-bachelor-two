@@ -762,6 +762,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .cursor-pointer {
   cursor: pointer;
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -938,6 +941,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-4 {
   padding-bottom: 1rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .text-center {
   text-align: center;
@@ -1495,6 +1501,10 @@ input:checked + .slider:before {
     margin-top: 1.25rem;
   }
 
+  .xl\:ml-96 {
+    margin-left: 24rem;
+  }
+
   .xl\:flex {
     display: flex;
   }
@@ -1575,6 +1585,18 @@ input:checked + .slider:before {
     justify-content: space-evenly;
   }
 
+  .xl\:bg-contain {
+    background-size: contain;
+  }
+
+  .xl\:bg-right {
+    background-position: right;
+  }
+
+  .xl\:bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+
   .xl\:p-24 {
     padding: 6rem;
   }
@@ -1622,6 +1644,16 @@ input:checked + .slider:before {
 
   .xl\:text-6xl {
     font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .xl\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
+  }
+
+  .xl\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
   }
 }
