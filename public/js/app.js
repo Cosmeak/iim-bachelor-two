@@ -2080,9 +2080,6 @@ function displayyMenu() {
 
 burger.addEventListener('click', displayMenu);
 close.addEventListener('click', displayyMenu);
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 document.getElementById('next_inscription').addEventListener('click', function () {
   document.getElementById('content_inscription_1').style.display = "none";
   document.getElementById('content_inscription_2').style.display = "flex";

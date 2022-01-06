@@ -25,7 +25,7 @@ class CandidateController extends Controller
      */
     public function create()
     {
-      return view('candidate/register');
+      return view('candidate.create');
     }
 
     /**

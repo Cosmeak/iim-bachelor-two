@@ -22,8 +22,6 @@ function displayyMenu() {
 burger.addEventListener('click', displayMenu);
 close.addEventListener('click', displayyMenu);
 
-
-require('./bootstrap');
 document.getElementById('next_inscription').addEventListener('click', () =>{
     document.getElementById('content_inscription_1').style.display = "none";
     document.getElementById('content_inscription_2').style.display = "flex";
