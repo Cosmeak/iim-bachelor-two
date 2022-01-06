@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('home');
 })->name('home');
+
+Route::get('/404', function() {
+  return view('404');
+})->name('404');
 
 /*------------------------------------------------------------------------ 
                             User pages

@@ -112,7 +112,7 @@
                                 <select class="btn-primary" type="text" placeholder="Site" name="formation"> 
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php 
-                                    $sectors = App\Models\Sector::all()
+                                      $sectors = App\Models\Sector::all()
                                     @endphp
                                     @foreach ($sectors as $sector)
                                       <option option value="{{ $sector->id}}">{{$sector->label}}</option>
@@ -132,11 +132,11 @@
                                 <select class="btn-primary" type="text" placeholder="Diplômes" name="diploma"> 
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php 
-                                    $diplomes = App\Models\Degree::all()
+                                      $diplomes = App\Models\Degree::all()
                                     @endphp
                                     @foreach ($diplomes as $diplome)
-                                    <option value="{{ $diplome->id}}">{{$diplome->label}}</option>
-                                @endforeach
+                                      <option option value="{{ $diplome->id}}">{{$diplome->label}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
