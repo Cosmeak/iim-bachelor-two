@@ -38,9 +38,8 @@
         <div id="login" class="flex-col">
             <button type="submit" class=" w-sm mb-20 py-4 bg-primary text-white rounded-2xl shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer text-center">Connexion</button>
         </div>
-            <p>Nouveau sur Easy Apply ? <a href="{{route('user.create')}}" class=" text-primary font-bold">S'inscrire</a></p>
+            <p>Nouveau sur Easy Apply ? <a href="{{route('user.create')}}" class="blue-underline text-primary font-bold">S'inscrire</a></p>
     </form>
 </section>
 
 @endsection
-    
