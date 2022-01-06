@@ -2080,6 +2080,17 @@ if (window.matchMedia("(max-width: 1280px)").matches) {
   close.addEventListener('click', displayyMenu);
 }
 
+function displayyMenu() {
+  menu_burger.style.transform = 'translateX(500px)';
+  burger.style.transform = 'translateX(0)';
+} //events on click
+
+
+burger.addEventListener('click', displayMenu);
+close.addEventListener('click', displayyMenu);
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 document.getElementById('next_inscription').addEventListener('click', function () {
   document.getElementById('content_inscription_1').style.display = "none";
   document.getElementById('content_inscription_2').style.display = "flex";
