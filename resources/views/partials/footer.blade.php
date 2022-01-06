@@ -2,21 +2,21 @@
     <div class="flex xl:flex-row flex-col xl:justify-around items-center xl:mx-64 mb-24" >
       <a href="/"><img src="../img/logo.png" alt="easy-apply" class="object-contain max-w-sm"></a>
         <div class=" flex flex-col text-center xl:text-left">
-            <h3 class="font-bold text-2xl mb-10">Nous contacter</h3>
-            <div class="flex items-center my-2">
-                <img src="../img/footer/contact_email.svg" class="w-xxs">
-                <a href="mailto: project@easyapply.fr" class="text-xl mx-4">project@easyapply.fr</a>
+            <h3 class="font-bold text-2xl py-10">Nous contacter</h3>
+            <div class="flex items-center py-2">
+                <i class="fas fa-envelope-open-text fa-2x text-white"></i>
+                <a href="mailto: project@easyapply.fr" class="text-xl mx-4 link link-underline">project@easyapply.fr</a>
             </div>
-            <div class="flex items-center mt-2 mb-10">
-                <img src="../img/footer/contact_phone.svg" class="w-xxs">
+            <div class="flex items-center pt-2 pb-10">
+                <i class="fas fa-phone-alt fa-2x text-white"></i>
                 <p class="text-xl mx-4">06.11.06.56.01</p>
             </div>
         </div>
         <div class=" flex flex-col justify-center text-center xl:text-left">
-            <h3 class="font-bold text-2xl mb-10 ">Vous avez un compte Easy Apply</h3>
-            <a href="{{route('login.index')}}" class="text-xl mb-6 font-display max-w-sm leading-tight">
+            <h3 class="font-bold text-2xl pb-10 ">Vous avez un compte Easy Apply</h3>
+            <a href="/login" class="text-xl pb-6 font-display max-w-sm leading-tight">
                 <span class="link link-underline">Se connecter</span></a>
-            <a href="{{route('user.create')}}" class="text-xl mb-6 font-display max-w-sm leading-tight">
+            <a href="/register" class="text-xl pb-6 font-display max-w-sm leading-tight">
                 <span class="link link-underline">S'inscrire</span></a>
         </div>
     </div>
