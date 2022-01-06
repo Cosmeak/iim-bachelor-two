@@ -16,7 +16,7 @@
         </form>
       </li>
     </ul>
-    @else
+  @else
     <ul class="flex justify-evenly xl:w-1/3 items-center">
       <li>
         <a href="{{ route('home') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
