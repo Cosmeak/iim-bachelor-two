@@ -50,7 +50,7 @@ class CandidateController extends Controller
       'facebook' => ['max:50', 'nullable'],
       'linkedin' => ['max:50', 'nullable'],
 
-      'id_user' => ['required'],
+      'id_user' => ['required', 'unique:candidates'],
       'id_status' => ['required'],
       'id_location' => ['nullable']
     ]);

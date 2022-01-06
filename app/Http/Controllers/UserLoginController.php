@@ -41,7 +41,7 @@ class UserLoginController extends Controller
   
       if (auth()->attempt($attributes)){
         session()->regenerate();
-        if (auth()->user->first()->is_company == 1){
+        if (auth()->user()->first()->is_company == 1){
           return view('company.show');
         } else {
           return view('candidate.show');
