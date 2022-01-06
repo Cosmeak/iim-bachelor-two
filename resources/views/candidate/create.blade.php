@@ -33,13 +33,6 @@
                         @enderror
                     </div>
                     <div class="flex flex-col items-start mx-16 my-4">
-                        <label for="city" class="my-2">Ville</label>
-                        <input class="btn-primary" type="text" placeholder="Ville" name="address">
-                        @error('address')
-                            <p class="text-red-500 mt-2">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <div class="flex flex-col items-start mx-16 my-4">
                         <label for="phone" class="my-2">Numéro</label>
                         <input class="btn-primary" type="tel" placeholder="Numéro" name="phone_number">
                         @error('phone_number')
