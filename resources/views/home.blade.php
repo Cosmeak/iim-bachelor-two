@@ -12,7 +12,7 @@
     </div>
 
     <article class="my-36 ">
-        <h2 class="font-title text-center text-6xl xl:mb-32  hover:text-light-blue transition duration-300 ease-out hover:ease-in">Qui sommes-nous ?</h2>
+        <h2 class="font-title text-center text-6xl xl:mb-32  hover:text-light-blue transition duration-300 ease-out hover:ease-in"><span class="text-light-blue">E</span>asy <span class="text-light-blue">A</span>pply</h2>
 
         <div class=" flex flex-col justify-center place-items-center my-12 xl:justify-evenly xl:flex-row">
             <div class="flex justify-center my-14">
