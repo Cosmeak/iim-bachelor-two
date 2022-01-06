@@ -24,13 +24,13 @@
                 </div>
 
                 <h3 class="font-title uppercase text-center text-3xl font-bold mt-12 ">Easy Apply</h3>
-                <p class="text-center">Application de recrutement pas système de matching</p>
+                <p class="text-center text-lg xl:text-xl">Application de recrutement pas système de matching</p>
 
                 <h4 class="font-title text-primary text-2xl xl:text-3xl mt-14">Qui sommes-nous ?</h4>
-                <p class="mt-5 font-title text-lg xl:text-xl font-bold">Nous sommes un site d’offres d’emploi qui favorise la
+                <p class="mt-5 font-title text-lg xl:text-2xl font-bold">Nous sommes un site d’offres d’emploi qui favorise la
                     rencontre entre l’offre et la demande d’emploi.</p>
                 <h4 class="font-title text-primary text-2xl xl:text-3xl mt-14">Quel-est notre objectif ?</h4>
-                <p class="mt-5 font-title text-lg xl:text-xl font-bold">Nous avons pour but d'augmenter le taux de candidature à moindre coût en favorisant la rencontre entre l’offre et
+                <p class="mt-5 font-title text-lg xl:text-2xl font-bold">Nous avons pour but d'augmenter le taux de candidature à moindre coût en favorisant la rencontre entre l’offre et
                     la demande d’emploi via un système de matching.</p>
             </div>
         </div>
@@ -44,8 +44,8 @@
             </div>
 
             <div class="">
-                <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Offres illimitées</h3>
-                <p class="pt-20 text-lg xl:text-xl text-justify">Les publications d’offres d’emplois sont illimitées. Trouvez la personne la plus qualifié pour une mission, ou la mission qui vous correspondra le mieux, dès maintenant !</p>
+                <h3 class="font-title uppercase text-center text-xl xl:text-3xl font-bold pt-16">Offres illimitées</h3>
+                <p class="pt-20 text-lg xl:text-2xl text-justify">Les publications d’offres d’emplois sont illimitées. Trouvez la personne la plus qualifié pour une mission, ou la mission qui vous correspondra le mieux, dès maintenant !</p>
             </div>
 
         </div>
@@ -57,8 +57,8 @@
             </div>
 
             <div class="">
-                <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Visibilité de l’offre</h3>
-                <p class="pt-20 text-lg xl:text-xl text-justify">Votre offre est proposée aux profils recherchés et à ceux intéressés par vos missions. EasyApply se charge de vous mettre en relation le plus facilement possible.</p>
+                <h3 class="font-title uppercase text-center text-xl xl:text-3xl font-bold pt-16">Visibilité de l’offre</h3>
+                <p class="pt-20 text-lg xl:text-2xl text-justify">Votre offre est proposée aux profils recherchés et à ceux intéressés par vos missions. EasyApply se charge de vous mettre en relation le plus facilement possible.</p>
             </div>
 
         </div>
@@ -71,8 +71,8 @@
             </div>
 
             <div class="">
-                <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Gain de temps</h3>
-                <p class="pt-20 text-lg xl:text-xl text-justify">Les candidatures sont classées automatiquement selon vos critères. Économisez un temps précieux pour vous consacrer à votre productivité.
+                <h3 class="font-title uppercase text-center text-xl xl:text-3xl font-bold pt-16">Gain de temps</h3>
+                <p class="pt-20 text-lg xl:text-2xl text-justify">Les candidatures sont classées automatiquement selon vos critères. Économisez un temps précieux pour vous consacrer à votre productivité.
                 </p>
             </div>
 
@@ -86,8 +86,8 @@
             </div>
 
             <div class="">
-                <h3 class="font-title uppercase text-center text-xl xl:text-2xl font-bold pt-16">Economies</h3>
-                <p class="pt-20 text-lg xl:text-xl text-justify">Un tarif annuel et unique pour l’utilisation complète et illimitée de nos services. Un prix abordable pour un résultat garantie !
+                <h3 class="font-title uppercase text-center text-xl xl:text-3xl font-bold pt-16">Economies</h3>
+                <p class="pt-20 text-lg xl:text-2xl text-justify">Un tarif annuel et unique pour l’utilisation complète et illimitée de nos services. Un prix abordable pour un résultat garantie !
                 </p>
             </div>
 
