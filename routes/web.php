@@ -21,7 +21,7 @@ Route::get('/404', function() {
   return view('404');
 })->name('404');
 
-Route::fallback('/404', function() {
+Route::fallback(function() {
   return view('404');
 });
 
