@@ -44,8 +44,8 @@
       <label class="mx-2">Entreprise</label>
   </div>
 
-    <button type="submit" class="w-sm my-12 py-4 bg-primary text-white rounded-2xl shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer text-center">S'inscrire</button>
-    <p>Déjà un compte Easy Apply ? <a href="{{route('login.index')}}" class=" text-primary font-bold">Connexion</a></p>
+    <button type="submit" class="my-12 btn-blue cursor-pointer ">S'inscrire</button>
+    <p>Déjà un compte Easy Apply ? <a href="{{route('login.index')}}" class="blue-underline text-primary font-bold">Connexion</a></p>
 
   </form>
 
