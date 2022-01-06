@@ -13,10 +13,10 @@
             </div>
         </div>
         <div class=" flex flex-col justify-center text-center xl:text-left">
-            <h3 class="font-bold text-2xl pb-10 ">Vous avez un compte Easy Apply</h3>
-            <a href="/login" class="text-xl pb-6 font-display max-w-sm leading-tight">
+            <h3 class="font-bold text-2xl pb-12 ">Votre compte Easy Apply</h3>
+            <a href="{{ route('login.index') }}" class="text-xl pb-6 font-display max-w-sm leading-tight">
                 <span class="link link-underline">Se connecter</span></a>
-            <a href="/register" class="text-xl pb-6 font-display max-w-sm leading-tight">
+            <a href="{{route('user.create')}}" class="text-xl pb-6 font-display max-w-sm leading-tight">
                 <span class="link link-underline">S'inscrire</span></a>
         </div>
     </div>
