@@ -20,6 +20,10 @@ class CreateCompaniesTable extends Migration
             $table->text('description')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('email')->nullable();
+            $table->string('website')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
             $table->boolean('is_completed')->default(0);
             $table->timestamps();
 
