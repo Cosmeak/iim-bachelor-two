@@ -94,9 +94,14 @@
                         <label for="soft_skills">Soft Skills</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
-                                <select class="btn-primary" type="text" placeholder="Site" name="soft_skills"> 
+                                <select class="btn-primary" type="text" name="id_softkill"> 
                                     <option value="">--Sélectionnez l'option--</option>
-                                    {{-- TODO: foreach option --}}
+                                    @php 
+                                        $softskills = App\Models\Softskill::all()
+                                        @endphp
+                                        @foreach ($softskills as $softskill)
+                                            <option value="{{ $softskill->id}}">{{$softskill->label}}</option>
+                                        @endforeach
                                 </select>
                             </div>
                         </div>
@@ -132,10 +137,10 @@
                                 <select class="btn-primary" type="text" placeholder="Diplômes" name="diploma"> 
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php 
-                                      $diplomes = App\Models\Degree::all()
+                                      $diplomas = App\Models\Diploma::all()
                                     @endphp
-                                    @foreach ($diplomes as $diplome)
-                                      <option option value="{{ $diplome->id}}">{{$diplome->label}}</option>
+                                    @foreach ($diplomas as $diploma)
+                                      <option option value="{{ $diploma->id}}">{{$diploma->label}}</option>
                                     @endforeach
                                 </select>
                             </div>
