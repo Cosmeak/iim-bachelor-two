@@ -8,7 +8,7 @@
   </div>
 
   <h1 class="text-center text-3xl ">Inscrivez-vous</h1>
-  <form class="flex flex-col xl:w-5xl xl:px-64 justify-center items-center" method="POST" action="/employer/register">
+  <form class="flex flex-col xl:w-5xl xl:px-64 justify-center items-center" method="POST" action="{{route('company.store')}}">
     @csrf {{-- Token check --}}
 
     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
