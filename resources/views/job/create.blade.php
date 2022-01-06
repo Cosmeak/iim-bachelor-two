@@ -87,3 +87,4 @@
   </form>
 </section>
 @endsection
+@include('partials/footer')

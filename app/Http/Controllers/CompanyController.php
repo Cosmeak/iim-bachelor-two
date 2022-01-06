@@ -58,7 +58,7 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('company.show');
     }
 
     /**

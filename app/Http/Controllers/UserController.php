@@ -50,8 +50,12 @@ class UserController extends Controller
       $attributes['password'] = bcrypt($attributes['password']);
   
       auth()->login(User::create($attributes));
-  
-      return view('home');
+      
+      if($attributes['is_company'] == 1) {
+        return view('company.create');
+      } else {
+        return view('candidate.create');
+      }
     }
 
     /**

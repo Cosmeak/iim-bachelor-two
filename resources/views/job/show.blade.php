@@ -53,5 +53,5 @@
     </div>
 
   </article>
-
 @endsection
+@include('partials/footer')

@@ -37,9 +37,9 @@
             <select class="btn-primary" type="text" name="business_sector_id"> 
               <option value="">--Sélectionnez l'option--</option>
               @php
-                $businessSector = App\Models\BusinessSector::all()
+                $Sector = App\Models\Sector::all()
               @endphp
-              @foreach ($businessSector as $sector)
+              @foreach ($Sector as $sector)
                 <option value="{{ $sector->id }}">{{ $sector->label }}</option>
               @endforeach
             </select>

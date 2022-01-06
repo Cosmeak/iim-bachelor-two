@@ -122,7 +122,7 @@
                                 <select class="btn-primary" type="text" placeholder="Site" name="formation"> 
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php 
-                                    $business_sector = App\Models\BusinessSector::all()
+                                    $business_sector = App\Models\Sector::all()
                                     @endphp
                                     @foreach ($business_sector as $sector)
                                     <option value="{{ $sector->id}}">{{$sector->label}}</option>
