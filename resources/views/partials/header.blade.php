@@ -1,7 +1,7 @@
 <header class="w-full h-[100] bg-white hidden xl:flex items-center justify-between px-10">
   <a href="/" class="w-fit"><img src="../img/logo.png" alt="logo" class="h-full w-fit"></a>
   @auth
-    <ul class="flex justify-evenly items-center">
+    <ul class="flex justify-evenly xl:w-1/3 items-center">
       <li>
         <a href="{{route('home')}}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
       </li>

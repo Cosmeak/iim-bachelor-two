@@ -12,6 +12,7 @@
     @csrf {{-- Token check --}}
 
     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+    
 
     <main class="flex flex-col xl:flex-row">
       <section>

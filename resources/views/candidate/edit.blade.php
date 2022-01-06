@@ -24,10 +24,10 @@
         <div class="flex flex-col text-center xl:justify-between place-items-center ">
 
             <div class="flex flex-row my-10">
-                <h2 class="font-title text-3xl xl:text-4xl mx-2 xl:mx-10">@if ($candidate->first_name) {{$candidate->first_name}} @endif <span class="uppercase">@if ($candidate->last_name) {{$candidate->last_name}} @endif</span></h2>
+                <h2 class="font-title text-3xl xl:text-4xl mx-2 xl:mx-10">{{$candidate->first_name}} <span class="uppercase">{{$candidate->last_name}}</span></h2>
                 <img src="../img/overwrite-icon.svg" alt="overwrite" class="w-xxs h-xxs">
             </div>
-            <h3 class="text-2xl xl:text-3xl"> @if ($city->label && $country->label) {{$city->label}}, {{ $country->label }} @else Non renseigné @endif <h3>
+            <h3 class="text-2xl xl:text-3xl"> {{$city->label}}, {{ $country->label }}</h3>
 
         </div>
 
@@ -47,7 +47,7 @@
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2 ">
                     <i class="fas fa-phone-square-alt fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->phone_number) +33{{ $candidate->phone_number}} @else Non renseigné @endif</p>
+                    <p class="text-xl xl:text-2xl mx-4">+33{{ $candidate->phone_number}}</p>
                 </div>
                 <div class="flex items-center mb-2 ">
                     <i class="fas fa-envelope fa-2x"></i>
@@ -63,22 +63,38 @@
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2 ">
                     <i class="fab fa-internet-explorer fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->website) {{ $candidate->website}} @else Non renseigné @endif</p>
+                    @if (!$candidate->website)
+                        <p class="text-xl xl:text-2xl mx-4">Non renseigné</p>
+                    @else
+                    <p class="text-xl xl:text-2xl mx-4">{{$candidate->website}}</p>
+                    @endif
                 </div>
 
                 <div class="flex items-center mb-2">
                     <i class="fab fa-linkedin fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->linkedin) {{ $candidate->linkedin}} @else Non renseigné @endif</p>
+                    @if ($candidate->linkedin)
+                        <p class="text-xl xl:text-2xl mx-4">{{$candidate->linkedin}}</p>
+                    @else
+                    <p class="text-xl xl:text-2xl mx-4">Non renseigné</p>
+                    @endif
                 </div>
             </div>
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2">
                     <i class="fab fa-instagram fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->instagram) {{ $candidate->instagram}} @else Non renseigné @endif</p>
+                    @if ($candidate->instagram)
+                        <p class="text-xl xl:text-2xl mx-4">{{$candidate->instagram}}</p>
+                    @else
+                    <p class="text-xl xl:text-2xl mx-4">Non renseigné</p>
+                    @endif
                 </div>
                 <div class="flex items-center mb-2">
                     <i class="fab fa-facebook-square fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->facebook) {{ $candidate->facebook}} @else Non renseigné @endif</p>
+                    @if ($candidate->facebook)
+                        <p class="text-xl xl:text-2xl mx-4">{{$candidate->facebook}}</p>
+                    @else
+                    <p class="text-xl xl:text-2xl mx-4">Non renseigné</p>
+                    @endif
                 </div>
 
             </div>

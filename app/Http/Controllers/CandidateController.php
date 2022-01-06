@@ -53,10 +53,11 @@ class CandidateController extends Controller
       'id_status' => ['required'],
       'id_location' => ['']
     ]);
+    
 
     Candidate::create($attributes);
 
-    return view('candidate.show', compact('candidate'));
+    return view('candidate.show');
     }
 
     /**

@@ -14,7 +14,7 @@
 <body class="bg-white-cream font-sans">
   @yield('content')
 
-  @yield('scripts')
+ 
   <script src="../js/app.js"></script>
 </body>
 </html>
