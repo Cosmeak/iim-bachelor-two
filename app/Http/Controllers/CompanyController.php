@@ -41,7 +41,7 @@ class CompanyController extends Controller
             'name'              => ['required'],
             'logo'              => ['nullable'],
             'description'       => ['required'],
-            'phone_number'      => ['nullable', 'numeric'],
+            'phone_number'      => ['nullable'],
             'email'             => ['required'],
             'website'           => ['nullable'],
             'linkedin'          => ['nullable'],

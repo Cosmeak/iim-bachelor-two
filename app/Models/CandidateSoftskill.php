@@ -16,7 +16,7 @@ class CandidateSoftskill extends Model
       'candidate_id'
     ];
 
-    protected $with = ['candidate', 'softskill'];
+    protected $with = ['softskill'];
 
     public function candidate() {
       return $this->belongsTo(Candidate::class, 'candidate_id');
