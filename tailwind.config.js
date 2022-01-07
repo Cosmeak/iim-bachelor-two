@@ -15,7 +15,7 @@ module.exports = {
                 'gray': '#707070',
                 'white-cream': '#fef8f2',
                 'black-mat': '#202020',
-
+                'dark-blue': '#4138ff',
                 'light-blue': '#38B6FF', // a retirer une fois tout changer en primary
             },
             width: {
