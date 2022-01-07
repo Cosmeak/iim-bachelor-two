@@ -45,10 +45,10 @@ class CompanyController extends Controller
             'facebook' => ['nullable'],
             'instagram' => ['nullable'],
 
-            'id_location' => ['nullable'],
-            'id_company_size' => ['nullable'],
-            'id_sector' => ['nullable'],
-            'id_user' => ['required'],
+            'location_id' => ['nullable'],
+            'company_size_id' => ['nullable'],
+            'sector_id' => ['nullable'],
+            'user_id' => ['required'],
     ]);
 
         $attributes = $request;

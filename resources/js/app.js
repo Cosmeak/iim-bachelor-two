@@ -21,21 +21,39 @@ if (window.matchMedia("(max-width: 1280px)").matches) {
     burger.addEventListener('click', displayMenu);
     close.addEventListener('click', displayyMenu);
   }
+document.getElementById('inscription_1').addEventListener('click', function(){
+    nextInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2')});
+
+document.getElementById('inscription_2').addEventListener('click', function(){
+    nextInscription('next_inscription_2', 'next_inscription_3', 'content_inscription_2', 'content_inscription_3')});
+
+document.getElementById('inscription_3').addEventListener('click', function(){
+    nextInscription('next_inscription_3', 'next_inscription_4', 'content_inscription_3', 'content_inscription_4')});
+
+document.getElementById('back_1').addEventListener('click', function(){
+    backInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2')});
+
+document.getElementById('back_2').addEventListener('click', function(){
+    backInscription('next_inscription_2', 'next_inscription_3', 'content_inscription_2', 'content_inscription_3')});
+
+document.getElementById('back_3').addEventListener('click', function(){
+    backInscription('next_inscription_3', 'next_inscription_4', 'content_inscription_3', 'content_inscription_4')});
 
 
-document.getElementById('next_inscription').addEventListener('click', () =>{
-    document.getElementById('content_inscription_1').style.display = "none";
-    document.getElementById('content_inscription_2').style.display = "flex";
-    document.getElementById('submit_inscription').style.display = "flex";
-    document.getElementById('next_inscription').style.display = "none";
-})
+function nextInscription(button_t, button_n, content_t, content_n){
+    document.getElementById(button_t).style.display = "none";
+    document.getElementById(button_n).style.display = "flex";
+    document.getElementById(content_t).style.display = "none";
+    document.getElementById(content_n).style.display = "flex";
+}
 
-document.getElementById('back_inscription').addEventListener('click', () =>{
-    document.getElementById('content_inscription_1').style.display = "flex";
-    document.getElementById('content_inscription_2').style.display = "none";
-    document.getElementById('submit_inscription').style.display = "none";
-    document.getElementById('next_inscription').style.display = "block";
-})
+function backInscription(button_b, button_t, content_b, content_t){
+    document.getElementById(button_t).style.display = "none";
+    document.getElementById(button_b).style.display = "flex";
+    document.getElementById(content_t).style.display = "none";
+    document.getElementById(content_b).style.display = "flex";
+    
+}
 
 
 // -------------------------------------------------------------------

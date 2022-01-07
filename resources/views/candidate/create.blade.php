@@ -195,5 +195,6 @@
 
             </form>
         </section>
-        </body>
+    </section>
+
     @endsection
