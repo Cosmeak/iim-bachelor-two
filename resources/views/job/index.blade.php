@@ -2,7 +2,7 @@
 @include('partials/header')
 @section('content')
 
-<section class="gradient p-12 text-lg xl:text-xl">
+<section class="moving-gradient p-12 text-lg xl:text-xl">
     <h2 class="text-center text-2xl xl:text-3xl text-white">Recherche de missions</h2>
     <div class="flex flex-wrap justify-center my-4 xl:my-10">
         <div class="flex flex-col mx-32 m-4 xl:my-10">

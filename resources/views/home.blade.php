@@ -4,10 +4,10 @@
 @section('content')
 
     <section class="w-full h-auto overflow-hidden">
-        <div class="wave w-full h-[70rem] flex flex-col bg-primary p-8 xl:pt-12 xl:px-24 xl:mb-36 text-center xl:text-left text-white">
-            <div class="z-10 xl:mt-20 flex flex-col-reverse xl:flex-row justify-around place-items-center">
+        <div class="wave w-full h-[70rem] flex flex-col bg-primary px-8 xl:px-24 text-center xl:text-left text-white">
+            <div class="z-10 xl:mt-16 flex flex-col-reverse xl:flex-row justify-around place-items-center">
                 <div class="xl:w-1/2 w-5/6">
-                    <h1 class="font-title text-3xl xl:text-5xl my-3">Et si on postulait autrement ?</h1><br>
+                    <h1 class="font-title text-3xl xl:text-5xl my-10 xl:my-3">Et si on postulait autrement ?</h1><br>
                     <h3 class="text-xl xl:text-3xl font-bold my-2 xl:my-3">Favorisons la rencontre entre l'offre et la demande d'emploi</h3>
                     <p class="text-white text-lg xl:text-2xl">Optimisez votre recrutement à moindre coût grâce à notre service tout en un : publications illimitées d’offres, matching et scoring des candidats, gestion automatisé des candidatures.</p>
                 </div>
@@ -18,14 +18,14 @@
         </div>
     </section>
 
-    <article class="w-full my-36">
+    <article class="w-full mb-36">
         <h2 class="font-title text-center text-6xl xl:mb-32  hover:text-light-blue transition duration-300 ease-out hover:ease-in"><span class="text-light-blue">E</span>asy <span class="text-light-blue">A</span>pply</h2>
 
         <div class="w-full flex flex-col justify-center place-items-center my-12 xl:justify-evenly xl:flex-row">
             <div class="flex justify-center my-14">
-                <iframe class="w-5/6 xl:w-1/2 xl:w-[600px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
+                <iframe class="w-[450px] xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
             </div>
-            <div class="w-5/6 xl:w-1/2 highlight shadow-md bg-white rounded px-10 py-24 relative mx-8 my-14">
+            <div class="w-5/6 xl:w-1/4 highlight shadow-md bg-white rounded px-10 py-24 relative mx-8 my-14">
                 <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm ">
                     <img width="170" height="170" class="m-auto" src="./img/logo.png" alt="logo">
                 </div>
@@ -101,7 +101,7 @@
 
     </section>
 
-    <article class="moving-gradient rounded text-white text-center m-24 xl:m-36 p-10 flex flex-col justify-center place-items-center gap-8">
+    <article class="w-5/6 moving-gradient h-[60vh] xl:h-[30vh] rounded text-white m-auto text-center xl:m-36 p-10 flex flex-col justify-center place-items-center gap-8">
         <h3 class="font-title xl:text-4xl text-2xl">Vous aimeriez voir votre entreprise sur notre site ?</h3>
         <p class="font-bold xl:text-2xl text-xl">Créez votre page d'entreprise en appuyant simplement ici !</p><br>
         <a href="{{route('company.create')}}" class="rounded-full border-2 border-white bg-white text-xl xl:text-2xl text-primary py-2 px-4 hover:text-white hover:bg-primary hover:border-2 hover:border-white transition duration-150 ease-out hover:ease-in">Page d'entreprise</a>

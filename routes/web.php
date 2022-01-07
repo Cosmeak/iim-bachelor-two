@@ -29,9 +29,9 @@ Route::fallback(function(){
                             User pages
 ------------------------------------------------------------------------*/
 
-Route::group(['middleware' => ['auth']], function() { 
-  Route::post('user/logout', ['App\Http\Controllers\UserLoginController', 'close'])->name('user.logout');
-});
+
+Route::post('user/logout', ['App\Http\Controllers\UserLoginController', 'close'])->name('user.logout')->middleware('auth');
+
 
 Route::group(['middleware' => ['guest']], function() { 
   Route::resource('user', 'App\Http\Controllers\UserController')->except(['show']);
@@ -45,11 +45,15 @@ Route::group(['middleware' => ['guest']], function() {
 
 Route::resource('candidate', 'App\Http\Controllers\CandidateController')->except(['index']);
 
+Route::group(['prefix' => 'candidate'], function() {
+  Route::resource('education', 'App\Http\Controllers\EducationController')->except(['index', 'create', 'show']);
+});
 /*------------------------------------------------------------------------ 
                           Company pages
 ------------------------------------------------------------------------*/
-Route::group(['middleware' => ['auth']], function() {
-  Route::resource('company', 'App\Http\Controllers\CompanyController');
 
+Route::resource('company', 'App\Http\Controllers\CompanyController');
+
+Route::group(['prefix' => 'company'], function() {
   Route::resource('job', 'App\Http\Controllers\JobController');
 });

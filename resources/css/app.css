@@ -4,7 +4,7 @@
 
 @layer components {
     .btn-primary {
-        @apply py-2 px-4 bg-white rounded shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-80;
+        @apply py-2 px-4 bg-white rounded shadow-inset focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-80;
     }
 
     .btn-second {
@@ -14,13 +14,17 @@
     .btn-blue{
         @apply rounded-full text-center border border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-6 hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
+    .btn-white{
+        @apply rounded-full text-center border border-primary bg-white text-xl xl:text-2xl text-primary py-2 px-6 hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in;
+   }
 
     .perk-card{
-        @apply w-5/6 xl:w-1/4 h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white;
+        @apply w-5/6 xl:w-1/4 h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-10 relative my-20 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white;
     }
     .btn-form{
         @apply rounded-xl text-center border-2 shadow-md border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-10 hover:text-primary hover:bg-white hover:border-2 hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
+
 }
 
 
@@ -427,7 +431,6 @@ input:checked + .slider-2:before {
     background: linear-gradient(45deg, rgba(56,182,255,1) 0%, rgba(65,56,255,1) 100%);
     background-size: 400% 400%;
     animation: gradient 8s ease infinite;
-    height: 30vh;
 }
 
 @keyframes gradient {

@@ -11,11 +11,11 @@
                 class="hidden xl:block rounded-md w-2xl h-2xl bg-primary absolute right-52 top-3/4 border-2 border-blue-400">
             </div>
 
-            <form class="flex flex-col px-8 pb-10 pt-32 justify-center items-center bg-white relative shadow-md rounded-lg"
+            <form class="flex flex-col px-8 pb-10 pt-32 justify-center items-center bg-white relative shadow-inset rounded-lg"
                 method="POST" action="{{ route('user.store') }}">
                 @csrf {{-- Token check --}}
 
-                <div class=" w-40 h-40 rounded-full mb-6 bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-20">
+                <div class=" w-40 h-40 rounded-full mb-6 bg-white shadow-inset absolute -translate-x-1/2 left-1/2 -top-20">
                     <img src="../img/logo.png" alt="logo">
                 </div>
 

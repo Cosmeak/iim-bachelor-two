@@ -56,15 +56,35 @@
                 </div>
 
                 <section id="content_inscription_2" class="hidden flex-col justify-center items-center px-16 h-xl">
-                    <div class="flex flex-col items-start">
-                        <label for="profile_picture" class="my-4">Photo</label>
-                        <input type="file"
-                            class="shadow-inner dashed-hover max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 bg-white "
-                            name="profile_picture">
-                        @error('profile_picture')
+                    <div class="flex flex-col items-start my-4">
+                        <label for="website" class="my-2">Site Internet</label>
+                        <input class="btn-primary" type="url" placeholder="Site web" name="website">
+                        @error('website')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="flex flex-col items-start my-4">
+                        <label for="linkedin" class="my-2">LinkedIn</label>
+                        <input class="btn-primary" type="text" placeholder="LinkedIn" name="linkedin">
+                        @error('linkedin')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col items-start my-4">
+                        <label for="instagram" class="my-2">Instagram</label>
+                        <input class="btn-primary" type="text" placeholder="Instagram" name="instagram">
+                        @error('instagram')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col items-start my-4">
+                        <label for="facebook" class="my-2">Facebook</label>
+                        <input class="btn-primary" type="text" placeholder="Facebook" name="facebook">
+                        @error('facebook')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    
                 </section>
                 <div id="next_inscription_2" class="hidden justify-between mt-auto">
                     <a id="back_1" class=" cursor-pointer btn-blue ">Retour</a>
@@ -72,52 +92,51 @@
                 </div>
 
 
-        <div id="content_inscription_2" class="xl:flex-row flex-col justify-center items-center hidden bg">
-            <div class="flex flex-wrap justify-center xl:justify-start">
-                <div class="flex flex-col items-start mx-16 my-4">
-                    <label for="website" class="my-2">Site Internet</label>
-                    <input class="btn-primary" type="url" placeholder="Site web" name="website">
-                    @error('website')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
+                <section id="content_inscription_3" class="hidden flex-col justify-center items-center px-16 h-xl">
+                    
+                    <div class="flex flex-col items-start">
+                        <label for="profile_picture" class="my-4">Photo</label>
+                        <input type="file"
+                            class="rounded-xl py-10 px-8 border-2 border-slate-600 border-dashed bg-white "
+                            name="profile_picture">
+                        @error('profile_picture')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col items-start">
+                        <label for="cv" class="my-4">CV</label>
+                        <input type="file"
+                            class="rounded-xl py-10 px-8 border-2 border-slate-600 border-dashed bg-white"
+                            name="cv">
+                        @error('cv')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-col items-start my-4">
+                        <label for="status" class="my-2">Status</label>
+                        <select class="btn-primary" type="text" placeholder="Status" name="id_status">
+                            <option value="">--Sélectionnez l'option--</option>
+                            @php
+                                $status = App\Models\Status::all();
+                            @endphp
+                            @foreach ($status as $statu)
+                                <option value="{{ $statu->id }}">{{ $statu->label }}</option>
+                            @endforeach
+                        </select>
+                        @error('id_status')
+                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </section>
+                <div id="next_inscription_3" class="hidden justify-between mt-auto">
+                    <a id="back_2" class="cursor-pointer btn-white ">Retour</a>
+                    <button id="inscription_3" type="submit" class=" btn-blue">Valider</button> 
                 </div>
-                <div class="flex flex-col items-start mx-16 my-4">
-                    <label for="linkedin" class="my-2">LinkedIn</label>
-                    <input class="btn-primary" type="text" placeholder="LinkedIn" name="linkedin">
-                    @error('linkedin')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="flex flex-col items-start mx-16 my-4">
-                    <label for="instagram" class="my-2">Instagram</label>
-                    <input class="btn-primary" type="text" placeholder="Instagram" name="instagram">
-                    @error('instagram')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="flex flex-col items-start mx-16 my-4">
-                    <label for="facebook" class="my-2">Facebook</label>
-                    <input class="btn-primary" type="text" placeholder="Facebook" name="facebook">
-                    @error('facebook')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="flex flex-col items-start mx-16 my-4">
-                    <label for="status" class="my-2">Status</label>
-                    <select class="btn-primary" type="text" placeholder="Status" name="id_status">
-                        <option value="">--Sélectionnez l'option--</option>
-                        @php
-                            $status = App\Models\Status::all();
-                        @endphp
-                        @foreach ($status as $statu)
-                            <option value="{{ $statu->id }}">{{ $statu->label }}</option>
-                        @endforeach
-                    </select>
-                    @error('id_status')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                {{-- <div id ="container_ss" class=" mx-16 mt-4"> <!-- Container Soft skills -->
+            </form>
+        </section>
+    </section>
+@endsection
+{{-- <div id ="container_ss" class=" mx-16 mt-4"> <!-- Container Soft skills -->
                         <label for="id_soft_skill_1">Soft Skills</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
@@ -137,7 +156,7 @@
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
                     </div> --}}
-                {{-- <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
+{{-- <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
                         <label for="id_sector_1" class="my-2">Formation</label>
                         <div class="content">
                             <div class=" options flex flex-col items-start mt-4">
@@ -157,7 +176,7 @@
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
                     </div> --}}
-                {{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Diplomas -->
+{{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Diplomas -->
                         <label for="diploma" class="my-2" >Diplômes</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
@@ -177,22 +196,3 @@
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
                     </div> --}}
-            </div>
-            <div>
-                <div class="flex flex-col items-start">
-                    <label for="cv" class="my-4">CV</label>
-                    <input type="file"
-                        class="dashed-hover max-w-sm xl:max-w-2xl rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white "
-                        name="cv">
-                    @error('cv')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        
-        </form>
-    </section>
-    <section></section>
-    </body>
-@endsection

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserLoginController extends Controller
+class EducationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class UserLoginController extends Controller
      */
     public function index()
     {
-        return view('user.login');
+        //! Don't used
     }
 
     /**
@@ -34,29 +34,7 @@ class UserLoginController extends Controller
      */
     public function store(Request $request)
     {
-      $attributes = request()->validate([
-        'email' => 'required|email',
-        'password' => 'required'
-      ]);
-  
-      if (auth()->attempt($attributes)){
-        session()->regenerate();
-        if (auth()->user()->is_company == 1){
-          if (!empty(auth()->user()->company->id))
-            return redirect()->route('company.show', [auth()->user()->company->id]);
-          else {
-            return redirect()->route('company.create');
-          }
-        } else {
-          if (!empty(auth()->user()->candidate->id))
-            return redirect()->route('candidate.show', [auth()->user()->candidate->id]);
-          else {
-            return redirect()->route('candidate.create');
-          }
-        }
-      }
-  
-      return back()->withErrors(['email' => 'Not be verified']);
+        //
     }
 
     /**
@@ -78,7 +56,7 @@ class UserLoginController extends Controller
      */
     public function edit($id)
     {
-        //! Don't used
+        //
     }
 
     /**
@@ -90,7 +68,7 @@ class UserLoginController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //! Don't used
+        //
     }
 
     /**
@@ -101,18 +79,6 @@ class UserLoginController extends Controller
      */
     public function destroy($id)
     {
-        //! Don't used
-    }
-
-    /** 
-    *  Close a session.
-    *
-    * @return \Illuminate\Http\Response
-    *
-    */
-    public function close()
-    {
-      auth()->logout();
-      return redirect('/')->with('success', 'Goodbye!');
+        //
     }
 }

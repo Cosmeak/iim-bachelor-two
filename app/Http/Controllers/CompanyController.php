@@ -53,11 +53,8 @@ class CompanyController extends Controller
             'sector_id'         => ['nullable'],
             'user_id'           => ['required'],
     ]);
-
         $attributes = $request->input();
-    
         Company::create($attributes);
-    
         return redirect()->route('company.show', [ auth()->user()->company->id]);
     }
 
@@ -80,7 +77,11 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(auth()->user()->id == $id){
+            return view('company.edit', [ 'company' => Company::findOrFail(auth()->user()->company->id) ]);
+        } else {
+            return redirect()->route('company.show', $id)->with('error', 'Vous n\'êtes pas la personne possèdant se compte!');
+        }
     }
 
     /**
@@ -92,9 +93,31 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(auth()->user()->id == $id) { 
+            $request->validate([
+                'name'              => ['required'],
+                'logo'              => ['nullable'],
+                'description'       => ['required'],
+                'phone_number'      => ['nullable'],
+                'email'             => ['required'],
+                'website'           => ['nullable'],
+                'linkedin'          => ['nullable'],
+                'facebook'          => ['nullable'],
+                'instagram'         => ['nullable'],
+    
+                'location_id'       => ['nullable'],
+                'company_size_id'   => ['nullable'],
+                'sector_id'         => ['nullable'],
+                'user_id'           => ['required'],
+            ]);
+            $company = Company::findOrFail(auth()->user()->company->id);
+            $input = $request->input();
+            $company->fill($input)->save();
+            return redirect()->route('company.show', [ 'company' => $company ]);
+        } else { 
+            return back()->withErrors('error', 'Vous n\'êtes pas la personne possèdant se compte!');
+        }
     }
-
     /**
      * Remove the specified resource from storage.
      *
