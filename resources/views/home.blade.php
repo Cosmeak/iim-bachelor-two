@@ -4,11 +4,15 @@
 @section('content')
 
 
-    <div class="w-full h-screen flex flex-col justify-center bg-primary p-8 pt-24 xl:p-24 xl:pb-48 text-center xl:text-left text-white">
-        <h1 class="font-title text-5xl my-5">Et si on postulait autrement ?</h1><br>
-        <h3 class="text-3xl font-bold my-10 xl:my-3">Favorisons la rencontre entre l'offre et la demande d'emploi</h3>
-        <p class="text-white text-xl">Optimisez votre recrutement à moindre coût grâce à notre service tout en un : publications illimitées d’offres, matching et scoring des</p>
-        <p class="text-white text-xl">candidats, gestion automatisé des candidatures.</p>
+    <div class="wave w-full h-[70rem] flex flex-col bg-primary p-8 pt-24 xl:pt-0 xl:px-24 xl:mb-36 text-center xl:text-left text-white">
+        <div class="z-10 xl:mt-20">
+            <h1 class="font-title text-5xl my-3">Et si on postulait autrement ?</h1><br>
+            <h3 class="text-3xl font-bold my-2 xl:my-3">Favorisons la rencontre entre l'offre et la demande d'emploi</h3>
+            <p class="text-white text-xl xl:text-2xl">Optimisez votre recrutement à moindre coût grâce à notre service tout en un : publications illimitées d’offres, matching et scoring des</p>
+            <p class="text-white text-xl xl:text-2xl">candidats, gestion automatisé des candidatures.</p>
+        </div>
+
+
     </div>
 
     <article class="my-36 ">
