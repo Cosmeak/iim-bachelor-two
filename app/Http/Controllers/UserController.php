@@ -77,7 +77,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        //! Don't used
     }
 
     /**
@@ -89,7 +89,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //! Don't used
     }
 
     /**

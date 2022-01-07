@@ -82,7 +82,6 @@
             <p class="text-xl mt-5">- conseil des clients</p>
             <p class="text-xl mt-5">- vente de médicaments sur ordonnance</p>
         </div>
-{{$candidate->user->password}}
     </section>
     @include('partials/footer')
 

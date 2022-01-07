@@ -55,8 +55,9 @@ class CandidateController extends Controller
     ]);
     
     Candidate::create($attributes);
+    $candidate_id = auth()->user()->candidate->id;
 
-    return redirect()->route('candidate.show', [auth()->user()->candidate->id]);
+    return redirect()->route('candidate.show', [$candidate_id]);
     }
 
     /**
