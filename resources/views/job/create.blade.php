@@ -1,90 +1,78 @@
-@extends('layout')
-@include('partials/header')
-
-@section('content')
-@php
-  $auth_id =  auth()->user()->id;
-  $company = App\Models\Company::where('user_id', auth()->user()->id)->first();
-@endphp
-
-<section class="text-xl">
-  <div class="bg-primary flex justify-center text-white items-center py-32">
-      <h1 class="text-5xl">Créer un job</h1><br>
-  </div>
-  <form class="flex flex-col xl:mx-96 items-center" method="POST" action="/employer/new-job">
+<form action="{{ route('job.store') }}" method="POST">
     @csrf
-    <input type="hidden" name="company_id" value="{{$company->id}}">
-    <input type="hidden" name="archive_date" value="<?= date('Y-m-d') ?>">
-    <div class="flex flex-col xl:flex-row py-10" >
-      <div class="flex flex-col items-start mx-16 my-4">
-        <label for="label"class="my-2" >Nom</label>
-        <div class="input-div">
-          <input class="btn-second text-gray-400 outline-input" type="text" placeholder="Nom" name="label">
-          <span class="focus-border"><i></i></span>
-        </div>
-      </div>
-      <div class="flex flex-col items-start mx-16 my-4">
-        <label for="sector_id"class="my-2 " >Domaine d'activité</label>
-        <div class="input-div">
-          <select name="sector_id" class="btn-second outline-input">
-            <option value="">--Sélectionnez l'option--</option>
-            @php
-              $sectors = App\Models\Sector::all()
-            @endphp
-            @foreach ($sectors as $sector)
-              <option value="{{ $sector->id }}">{{ $sector->label }}</option>
-            @endforeach
-          </select>
-          <span class="focus-border"><i></i></span>
-        </div>
-      </div>
-      <div class="flex flex-col items-start mx-16 my-4">
-        <label for="contract_type_id" class="my-2" >Type de contrat</label>
-        <div class="input-div">
-          <select name="contract_type_id" class="btn-second text-gray-400 outline-input">
-            @php
-              $contracts = App\Models\ContractType::all()
-            @endphp
-            @foreach ($contracts as $contract)
-              <option value="{{ $contract->id }}">{{ $contract->label }}</option>
-            @endforeach
-          </select>
-          <span class="focus-border"><i></i></span>
-        </div>
-      </div>
-      <div class="flex flex-col items-start mx-16 my-4">
-        <label for="salary" class="my-2">Salaire</label>
-        <div class="input-div">
-          <input class="btn-second text-gray-400 outline-input" type="text" placeholder="Salaire" name="salary">
-          <span class="focus-border"><i></i></span>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col xl:flex-row py-10">
-      <div class="flex flex-col items-start mx-16 my-4">
-        <label for="working_mode_id" class="my-2" >Type de travail</label>
-        <div class="input-div">
-          <select name="working_mode_id" id="" class="btn-second text-gray-400 outline-input">
-            @php
-              $works = App\Models\WorkingMode::all()
-            @endphp
-            @foreach ($works as $work)
-              <option value="{{ $work->id }}">{{ $work->label }}</option>
-            @endforeach
-          </select>
-          <span class="focus-border"><i></i></span>
-          </div>
-        </div>
-        <div class="flex flex-col items-start mx-16 my-4">
-          <label for="description" class="my-2">Description</label>
-          <div class="input-div">
-            <textarea class="btn-second text-gray-400 outline-input text-gray-400 h-32" type="text" placeholder="Présentez le travail en quelques lignes..." name="description"></textarea>
-            <span class="focus-border"><i></i></span>
-          </div>
-        </div>
-    </div>
-    <input type="submit" value="Valider" class="my-12 btn-blue cursor-pointer">
-  </form>
-</section>
-@include('partials/footer')
-@endsection
+    <table>
+        <tr>
+            <td>
+                <label for="">Nom du Job</label>
+            </td>
+            <td>
+                <input type="text" name="label" value="{{ old('label') }}">
+                @error('label')
+                    <p> {{ $message }} </p>
+                @enderror
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Description</label>
+            </td>
+            <td>
+                <input type="text" name="description" value="{{ old('description') }}">
+                @error('description')
+                    <p> {{ $message }} </p>
+                @enderror
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Salaire</label>
+            </td>
+            <td>
+                <input type="text" name="salary" value="{{ old('salary') }}">
+                @error('salary')
+                    <p> {{ $message }} </p>
+                @enderror
+            </td>
+        </tr>
+        <input type="hidden" name="working_mode_id" value="1">
+        @error('working_mode_id')
+            <p> {{ $message }} </p>
+        @enderror
+
+        <input type="hidden" name="contract_type_id" value="1">
+        @error('contract_type_id')
+            <p> {{ $message }} </p>
+        @enderror
+
+        <input type="hidden" name="company_id" value="{{ auth()->user()->company->id }}">
+        @error('company_id')
+            <p> {{ $message }} </p>
+        @enderror
+
+        <input type="hidden" name="sector_id" value="1">
+        @error('sector_id')
+            <p> {{ $message }} </p>
+        @enderror
+
+        <input type="hidden" name="tag_id_1" value="1">
+        @error('tag_id_1')
+            <p> {{ $message }} </p>
+        @enderror
+
+        <input type="hidden" name="tag_id_2" value="2">
+        @error('tag_id_2')
+            <p> {{ $message }} </p>
+        @enderror
+
+        <input type="hidden" name="tag_id_3" value="3">
+        @error('tag_id_3')
+            <p> {{ $message }} </p>
+        @enderror
+        <tr>
+            <td></td>
+            <td> <button type="submit">Valider</button> </td>
+        </tr>
+    </table>
+</form>

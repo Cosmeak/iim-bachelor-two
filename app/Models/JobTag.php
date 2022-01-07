@@ -16,6 +16,8 @@ class JobTag extends Model
         'job_id',
     ];
 
+    public $table = 'jobs_tags';
+
     protected $with = ['tag'];
 
     public function tag() {

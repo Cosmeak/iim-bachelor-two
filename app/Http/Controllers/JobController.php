@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Job;
+use App\Models\JobTag;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -23,12 +25,12 @@ class JobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   if(!empty(auth()->user()->company->id)){
+    {   
+        if(!empty(auth()->user()->company->id)){
             return view('job.create');
         } else {
             return redirect()->route('home');
         }
-        
     }
 
     /**
@@ -48,11 +50,27 @@ class JobController extends Controller
             'working_mode_id'   => ['required'],
             'contract_type_id'  => ['required'],
             'company_id'        => ['required'],
-            'sector_id'         => ['required']
+            'sector_id'         => ['required'],
+
+            'tag_id_1'          => ['required'],
+            'tag_id_2'          => ['required'],
+            'tag_id_3'          => ['required'],
         ]);
+
         $input = $request->input();
-        Job::create($input);
+        $input['archive_date'] = Carbon::now();
+        $job = Job::create($input);
+
         $company_id = auth()->user()->company->id;
+        $tag['job_id'] = $job->id;
+
+        $tag_list = [$input['tag_id_1'], $input['tag_id_2'], $input['tag_id_3']];
+        dump($tag_list);
+        foreach($tag_list as $tag_){
+            $tag['tag_id'] = $tag_;
+            JobTag::create($tag);
+        }
+
         return redirect()->route('company.show', [$company_id]);
     }
 

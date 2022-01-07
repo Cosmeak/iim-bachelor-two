@@ -24,12 +24,12 @@
             @foreach ($company->job as $job)
                 <article class="w-3/4 m-auto bg-white shadow-md p-8 rounded-[20px]">
                     <div class="flex justify-between ">
-                        <h3 class="font-bold text-lg xl:text-xl pb-2">Titre de l'annonce : {{ $company->job->label }}</h3>
-                        <h3 class="font-bold text-lg xl:text-xl pb-2">Secteur : {{ $company->job->sector->label }}</h3>
+                        <h3 class="font-bold text-lg xl:text-xl pb-2">Titre de l'annonce : {{ $job->label }}</h3>
+                        <h3 class="font-bold text-lg xl:text-xl pb-2">Secteur : {{ $job->sector->label }}</h3>
                     </div>
-                    <h3 class="text-lg pb-4">{{ $company->job->working_mode->label }}, {{ $company->job->contract->type->label }} </h3>
+                    <h3 class="text-lg pb-4">{{ $job->workingMode->label }}, {{ $job->contractType->label }} </h3>
 
-                    <p class="leading-relaxed"><span>Description : {{ $company->job->description }}</p>
+                    <p class="leading-relaxed"><span>Description : {{ $job->description }}</p>
                 </article>
             @endforeach
         @else

@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return route('user.create');
+        return redirect()->route('user.create');
     }
 
     /**

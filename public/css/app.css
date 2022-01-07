@@ -463,23 +463,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-color: rgb(96 165 250 / var(--tw-ring-opacity));
   --tw-ring-opacity: 0.75;
 }
-.btn-second {
-  width: 20rem;
-  border-radius: 10px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.btn-second:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
 .btn-blue {
   border-radius: 9999px;
   border-width: 1px;
@@ -852,6 +835,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 .hidden {
   display: none;
 }
@@ -1182,10 +1168,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -1902,11 +1884,6 @@ input:checked + .slider-2:before {
   .xl\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
-  }
-
-  .xl\:mx-96 {
-    margin-left: 24rem;
-    margin-right: 24rem;
   }
 
   .xl\:my-10 {

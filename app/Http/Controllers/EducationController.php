@@ -13,7 +13,7 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //! Don't used
+        //!Don't used
     }
 
     /**

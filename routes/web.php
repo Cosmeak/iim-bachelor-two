@@ -22,7 +22,7 @@ Route::get('/404', function() {
 })->name('404');
 
 Route::fallback(function(){
-  return view('404');
+  return redirect()->route('404');
 });
 
 Route::get('/contact', function() {

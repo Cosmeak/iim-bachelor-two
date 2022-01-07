@@ -32,7 +32,7 @@ class Company extends Model
         'sector_id',
     ];
 
-    protected $with = ['user', 'location', 'companySize', 'sector' ,'job'];
+    protected $with = ['location', 'companySize', 'sector' , 'job'];
 
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
@@ -51,6 +51,6 @@ class Company extends Model
     }
 
     public function job() {
-        return $this->hasMany(Job::class);
+        return $this->hasMany(Job::class)->without('company');
     }
 }

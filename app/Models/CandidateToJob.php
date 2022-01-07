@@ -21,10 +21,10 @@ class CandidateToJob extends Model
     protected $with = ['candidate', 'job'];
 
     public function candidate() {
-      return $this->belongsTo(Candidate::class, 'candidate_id');
+      return $this->belongsTo(Candidate::class, 'candidate_id')->without('job');
     }
 
     public function job() {
-      return $this->belongsTo(Job::class, 'job_id');
+      return $this->belongsTo(Job::class, 'job_id')->without('candidate');
     }
 }

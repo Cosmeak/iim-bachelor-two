@@ -23,12 +23,12 @@ class Job extends Model
 
         'location_id',
         'working_mode_id',
-        'contract_mode_id',
+        'contract_type_id',
         'company_id',
         'sector_id',
     ];
 
-    protected $with = ['location', 'workingMode', 'contractType', 'company', 'sector'];
+    protected $with = ['location', 'workingMode', 'contractType', 'sector'];
 
     public function location() {
         return $this->belongsTo(Location::class, 'location_id');
@@ -43,7 +43,7 @@ class Job extends Model
     }
     
     public function company() {
-        return $this->belongsTo(Company::class, 'company_id');
+        return $this->belongsTo(Company::class, 'company_id')->without('job');
     }
     
     public function sector() {
