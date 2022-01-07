@@ -11,8 +11,7 @@
             <div
                 class="hidden xl:block rounded-md w-2xl h-2xl bg-primary absolute right-52 top-3/4 border-2 border-blue-400">
             </div>
-
-
+            
             <form class="flex flex-col px-8 pb-10 pt-32  bg-white relative shadow-md rounded-lg xl:w-xl xl:h-2xl"
                 method="POST" action="{{ route('candidate.store') }}">
                 @csrf

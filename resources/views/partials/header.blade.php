@@ -6,6 +6,10 @@
                 <a href="{{ route('home') }}"
                     class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
             </li>
+            <li>
+                <a href="{{ route('contact') }}"
+                    class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Contact</a>
+            </li>
             <li
                 class="flex rounded-full border btn-white">
                 <img src="../img/search.png" alt="">
@@ -35,7 +39,7 @@
 
 </header>
 
-<header class="w-full flex xl:hidden w-full h-[80] bg-white fixed z-20 shadow-md">
+<header class="w-full flex xl:hidden h-[80] bg-white fixed z-20 shadow-md">
     <div class="flex justify-evenly items-center">
         <a href="{{ route('home') }}" class="w-fit ml-4"><img src="../img/logo.png" alt="logo"
                 class="h-full w-fit"></a>
