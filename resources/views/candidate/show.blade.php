@@ -4,13 +4,13 @@
 @section('content')
 
     <section class="bg-gray flex justify-center h-100 relative">
-        <img src="../img/add-pic.svg" alt="add pic" class="my-60">
+        <span class="my-60"></span>
         <div
             class="flex rounded-full bg-white shadow-md absolute justify-center xl:left-[10%] bottom-[-30%] xl:bottom-[-40%] w-xxs h-xss xl:w-lg xl:h-lg">
             <a href="" class="m-auto"><img width="50" height="50" src="@if($candidate->profile_picture){{ $candidate->profile_picture }}@else ../img/logo.png @endif" alt="logo"></a>
         </div>
     </section>
-
+    
     <article
         class="flex flex-col justify-evenly mx-14 mt-56 mb-20 place-items-center xl:flex xl:flex-row xl:justify-around xl:text-left ">
         <div class="flex flex-col text-center xl:justify-between place-items-center ">
