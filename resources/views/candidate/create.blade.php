@@ -179,5 +179,4 @@
         </form>
     </section>
 </body>
-@include('partials/footer')
 @endsection

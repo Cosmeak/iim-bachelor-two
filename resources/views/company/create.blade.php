@@ -23,16 +23,45 @@
             <p class="text-red-500 mt-1">{{ $message }}</p>
           @enderror
         </div>
-
-        <div class="flex flex-col items-start mx-16 my-4">
+        
+          <div class="flex flex-wrap justify-center xl:justify-start" >
+              <div class="flex flex-col items-start mx-16 my-4">
+                  <label for="website"class="my-2" >Site Internet</label>
+                  <input class="btn-primary" type="url" placeholder="Site web" name="website">
+                  @error('website')
+                      <p class="text-red-500 mt-2">{{ $message }}</p>
+                  @enderror
+              </div>
+              <div class="flex flex-col items-start mx-16 my-4">
+                  <label for="linkedin" class="my-2" >LinkedIn</label>
+                  <input class="btn-primary" type="text" placeholder="LinkedIn" name="linkedin">
+                  @error('linkedin')
+                      <p class="text-red-500 mt-2">{{ $message }}</p>
+                  @enderror
+              </div>
+              <div class="flex flex-col items-start mx-16 my-4">
+                  <label for="instagram" class="my-2" >Instagram</label>
+                  <input class="btn-primary" type="text" placeholder="Instagram" name="instagram">
+                  @error('instagram')
+                      <p class="text-red-500 mt-2">{{ $message }}</p>
+                  @enderror
+              </div>
+              <div class="flex flex-col items-start mx-16 my-4">
+                  <label for="facebook" class="my-2" >Facebook</label>
+                  <input class="btn-primary" type="text" placeholder="Facebook" name="facebook">
+                  @error('facebook')
+                      <p class="text-red-500 mt-2">{{ $message }}</p>
+                  @enderror
+              </div>
+        {{-- <div class="flex flex-col items-start mx-16 my-4">
           <label for="adress" class="my-2" >Adresse</label>
           <input class="btn-primary" type="text" placeholder="Adresse" name="address" value="{{ old('address')}}">
           @error('address')
             <p class="text-red-500 mt-1">{{ $message }}</p>
           @enderror
-        </div>
+        </div> --}}
 
-        <div id ="container_form" class=" mx-16 mt-4">
+        {{-- <div id ="container_form" class=" mx-16 mt-4">
           <label for="company-activity" class="my-2">Secteur d'activité</label>
           <div class=" options flex flex-col items-start mt-4">
             <select class="btn-primary" type="text" name="business_sector_id">
@@ -48,9 +77,9 @@
               <p class="text-red-500 mt-1">{{ $message }}</p>
             @enderror
           </div>
-        </div>
+        </div> --}}
 
-        <div id ="container_form" class="mx-16 mt-4">
+        {{-- <div id ="container_form" class="mx-16 mt-4">
           <label for="company-size" class="my-2">Taille de l'entreprise</label>
           <div class=" options flex flex-col items-start mt-4">
             <select class="btn-primary" type="text" name="company_size_id">
@@ -66,7 +95,7 @@
               <p class="text-red-500 mt-1">{{ $message }}</p>
             @enderror
           </div>
-        </div>
+        </div> --}}
 
       </section>
 
