@@ -16,7 +16,7 @@
 
 
     <section class="flex flex-col justify-evenly m-14 place-items-center xl:flex xl:flex-row xl:justify-evenly">
-        <div class="shadow-md bg-white rounded-lg p-10 m-5 relative w-lg flex flex-col justify-between place-items-center">
+        <div class="shadow-md bg-white rounded p-10 m-5 relative w-lg flex flex-col justify-between place-items-center">
             <h3 class="font-title text-primary uppercase text-center text-2xl font-bold ">Vous êtes employeur ?</h3>
             <p class="text-center text-xl my-14">
                 Créez votre page entreprise en cliquant ici.
@@ -29,7 +29,7 @@
             </a>
         </div>
 
-        <div class="shadow-md bg-white rounded-lg p-10 m-5 relative w-lg flex flex-col justify-between place-items-center">
+        <div class="shadow-md bg-white rounded p-10 m-5 relative w-lg flex flex-col justify-between place-items-center">
             <h3 class="font-title text-primary uppercase text-center text-2xl font-bold ">Vous êtes à la recherche d’un emploi ?</h3>
             <p class="text-center text-xl my-14">
                 Créez votre page candidat en cliquant ici.

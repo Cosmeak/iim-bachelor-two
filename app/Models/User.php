@@ -47,10 +47,10 @@ class User extends Authenticatable
     ];
 
     public function candidate() {
-      return $this->hasOne(Candidate::class);
+      return $this->hasOne(Candidate::class, 'user_id');
     }
 
     public function company() {
-      return $this->hasOne(Company::class);
+      return $this->hasOne(Company::class, 'user_id');
     }
 }

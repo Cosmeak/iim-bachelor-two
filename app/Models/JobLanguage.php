@@ -10,16 +10,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class JobLanguage extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
-        'id_language',
-        'id_job',
+        'language_id',
+        'job_id',
     ];
+    
+    protected $with = ['language'];
 
     public function language() {
-        return $this->belongsTo(Language::class);
+        return $this->belongsTo(Language::class, 'language_id');
     }
 
     public function job() {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Job::class, 'job_id');
     }
 }

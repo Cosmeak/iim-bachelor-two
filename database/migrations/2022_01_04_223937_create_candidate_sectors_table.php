@@ -17,8 +17,8 @@ class CreateCandidateSectorsTable extends Migration
           $table->id();
           $table->timestamps();
 
-          $table->foreignId('id_candidate')->constrained('candidates');
-          $table->foreignId('id_sector')->constrained('sectors');
+          $table->foreignId('candidate_id')->constrained('candidates');
+          $table->foreignId('sector_id')->constrained('sectors');
         });
     }
 

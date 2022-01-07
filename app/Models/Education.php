@@ -11,25 +11,30 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Education extends Model
 {
     use HasFactory;
+    
+    public $table = 'educations';
 
     protected $fillable = [
       'label',
       'start_date',
       'end_date',
-      'id_degree',
-      'id_candidate',
-      'id_diploma'
+
+      'degree_id',
+      'candidate_id',
+      'diploma_id'
     ];
 
+    protected $with = ['degree', 'diploma'];
+
     public function candidate() {
-      return $this->belongsTo(Candidate::class);
+      return $this->belongsTo(Candidate::class, 'candidate_id');
     }
 
     public function degree() {
-      return $this->belongsTo(Degree::class);
+      return $this->belongsTo(Degree::class, 'degree_id');
     }
 
     public function diploma() {
-      return $this->belongsTo(Diploma::class);
+      return $this->belongsTo(Diploma::class, 'diploma_id');
     }
 }

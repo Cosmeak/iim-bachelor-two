@@ -17,8 +17,8 @@ class CreateJobsTagsTable extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->foreignId('id_tag')->constrained('tags');
-            $table->foreignId('id_job')->constrained('jobs');
+            $table->foreignId('tag_id')->constrained('tags');
+            $table->foreignId('job_id')->constrained('jobs');
         });
     }
 

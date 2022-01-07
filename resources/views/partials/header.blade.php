@@ -31,7 +31,7 @@
 
 </header>
 
-<header class="flex xl:hidden w-full h-[80] bg-white fixed z-10 shadow-md">
+<header class="w-full flex xl:hidden w-full h-[80] bg-white fixed z-20 shadow-md">
   <div class="flex justify-evenly items-center">
     <a href="{{route('home')}}" class="w-fit ml-4"><img src="../img/logo.png" alt="logo" class="h-full w-fit"></a>
     <i class="fas fa-bars fa-2x fixed right-8 w-xs cursor-pointer transition duration-500 text-primary" id="burger"></i>

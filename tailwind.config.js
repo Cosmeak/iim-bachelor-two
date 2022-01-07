@@ -56,6 +56,9 @@ module.exports = {
                 '7xl': '300rem',
                 'screen': '100vh',
             },
+            borderRadius: {
+                DEFAULT: '10px', 
+            }
         },
     },
     plugins: [],

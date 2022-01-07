@@ -28,9 +28,9 @@ class CreateCandidatesTable extends Migration
             $table->boolean('is_completed')->default(0);
             $table->timestamps();
 
-            $table->foreignId('id_user')->constrained('users');
-            $table->foreignId('id_status')->nullable()->constrained('status');
-            $table->foreignId('id_location')->nullable()->constrained('locations');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('status_id')->nullable()->constrained('status');
+            $table->foreignId('location_id')->nullable()->constrained('locations');
         });
     }
 

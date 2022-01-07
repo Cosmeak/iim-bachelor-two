@@ -53,14 +53,14 @@
                         </div>
                         {{-- <div class="flex flex-col items-start mx-16 my-4">
                         <label for="status" class="my-2">Status</label>
-                        <select class="btn-primary" type="text" placeholder="Status" name="id_status">
+                        <select class="btn-primary" type="text" placeholder="Status" name="status_id" value="{{ old('status_id') }}">
                             <option value="">--Sélectionnez l'option--</option>
                             @php
-                                $status = App\Models\Statu::all()
-                                @endphp
-                                @foreach ($status as $statu)
-                                    <option value="{{ $statu->id}}">{{$statu->label}}</option>
-                                @endforeach
+                                $status = App\Models\Status::all();
+                            @endphp
+                            @foreach ($status as $statu)
+                                <option value="{{ $statu->id }}">{{ $statu->label }}</option>
+                            @endforeach
                         </select>
                         @error('id_status')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
@@ -118,17 +118,19 @@
                                 <select class="btn-primary" type="text" name="id_softkill_1">
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php
-                                        $softskills = App\Models\Softskill::all()
-                                        @endphp
-                                        @foreach ($softskills as $softskill)
-                                            <option value="{{ $softskill->id}}">{{$softskill->label}}</option>
-                                        @endforeach
+                                        $softskills = App\Models\Softskill::all();
+                                    @endphp
+                                    @foreach ($softskills as $softskill)
+                                        <option value="{{ $softskill->id }}">{{ $softskill->label }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div> 
                         <div class="flex w-tiny justify-center text-white">
-                            <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
-                            <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                            <input value="Supprimer -" type="button" id="dlt_ss"
+                                class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded bg-light-blue">
+                            <input value="Ajouter +" type="button" id="add_ss"
+                                class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                         </div>
                     </div> --}}
                         {{-- <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
@@ -138,17 +140,19 @@
                                 <select class="btn-primary" type="text" placeholder="Site" name="id_sector_1">
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php
-                                      $sectors = App\Models\Sector::all()
+                                        $sectors = App\Models\Sector::all();
                                     @endphp
                                     @foreach ($sectors as $sector)
-                                      <option option value="{{ $sector->id}}">{{$sector->label}}</option>
+                                        <option option value="{{ $sector->id }}">{{ $sector->label }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="flex w-tiny justify-center text-white">
-                            <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
-                            <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                            <input value="Supprimer -" type="button" id="dlt_ss"
+                                class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded bg-light-blue">
+                            <input value="Ajouter +" type="button" id="add_ss"
+                                class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                         </div>
                     </div> --}}
                         {{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Diplomas -->
@@ -158,17 +162,17 @@
                                 <select class="btn-primary" type="text" placeholder="Diplômes" name="diploma">
                                     <option value="">--Sélectionnez l'option--</option>
                                     @php
-                                      $diplomas = App\Models\Diploma::all()
+                                        $diplomas = App\Models\Diploma::all()
                                     @endphp
                                     @foreach ($diplomas as $diploma)
-                                      <option option value="{{ $diploma->id}}">{{$diploma->label}}</option>
+                                        <option option value="{{ $diploma->id}}">{{$diploma->label}}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="flex w-tiny justify-center text-white">
-                            <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
-                            <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                            <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded bg-light-blue">
+                            <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                         </div>
                     </div> --}}
                     </div>

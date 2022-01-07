@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class CompanyController extends Controller
 {
@@ -35,27 +38,27 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request-> validate ([
-            'name' => ['required'],
-            'logo' => ['nullable'],
-            'description' => ['required'],
-            'phone_number' => ['nullable', 'numeric'],
-            'email' => ['required'],
-            'website' => ['nullable'],
-            'linkedin' => ['nullable'],
-            'facebook' => ['nullable'],
-            'instagram' => ['nullable'],
+            'name'              => ['required'],
+            'logo'              => ['nullable'],
+            'description'       => ['required'],
+            'phone_number'      => ['nullable'],
+            'email'             => ['required'],
+            'website'           => ['nullable'],
+            'linkedin'          => ['nullable'],
+            'facebook'          => ['nullable'],
+            'instagram'         => ['nullable'],
 
-            'location_id' => ['nullable'],
-            'company_size_id' => ['nullable'],
-            'sector_id' => ['nullable'],
-            'user_id' => ['required'],
+            'location_id'       => ['nullable'],
+            'company_size_id'   => ['nullable'],
+            'sector_id'         => ['nullable'],
+            'user_id'           => ['required'],
     ]);
 
         $attributes = $request;
     
         Company::create($attributes);
     
-        return route('company.show');
+        return redirect()->route('company.show' [ auth()->user()->company->id]);
     }
 
     /**
@@ -66,7 +69,7 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        return view('company.show');
+        return view('company.show', [ 'company' => Company::findOrFail($id) ]);
     }
 
     /**
