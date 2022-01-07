@@ -504,7 +504,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 .btn-blue:hover {
-  border-width: 2px;
+  border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(56 182 255 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -563,6 +563,51 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2rem;
   }
 }
+.perk-card {
+  position: relative;
+  margin: 1.25rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  height: 30rem;
+  width: 83.333333%;
+  border-radius: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 2.5rem;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.perk-card:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: var(--tw-transform);
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 182 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (min-width: 1280px) {
+
+  .perk-card {
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .perk-card {
+    width: 25%;
+  }
+}
 .fixed {
   position: fixed;
 }
@@ -617,14 +662,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-auto {
   margin: auto;
 }
-.m-5 {
-  margin: 1.25rem;
-}
 .m-24 {
   margin: 6rem;
 }
 .m-2 {
   margin: 0.5rem;
+}
+.m-5 {
+  margin: 1.25rem;
 }
 .m-4 {
   margin: 1rem;
@@ -669,9 +714,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
 }
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 .mx-16 {
   margin-left: 4rem;
@@ -726,10 +771,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 .mx-96 {
   margin-left: 24rem;
@@ -825,9 +866,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-sm {
   height: 10rem;
 }
-.h-lg {
-  height: 30rem;
-}
 .h-tiny {
   height: 20rem;
 }
@@ -889,12 +927,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100vw;
 .w-1\/2 {
   width: 50%;
+.w-5\/6 {
+  width: 83.333333%;
 }
 .w-full {
   width: 100%;
 }
 .w-xl {
   width: 35rem;
+}
+.w-\[330px\] {
+  width: 330px;
 }
 .w-sm {
   width: 10rem;
@@ -965,6 +1008,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-col {
   flex-direction: column;
 }
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -988,6 +1034,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .justify-evenly {
   justify-content: space-evenly;
@@ -1031,6 +1080,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-2 {
   border-width: 2px;
+}
+.border {
+  border-width: 1px;
 }
 .border-t-2 {
   border-top-width: 2px;
@@ -1220,9 +1272,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-.pt-24 {
-  padding-top: 6rem;
 }
 .pt-16 {
   padding-top: 4rem;
@@ -1830,11 +1879,6 @@ input:checked + .slider-2:before {
         font-size: 14px;
     }
 }
-.hover\:scale-110:hover {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: var(--tw-transform);
-}
 .hover\:border-2:hover {
   border-width: 2px;
 }
@@ -2062,6 +2106,12 @@ input:checked + .slider-2:before {
 
   .xl\:w-\[800px\] {
     width: 800px;
+  .xl\:w-1\/2 {
+    width: 50%;
+  }
+
+  .xl\:w-\[600px\] {
+    width: 600px;
   }
 
   .xl\:w-full {
@@ -2082,10 +2132,6 @@ input:checked + .slider-2:before {
 
   .xl\:w-sm {
     width: 10rem;
-  }
-
-  .xl\:w-1\/2 {
-    width: 50%;
   }
 
   .xl\:w-2xl {
@@ -2187,8 +2233,8 @@ input:checked + .slider-2:before {
     padding-right: 16rem;
   }
 
-  .xl\:pt-0 {
-    padding-top: 0px;
+  .xl\:pt-12 {
+    padding-top: 3rem;
   }
 
   .xl\:text-left {
@@ -2206,6 +2252,16 @@ input:checked + .slider-2:before {
   .xl\:text-8xl {
     font-size: 6rem;
     line-height: 1;
+  }
+
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .xl\:text-2xl {
