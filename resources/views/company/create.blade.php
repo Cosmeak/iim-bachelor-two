@@ -148,7 +148,7 @@
                 </section>
                 <div id="next_inscription_4" class="hidden justify-between mt-auto">
                     <a id="back_3" class="cursor-pointer btn-blue ">Retour</a>
-                    <button id="sub_inscription" type="submit" class="cursor-pointer btn-blue">Valider</button>
+                    <button id="sub_inscription" type="submit" class=" btn-blue">Valider</button>
                 </div>
             </form>
         </section>

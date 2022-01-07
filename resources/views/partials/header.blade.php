@@ -7,7 +7,7 @@
                     class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
             </li>
             <li
-                class="flex rounded-full border text-primary border-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">
+                class="flex rounded-full border btn-white">
                 <img src="../img/search.png" alt="">
                 <a href="{{ route('job.index') }}" class=" mx-2 text-xl  ">Recherche</a>
             </li>
