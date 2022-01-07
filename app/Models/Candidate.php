@@ -26,7 +26,7 @@ class Candidate extends Model
       'profile_picture',
       'cv',
       'website',
-      'intagram',
+      'instagram',
       'facebook',
       'linkedin',
       'is_completed',

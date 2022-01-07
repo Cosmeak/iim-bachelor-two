@@ -5,12 +5,12 @@
       <li>
         <a href="{{route('home')}}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
       </li>
-      <li class="flex rounded-full border-2 border-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">
+      <li class="flex rounded-full border-2 text-primary border-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">
         <img src="../img/search.png" alt="">
-        <a href="{{ route('job.index') }}" class=" mx-2 text-xl ">Recherche</a>
+        <a href="{{ route('job.index') }}" class=" mx-2 text-xl  ">Recherche</a>
       </li>
       <li>
-        <form method="POST" action="{{ route('user.logout') }}" class="w-sm px-6 py-4 bg-primary text-white rounded-2xl shadow-md hover:bg-blue-500 transition duration-150 ease-out hover:ease-in focus:outline-none focus:ring-2 cursor-pointer text-center">
+        <form method="POST" action="{{ route('user.logout') }}" class="btn-blue flex item-center m-0">
           @csrf
           <button type="submit" >Se déconnecter</button>
         </form>
@@ -22,7 +22,7 @@
         <a href="{{ route('home') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
       </li>
       <li>
-        <a href="{{ route('job.index') }}" class="rounded-full border-2 border-primary text-xl hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">Recherche</a>
+        <a href="{{ route('job.index') }}" class="rounded-full border-2 border-primary text-xl text-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">Recherche</a>
       </li>
       <li>
         <a href="{{ route('login.index') }}" class="btn-blue cursor-pointer">Se connecter</a>
