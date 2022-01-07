@@ -15,7 +15,7 @@ class CreateSoftskillsTable extends Migration
     {
         Schema::create('softskills', function (Blueprint $table) {
             $table->id();
-            $table->string('label');
+            $table->string('label')->unique();
             $table->timestamps();
         });
     }
