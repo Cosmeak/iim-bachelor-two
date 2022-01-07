@@ -40,7 +40,7 @@
     </article>
 
     <section class="xl:flex xl:flex-row xl:justify-evenly xl:mt-24 flex flex-col justify-center place-items-center">
-        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative  my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
+        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white">
 
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="fas fa-infinity fa-4x text-primary"></i>
@@ -54,7 +54,6 @@
         </div>
 
         <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
-
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="fas fa-bullseye fa-4x text-primary"></i>
             </div>
