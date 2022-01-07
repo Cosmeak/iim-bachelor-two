@@ -1,5 +1,4 @@
 
-
 // Menu Burger
 if (window.matchMedia("(max-width: 1280px)").matches) {
     var menu_burger = document.getElementById('menu-burger');
@@ -111,4 +110,4 @@ function DltOption(container){
         }
     }
 }
-
+require('./bootstrap');

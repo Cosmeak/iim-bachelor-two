@@ -61,6 +61,9 @@ module.exports = {
             },
             boxShadow: {
                 'inset': 'inset 0 3px 10px 0 rgb(0 0 0 / 0.16)',
+            },
+            translate: {
+                'xl': '500px',
             }
         },
     },
