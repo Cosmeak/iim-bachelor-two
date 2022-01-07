@@ -7,7 +7,7 @@
         <img src="../img/add-pic.svg" alt="add pic" class="my-60">
         <div
             class="flex rounded-full bg-white shadow-md absolute justify-center xl:left-[10%] bottom-[-30%] xl:bottom-[-40%] w-xxs h-xss xl:w-lg xl:h-lg">
-            <a href="" class="m-auto"><img width="50" height="50" src="../img/add-pic.svg" alt="logo"></a>
+            <a href="" class="m-auto"><img width="50" height="50" src="@if($candidate->profile_picture){{ $candidate->profile_picture }}@else ../img/logo.png @endif" alt="logo"></a>
         </div>
     </section>
 
@@ -15,18 +15,15 @@
         class="flex flex-col justify-evenly mx-14 mt-56 mb-20 place-items-center xl:flex xl:flex-row xl:justify-around xl:text-left ">
         <div class="flex flex-col text-center xl:justify-between place-items-center ">
             <div class="flex flex-row my-10">
-                <h2 class="font-title text-3xl xl:text-4xl mx-2 xl:mx-10">{{ $candidate->first_name }}<span
-                        class="uppercase">{{ $candidate->last_name }}</span></h2>
-                <img src="../img/overwrite-icon.svg" alt="overwrite" class="w-xxs h-xxs">
+                <h2 class="font-title text-3xl xl:text-4xl mx-2 xl:mx-10">{{ $candidate->first_name }} <span class="uppercase">{{ $candidate->last_name }}</span></h2>
             </div>
-            <h3 class="text-2xl xl:text-3xl"> @if ($candidate->location()) {{ $candidate->location->country->label }}, {{ $candidate->location->city->label }} @else Non renseigné @endif<h3>
+            {{-- <h3 class="text-2xl xl:text-3xl"> @if ($candidate->location()) {{ $candidate->location->country->label }}, {{ $candidate->location->city->label }} @else Non renseigné @endif<h3> --}}
         </div>
     </article>
 
     <article class="my-14">
         <div class="flex flex-row justify-center place-items-center">
             <h2 class="text-light-blue font-title mx-3 text-4xl">Coordonnées</h2>
-            <img src="../img/overwrite-icon.svg" alt="overwrite" class="w-xxs h-xxs">
         </div>
         <div class="flex xl:flex-row flex-col xl:justify-around ml-16 xl:items-center xl:mx-64 my-14">
             <div class=" flex flex-col xl:text-left">
@@ -36,19 +33,17 @@
                 </div>
                 <div class="flex items-center mb-2 ">
                     <i class="fas fa-envelope fa-2x"></i>
-                    <a href="mailto: project@easyapply.fr" class="link link-underline text-xl xl:text-2xl mx-4">
-                        {{ $candidate->user->email }}
-                    </a>
+                    <a href="mailto: {{ $candidate->user->email }}" class="link link-underline cursor-pointer text-xl xl:text-2xl mx-4">{{ $candidate->user->email }}</a>
                 </div>
             </div>
             <div class=" flex flex-col xl:text-left">
                 <div class="flex items-center mb-2 ">
                     <i class="fab fa-internet-explorer fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->website) {{ $candidate->website }} @else Non renseigné @endif</p>
+                    <p class="text-xl xl:text-2xl mx-4">@if($candidate->website){{ $candidate->website }} @else Non renseigné @endif</p>
                 </div>
                 <div class="flex items-center mb-2">
                     <i class="fab fa-linkedin fa-2x"></i>
-                    <p class="text-xl xl:text-2xl mx-4">@if ($candidate->linkedin) {{ $candidate->linkedin }} @else Non renseigné @endif</p>
+                    <p class="text-xl xl:text-2xl mx-4">@if($candidate->linkedin){{ $candidate->linkedin }} @else Non renseigné @endif</p>
                 </div>
             </div>
             <div class=" flex flex-col xl:text-left">
@@ -65,8 +60,7 @@
     </article>
 
     <div class="flex flex-row justify-center place-items-center mt-20">
-        <h2 class="text-light-blue font-title mx-3 text-2xl xl:text-3xl">Formation</h2>
-        <img src="../img/overwrite-icon.svg" alt="overwrite" class="w-xxs h-xxs">
+        <h2 class="text-light-blue font-title mx-3 text-2xl xl:text-3xl">Formation</h2> 
     </div>
 
     <section class="xl:flex xl:flex-row xl:justify-evenly xl:mt-14 flex flex-col justify-center place-items-center">
@@ -88,7 +82,7 @@
             <p class="text-xl mt-5">- conseil des clients</p>
             <p class="text-xl mt-5">- vente de médicaments sur ordonnance</p>
         </div>
-
+{{$candidate->user->password}}
     </section>
     @include('partials/footer')
 

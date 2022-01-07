@@ -49,14 +49,14 @@ class CandidateController extends Controller
       'facebook'        => ['nullable','max:50'],
       'linkedin'        => ['nullable','max:50'],
 
-      'id_user'         => ['required'],
-      'id_status'       => ['nullable'],
-      'id_location'     => ['nullable']
+      'user_id'         => ['required', 'unique:candidates'],
+      'status_id'       => ['nullable'],
+      'location_id'     => ['nullable']
     ]);
     
     Candidate::create($attributes);
 
-    return route('candidate.show', [user()->candidate->id]);
+    return redirect()->route('candidate.show', [auth()->user()->candidate->id]);
     }
 
     /**

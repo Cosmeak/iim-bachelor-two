@@ -43,9 +43,7 @@ Route::group(['middleware' => ['guest']], function() {
                           Candidate pages
 ------------------------------------------------------------------------*/
 
-Route::group(['middleware' => ['auth']], function() { 
-  Route::resource('candidate', 'App\Http\Controllers\CandidateController')->except(['index']);
-});
+Route::resource('candidate', 'App\Http\Controllers\CandidateController')->except(['index']);
 
 /*------------------------------------------------------------------------ 
                           Company pages
