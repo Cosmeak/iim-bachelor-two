@@ -22,7 +22,7 @@ class Experience extends Model
       'candidate_id'
     ];
 
-    protected $with = ['candidate', 'sector'];
+    protected $with = ['sector'];
     
 
     public function candidate() {

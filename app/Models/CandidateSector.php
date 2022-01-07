@@ -16,7 +16,7 @@ class CandidateSector extends Model
       'sector_id'
     ];
 
-    protected $with = ['candidate', 'sector'];
+    protected $with = ['sector'];
 
     public function candidate() {
       return $this->belongsTo(Candidate::class, 'candidate_id');
