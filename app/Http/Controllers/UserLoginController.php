@@ -42,13 +42,13 @@ class UserLoginController extends Controller
       if (auth()->attempt($attributes)){
         session()->regenerate();
         if (auth()->user()->is_company == 1){
-          if (auth()->user()->company->id)
+          if (!empty(auth()->user()->company->id))
             return redirect()->route('company.show', [auth()->user()->company->id]);
           else {
             return redirect()->route('company.create');
           }
         } else {
-          if (auth()->user()->candidate->id)
+          if (!empty(auth()->user()->candidate->id))
             return redirect()->route('candidate.show', [auth()->user()->candidate->id]);
           else {
             return redirect()->route('candidate.create');
