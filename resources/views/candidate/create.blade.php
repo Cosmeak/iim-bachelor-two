@@ -40,7 +40,7 @@
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="flex flex-col items-start mx-16 my-4">
+                    {{-- <div class="flex flex-col items-start mx-16 my-4">
                         <label for="status" class="my-2">Status</label>
                         <select class="btn-primary" type="text" placeholder="Status" name="id_status">
                             <option value="">--Sélectionnez l'option--</option>
@@ -54,7 +54,7 @@
                         @error('id_status')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
-                    </div>
+                    </div> --}}
                 </div>
                 <div>
                     <div class="flex flex-col items-start">
@@ -98,7 +98,7 @@
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div id ="container_ss" class=" mx-16 mt-4"> <!-- Container Soft skills -->
+                    {{-- <div id ="container_ss" class=" mx-16 mt-4"> <!-- Container Soft skills -->
                         <label for="id_soft_skill_1">Soft Skills</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
@@ -112,13 +112,13 @@
                                         @endforeach
                                 </select>
                             </div>
-                        </div>
+                        </div> 
                         <div class="flex w-tiny justify-center text-white">
                             <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
-                    </div>
-                    <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
+                    </div>--}}
+                    {{-- <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
                         <label for="id_sector_1" class="my-2">Formation</label>
                         <div class="content">
                             <div class=" options flex flex-col items-start mt-4">
@@ -137,8 +137,8 @@
                             <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
-                    </div>
-                    {{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Expériences -->
+                    </div> --}}
+                    {{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Diplomas -->
                         <label for="diploma" class="my-2" >Diplômes</label>
                         <div class="content">
                             <div class="options flex flex-col items-start mt-4">
