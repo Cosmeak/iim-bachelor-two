@@ -14,6 +14,9 @@
     .btn-blue{
         @apply rounded-full text-center border-2 border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-10 hover:text-primary hover:bg-white hover:border-2 hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
+    .btn-form{
+        @apply rounded-xl text-center border-2 shadow-md border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-10 hover:text-primary hover:bg-white hover:border-2 hover:border-primary transition duration-300 ease-out hover:ease-in;
+    }
 }
 
 
@@ -52,7 +55,23 @@ html{ /* Size for desktop */
 
 }
 
+.black-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#222, #222);
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+    padding-bottom: 5px;
+}
+
 .blue-underline:hover {
+    background-size: 100% 2px;
+    background-position: 0 100%;
+    padding-bottom: 5px;
+}
+
+.black-underline:hover {
     background-size: 100% 2px;
     background-position: 0 100%;
     padding-bottom: 5px;

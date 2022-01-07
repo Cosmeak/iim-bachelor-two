@@ -19,7 +19,7 @@
                 <iframe class="w-screen xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
             </div>
             <div class="highlight shadow-md bg-white rounded-lg px-10 py-24 relative m-14 w-xl">
-                <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm ">
+                <div class="flex justify-center place-items-center rounded-full bg-white absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm  ">
                     <img width="170" height="170" class="m-auto" src="./img/logo.png" alt="logo">
                 </div>
 
