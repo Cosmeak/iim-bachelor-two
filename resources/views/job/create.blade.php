@@ -4,7 +4,7 @@
 @section('content')
 @php
   $auth_id =  auth()->user()->id;
-  $company = App\Models\Company::where('id_user', auth()->user()->id)->first();
+  $company = App\Models\Company::where('user_id', auth()->user()->id)->first();
 @endphp
 
 <section class="text-xl">
@@ -13,7 +13,7 @@
   </div>
   <form class="flex flex-col xl:mx-96 items-center" method="POST" action="/employer/new-job">
     @csrf
-    <input type="hidden" name="id_company" value="{{$company->id}}">
+    <input type="hidden" name="company_id" value="{{$company->id}}">
     <input type="hidden" name="archive_date" value="<?= date('Y-m-d') ?>">
     <div class="flex flex-col xl:flex-row py-10" >
       <div class="flex flex-col items-start mx-16 my-4">
@@ -24,9 +24,9 @@
         </div>
       </div>
       <div class="flex flex-col items-start mx-16 my-4">
-        <label for="id_sector"class="my-2 " >Domaine d'activité</label>
+        <label for="sector_id"class="my-2 " >Domaine d'activité</label>
         <div class="input-div">
-          <select name="id_sector" class="btn-second outline-input">
+          <select name="sector_id" class="btn-second outline-input">
             <option value="">--Sélectionnez l'option--</option>
             @php
               $sectors = App\Models\Sector::all()
@@ -39,9 +39,9 @@
         </div>
       </div>
       <div class="flex flex-col items-start mx-16 my-4">
-        <label for="id_contract_type" class="my-2" >Type de contrat</label>
+        <label for="contract_type_id" class="my-2" >Type de contrat</label>
         <div class="input-div">
-          <select name="id_contract_type" class="btn-second text-gray-400 outline-input">
+          <select name="contract_type_id" class="btn-second text-gray-400 outline-input">
             @php
               $contracts = App\Models\ContractType::all()
             @endphp
@@ -62,9 +62,9 @@
     </div>
     <div class="flex flex-col xl:flex-row py-10">
       <div class="flex flex-col items-start mx-16 my-4">
-        <label for="id_working_mode" class="my-2" >Type de travail</label>
+        <label for="working_mode_id" class="my-2" >Type de travail</label>
         <div class="input-div">
-          <select name="id_working_mode" id="" class="btn-second text-gray-400 outline-input">
+          <select name="working_mode_id" id="" class="btn-second text-gray-400 outline-input">
             @php
               $works = App\Models\WorkingMode::all()
             @endphp
