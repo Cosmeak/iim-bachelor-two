@@ -3,7 +3,7 @@
 
 @section('content')
 
-
+<section class="w-full h-auto overflow-hidden">
     <div class="wave w-full h-[70rem] flex flex-col bg-primary p-8 pt-24 xl:pt-0 xl:px-24 xl:mb-36 text-center xl:text-left text-white">
         <div class="z-10 xl:mt-20">
             <h1 class="font-title text-5xl my-3">Et si on postulait autrement ?</h1><br>
@@ -11,16 +11,15 @@
             <p class="text-white text-xl xl:text-2xl">Optimisez votre recrutement à moindre coût grâce à notre service tout en un : publications illimitées d’offres, matching et scoring des</p>
             <p class="text-white text-xl xl:text-2xl">candidats, gestion automatisé des candidatures.</p>
         </div>
-
-
     </div>
+</section>
 
     <article class="my-36 ">
         <h2 class="font-title text-center text-6xl xl:mb-32  hover:text-light-blue transition duration-300 ease-out hover:ease-in"><span class="text-light-blue">E</span>asy <span class="text-light-blue">A</span>pply</h2>
 
         <div class=" flex flex-col justify-center place-items-center my-12 xl:justify-evenly xl:flex-row">
             <div class="flex justify-center my-14">
-                <iframe class="w-screen xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
+                <iframe class="w-1/2 xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
             </div>
             <div class="highlight shadow-md bg-white rounded-lg px-10 py-24 relative m-14 w-xl">
                 <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm ">
@@ -41,7 +40,7 @@
     </article>
 
     <section class="xl:flex xl:flex-row xl:justify-evenly xl:mt-24 flex flex-col justify-center place-items-center">
-        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative w-lg my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
+        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative  my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
 
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="fas fa-infinity fa-4x text-primary"></i>

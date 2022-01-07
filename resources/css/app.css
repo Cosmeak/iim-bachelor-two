@@ -12,7 +12,7 @@
     }
 
     .btn-blue{
-        @apply rounded-full text-center border-2 border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-6 hover:text-primary hover:bg-white hover:border-2 hover:border-primary transition duration-300 ease-out hover:ease-in;
+        @apply rounded-full text-center border border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-6 hover:text-primary hover:bg-white hover:border-2 hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
 }
 
