@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -79,7 +80,11 @@ class CandidateController extends Controller
      */
     public function edit($id)
     {
-        return view('candidate.edit');
+        if(auth()->user()->id == $id){
+          return view('candidate.edit', [ 'candidate' => Candidate::findOrFail(auth()->user()->candidate->id) ]);
+        } else {
+          return redirect()->route('candidate.show', $id)->with('error', 'Vous n\'êtes pas la personne possèdant se compte!');
+        }
     }
 
     /**
@@ -91,30 +96,33 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $attributes = $request->validate([
-        'first_name' => ['required', 'max:30', 'min:3'],
-        'last_name' => ['required', 'max:30', 'min:3'],
-        'birth_date' => ['date'],
-        'phone_number' => ['numeric'],
-        'profile_picture' => [''],
-        'cv' => ['max:50'],
-        'website' => [''],
-        'instagram' => ['max:50'],
-        'facebook' => ['max:50'],
-        'linkedin' => ['max:50'],
+      if(auth()->user()->id == $id) {
+        $request->validate([
+          'first_name'      => ['required', 'min:3', 'max:30'],
+          'last_name'       => ['required', 'min:3', 'max:30' ],
+          'birth_date'      => ['nullable'],
+          'phone_number'    => ['nullable'],
+          'profile_picture' => ['nullable'],
+          'cv'              => ['nullable', 'max:50'],
+          'website'         => ['nullable'],
+          'instagram'       => ['nullable','max:50'],
+          'facebook'        => ['nullable','max:50'],
+          'linkedin'        => ['nullable','max:50'],
+
+          'status_id'       => ['nullable'],
+          'location_id'     => ['nullable']
+        ]);
   
-        'id_user' => ['required', 'unique:candidates'],
-        'id_status' => ['required'],
-        'id_location' => ['']
-      ]);
+        $candidate = Candidate::findOrFail(auth()->user()->candidate->id);
 
-      $candidate = Candidate::whereUser;
+        $input = $request->input();
 
-      $input = $attributes->input();
-
-      $candidate->fill($input)->save();
-
-      return back()->with('message', 'Profil mit à jour');
+        $candidate->fill($input)->save();
+  
+        return redirect()->route('candidate.show', [ 'candidate' => $candidate ]);
+      } else { 
+        return back()->withErrors('error', 'Vous n\'êtes pas la personne possèdant se compte!');
+      }
     }
 
     /**
@@ -126,6 +134,6 @@ class CandidateController extends Controller
     public function destroy($id)
     {
       User::find(auth()->user->id)->delete();
-      return view('home');
+      return redirect()->route('home');
     }
 }
