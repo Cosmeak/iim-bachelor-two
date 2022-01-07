@@ -41,7 +41,7 @@
         <input class="mt-6 mb-1 cursor-pointer btn-blue" type="submit" value="Postuler à toutes les offres">
     </div>
     <div class="flex flex-col xl:flex-row xl:flex-wrap place-items-center justify-center">
-        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded-lg">
+        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col ">
                     <h2 class="text-2xl xl:text-3xl text-primary font-bold">Nom de la mission</h2>
@@ -58,7 +58,7 @@
             <p class="text-lg xl:text-xl">-Objectif de la mission : paragraphes sur les tâches à accomplir et des pré-requis à respecter</p><br>
             <p class="text-lg xl:text-xl text-gray pt-10 justify-self-end mt-auto">Date du post de la mission</p>
         </div>
-        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded-lg">
+        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col ">
                     <h2 class="text-3xl text-primary font-bold">Assistant Administratif H/F</h2>
@@ -75,7 +75,7 @@
             <p class="text-lg xl:text-xl text-gray pt-10 justify-self-end mt-auto">Il y a 4 jours</p>
         </div>
 
-        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded-lg">
+        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col ">
                     <h2 class="text-3xl text-primary font-bold">Nom de la mission</h2>
@@ -94,7 +94,7 @@
             <p class="text-lg xl:text-xl text-gray pt-10 justify-self-end mt-auto">Date du post de la mission</p>
         </div>
 
-        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded-lg">
+        <div class="flex flex-col w-lg xl:w-2xl h-auto my-5 xl:m-20 px-6 py-8 highlight shadow-md bg-white rounded">
             <div class="flex flex-row justify-between">
                 <div class="flex flex-col ">
                     <h2 class="text-3xl text-primary font-bold">Nom de la mission</h2>

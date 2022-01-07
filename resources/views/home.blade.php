@@ -21,7 +21,7 @@
             <div class="flex justify-center my-14">
                 <iframe class="w-1/2 xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
             </div>
-            <div class="highlight shadow-md bg-white rounded-lg px-10 py-24 relative my-14">
+            <div class="highlight shadow-md bg-white rounded px-10 py-24 relative my-14">
                 <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm ">
                     <img width="170" height="170" class="m-auto" src="./img/logo.png" alt="logo">
                 </div>
@@ -40,7 +40,7 @@
     </article>
 
     <section class="w-full xl:flex xl:flex-row xl:justify-evenly xl:mt-24 flex flex-col justify-center place-items-center">
-        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white">
+        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white">
 
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="fas fa-infinity fa-4x text-primary"></i>
@@ -53,7 +53,7 @@
 
         </div>
 
-        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
+        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="fas fa-bullseye fa-4x text-primary"></i>
             </div>
@@ -66,7 +66,7 @@
         </div>
 
 
-        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
+        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
 
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="far fa-clock fa-4x text-primary"></i>
@@ -81,7 +81,7 @@
         </div>
 
 
-        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded-lg p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
+        <div class="h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-5 relative my-16 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white ">
 
             <div class="flex rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm justify-center place-items-center text-center">
                 <i class="far fa-money-bill-alt fa-4x text-primary"></i>

@@ -443,7 +443,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .btn-primary {
   width: 20rem;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
@@ -465,7 +465,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .btn-second {
   width: 20rem;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
@@ -853,8 +853,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden {
   overflow: hidden;
 }
-.rounded-lg {
-  border-radius: 0.5rem;
+.rounded {
+  border-radius: 10px;
 }
 .rounded-full {
   border-radius: 9999px;

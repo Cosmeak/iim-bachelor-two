@@ -120,9 +120,9 @@
                         </div>
                         <div class="flex w-tiny justify-center text-white">
                             <input value="Supprimer -" type="button" id="dlt_ss"
-                                class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                                class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                             <input value="Ajouter +" type="button" id="add_ss"
-                                class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                                class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                         </div>
                     </div>
                     <div id="container_form" class=" mx-16 mt-4">
@@ -143,9 +143,9 @@
                         </div>
                         <div class="flex w-tiny justify-center text-white">
                             <input value="Supprimer -" type="button" id="dlt_ss"
-                                class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                                class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                             <input value="Ajouter +" type="button" id="add_ss"
-                                class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                                class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                         </div>
                     </div>
                     {{-- <div id ="container_dip" class="mx-16 mt-4"> <!-- Container Expériences -->
@@ -164,8 +164,8 @@
                             </div>
                         </div>
                         <div class="flex w-tiny justify-center text-white">
-                            <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
-                            <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
+                            <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded bg-light-blue">
+                            <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded bg-light-blue">
                         </div>
                     </div> --}}
                 </div>
