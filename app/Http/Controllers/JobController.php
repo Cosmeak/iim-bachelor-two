@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -22,8 +23,12 @@ class JobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('job.create');
+    {   if(!empty(auth()->user()->company->id)){
+            return view('job.create');
+        } else {
+            return redirect()->route('home');
+        }
+        
     }
 
     /**
@@ -34,7 +39,21 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'label'             => ['required'],
+            'description'       => ['required'],
+            'salary'            => ['nullable', 'numeric'],
+
+            'location_id'       => ['nullable'],
+            'working_mode_id'   => ['required'],
+            'contract_type_id'  => ['required'],
+            'company_id'        => ['required'],
+            'sector_id'         => ['required']
+        ]);
+        $input = $request->input();
+        Job::create($input);
+        $company_id = auth()->user()->company->id;
+        return redirect()->route('company.show', [$company_id]);
     }
 
     /**
