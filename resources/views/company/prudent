@@ -46,9 +46,9 @@
 
                 <section id="content_inscription_2" class="hidden flex-col justify-center items-center px-16 h-xl">
                     <div id="container_form" class="my-4">
-                      <label for="sector_id" class="my-2">Secteur d'activité</label>
+                      <label for="company-activity" class="my-2">Secteur d'activité</label>
                       <div class=" options flex flex-col items-start mt-4">
-                          <select class="btn-primary" type="text" name="sector_id">
+                          <select class="btn-primary" type="text" name="id_sector">
                               <option value="">--Sélectionnez l'option--</option>
                               @php
                                   $Sector = App\Models\Sector::all();
@@ -63,7 +63,7 @@
                       </div>
                   </div>
                   <div id="container_form" class=" mt-4">
-                      <label for="company-size_id" class="my-2">Taille de l'entreprise</label>
+                      <label for="company-size" class="my-2">Taille de l'entreprise</label>
                       <div class=" options flex flex-col items-start mt-4">
                           <select class="btn-primary" type="text" name="company_size_id">
                               <option value="">--Sélectionnez l'option--</option>
@@ -138,7 +138,7 @@
                 <section id="content_inscription_4" class="hidden flex-col justify-center items-center px-16 h-xl">
                     <div class="flex flex-col items-start my-4">
                         <label for="logo" class="my-2">Logo</label>
-                        <input type="file" class=" rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white" name="logo">
+                        <input type="file" class=" rounded-xl py-24 px-8 border-2 border-slate-600 border-dashed bg-white"name="logo">
                         @error('logo')
                             <p class="text-red-500 mt-1">{{ $message }}</p>
                         @enderror
@@ -153,4 +153,10 @@
     </section>
 
 @endsection
-
+{{-- <div class="flex flex-col items-start mx-16 my-4">
+          <label for="adress" class="my-2" >Adresse</label>
+          <input class="btn-primary" type="text" placeholder="Adresse" name="address" value="{{ old('address')}}">
+          @error('address')
+            <p class="text-red-500 mt-1">{{ $message }}</p>
+          @enderror
+        </div> --}}

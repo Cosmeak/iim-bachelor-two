@@ -54,11 +54,11 @@ class CompanyController extends Controller
             'user_id'           => ['required'],
     ]);
 
-        $attributes = $request;
+        $attributes = $request->input();
     
         Company::create($attributes);
     
-        return redirect()->route('company.show' [ auth()->user()->company->id]);
+        return redirect()->route('company.show', [ auth()->user()->company->id]);
     }
 
     /**
