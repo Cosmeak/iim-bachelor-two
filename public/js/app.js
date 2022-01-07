@@ -42,9 +42,6 @@ document.getElementById('back_inscription').addEventListener('click', function (
 // Inscription options 
 // -------------------------------------------------------------------
 
-var count_select = 1;
-
-
 var btns_add = document.querySelectorAll(".add_option");
 btns_add.forEach(function (btn) {
   btn.addEventListener('click', function () {
@@ -70,11 +67,6 @@ function AddOption(container) {
   dlt.style.filter = 'none'; // Remove grayscale
 
   var clone = div.cloneNode(true); // Clone div Soft skills
-  count_select += 1;
-  var select = clone.getElementsByTagName('select')[0];
-  var attr = select.getAttribute('name');
-  select.setAttribute('name',  attr.slice(0, -1) + count_select );
-  
 
   parent.appendChild(clone); // Add the clone as a child of the parent
 
@@ -83,10 +75,9 @@ function AddOption(container) {
   if (count > 1) {
     // If there are more than 1 div, display the Delete button
     dlt.style.display = 'flex';
-    
 
     if (count >= 3) {
-      // If there are 3 or more div, disable button add (so there are 5 options max) & add grayscale
+      // If there are 5 or more div, disable button add (so there are 5 options max) & add grayscale
       add.disabled = true;
       add.style.filter = "grayscale(100%)";
     }
@@ -100,9 +91,8 @@ function DltOption(container) {
   var parent = document.getElementById(container).getElementsByClassName('content')[0];
   var count = parent.getElementsByTagName('div').length;
   add.disabled = false; // Enable button Add
-  count_select -= 1;
+
   add.style.filter = 'none'; // Remove grayscale 
-  
 
   if (count > 1) {
     parent.removeChild(parent.lastChild); // Remove the last child of  the parent

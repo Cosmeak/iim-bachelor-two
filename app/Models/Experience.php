@@ -17,17 +17,20 @@ class Experience extends Model
       'end_date',
       'job_name',
       'description',
-      'id_sector',
-      'id_candidate'
+
+      'sector_id',
+      'candidate_id'
     ];
+
+    protected $with = ['candidate', 'sector'];
     
 
     public function candidate() {
-      return $this->belongsTo(Candidate::class);
+      return $this->belongsTo(Candidate::class, 'candidate_id');
     }
 
     public function sector() {
-      return $this->belongsTo(Sector::class);
+      return $this->belongsTo(Sector::class, 'sector_id');
     }
 
     

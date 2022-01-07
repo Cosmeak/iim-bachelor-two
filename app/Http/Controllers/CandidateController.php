@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Location;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CandidateController extends Controller
 {
@@ -39,25 +38,26 @@ class CandidateController extends Controller
     {
     // Create the user
     $attributes = $request->validate([
-      'first_name' => ['required', 'max:30', 'min:3'],
-      'last_name' => ['required', 'max:30', 'min:3'],
-      'birth_date' => ['date'],
-      'phone_number' => ['numeric'],
-      'profile_picture' => [''],
-      'cv' => ['max:50', 'nullable'],
-      'website' => ['nullable'],
-      'instagram' => ['max:50', 'nullable'],
-      'facebook' => ['max:50', 'nullable'],
-      'linkedin' => ['max:50', 'nullable'],
+      'first_name'      => ['required', 'min:3', 'max:30'],
+      'last_name'       => ['required', 'min:3', 'max:30' ],
+      'birth_date'      => ['nullable'],
+      'phone_number'    => ['nullable'],
+      'profile_picture' => ['nullable'],
+      'cv'              => ['nullable', 'max:50'],
+      'website'         => ['nullable'],
+      'instagram'       => ['nullable','max:50'],
+      'facebook'        => ['nullable','max:50'],
+      'linkedin'        => ['nullable','max:50'],
 
-      'id_user' => ['required', 'unique:candidates'],
-      'id_status' => ['required'],
-      'id_location' => ['nullable']
+      'user_id'         => ['required', 'unique:candidates'],
+      'status_id'       => ['nullable'],
+      'location_id'     => ['nullable']
     ]);
     
     Candidate::create($attributes);
+    $candidate_id = auth()->user()->candidate->id;
 
-    return view('candidate.show');
+    return redirect()->route('candidate.show', [$candidate_id]);
     }
 
     /**
@@ -68,8 +68,7 @@ class CandidateController extends Controller
      */
     public function show($id)
     {
-      $candidate = Candidate::find($id);
-      return view('candidate.show', compact('candidate'));
+      return view('candidate.show', [ 'candidate' => Candidate::findOrFail($id) ]);
     }
 
     /**

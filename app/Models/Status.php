@@ -6,9 +6,11 @@ use App\Models\Candidate;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Statu extends Model
+class Status extends Model
 {
     use HasFactory;
+
+    public $table = 'status';
 
     protected $fillable = [
       'label'

@@ -21,11 +21,11 @@ class CreateJobsTable extends Migration
             $table->date('archive_date');
             $table->timestamps();
 
-            $table->foreignId('id_location')->nullable()->constrained('locations');
-            $table->foreignId('id_working_mode')->constrained('working_modes');
-            $table->foreignId('id_contract_type')->constrained('contract_types');
-            $table->foreignId('id_company')->constrained('companies');
-            $table->foreignId('id_sector')->constrained('sectors');
+            $table->foreignId('location_id')->nullable()->constrained('locations');
+            $table->foreignId('working_mode_id')->constrained('working_modes');
+            $table->foreignId('contract_type_id')->constrained('contract_types');
+            $table->foreignId('company_id')->constrained('companies');
+            $table->foreignId('sector_id')->constrained('sectors');
         });
     }
 

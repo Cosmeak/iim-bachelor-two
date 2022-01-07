@@ -11,16 +11,20 @@ class CandidateToJob extends Model
 {
     use HasFactory;
 
+    public $table = 'candidates_to_jobs';
+
     protected $fillable = [
-      'id_candidate',
-      'id_job'
+      'candidate_id',
+      'job_id'
     ];
 
+    protected $with = ['candidate', 'job'];
+
     public function candidate() {
-      return $this->belongsTo(Candidate::class);
+      return $this->belongsTo(Candidate::class, 'candidate_id');
     }
 
     public function job() {
-      return $this->belongsTo(Job::class);
+      return $this->belongsTo(Job::class, 'job_id');
     }
 }
