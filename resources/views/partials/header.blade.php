@@ -22,7 +22,7 @@
         <a href="{{ route('home') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
       </li>
       <li>
-        <a href="{{ route('job.index') }}" class="rounded-full border-2 border-primary text-xl text-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">Recherche</a>
+        <a href="{{ route('job.index') }}" class="rounded-full border border-primary text-xl text-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">Recherche</a>
       </li>
       <li>
         <a href="{{ route('login.index') }}" class="btn-blue cursor-pointer">Se connecter</a>
