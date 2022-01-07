@@ -58,6 +58,9 @@ module.exports = {
             },
             borderRadius: {
                 DEFAULT: '10px', 
+            },
+            boxShadow: {
+                'inset': 'inset 0 3px 10px 0 rgb(0 0 0 / 0.16)',
             }
         },
     },
