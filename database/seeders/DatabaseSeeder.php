@@ -8,6 +8,7 @@ use App\Models\Country;
 use App\Models\Diploma;
 use App\Models\Softskill;
 use App\Models\CompanySize;
+use App\Models\WorkingMode;
 use App\Models\ContractType;
 use Illuminate\Database\Seeder;
 
@@ -101,6 +102,10 @@ class DatabaseSeeder extends Seeder
 
         City::create(['label' => 'Paris']);
         City::create(['label' => 'Madrid']);
+
+        WorkingMode::create(['label' => 'Présentiel']);
+        WorkingMode::create(['label' => 'Distanciel']);
+        WorkingMode::create(['label' => 'Hybride']);
 
         
     }

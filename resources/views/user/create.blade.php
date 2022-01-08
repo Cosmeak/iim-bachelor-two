@@ -3,12 +3,12 @@
     <section class="w-screen h-screen overflow-hidden relative">
         <section class="text-xl flex items-center flex-col h-screen justify-center">
             <div
-                class="hidden xl:block rounded-full w-2xl h-2xl bg-primary absolute -right-52 -top-64 border-2 border-blue-400">
+                class="hidden xl:block rounded-full w-2xl h-2xl bg-primary absolute -right-52 -top-64 border-2 border-blue-400 shadow-xl">
             </div>
-            <div class="hidden xl:block rounded-full w-2xl h-2xl bg-primary absolute -left-96 border-2 border-blue-400">
+            <div class="hidden xl:block rounded-full w-2xl h-2xl bg-primary absolute -left-96 border-2 border-blue-400 shadow-xl">
             </div>
             <div
-                class="hidden xl:block rounded-md w-2xl h-2xl bg-primary absolute right-52 top-3/4 border-2 border-blue-400">
+                class="hidden xl:block rounded-md w-2xl h-2xl bg-primary absolute right-52 top-3/4 border-2 border-blue-400 shadow-xl">
             </div>
 
             <form class="flex flex-col px-8 pb-10 pt-32 justify-center items-center bg-white relative shadow-inset rounded-lg"

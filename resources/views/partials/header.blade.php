@@ -1,5 +1,5 @@
 <header class="w-full h-[80px] bg-white hidden xl:flex items-center justify-between px-10 fixed z-20">
-    <a href="/" class="w-fit"><img src="../img/logo.png" alt="logo" class="h-full w-fit"></a>
+    <a href="/" class="w-fit"><img src="../../img/logo.png" alt="logo" class="h-full w-fit"></a>
     @auth
         <ul class="flex justify-evenly xl:w-1/3 items-center">
             <li>
@@ -38,14 +38,14 @@
 
 <header class="w-full flex xl:hidden h-[80] bg-white fixed z-20 shadow-md">
     <div class="flex justify-evenly items-center">
-        <a href="{{ route('home') }}" class="w-fit ml-4"><img src="../img/logo.png" alt="logo"
+        <a href="{{ route('home') }}" class="w-fit ml-4"><img src="../../img/logo.png" alt="logo"
                 class="h-full w-fit"></a>
         <i class="fas fa-bars fa-2x fixed right-8 w-xs cursor-pointer transition duration-500 text-primary"
             id="burger"></i>
     </div>
     <div class=" xl:hidden w-base h-full rounded-xl p-20 text-3xl flex flex-col items-center fixed right-0 top-0 bg-white translate-x-xl transition duration-500 shadow-2xl"
         id='menu-burger'>
-        <img src="../img/logo.png" alt="">
+        <img src="../../img/logo.png" alt="">
         <i class="fas fa-times fa-2x cursor-pointer my-5 text-primary" id="x"></i>
         <ul class="">
             <a href="{{ route('home') }}">
