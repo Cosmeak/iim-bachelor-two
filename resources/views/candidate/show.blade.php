@@ -22,17 +22,14 @@
                     <div class="info">
                         <i class="fas fa-id-card fa-lg text-primary"></i>
                         <h2 class="info-p">{{ $candidate->first_name }} <span class="uppercase">{{ $candidate->last_name }}</span></h2>
-                    </div>
-                    <div class="info">
-                        <p class="p"> @if ($candidate->location) {{ $candidate->location->country->label }}, {{ $candidate->location->city->label }} @else Non renseigné @endif<p>
-                    </div>  
+                    </div> 
                     <div class="info">
                         <i class="fas fa-user-graduate fa-lg text-primary"></i>
                         <p class="info-p">Étudiante</p>
                     </div>
                     <div class="info text-left ">
                         <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
-                        <p class="info-p">Nantes,France</p>
+                        <p class="info-p">@if ($candidate->location) {{ $candidate->location->country->label }}, {{ $candidate->location->city->label }}@else Non renseigné @endif</p>
                     </div>
                 </div>
             </div>
