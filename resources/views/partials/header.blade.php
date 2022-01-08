@@ -8,9 +8,8 @@
             <li>
                 <a href="{{ route('contact') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Contact</a>
             </li>
-            <li class="flex rounded-full border btn-white">
-                <img src="../img/search.png" alt="">
-                <a href="{{ route('job.index') }}" class=" mx-2 text-xl  ">Recherche</a>
+            <li>
+                <a href="{{ route('job.index') }}" class="btn-white">Recherche</a>
             </li>
             <li>
                 <form method="POST" action="{{ route('user.logout') }}" class="btn-blue flex item-center m-0">
@@ -26,11 +25,10 @@
                     class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
             </li>
             <li>
-                <a href="{{ route('job.index') }}"
-                    class="rounded-full border border-primary text-xl text-primary hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in px-4 py-2">Recherche</a>
+                <a href="{{ route('job.index') }}" class="btn-white">Recherche</a>
             </li>
             <li>
-                <a href="{{ route('login.index') }}" class="btn-blue cursor-pointer">Se connecter</a>
+                <a href="{{ route('login.index') }}" class="btn-blue">Se connecter</a>
             </li>
         @endauth
 

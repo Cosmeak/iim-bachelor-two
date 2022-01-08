@@ -22,7 +22,7 @@ Route::get('/404', function() {
 })->name('404');
 
 Route::fallback(function(){
-  return redirect()->route('404');
+  return view('404');
 });
 
 Route::get('/contact', function() {
@@ -33,9 +33,7 @@ Route::get('/contact', function() {
                             User pages
 ------------------------------------------------------------------------*/
 
-
 Route::post('user/logout', ['App\Http\Controllers\UserLoginController', 'close'])->name('user.logout')->middleware('auth');
-
 
 Route::group(['middleware' => ['guest']], function() { 
   Route::resource('user', 'App\Http\Controllers\UserController')->except(['show']);
@@ -52,6 +50,7 @@ Route::resource('candidate', 'App\Http\Controllers\CandidateController')->except
 Route::group(['prefix' => 'candidate'], function() {
   Route::resource('education', 'App\Http\Controllers\EducationController')->except(['index', 'create', 'show']);
 });
+
 /*------------------------------------------------------------------------ 
                           Company pages
 ------------------------------------------------------------------------*/

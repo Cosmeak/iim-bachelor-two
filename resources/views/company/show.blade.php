@@ -38,7 +38,11 @@
                     </div>
                     <div class="info">
                         <i class="fas fa-envelope fa-lg text-primary"></i>
-                        <a href="mailto: {{ $company->email }}" class="link link-underline cursor-pointer info-p">{{ $company->email }}</a>
+                        @if ($company->email)
+                            <a href="mailto: {{ $company->email }}"class="link link-underline cursor-pointer info-p">{{ $company->phone_number }}</a>
+                        @else
+                            <p class="info-p">Non renseigné</p>
+                        @endif
                     </div>
                     <div class="info ">
                         <i class="fab fa-internet-explorer fa-lg text-primary"></i>

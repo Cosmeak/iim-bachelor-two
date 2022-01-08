@@ -19,21 +19,16 @@ class Education extends Model
       'start_date',
       'end_date',
 
-      'degree_id',
       'candidate_id',
       'diploma_id'
     ];
 
-    protected $with = ['degree', 'diploma'];
+    protected $with = ['diploma'];
 
     public function candidate() {
       return $this->belongsTo(Candidate::class, 'candidate_id');
     }
-
-    public function degree() {
-      return $this->belongsTo(Degree::class, 'degree_id');
-    }
-
+    
     public function diploma() {
       return $this->belongsTo(Diploma::class, 'diploma_id');
     }

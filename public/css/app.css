@@ -1435,6 +1435,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-6 {
   padding-bottom: 1.5rem;
 }
+.pt-\[32px\] {
+  padding-top: 32px;
+}
 .text-left {
   text-align: left;
 }
