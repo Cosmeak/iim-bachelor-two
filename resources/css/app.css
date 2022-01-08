@@ -37,7 +37,7 @@
         @apply h-auto flex flex-col w-10/12 xl:w-6/12 m-auto gap-y-[16px]
     }
     .subcontent-section {
-        @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-x-[16px]
+        @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-[16px]
     }
     .profile-card{
         @apply highlight h-full xl:h-[300px] w-full xl:w-1/2 flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center

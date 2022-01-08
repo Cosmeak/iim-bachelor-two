@@ -726,8 +726,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-direction: column;
   place-items: center;
   justify-content: center;
-  -moz-column-gap: 16px;
-       column-gap: 16px;
+  gap: 16px;
 }
 @media (min-width: 1280px) {
 
