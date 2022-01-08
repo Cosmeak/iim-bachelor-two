@@ -16,6 +16,8 @@ module.exports = {
                 'white-cream': '#fef8f2',
                 'black-mat': '#202020',
                 'dark-blue': '#4138ff',
+                'warning': '#e63946',
+                'notice': '#e9c46a',
                 'light-blue': '#38B6FF', // a retirer une fois tout changer en primary
             },
             width: {
@@ -57,7 +59,7 @@ module.exports = {
                 'screen': '100vh',
             },
             borderRadius: {
-                DEFAULT: '10px', 
+                DEFAULT: '10px',
             },
             boxShadow: {
                 'inset': 'inset 0 3px 10px 0 rgb(0 0 0 / 0.16)',

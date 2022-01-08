@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <section class="w-full h-auto overflow-hidden pt-[80px]">
+    <section class="w-full h-auto overflow-hidden">
         <div class="wave w-full h-[70rem] flex flex-col bg-primary px-8 xl:px-24 text-center xl:text-left text-white">
             <div class="z-10 xl:mt-16 flex flex-col-reverse xl:flex-row justify-around place-items-center">
                 <div class="xl:w-1/2 w-5/6">

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    /** All buttons*/ 
+    /** All buttons*/
     .btn-primary {
         @apply py-2 px-4 bg-white rounded shadow-inset focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-80;
     }
@@ -15,6 +15,12 @@
     }
     .btn-white{
         @apply rounded-full text-center border border-primary bg-white text-xl text-primary py-[4px] px-[16px] hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in;
+    }
+    .btn-red{
+        @apply rounded-full text-center border border-primary bg-white text-xl text-primary py-[4px] px-[16px] hover:text-white hover:bg-warning hover:border-warning transition duration-300 ease-out hover:ease-in;
+    }
+    .btn-yellow{
+        @apply rounded-full text-center border border-primary bg-white text-xl text-primary py-[4px] px-[16px] hover:text-white hover:bg-notice hover:border-notice transition duration-300 ease-out hover:ease-in;
     }
     .perk-card{
         @apply w-5/6 xl:w-1/4 h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-10 relative my-20 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white;
