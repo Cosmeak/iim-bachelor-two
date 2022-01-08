@@ -1,17 +1,14 @@
-<header class="w-full h-[100] bg-white hidden xl:flex items-center justify-between px-10">
+<header class="w-full h-[80px] bg-white hidden xl:flex items-center justify-between px-10 fixed z-20">
     <a href="/" class="w-fit"><img src="../img/logo.png" alt="logo" class="h-full w-fit"></a>
     @auth
         <ul class="flex justify-evenly xl:w-1/3 items-center">
             <li>
-                <a href="{{ route('home') }}"
-                    class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
+                <a href="{{ route('home') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
             </li>
             <li>
-                <a href="{{ route('contact') }}"
-                    class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Contact</a>
+                <a href="{{ route('contact') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Contact</a>
             </li>
-            <li
-                class="flex rounded-full border btn-white">
+            <li class="flex rounded-full border btn-white">
                 <img src="../img/search.png" alt="">
                 <a href="{{ route('job.index') }}" class=" mx-2 text-xl  ">Recherche</a>
             </li>

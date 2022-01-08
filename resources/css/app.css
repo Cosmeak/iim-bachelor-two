@@ -3,28 +3,54 @@
 @tailwind utilities;
 
 @layer components {
+    /** All buttons*/ 
     .btn-primary {
         @apply py-2 px-4 bg-white rounded shadow-inset focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-80;
     }
-
     .btn-second {
         @apply py-2 px-4 bg-white rounded shadow-md focus:outline-none w-80;
     }
-
     .btn-blue{
-        @apply rounded-full text-center border border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-6 hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in;
+        @apply rounded-full text-center border border-primary bg-primary text-xl text-white py-[4px] px-[16px] hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
     .btn-white{
-        @apply rounded-full text-center border border-primary bg-white text-xl xl:text-2xl text-primary py-2 px-6 hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in;
-   }
-
+        @apply rounded-full text-center border border-primary bg-white text-xl text-primary py-[4px] px-[16px] hover:text-white hover:bg-primary transition duration-300 ease-out hover:ease-in;
+    }
     .perk-card{
         @apply w-5/6 xl:w-1/4 h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-10 relative my-20 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white;
     }
     .btn-form{
         @apply rounded-xl text-center border shadow-md border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-10 hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
+    .btn-edit {
+        @apply flex justify-center place-items-center rounded-full bg-primary w-[32px] h-[32px] absolute right-8 xl:right-10 shadow-inset m-auto z-10
+    }
 
+    /** For Show pages of candidate and company */
+    .profile-show {
+        @apply h-auto flex flex-col gap-y-[32px]
+    }
+    .split-section {
+        @apply flex flex-row justify-center place-items-center p-[8px] shadow-md w-full m-auto rounded bg-white highlight relative text-center text-light-blue font-title h-auto
+    }
+    .content-section {
+        @apply h-auto flex flex-col w-10/12 xl:w-6/12 m-auto gap-y-[16px]
+    }
+    .subcontent-section {
+        @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-x-[16px]
+    }
+    .profile-card{
+        @apply highlight h-full xl:h-[300px] w-full xl:w-1/2 flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center
+    }
+    .title {
+        @apply text-light-blue font-title text-2xl text-center
+    }
+    .info {
+        @apply flex flex-row place-items-center gap-x-[8px]
+    }
+    .info-p{
+        @apply font-title text-xl
+    }
 }
 
 
