@@ -25,7 +25,7 @@
                     </div> 
                     <div class="info">
                         <i class="fas fa-user-graduate fa-lg text-primary"></i>
-                        <p class="info-p">Étudiante</p>
+                        <p class="info-p">@if ($candidate->status) {{ $candidate->status->label }}@else Non renseigné @endif</p>
                     </div>
                     <div class="info text-left ">
                         <i class="fas fa-map-marker-alt fa-lg text-primary"></i>
