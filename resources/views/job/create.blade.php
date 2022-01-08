@@ -86,11 +86,39 @@
                     <input type="text" class=" my-2 btn-primary" name="tag_id">
                 </div>
                 <div class="flex flex-col my-2">
-                    <label for="location">Localisation</label>
-                    <input type="text" class=" my-1 mt-2 btn-primary" placeholder="Ville" name="city_id">
-                    <input type="text" class=" my-1 btn-primary" placeholder="Pays" name="country_id">
-                    <input type="text" class=" my-1 btn-primary" placeholder="Adresse" name="address">
-                    <input type="text" class=" my-1 btn-primary" placeholder="Code postal" name="zipcode">
+                    <div class="flex flex-col my-2">
+                        <label for="city">Localisation</label>
+                        <div class=" options flex flex-col items-start mt-4">
+                            <select class="btn-primary" type="text" name="city">
+                                <option value="">--Sélectionnez l'option--</option>
+                                @php
+                                    $cities = App\Models\City::all();
+                                @endphp
+                                @foreach ($cities as $city)
+                                    <option value="{{ $city->id }}">{{ $city->label }}</option>
+                                @endforeach
+                            </select>
+                            @error('city')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class=" options flex flex-col items-start mt-4">
+                            <select class="btn-primary" type="text" name="country">
+                                <option value="">--Sélectionnez l'option--</option>
+                                @php
+                                    $countries = App\Models\Country::all();
+                                @endphp
+                                @foreach ($countries as $country)
+                                    <option value="{{ $country->id }}">{{ $country->label }}</option>
+                                @endforeach
+                            </select>
+                            @error('country')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <input type="text" class=" my-1 btn-primary" placeholder="Adresse" name="address">
+                        <input type="text" class=" my-1 btn-primary" placeholder="Code postal" name="zipcode">
+                    </div>
                 </div>
             </div>
         </section>
