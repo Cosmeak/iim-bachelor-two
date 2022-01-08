@@ -51,11 +51,12 @@ class CompanyController extends Controller
             'location_id'       => ['nullable'],
             'company_size_id'   => ['nullable'],
             'sector_id'         => ['nullable'],
-            'user_id'           => ['required'],
     ]);
-        $attributes = $request->input();
-        Company::create($attributes);
-        return redirect()->route('company.show', [ auth()->user()->company->id]);
+
+        $input = $request->input();
+        $input['user_id'] = auth()->user()->id;
+        $company = Company::create($input);
+        return redirect()->route('company.show', [ $company->id]);
     }
 
     /**

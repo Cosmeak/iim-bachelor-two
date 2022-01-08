@@ -1,7 +1,3 @@
-@extends('layout')
-@include('partials/header')
-
-@section('content')
 <form action="{{ route('candidate.update', [$candidate->user->id]) }}" method="POST">
     @method('PUT')
     @csrf {{-- token check --}}
@@ -94,5 +90,3 @@
         </div>
     </section>
 </form>
-@include('partials/footer')
-@endsection

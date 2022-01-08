@@ -2,7 +2,7 @@
 @include('partials/header')
 @section('content')
 <main class="profile-show pt-[80px]">
-    <section class="moving-gradient w-10/12 xl:w-6/12 rounded-b-[10px] flex justify-center mx-auto h-[180px] relative mb-[32px]">
+    <section class="moving-gradient w-10/12 xl:w-6/12 rounded-b-[10px] flex justify-center mx-auto h-[180px] relative">
         <span class="my-60"></span>
         <div class="w-[90px] xl:w-[120px] h-[90px] xl:h-[120px] flex rounded-full bg-white shadow-md absolute justify-center bottom-[-23%] xl:bottom-[-30%] ">
             <img class="object-contain" width="90" height="90" src="@if($candidate->profile_picture){{ $candidate->profile_picture }}@else ../img/logo.png @endif" alt="">
@@ -11,6 +11,7 @@
 
     <article class="content-section">
         <div class="split-section">
+            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
             <p class="text-2xl">Informations</p>
             <button class="btn-edit" id="form_edit_candidate"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
         </div>
@@ -63,72 +64,48 @@
                 </div>
             </div>
         </div>
-
-
     </article>
 
+    @if ($candidate->education->count() > 0 )
+        <article class="content-section">
+            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
+            <div class="split-section">
+                <p class="text-2xl">Formation</p>
+                <button class="btn-edit" id="form_edit_formation"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
+            </div>
+            <div class="subcontent-section-grid">
+            @foreach ($candidate->education as $education)
+                <div class="profile-card">
+                    <p class="title">{{ $education->label }}</p>
+                    <p class="info-p">Du {{ $education->start_date }} au {{ $education->end_date }}</p>
+                    <p class="info-p">{{ $education->degree->label }},{{ $education->diploma->label }}</p>
+                </div>
+            @endforeach
+            </div>
+        </article>
+    @endif
 
-    <article class="content-section">
-        <div class="split-section">
-            <p class="text-2xl">Formation</p>
-            <button class="btn-edit" id="form_edit_formation"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
+    @if ($candidate->experience->count() > 0 )
+        <article class="content-section">
+            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
+            <div class="split-section">
+                <p class="text-2xl">Experience</p>
+                <button class="btn-edit" id="form_edit_experience"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
+            </div>
+            <div class="subcontent-section-grid">
+            @foreach ($candidate->experience as $experience)
+                <div class="profile-card">
+                    <p class="title">{{ $experience->company_name }}</p>
+                    <p class="info-p">Du {{ $experience->start_date }} au {{ $experience->end_date }}</p>
+                    <p class="info-p">{{ $experience->job_name }}</p>
+                    <p class="info-p">{{ $experience->sector->label }}</p>
+                    <p class="info-p">{{ $experience->description }}</p>
+                </div>
+            @endforeach
+            </div>
+        </article>
+    @endif
 
-        </div>
-        <div class="flex flex-col xl:flex-row justify-center place-items-center xl:justify-between">
-            <div class="highlight w-full xl:w-1/2   flex flex-col shadow-md rounded bg-white px-6 xl:px-10 py-6 mb-10">
-                    <p class="title">Stage en pharmacie</p>
-                    <p class="text-center">De mai 2020 à juillet 2020</p>
-                    <p class="text-lg xl:text-xl mt-10 xl:mt-14">Stage rémunéré de 3 mois dans une pharmacie
-                        dans le 5ème arrondissement de Paris.
-                    </p><br>
-                    <p class="text-lg xl:text-xl mt-2 xl:mt-5">- approvisionnement des stocks</p>
-                    <p class="text-lg xl:text-xl mt-2 xl:mt-5">- conseil des clients</p>
-                    <p class="text-lg xl:text-xl mt-2 xl:mt-5">- vente de médicaments sur ordonnance</p>
-            </div>
-            <div class="highlight w-full xl:w-1/2 ml-0 xl:ml-14 flex flex-col shadow-md rounded bg-white px-6 xl:px-10 py-6 mb-10">
-                    <p class="title">Stage en pharmacie</p>
-                    <p class="text-center">De mai 2020 à juillet 2020</p>
-                    <p class="text-lg xl:text-xl mt-10 xl:mt-14">Stage rémunéré de 3 mois dans une pharmacie
-                        dans le 5ème arrondissement de Paris.
-                    </p><br>
-                    <p class="text-lg xl:text-xl mt-2 xl:mt-5">- approvisionnement des stocks</p>
-                    <p class="text-lg xl:text-xl mt-2 xl:mt-5">- conseil des clients</p>
-                    <p class="text-lg xl:text-xl mt-2 xl:mt-5">- vente de médicaments sur ordonnance</p>
-            </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="content-section">
-        <div class="split-section">
-            <p class="text-light-blue font-title text-2xl">Expériences</p>
-            <button class="btn-edit"" id="form_edit_experience"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
-
-        </div>
-        <div class="flex flex-col xl:flex-row justify-center place-items-center xl:justify-between">
-            <div class="highlight w-full xl:w-1/2  flex flex-col shadow-md rounded bg-white px-6 xl:px-10 py-6 mb-10">
-                <p class="title">Stage en pharmacie</p>
-                <p class="text-center">De mai 2020 à juillet 2020</p>
-                <p class="text-lg xl:text-xl mt-10 xl:mt-14">Stage rémunéré de 3 mois dans une pharmacie
-                    dans le 5ème arrondissement de Paris.
-                </p><br>
-                <p class="text-lg xl:text-xl mt-2 xl:mt-5">- approvisionnement des stocks</p>
-                <p class="text-lg xl:text-xl mt-2 xl:mt-5">- conseil des clients</p>
-                <p class="text-lg xl:text-xl mt-2 xl:mt-5">- vente de médicaments sur ordonnance</p>
-            </div>
-            <div class="highlight w-full xl:w-1/2 ml-0 xl:ml-14 flex flex-col shadow-md rounded bg-white px-6 xl:px-10 py-6 mb-10">
-                <p class="title">Stage en pharmacie</p>
-                <p class="text-center">De mai 2020 à juillet 2020</p>
-                <p class="text-lg xl:text-xl mt-10 xl:mt-14">Stage rémunéré de 3 mois dans une pharmacie
-                    dans le 5ème arrondissement de Paris.
-                </p><br>
-                <p class="text-lg xl:text-xl mt-2 xl:mt-5">- approvisionnement des stocks</p>
-                <p class="text-lg xl:text-xl mt-2 xl:mt-5">- conseil des clients</p>
-                <p class="text-lg xl:text-xl mt-2 xl:mt-5">- vente de médicaments sur ordonnance</p>
-            </div>
-        </div>
-        </div>
-    </article>
 </main>
 @include('partials/footer')
 @endsection

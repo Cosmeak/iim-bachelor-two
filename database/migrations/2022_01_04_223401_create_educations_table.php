@@ -20,7 +20,6 @@ class CreateEducationsTable extends Migration
             $table->date('end_date');
             $table->timestamps();
 
-            $table->foreignId('degree_id')->constrained('degrees');
             $table->foreignId('candidate_id')->constrained('candidates');
             $table->foreignId('diploma_id')->constrained('diplomas');
         });

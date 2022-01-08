@@ -617,7 +617,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .btn-edit {
   position: absolute;
-  right: 2rem;
+  right: 16px;
   z-index: 10;
   margin: auto;
   display: flex;
@@ -632,18 +632,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: inset 0 3px 10px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-@media (min-width: 1280px) {
-
-  .btn-edit {
-    right: 2.5rem;
-  }
+.btn-plus {
+  position: absolute;
+  left: 16px;
+  z-index: 10;
+  margin: auto;
+  display: flex;
+  height: 32px;
+  width: 32px;
+  place-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 182 255 / var(--tw-bg-opacity));
+  --tw-shadow: inset 0 3px 10px 0 rgb(0 0 0 / 0.16);
+  --tw-shadow-colored: inset 0 3px 10px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 /** For Show pages of candidate and company */
 .profile-show {
   display: flex;
   height: auto;
   flex-direction: column;
-  row-gap: 32px;
+  row-gap: 64px;
 }
 .split-section {
   margin: auto;
@@ -752,56 +763,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    position: relative;
-    z-index: 0;
-}
-.profile-card:before, .profile-card:after {
-    content: '';
-    width: 0%;
-    height: 0%;
-    position: absolute;
-    border-radius: 5px;
-    visibility: hidden;
-
-}
-.profile-card:before {
-    border-top: 2px solid #38b6ff;
-    border-right: 2px solid #38b6ff;
-    transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
-    top: 0;
-    left: 0;
-
-}
-.profile-card:after {
-    border-left: 2px solid #38b6ff;
-    border-bottom: 2px solid #38b6ff;
-    bottom: 0;
-    right: 0;
-    transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
-}
-.profile-card:hover {
-    -webkit-animation: pulse 3s ease-out 0.4s;
-            animation: pulse 3s ease-out 0.4s;
-}
-.profile-card:hover:before, .profile-card:hover:after {
-    width: 100%;
-    height: 100%;
-    visibility: visible;
-}
-.profile-card:hover:before {
-    transition: width .1s ease, height .1s ease .1s;
-}
-.profile-card:hover:after {
-    transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
 }
 @media (min-width: 1280px) {
 
   .profile-card {
     height: 300px;
-  }
-
-  .profile-card {
-    width: 50%;
   }
 }
 .title {
@@ -823,6 +789,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: "Baloo 2", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.subcontent-section-grid {
+  display: grid;
+  height: auto;
+  width: 100%;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (min-width: 1280px) {
+
+  .subcontent-section-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 .fixed {
   position: fixed;
@@ -907,9 +886,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .m-5 {
   margin: 1.25rem;
-}
-.m-24 {
-  margin: 6rem;
 }
 .m-4 {
   margin: 1rem;
@@ -1060,23 +1036,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-20 {
   margin-top: 5rem;
 }
-.mb-\[32px\] {
-  margin-bottom: 32px;
-}
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-.mt-10 {
-  margin-top: 2.5rem;
-}
-.ml-0 {
-  margin-left: 0px;
-}
 .mt-1 {
   margin-top: 0.25rem;
 }
 .mt-6 {
   margin-top: 1.5rem;
+}
+.mt-\[32px\] {
+  margin-top: 32px;
 }
 .mb-24 {
   margin-bottom: 6rem;
@@ -1143,9 +1110,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-\[90px\] {
   height: 90px;
-}
-.h-32 {
-  height: 8rem;
 }
 .h-24 {
   height: 6rem;
@@ -1219,16 +1183,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[90px\] {
   width: 90px;
 }
+.w-24 {
+  width: 6rem;
+}
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-.w-3\/4 {
-  width: 75%;
-}
-.w-24 {
-  width: 6rem;
 }
 .w-xs {
   width: 5rem;
@@ -1304,9 +1265,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-8 {
   gap: 2rem;
 }
-.gap-16 {
-  gap: 4rem;
-}
 .justify-self-end {
   justify-self: end;
 }
@@ -1330,9 +1288,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rounded-3xl {
   border-radius: 1.5rem;
-}
-.rounded-\[20px\] {
-  border-radius: 20px;
 }
 .rounded-2xl {
   border-radius: 1rem;
@@ -1445,11 +1400,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-10 {
   padding: 2.5rem;
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-12 {
   padding: 3rem;
+}
+.p-8 {
+  padding: 2rem;
 }
 .p-20 {
   padding: 5rem;
@@ -1505,21 +1460,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 5rem;
   padding-right: 5rem;
 }
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .py-7 {
   padding-top: 1.75rem;
@@ -1559,15 +1506,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-\[80px\] {
   padding-top: 80px;
 }
-.pb-8 {
-  padding-bottom: 2rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
-}
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1576,6 +1514,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-6 {
   padding-bottom: 1.5rem;
+}
+.pt-\[32px\] {
+  padding-top: 32px;
 }
 .text-left {
   text-align: left;
@@ -1629,9 +1570,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .uppercase {
   text-transform: uppercase;
-}
-.leading-relaxed {
-  line-height: 1.625;
 }
 .leading-tight {
   line-height: 1.25;
@@ -2248,10 +2186,6 @@ input:checked + .slider-2:before {
     margin: 9rem;
   }
 
-  .xl\:m-0 {
-    margin: 0px;
-  }
-
   .xl\:m-20 {
     margin: 5rem;
   }
@@ -2274,11 +2208,6 @@ input:checked + .slider-2:before {
   .xl\:mx-64 {
     margin-left: 16rem;
     margin-right: 16rem;
-  }
-
-  .xl\:mx-20 {
-    margin-left: 5rem;
-    margin-right: 5rem;
   }
 
   .xl\:my-10 {
@@ -2312,10 +2241,6 @@ input:checked + .slider-2:before {
 
   .xl\:mt-5 {
     margin-top: 1.25rem;
-  }
-
-  .xl\:ml-14 {
-    margin-left: 3.5rem;
   }
 
   .xl\:block {
@@ -2352,10 +2277,6 @@ input:checked + .slider-2:before {
 
   .xl\:h-\[120px\] {
     height: 120px;
-  }
-
-  .xl\:h-auto {
-    height: auto;
   }
 
   .xl\:h-xl {
@@ -2402,10 +2323,6 @@ input:checked + .slider-2:before {
     width: 120px;
   }
 
-  .xl\:w-sm {
-    width: 10rem;
-  }
-
   .xl\:w-2xl {
     width: 50rem;
   }
@@ -2430,20 +2347,12 @@ input:checked + .slider-2:before {
     flex-wrap: wrap;
   }
 
-  .xl\:place-items-center {
-    place-items: center;
-  }
-
   .xl\:items-center {
     align-items: center;
   }
 
   .xl\:justify-start {
     justify-content: flex-start;
-  }
-
-  .xl\:justify-center {
-    justify-content: center;
   }
 
   .xl\:justify-between {
@@ -2474,14 +2383,6 @@ input:checked + .slider-2:before {
     padding: 0px;
   }
 
-  .xl\:p-24 {
-    padding: 6rem;
-  }
-
-  .xl\:p-8 {
-    padding: 2rem;
-  }
-
   .xl\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
@@ -2495,11 +2396,6 @@ input:checked + .slider-2:before {
   .xl\:px-64 {
     padding-left: 16rem;
     padding-right: 16rem;
-  }
-
-  .xl\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
   }
 
   .xl\:text-left {
