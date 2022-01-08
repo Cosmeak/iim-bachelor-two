@@ -2084,6 +2084,9 @@ if (document.getElementById('form_edit')) {
   document.getElementById('x_edit').addEventListener('click', function () {
     document.getElementById('form_edit').style.display = "none";
   });
+  document.getElementById('form_edit_company').addEventListener('click', function () {
+    document.getElementById('form_edit').style.display = "block";
+  });
 }
 
 if (document.getElementById('inscription_1')) {

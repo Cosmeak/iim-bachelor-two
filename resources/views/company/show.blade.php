@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="subcontent-section">
-                        <div class="profile-card">
+                        <div class="profile-card xl:h-[350px] ">
                             <p class="title">Information</p>
                             <div class="flex flex-col items-end">
                                 <div class="info my-1">
@@ -101,42 +101,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-card">
+                        <div class="profile-card xl:h-[350px] ">
                             <p class="title">Coordonnées</p>
                             <div class="flex flex-col">
-                                <div class="info ">
-                                    <i class="fas fa-phone-square-alt fa-lg text-primary"></i>
-                                    <p class="info-p">@if ($company->phone_number){{ $company->phone_number }} @else Non renseigné @endif</p>
+                                <div class="info my-1">
+                                    <i class="fas fa-phone-square-alt fa-lg text-primary mx-auto"></i>
+                                    <input class="btn-primary" value="@if ($company->phone_number){{ $company->phone_number }} @else Non renseigné @endif">
                                 </div>
-                                <div class="info">
-                                    <i class="fas fa-envelope fa-lg text-primary"></i>
-                                    @if ($company->email)
-                                        <a href="mailto: {{ $company->email }}"
-                                            class="link link-underline cursor-pointer info-p">{{ $company->phone_number }}</a>
-                                    @else
-                                        <p class="info-p">Non renseigné</p>
-                                    @endif
+                                <div class="info my-1">
+                                    <i class="fas fa-envelope fa-lg text-primary mx-auto"></i>
+                                    
+                                        <input
+                                            class="btn-primary" value="@if($company->email){{ $company->email }} @else Non renseigné @endif">
                                 </div>
-                                <div class="info ">
-                                    <i class="fab fa-internet-explorer fa-lg text-primary"></i>
-                                    <p class="info-p">@if ($company->website){{ $company->website }} @else Non renseigné @endif</p>
+                                <div class="info my-1">
+                                    <i class="fab fa-internet-explorer fa-lg text-primary mx-auto"></i>
+                                    <input class="btn-primary" value="@if ($company->website){{ $company->website }} @else Non renseigné @endif">
                                 </div>
-                                <div class="info">
-                                    <i class="fab fa-linkedin fa-lg text-primary"></i>
-                                    <p class="info-p">@if ($company->linkedin){{ $company->linkedin }} @else Non renseigné @endif</p>
+                                <div class="info my-1">
+                                    <i class="fab fa-linkedin fa-lg text-primary mx-auto"></i>
+                                    <input class="btn-primary" value="@if ($company->linkedin){{ $company->linkedin }} @else Non renseigné @endif">
                                 </div>
-                                <div class="info">
-                                    <i class="fab fa-instagram fa-lg text-primary"></i>
-                                    <p class="info-p">@if ($company->instagram) {{ $company->instagram }} @else Non renseigné @endif</p>
+                                <div class="info my-1">
+                                    <i class="fab fa-instagram fa-lg text-primary mx-auto"></i>
+                                    <input class="btn-primary" value="@if ($company->instagram) {{ $company->instagram }} @else Non renseigné @endif">
                                 </div>
-                                <div class="info">
-                                    <i class="fab fa-facebook-square fa-lg text-primary"></i>
-                                    <p class="info-p">@if ($company->facebook) {{ $company->facebook }} @else Non renseigné @endif</p>
+                                <div class="info my-1">
+                                    <i class="fab fa-facebook-square fa-lg text-primary mx-auto"></i>
+                                    <input class="btn-primary" value="@if ($company->facebook) {{ $company->facebook }} @else Non renseigné @endif">
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="flex justify-center pt-10">
+                        <button type="submit" class="btn-form">Modifier</button>
+                    </div>
                 </article>
+                
             </section>
         </form>
 

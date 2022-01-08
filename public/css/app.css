@@ -838,11 +838,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .z-10 {
   z-index: 10;
 }
-.z-20 {
-  z-index: 20;
-}
 .z-0 {
   z-index: 0;
+}
+.z-20 {
+  z-index: 20;
 }
 .m-auto {
   margin: auto;
@@ -1010,9 +1010,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-7 {
   margin-top: 1.75rem;
-}
-.mr-auto {
-  margin-right: auto;
 }
 .block {
   display: block;
@@ -1207,12 +1204,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-8 {
   gap: 2rem;
 }
-.self-start {
-  align-self: flex-start;
-}
-.justify-self-start {
-  justify-self: start;
-}
 .justify-self-end {
   justify-self: end;
 }
@@ -1250,9 +1241,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-2 {
   border-width: 2px;
-}
-.border {
-  border-width: 1px;
 }
 .border-t-2 {
   border-top-width: 2px;
@@ -1310,10 +1298,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-stone-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
-}
-.bg-pink-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 24 93 / var(--tw-bg-opacity));
 }
 .bg-inherit {
   background-color: inherit;
@@ -2202,6 +2186,14 @@ input:checked + .slider-2:before {
 
   .xl\:h-sm {
     height: 10rem;
+  }
+
+  .xl\:h-\[300px\] {
+    height: 300px;
+  }
+
+  .xl\:h-\[350px\] {
+    height: 350px;
   }
 
   .xl\:min-h-screen {
