@@ -40,7 +40,7 @@
         @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-[16px]
     }
     .profile-card{
-        @apply highlight h-full xl:h-[300px] w-full xl:w-1/2 flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center
+        @apply h-full xl:h-[300px] w-full xl:w-1/2 flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center
     }
     .title {
         @apply text-light-blue font-title text-2xl text-center
