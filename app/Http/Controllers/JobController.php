@@ -65,7 +65,6 @@ class JobController extends Controller
         $tag['job_id'] = $job->id;
 
         $tag_list = [$input['tag_id_1'], $input['tag_id_2'], $input['tag_id_3']];
-        dump($tag_list);
         foreach($tag_list as $tag_){
             $tag['tag_id'] = $tag_;
             JobTag::create($tag);

@@ -28,7 +28,7 @@
 
     /** For Show pages of candidate and company */
     .profile-show {
-        @apply h-auto flex flex-col gap-y-[32px]
+        @apply h-auto flex flex-col gap-y-[64px]
     }
     .split-section {
         @apply flex flex-row justify-center place-items-center p-[8px] shadow-md w-full m-auto rounded bg-white highlight relative text-center text-light-blue font-title h-auto
@@ -40,7 +40,7 @@
         @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-[16px]
     }
     .profile-card{
-        @apply h-full xl:h-[300px] w-full xl:w-1/2 flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center
+        @apply h-full xl:h-[300px] w-full  flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center
     }
     .title {
         @apply text-light-blue font-title text-2xl text-center
@@ -50,6 +50,9 @@
     }
     .info-p{
         @apply font-title text-xl
+    }
+    .subcontent-section-grid {
+        @apply h-auto w-full grid grid-cols-1 xl:grid-cols-2 gap-[16px]
     }
 }
 
