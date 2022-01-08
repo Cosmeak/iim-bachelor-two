@@ -1,5 +1,5 @@
 <header class="w-full h-[80px] bg-white hidden xl:flex items-center justify-between px-10 fixed z-20 shadow-md">
-    <a href="/" class="w-fit"><img src="../img/logo.png" alt="logo" class="h-full w-fit"></a>
+    <a href="/" class="w-fit"><img src="../../img/logo.png" alt="logo" class="h-full w-fit"></a>
     @auth
         <ul class="flex justify-evenly xl:w-1/3 items-center">
             <li>

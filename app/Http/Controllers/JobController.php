@@ -51,10 +51,6 @@ class JobController extends Controller
             'contract_type_id'  => ['required'],
             'company_id'        => ['required'],
             'sector_id'         => ['required'],
-
-            'tag_id_1'          => ['required'],
-            'tag_id_2'          => ['required'],
-            'tag_id_3'          => ['required'],
         ]);
 
         $input = $request->input();

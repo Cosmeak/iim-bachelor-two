@@ -31,9 +31,9 @@
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-col my-2">
-                        <label for="name">Mode de travail <span class="text-red-500">*</span></label>
+                        <label for="working_mode_id">Mode de travail <span class="text-red-500">*</span></label>
                         <div class="flex flex-col items-start mt-4">
-                            <select class="btn-primary" type="text" name="contract_type_id">
+                            <select class="btn-primary" type="text" name="working_mode_id">
                                 <option value="">--Sélectionnez l'option--</option>
                                 @php
                                     $working_mods = App\Models\WorkingMode::all();
@@ -42,7 +42,7 @@
                                     <option value="{{ $working_mod->id }}">{{ $working_mod->label }}</option>
                                 @endforeach
                             </select>
-                            @error('contract_type_id')
+                            @error('working_mode_id')
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
                             @enderror
                         </div>
@@ -82,13 +82,39 @@
                         </div>
                     </div>
                     <div class="flex flex-col my-2">
-                        <label for="label">Tag (1 obligatoire) <span class="text-red-500">*</span></label>
-                        <input type="text" class=" my-2 btn-primary" name="label">
+                        <label for="tag_id_1">Tag (1 obligatoire) <span class="text-red-500">*</span></label>
+                        <input type="text" class=" my-2 btn-primary" name="tag_id_1">
                     </div>
                     <div class="flex flex-col my-2">
-                        <label for="label">Localisation</label>
-                        <input type="text" class=" my-1 mt-2 btn-primary" placeholder="Ville" name="label">
-                        <input type="text" class=" my-1 btn-primary" placeholder="Pays" name="label">
+                        <label for="city">Localisation</label>
+                        <div class=" options flex flex-col items-start mt-4">
+                            <select class="btn-primary" type="text" name="city">
+                                <option value="">--Sélectionnez l'option--</option>
+                                @php
+                                    $cities = App\Models\City::all();
+                                @endphp
+                                @foreach ($cities as $city)
+                                    <option value="{{ $city->id }}">{{ $city->label }}</option>
+                                @endforeach
+                            </select>
+                            @error('city')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class=" options flex flex-col items-start mt-4">
+                            <select class="btn-primary" type="text" name="country">
+                                <option value="">--Sélectionnez l'option--</option>
+                                @php
+                                    $countries = App\Models\Country::all();
+                                @endphp
+                                @foreach ($countries as $country)
+                                    <option value="{{ $country->id }}">{{ $country->label }}</option>
+                                @endforeach
+                            </select>
+                            @error('country')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
                         <input type="text" class=" my-1 btn-primary" placeholder="Adresse" name="label">
                         <input type="text" class=" my-1 btn-primary" placeholder="Code postal" name="label">
                     </div>
@@ -101,5 +127,5 @@
         </form>
     </section>
 
-
+@include('partials/footer')
 @endsection
