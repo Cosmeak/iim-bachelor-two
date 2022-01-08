@@ -42,9 +42,9 @@
         </div>
       </article>
 
-          <section class="flex flex-col justify-center place-items-center w-10/12 my-14 m-auto">
-              <div class="flex flex-row w-full justify-evenly my-5">
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded px-10 py-4">
+          <section class="flex flex-row justify-around w-10/12 my-14 m-auto">
+              <div class="flex flex-col justify-center place-items-center ">
+                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-10 py-4">
                       <div class="flex flex-col justify-center place-items-center mr-10">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-xl">Nom du candidat</p>
@@ -54,7 +54,7 @@
                           <p class="text-xl">84%</p>
                       </div>
                   </div>
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded px-10 py-4">
+                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-10 py-4">
                       <div class="flex flex-col justify-center place-items-center mr-10">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-xl">Nom du candidat</p>
@@ -65,8 +65,8 @@
                       </div>
                   </div>
               </div>
-              <div class="flex flex-row w-full justify-evenly my-5">
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded px-10 py-4">
+              <div class="flex flex-col justify-center place-items-center">
+                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white my-5 rounded px-10 py-4">
                       <div class="flex flex-col justify-center place-items-center mr-10">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-xl">Mehdi AL SID CHEIKH</p>
@@ -76,7 +76,7 @@
                           <p class="text-xl">78%</p>
                       </div>
                   </div>
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded px-10 py-4">
+                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white my-5 rounded px-10 py-4">
                       <div class="flex flex-col justify-center place-items-center mr-10">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-xl">Abdel-Aziz AL SID CHEIKH</p>
