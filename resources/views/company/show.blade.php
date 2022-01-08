@@ -42,7 +42,7 @@
                             <i class="fas fa-envelope fa-lg text-primary"></i>
                             @if ($company->email)
                                 <a href="mailto: {{ $company->email }}"
-                                    class="link link-underline cursor-pointer info-p">{{ $company->phone_number }}</a>
+                                    class="link link-underline cursor-pointer info-p">{{ $company->email }}</a>
                             @else
                                 <p class="info-p">Non renseigné</p>
                             @endif
@@ -70,6 +70,8 @@
 
         {{-- Edit 1 --}}
         <form class="fixed bg-stone-800 bg-opacity-90 w-screen h-screen hidden" method="POST" action="" id="form_edit">
+            @csrf
+            @method('PUT')
             <section class="flex flex-col justify-center items-center h-[80%]">
                 <i
                     class="fas fa-times fa-2x absolute right-32 top-20 cursor-pointer text-white hover:text-primary transition" id="x_edit"></i>

@@ -2180,20 +2180,16 @@ input:checked + .slider-2:before {
     height: 120px;
   }
 
+  .xl\:h-\[350px\] {
+    height: 350px;
+  }
+
   .xl\:h-xl {
     height: 35rem;
   }
 
   .xl\:h-sm {
     height: 10rem;
-  }
-
-  .xl\:h-\[300px\] {
-    height: 300px;
-  }
-
-  .xl\:h-\[350px\] {
-    height: 350px;
   }
 
   .xl\:min-h-screen {
