@@ -16,7 +16,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        return view('job.index');
+        // return view('job.index');
     }
 
     /**
@@ -44,31 +44,28 @@ class JobController extends Controller
         $request->validate([
             'label'             => ['required'],
             'description'       => ['required'],
-            'salary'            => ['nullable', 'numeric'],
+            'salary'            => ['nullable'],
 
             'location_id'       => ['nullable'],
             'working_mode_id'   => ['required'],
             'contract_type_id'  => ['required'],
-            'company_id'        => ['required'],
             'sector_id'         => ['required'],
-
-            'tag_id_1'          => ['required'],
-            'tag_id_2'          => ['required'],
-            'tag_id_3'          => ['required'],
         ]);
 
         $input = $request->input();
+        $input['company_id'] = auth()->user()->company->id;
         $input['archive_date'] = Carbon::now();
+
         $job = Job::create($input);
 
-        $company_id = auth()->user()->company->id;
-        $tag['job_id'] = $job->id;
+        $company_id = $job->company->id;
+        // $tag['job_id'] = $job->id;
 
-        $tag_list = [$input['tag_id_1'], $input['tag_id_2'], $input['tag_id_3']];
-        foreach($tag_list as $tag_){
-            $tag['tag_id'] = $tag_;
-            JobTag::create($tag);
-        }
+        // $tag_list = [$input['tag_id_1'], $input['tag_id_2'], $input['tag_id_3']];
+        // foreach($tag_list as $tag_){
+        //     $tag['tag_id'] = $tag_;
+        //     JobTag::create($tag);
+        // }
 
         return redirect()->route('company.show', [$company_id]);
     }

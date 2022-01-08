@@ -1,4 +1,4 @@
-<footer class="xl:w-full bg-black-mat text-white pt-20">
+<footer class="xl:w-full bg-black-mat text-white pt-20 mt-[32px]">
     <div class="flex xl:flex-row flex-col xl:justify-around items-center xl:mx-64 mb-24">
         <a href="/"><img src="../../img/logo.png" alt="easy-apply" class="object-contain max-w-sm"></a>
         <div class=" flex flex-col text-center xl:text-left">

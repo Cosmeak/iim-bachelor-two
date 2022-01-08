@@ -55,8 +55,9 @@ Route::group(['prefix' => 'candidate'], function() {
                           Company pages
 ------------------------------------------------------------------------*/
 
-Route::resource('company', 'App\Http\Controllers\CompanyController');
 
 Route::group(['prefix' => 'company'], function() {
   Route::resource('job', 'App\Http\Controllers\JobController');
 });
+
+Route::resource('company', 'App\Http\Controllers\CompanyController');
