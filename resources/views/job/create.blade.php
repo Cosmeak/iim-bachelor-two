@@ -115,8 +115,8 @@
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
                             @enderror
                         </div>
-                        <input type="text" class=" my-1 btn-primary" placeholder="Adresse" name="label">
-                        <input type="text" class=" my-1 btn-primary" placeholder="Code postal" name="label">
+                        <input type="text" class=" my-1 btn-primary" placeholder="Adresse" name="address">
+                        <input type="text" class=" my-1 btn-primary" placeholder="Code postal" name="zipcode">
                     </div>
                 </div>
             </section>
