@@ -23,7 +23,10 @@
         @apply rounded-xl text-center border shadow-md border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-10 hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in;
     }
     .btn-edit {
-        @apply flex justify-center place-items-center rounded-full bg-primary w-[32px] h-[32px] absolute right-8 xl:right-10 shadow-inset m-auto z-10
+        @apply flex justify-center place-items-center rounded-full bg-primary w-[32px] h-[32px] absolute right-[16px] shadow-inset m-auto z-10
+    }
+    .btn-plus {
+        @apply flex justify-center place-items-center rounded-full bg-primary w-[32px] h-[32px] absolute left-[16px] shadow-inset m-auto z-10
     }
 
     /** For Show pages of candidate and company */

@@ -617,7 +617,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .btn-edit {
   position: absolute;
-  right: 2rem;
+  right: 16px;
   z-index: 10;
   margin: auto;
   display: flex;
@@ -632,11 +632,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: inset 0 3px 10px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-@media (min-width: 1280px) {
-
-  .btn-edit {
-    right: 2.5rem;
-  }
+.btn-plus {
+  position: absolute;
+  left: 16px;
+  z-index: 10;
+  margin: auto;
+  display: flex;
+  height: 32px;
+  width: 32px;
+  place-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 182 255 / var(--tw-bg-opacity));
+  --tw-shadow: inset 0 3px 10px 0 rgb(0 0 0 / 0.16);
+  --tw-shadow-colored: inset 0 3px 10px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 /** For Show pages of candidate and company */
 .profile-show {
@@ -1005,9 +1016,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-20 {
   margin-top: 5rem;
-}
-.mb-\[32px\] {
-  margin-bottom: 32px;
 }
 .mt-1 {
   margin-top: 0.25rem;

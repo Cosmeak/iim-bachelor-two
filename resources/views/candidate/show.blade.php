@@ -11,6 +11,7 @@
 
     <article class="content-section">
         <div class="split-section">
+            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
             <p class="text-2xl">Informations</p>
             <button class="btn-edit" id="form_edit_candidate"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
         </div>
@@ -67,6 +68,7 @@
 
     @if ($candidate->education->count() > 0 )
         <article class="content-section">
+            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
             <div class="split-section">
                 <p class="text-2xl">Formation</p>
                 <button class="btn-edit" id="form_edit_formation"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
@@ -85,6 +87,7 @@
 
     @if ($candidate->experience->count() > 0 )
         <article class="content-section">
+            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
             <div class="split-section">
                 <p class="text-2xl">Experience</p>
                 <button class="btn-edit" id="form_edit_experience"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
