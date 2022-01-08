@@ -29,7 +29,7 @@
                 </div>
                 <div class="flex flex-col">
                     <div class="flex flex-col my-2">
-                        <label for="name">Mode de travail <span class="text-red-500">*</span></label>
+                        <label for="working_mode_id">Mode de travail <span class="text-red-500">*</span></label>
                         <div class="flex flex-col items-start mt-4">
                             <select class="btn-primary" type="text" name="working_mode_id">
                                 <option value="">--Sélectionnez l'option--</option>
