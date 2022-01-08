@@ -38,7 +38,7 @@ class CandidateController extends Controller
     public function store(Request $request)
     {
     // Create the user
-    $attributes = $request->validate([
+    $request->validate([
       'first_name'      => ['required', 'min:3', 'max:30'],
       'last_name'       => ['required', 'min:3', 'max:30' ],
       'birth_date'      => ['nullable'],
@@ -50,15 +50,17 @@ class CandidateController extends Controller
       'facebook'        => ['nullable','max:50'],
       'linkedin'        => ['nullable','max:50'],
 
-      'user_id'         => ['required', 'unique:candidates'],
       'status_id'       => ['nullable'],
       'location_id'     => ['nullable']
     ]);
-    
-    Candidate::create($attributes);
-    $candidate_id = auth()->user()->candidate->id;
 
-    return redirect()->route('candidate.show', [$candidate_id]);
+    $input = $request->input();
+
+    $input['user_id'] = auth()->user()->id;
+    
+    $candidate = Candidate::create($input);
+
+    return redirect()->route('candidate.show', [$candidate->id]);
     }
 
     /**

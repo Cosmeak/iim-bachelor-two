@@ -87,7 +87,7 @@
         <article class="content-section">
             <div class="split-section">
                 <p class="text-2xl">Experience</p>
-                <button class="btn-edit" id="form_edit_formation"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
+                <button class="btn-edit" id="form_edit_experience"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
             </div>
             <div class="flex flex-col xl:flex-row justify-center place-items-center xl:justify-between">
             @foreach ($candidate->experience as $experience)
