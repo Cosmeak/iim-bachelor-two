@@ -34,7 +34,7 @@
         @apply h-auto flex flex-col gap-y-[64px]
     }
     .split-section {
-        @apply flex flex-row justify-center place-items-center p-[8px] shadow-md w-full m-auto rounded bg-white highlight relative text-center text-light-blue font-title h-auto
+        @apply flex flex-row justify-center place-items-center p-[8px] shadow-md w-full m-auto rounded bg-white relative text-center text-light-blue font-title h-auto
     }
     .content-section {
         @apply h-auto flex flex-col w-10/12 xl:w-6/12 m-auto gap-y-[16px]
