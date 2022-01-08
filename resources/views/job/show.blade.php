@@ -44,44 +44,44 @@
 
           <section class="flex flex-col xl:flex-row justify-around w-10/12 my-4 xl:my-14 m-auto">
               <div class="flex flex-col justify-center place-items-center ">
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-8 py-4">
-                      <div class="flex flex-col justify-center text-center place-items-center mr-10">
+                  <div class="job-candidate ">
+                      <div class="candidate-name">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-lg xl:text-xl">Nom du candidat</p>
                       </div>
-                      <div class="flex flex-col justify-center text-center place-items-center ml-10">
+                      <div class="candidate-rate">
                           <p class="font-bold underline text-2xl mb-2">Taux de match</p>
                           <p class="text-lg xl:text-xl">84%</p>
                       </div>
                   </div>
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-8 py-4">
-                      <div class="flex flex-col justify-center text-center place-items-center mr-10">
+                  <div class="job-candidate ">
+                      <div class="candidate-name">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-lg xl:text-xl">Nom du candidat</p>
                       </div>
-                      <div class="flex flex-col justify-center text-center place-items-center ml-10">
+                      <div class="candidate-rate">
                           <p class="font-bold underline text-2xl mb-2">Taux de match</p>
                           <p class="text-lg xl:text-xl">94%</p>
                       </div>
                   </div>
               </div>
               <div class="flex flex-col justify-center place-items-center">
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-8 py-4">
-                      <div class="flex flex-col justify-center text-center place-items-center mr-10">
+                  <div class="job-candidate ">
+                      <div class="candidate-name">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-lg xl:text-xl">Mehdi AL SID CHEIKH</p>
                       </div>
-                      <div class="flex flex-col justify-center text-center place-items-center ml-10">
+                      <div class="candidate-rate">
                           <p class="font-bold underline text-2xl mb-2">Taux de match</p>
                           <p class="text-lg xl:text-xl">78%</p>
                       </div>
                   </div>
-                  <div class="flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-8 py-4">
-                      <div class="flex flex-col justify-center text-center place-items-center mr-10">
+                  <div class="job-candidate ">
+                      <div class="candidate-name">
                           <p class="font-bold underline text-2xl mb-2">Candidat</p>
                           <p class="text-lg xl:text-xl">Abdel-Aziz AL SID CHEIKH</p>
                       </div>
-                      <div class="flex flex-col justify-center text-center place-items-center ml-10">
+                      <div class="candidate-rate">
                           <p class="font-bold underline text-2xl mb-2">Taux de match</p>
                           <p class="text-lg xl:text-xl">76%</p>
                       </div>
