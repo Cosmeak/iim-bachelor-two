@@ -1,7 +1,7 @@
 @extends('layout')
 @include('partials/header')
 @section('content')
-    <main class="profile-show pt-[80px]">
+    <main class="profile-show">
         <section class="moving-gradient w-10/12 xl:w-6/12 rounded-b-[10px] flex justify-center mx-auto h-[180px] relative">
             <span class="my-60"></span>
             <div

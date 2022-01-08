@@ -2,7 +2,7 @@
 @include('partials/header')
 
 @section('content')
-<main class="pt-[80px] flex flex-col justify-center items-center">
+<main class="flex flex-col justify-center items-center">
     <section
         class="px-12 xl:px-64 justify-center flex flex-col moving-gradient h-[100px] shadow-md rounded-b-xl w-10/12 xl:w-1/2 mx-auto items-center">
         <h2 class="text-3xl text-center text-white font-bold">Créer un travail</h2>

@@ -1,7 +1,7 @@
 @extends('layout')
 @include('partials/header')
 @section('content')
-<main class="profile-show pt-[80px]">
+<main class="profile-show">
     <section class="moving-gradient w-10/12 xl:w-6/12 rounded-b-[10px] flex justify-center mx-auto h-[180px] relative">
         <span class="my-60"></span>
         <div class="w-[90px] xl:w-[120px] h-[90px] xl:h-[120px] flex rounded-full bg-white shadow-md absolute justify-center bottom-[-23%] xl:bottom-[-30%] ">
@@ -23,7 +23,7 @@
                     <div class="info">
                         <i class="fas fa-id-card fa-lg text-primary"></i>
                         <h2 class="info-p">{{ $candidate->first_name }} <span class="uppercase">{{ $candidate->last_name }}</span></h2>
-                    </div> 
+                    </div>
                     <div class="info">
                         <i class="fas fa-user-graduate fa-lg text-primary"></i>
                         <p class="info-p">@if ($candidate->status) {{ $candidate->status->label }}@else Non renseigné @endif</p>
