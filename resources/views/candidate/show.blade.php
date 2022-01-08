@@ -5,7 +5,7 @@
     <section class="moving-gradient w-10/12 xl:w-6/12 rounded-b-[10px] flex justify-center mx-auto h-[180px] relative mb-[32px]">
         <span class="my-60"></span>
         <div class="w-[90px] xl:w-[120px] h-[90px] xl:h-[120px] flex rounded-full bg-white shadow-md absolute justify-center bottom-[-23%] xl:bottom-[-30%] ">
-            <a href="" class="m-auto"><img width="90" height="90" src="@if($candidate->profile_picture){{ $candidate->profile_picture }}@else ../img/logo.png @endif" alt="logo"></a>
+            <img class="object-contain" width="90" height="90" src="@if($candidate->profile_picture){{ $candidate->profile_picture }}@else ../img/logo.png @endif" alt="">
         </div>
     </section>
 
