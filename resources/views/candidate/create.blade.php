@@ -22,14 +22,14 @@
                 {{-- <input type="hidden" name="location_id" value="2"> --}}
                 <section id="content_inscription_1" class="flex flex-col justify-center items-center px-16 h-xl">
                     <div class="flex flex-col items-start my-4">
-                        <label for="last_name" class="my-2">Nom</label>
+                        <label for="last_name" class="my-2">Nom <span class="text-red-500">*</span></label>
                         <input class="btn-primary" type="text" name="last_name" value="{{ old('last_name') }}">
                         @error('last_name')
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="flex flex-col items-start my-4">
-                        <label for="first_name" class="my-2">Prénom</label>
+                        <label for="first_name" class="my-2">Prénom <span class="text-red-500">*</span></label>
                         <input class="btn-primary" type="text" name="first_name" value="{{ old('first_name') }}">
                         @error('first_name')
                             <p class="text-red-500 mt-2">{{ $message }}</p>

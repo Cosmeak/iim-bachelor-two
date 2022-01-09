@@ -1090,6 +1090,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 24rem;
   margin-right: 24rem;
 }
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.mx-\[800px\] {
+  margin-left: 800px;
+  margin-right: 800px;
+}
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1286,6 +1294,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-xs {
   width: 5rem;
+}
+.w-auto {
+  width: auto;
+}
+.w-1\/2 {
+  width: 50%;
 }
 .max-w-sm {
   max-width: 24rem;
@@ -1537,6 +1551,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1560,6 +1590,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-6 {
   padding-bottom: 1.5rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pt-5 {
+  padding-top: 1.25rem;
+}
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-left {
   text-align: left;
@@ -2342,6 +2381,14 @@ input:checked + .slider-2:before {
 
   .xl\:h-sm {
     height: 10rem;
+  }
+
+  .xl\:h-\[650px\] {
+    height: 650px;
+  }
+
+  .xl\:h-auto {
+    height: auto;
   }
 
   .xl\:min-h-screen {

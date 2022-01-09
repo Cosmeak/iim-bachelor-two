@@ -22,14 +22,14 @@
 
             <section id="content_inscription_1" class="flex flex-col justify-center items-center px-16 h-xl">
                 <div class="flex flex-col items-start my-4">
-                    <label for="name" class="my-2">Nom de l'entreprise</label>
+                    <label for="name" class="my-2">Nom de l'entreprise <span class="text-red-500">*</span></label>
                     <input class="btn-primary" type="text" name="name" value="{{ old('name') }}">
                     @error('name')
                         <p class="text-red-500 mt-1">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="flex flex-col items-start my-4">
-                    <label for="description" class="my-2">Description de l'entreprise</label>
+                    <label for="description" class="my-2">Description de l'entreprise <span class="text-red-500">*</span></label>
                     <textarea class="resize-none btn-primary py-4 h-tiny" type="text" name="description"
                         value="{{ old('description') }}"> </textarea>
                     @error('description')
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-start my-4">
-                    <label for="email" class="my-2">Email de l'entreprise</label>
+                    <label for="email" class="my-2">Email de l'entreprise <span class="text-red-500">*</span></label>
                     <input class="btn-primary" type="email" name="email">
                     @error('email')
                         <p class="text-red-500 mt-2">{{ $message }}</p>

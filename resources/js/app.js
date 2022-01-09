@@ -18,9 +18,9 @@ if (window.matchMedia("(max-width: 1280px)").matches) {
     //events on click
     burger.addEventListener('click', displayMenu);
     close.addEventListener('click', displayyMenu);
-  }
+}
 
-if (document.getElementById('form_edit')){
+if (document.getElementById('form_edit_company')){
     document.getElementById('x_edit').addEventListener('click', () =>{
         document.getElementById('form_edit').style.display = "none";
     })
@@ -28,6 +28,25 @@ if (document.getElementById('form_edit')){
         document.getElementById('form_edit').style.display = "block";
     })
 } 
+if (document.getElementById('form_edit_candidate')){
+    document.getElementById('form_edit_candidate').addEventListener('click', () =>{
+        document.getElementById('form_edit').style.display = "block";
+    })
+    document.getElementById('x_edit').addEventListener('click', () =>{
+        document.getElementById('form_edit').style.display = "none";
+    })
+
+    // Create formation Candidate
+
+    document.getElementById('btn_create_formation').addEventListener('click', () => {
+        document.getElementById('form_store_formation').style.display = "block";
+    })
+    document.getElementById('x_store').addEventListener('click', () =>{
+
+        document.getElementById('form_store_formation').style.display = "none";
+    })
+}
+
 
 
 
