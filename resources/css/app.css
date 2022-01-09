@@ -37,7 +37,7 @@
 
     /** For Show pages of candidate and company */
     .profile-show {
-        @apply h-auto flex flex-col gap-y-[64px]
+        @apply h-auto flex flex-col gap-y-[32px]
     }
     .split-section {
         @apply flex flex-row justify-center place-items-center p-[8px] shadow-md w-full m-auto rounded bg-white relative text-center text-light-blue font-title h-auto

@@ -56,9 +56,10 @@ Route::group(['prefix' => 'candidate'], function() {
                           Company pages
 ------------------------------------------------------------------------*/
 
+Route::post('job', ['App\Http\Controllers\JobController', 'addCandidate'])->name('job.addCandidate')->middleware('auth');
 
 Route::group(['prefix' => 'company'], function() {
   Route::resource('job', 'App\Http\Controllers\JobController');
 });
 
-Route::resource('company', 'App\Http\Controllers\CompanyController');
+Route::resource('company', 'App\Http\Controllers\CompanyController')->except(['index']);

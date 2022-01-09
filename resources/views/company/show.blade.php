@@ -10,7 +10,7 @@
             </div>
         </section>
 
-        <article class="content-section">
+        <article class="content-section mt-[32px]">
             <div class="split-section">
                 <h1 class="text-2xl">{{ $company->name }}</h1>
                 @if (!empty(auth()->user()->company))
@@ -80,7 +80,7 @@
                 <div class="split-section">
                     @if (!empty(auth()->user()->company))
                         @if(auth()->user()->company->id == $company->id)
-                            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
+                            <a class="btn-plus" href="{{ route('job.create') }}"><i class="fas fa-plus fa-lg text-white"></i></a>
                         @endif
                     @endif
                     <p class="text-2xl">Missions proposées</p>

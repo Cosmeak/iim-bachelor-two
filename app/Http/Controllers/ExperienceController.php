@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Experience;
 use Illuminate\Http\Request;
 
 class ExperienceController extends Controller
@@ -34,7 +35,19 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'company_name' => ['required'],
+            'job_name' => ['required'],
+            'description' => ['required'],
+            'start_date' => ['required'],
+            'end_date' => ['required'],
+            'sector_id' => ['required']
+        ]);
+
+        $input = $request->input();
+        $input['candidate_id'] = auth()->user()->candidate->id;
+        $experience = Experience::create($input);
+        return redirect()->route('candidate.show', [ $experience->candidate->id ]);
     }
 
     /**
@@ -68,7 +81,18 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'company_name' => ['required'],
+            'job_name' => ['required'],
+            'description' => ['required'],
+            'start_date' => ['required'],
+            'end_date' => ['required'],
+            'sector_id' => ['required']
+        ]);
+        $input = $request->input();
+        $experience = Experience::findOrFail($id);
+        $experience->fill($input)->save();
+        return redirect()->route('candidate.show', [ $experience->candidate->id ]);
     }
 
     /**

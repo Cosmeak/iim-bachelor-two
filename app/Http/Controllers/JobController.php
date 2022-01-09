@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Job;
 use App\Models\JobTag;
 use Illuminate\Http\Request;
+use App\Models\CandidateToJob;
 
 class JobController extends Controller
 {
@@ -16,7 +17,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        return view('job.index');
+        return view('job.index', ['jobs' => Job::all() ]);
     }
 
     /**
@@ -113,5 +114,20 @@ class JobController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Add a candidate to apply for a job.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function addCandidate(Request $request) 
+    {
+        $apply = $request->input();
+        $apply['candidate_id'] = auth()->user()->candidate->id;
+        // ddd($apply);
+        CandidateToJob::create($apply);
+        return redirect()->back();
     }
 }
