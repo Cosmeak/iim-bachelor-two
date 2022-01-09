@@ -74,17 +74,17 @@
                 <p class="info-p">{{ $company->description }}</p>
             </div>
         </article>
-
-        @if ($company->job->count() > 0)
-            <article class="content-section">
-                <div class="split-section">
-                    @if (!empty(auth()->user()->company))
-                        @if(auth()->user()->company->id == $company->id)
-                            <a class="btn-plus" href="{{ route('job.create') }}"><i class="fas fa-plus fa-lg text-white"></i></a>
-                        @endif
+        <article class="content-section">
+            <div class="split-section">
+                @if (!empty(auth()->user()->company))
+                    @if(auth()->user()->company->id == $company->id)
+                        <a class="btn-plus" href="{{ route('job.create') }}"><i class="fas fa-plus fa-lg text-white"></i></a>
                     @endif
-                    <p class="text-2xl">Missions proposées</p>
-                </div>
+                @endif
+                <p class="text-2xl">Missions proposées</p>
+            </div>
+        @if ($company->job->count() > 0)
+            
                 <div class="subcontent-section-grid">
                     @foreach ($company->job as $job)
                         <div class="profile-card">

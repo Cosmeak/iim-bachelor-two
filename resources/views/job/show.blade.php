@@ -46,6 +46,9 @@
                     <p class="info-p">Secteur: {{ $job->sector->label }}</p>
                     <p class="info-p">Mode de travail: {{ $job->workingMode->label }}</p>
                     <p class="info-p">Type de contrat: {{ $job->contractType->label }}</p>
+                    @if (!empty($job->salary))
+                        <p class="info-p">Salaire: {{ $job->salary}} €</p>
+                    @endif
                     @if (!empty($job->location))
                         <p class="info-p">Localisation: {{ $job->location->city->label }}, {{ $job->location->country->label }}</p>
                     @endif
@@ -99,6 +102,7 @@
             </form>
         @endif
     @endif
+    @include('job/edit')
 </main>
 @include('partials/footer')
 @endsection
