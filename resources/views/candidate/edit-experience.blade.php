@@ -1,26 +1,35 @@
 {{-- Edit 1 --}}
 <form class="fixed bg-stone-800 bg-opacity-90 w-screen h-screen right-0 top-0 hidden z-20" method="POST"
-    action="{{ route('education.update', [$education->id]) }}" id="form_edit_formation_{{ $education->id }}">
+    action="{{ route('experience.update', [$experience->id]) }}" id="form_edit_experience_{{ $experience->id }}">
     @csrf
     @method('PUT')
     <section class="flex flex-col h-[90%]">
-        <i class="fas fa-times fa-2x absolute right-32 top-20 cursor-pointer text-white hover:text-primary transition x_edit_formation"
-            name="{{ $education->id }}"></i>
+        <i class="fas fa-times fa-2x absolute right-32 top-20 cursor-pointer text-white hover:text-primary transition x_edit_experience"
+            name="{{ $experience->id }}"></i>
         <article class="content-section flex items-center">
             <div class="profile-card xl:h-auto w-1/2 pb-16 pt-12 flex items-center">
-                <p class="title">Formation</p>
+                <p class="title">Experience</p>
                 <div class="info my-1">
                     <i class="fas fa-file-signature fa-lg text-primary mx-auto"></i>
-                    <input class="btn-primary" type="text" name="label" placeholder="Nom de la formation"
-                        value="{{ $education->label }}">
+                    <input class="btn-primary" type="text" name="job_name" placeholder="Nom du travail"
+                        value="{{ $experience->job_name }}">
                     
                 </div>
-                @error('label')
+                @error('job_name')
+                        <p class="text-red-500">{{ $message }}</p>
+                    @enderror
+                <div class="info my-1">
+                    <i class="fas fa-building fa-lg text-primary mx-auto"></i>
+                    <input class="btn-primary" type="text" name="company_name" placeholder="Nom de l'entreprise"
+                        value="{{ $experience->company_name }}">
+                    
+                </div>
+                @error('company_name')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
                 <div class="info my-1">
                     <i class="far fa-calendar-plus fa-lg text-primary mx-auto"></i>
-                    <input class="btn-primary" type="date" name="start_date" value="{{ $education->start_date }}">
+                    <input class="btn-primary" type="date" name="start_date" value="{{ $experience->start_date }}">
                     
                 </div>
                 @error('start_date')
@@ -28,7 +37,7 @@
                     @enderror
                 <div class="info my-1">
                     <i class="far fa-calendar-minus fa-lg text-primary mx-auto""></i>
-                        <input class=" btn-primary" type="date" name="end_date" value="{{ $education->end_date }}">
+                        <input class=" btn-primary" type="date" name="end_date" value="{{ $experience->end_date }}">
                         
                 </div>
                 @error('end_date')
@@ -37,7 +46,7 @@
                 <div class="info my-1">
                     <i class="far fa-calendar-minus fa-lg text-primary mx-auto"></i>
                     <textarea class="btn-primary resize-none" name="description" id="" cols="30"
-                        rows="10">{{ $education->description }}</textarea>
+                        rows="10">{{ $experience->description }}</textarea>
                     
                 </div>
                 @error('description')
@@ -45,21 +54,21 @@
                     @enderror
                 <div class="info my-1">
                     <i class="fas fa-user-graduate fa-lg text-primary mx-auto"></i>
-                    <select class="btn-primary" type="text" placeholder="Site" name="diploma_id">
+                    <select class="btn-primary" name="sector_id">
                         <option value="">----</option>
                         @php
-                            $diplomas = App\Models\Diploma::all();
+                            $sectors = App\Models\Sector::all();
                         @endphp
-                        @foreach ($diplomas as $diploma)
-                            <option value="{{ $diploma->id }}" @if ($diploma->id == $education->diploma->id) selected="selected" @endif>{{ $diploma->label }}
+                        @foreach ($sectors as $sector)
+                            <option value="{{ $sector->id }}" @if ($sector->id == $experience->sector->id) selected="selected" @endif>{{ $sector->label }}
                             </option>
                         @endforeach
                     </select>
                     
                 </div>
-                @error('diploma_id')
-                        <p class="text-red-500">{{ $message }}</p>
-                    @enderror
+                @error('sector_id')
+                <p class="text-red-500 mt-2">{{ $message }}</p>
+            @enderror
             </div>
             <div class="flex justify-center pt-10">
                 <button type="submit" class="btn-form">Modifier</button>

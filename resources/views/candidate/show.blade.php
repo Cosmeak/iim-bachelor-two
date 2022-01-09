@@ -79,11 +79,7 @@
                 @endif
             @endif
             <p class="text-2xl">Formation</p>
-            @if (!empty(auth()->user()->candidate))
-                @if(auth()->user()->candidate->id == $candidate->id)
-                    <button class="btn-edit" id="btn_edit_formation"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
-                @endif
-            @endif
+            
         </div>
         @if ($candidate->education->count() > 0)
             <div class="subcontent-section-grid">
@@ -111,23 +107,20 @@
                 @endif
             @endif
             <p class="text-2xl">Experience</p>
-            @if (!empty(auth()->user()->candidate))
-                @if(auth()->user()->candidate->id == $candidate->id)
-                    <button class="btn-edit" id="btn_edit_experience"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
-                @endif
-            @endif
         </div>
     @if ($candidate->experience->count() > 0)
             <div class="subcontent-section-grid">
                 @foreach ($candidate->experience as $experience)
-                    <div class="profile-card">
-                        <p class="title">{{ $experience->company_name }}</p>
-                        <p class="info-p">Du {{ $experience->start_date }} au {{ $experience->end_date }}
+                    <div class="profile-card relative">
+                        <button class="btn-edit btn_experience" name="{{$experience->id}}"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
+                        <p class="title">{{ $experience->job_name }}</p>
+                        <p class="info-p">Du <span class="text-green-600">{{ $experience->start_date }}</span> au <span class=" text-red-600">{{ $experience->end_date }}</span>
                         </p>
-                        <p class="info-p">{{ $experience->job_name }}</p>
-                        <p class="info-p">{{ $experience->sector->label }}</p>
-                        <p class="info-p">{{ $experience->description }}</p>
+                        <p class="info-p">{{ $experience->job_name }} chez <span class="font-bold">{{ $experience->company_name }}</span></p>
+                        <p class="info-p">Secteur : {{ $experience->sector->label }}</p>
+                        <p class="info-p">Description : {{ $experience->description }}</p>
                     </div>
+                    @include('candidate/edit-experience')
                 @endforeach
             </div>
         @endif
@@ -136,6 +129,7 @@
         @if(auth()->user()->candidate->id == $candidate->id)
             @include('candidate/edit')
             @include('candidate/store-formation')
+            @include('candidate/store-experience')
         @endif
     @endif
 </main>

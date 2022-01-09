@@ -1,4 +1,5 @@
 // Menu Burger
+
 if (window.matchMedia("(max-width: 1280px)").matches) {
     var menu_burger = document.getElementById('menu-burger');
     var close = document.getElementById('x');
@@ -15,12 +16,16 @@ if (window.matchMedia("(max-width: 1280px)").matches) {
         burger.style.transform = 'translateX(0)';
     }
 
-    //events on click
     burger.addEventListener('click', displayMenu);
     close.addEventListener('click', displayyMenu);
 }
 
+// Company
+
 if (document.getElementById('form_edit_company')) {
+
+    // Edit 
+
     document.getElementById('x_edit').addEventListener('click', () => {
         document.getElementById('form_edit').style.display = "none";
     })
@@ -28,7 +33,12 @@ if (document.getElementById('form_edit_company')) {
         document.getElementById('form_edit').style.display = "block";
     })
 }
+
+// Candidate
+
 if (document.getElementById('form_edit_candidate')) {
+
+    // Edit
     document.getElementById('form_edit_candidate').addEventListener('click', () => {
         document.getElementById('form_edit').style.display = "block";
     })
@@ -36,7 +46,7 @@ if (document.getElementById('form_edit_candidate')) {
         document.getElementById('form_edit').style.display = "none";
     })
 
-    // Create formation Candidate
+    // Create formation
 
 
     document.getElementById('btn_create_formation').addEventListener('click', () => {
@@ -47,31 +57,55 @@ if (document.getElementById('form_edit_candidate')) {
         document.getElementById('form_store_formation').style.display = "none";
     })
 
+    // Edit formation
+
+    const btn_formation = document.querySelectorAll('.btn_formation');
+    btn_formation.forEach((btn) => {
+        var attr = btn.getAttribute('name');
+        btn.addEventListener('click', function () {
+            document.getElementById('form_edit_formation_' + attr).style.display = "block";
+        })
+    });
+
+    const x_formation = document.querySelectorAll('.x_edit_formation');
+    x_formation.forEach((x) => {
+        var attr = x.getAttribute('name');
+        x.addEventListener('click', function () {
+            document.getElementById('form_edit_formation_' + attr).style.display = "none";
+        })
+    });
+
+    // Create experience
+
+    document.getElementById('btn_create_experience').addEventListener('click', () => {
+        document.getElementById('form_store_experience').style.display = "block";
+    })
+    document.getElementById('x_store_experience').addEventListener('click', () => {
+
+        document.getElementById('form_store_experience').style.display = "none";
+    });
+
+    // Edit experience
+
+    const btn_experience = document.querySelectorAll('.btn_experience');
+    btn_experience.forEach((btn) => {
+        var attr = btn.getAttribute('name');
+        btn.addEventListener('click', function () {
+            document.getElementById('form_edit_experience_' + attr).style.display = "block";
+        })
+    });
+
+    const x_experience = document.querySelectorAll('.x_edit_experience');
+    x_experience.forEach((x) => {
+        var attr = x.getAttribute('name');
+        x.addEventListener('click', function () {
+            document.getElementById('form_edit_experience_' + attr).style.display = "none";
+        })
+    });
 
 }
 
-const btn_formation = document.querySelectorAll('.btn_formation');
-btn_formation.forEach((btn) => {
-    var attr = btn.getAttribute('name');
-    btn.addEventListener('click', function () {
-        document.getElementById('form_edit_formation_' + attr).style.display = "block";
-    })
-});
-// document.querySelectorAll('.btn_formation')[2].addEventListener('click', () => {
-//     document.getElementById('form_edit_formation').style.display = "block";
-// });
-
-
-const x_formation = document.querySelectorAll('.x_edit_formation');
-x_formation.forEach((x) => {
-    var attr = x.getAttribute('name');
-    x.addEventListener('click', function () {
-        document.getElementById('form_edit_formation_' + attr).style.display = "none";
-    })
-});
-
-
-
+// Inscription
 
 if (document.getElementById('inscription_1')) {
     document.getElementById('inscription_1').addEventListener('click', function () {

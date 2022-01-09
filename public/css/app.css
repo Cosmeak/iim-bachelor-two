@@ -1080,10 +1080,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 24rem;
   margin-right: 24rem;
 }
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -1119,6 +1115,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-\[32px\] {
+  margin-top: 32px;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1130,9 +1129,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-.mt-\[32px\] {
-  margin-top: 32px;
 }
 .ml-\[-4px\] {
   margin-left: -4px;
@@ -1154,9 +1150,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-7 {
   margin-top: 1.75rem;
-}
-.mt-\[64px\] {
-  margin-top: 64px;
 }
 .block {
   display: block;
@@ -1203,6 +1196,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-40 {
   height: 10rem;
 }
+.h-\[90\%\] {
+  height: 90%;
+}
 .h-\[80\%\] {
   height: 80%;
 }
@@ -1224,17 +1220,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[80\] {
   height: 80;
 }
-.h-28 {
-  height: 7rem;
-}
 .h-full {
   height: 100%;
-}
-.h-\[70\%\] {
-  height: 70%;
-}
-.h-\[90\%\] {
-  height: 90%;
 }
 .w-screen {
   width: 100vw;
@@ -1281,19 +1268,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[90px\] {
   width: 90px;
 }
-.w-24 {
-  width: 6rem;
-}
-.w-1\/2 {
-  width: 50%;
-}
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-.w-28 {
-  width: 7rem;
 }
 .w-xs {
   width: 5rem;
@@ -1362,9 +1340,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-y-\[8px\] {
   row-gap: 8px;
-}
-.justify-self-end {
-  justify-self: end;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1450,10 +1425,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-black-mat {
   --tw-bg-opacity: 1;
   background-color: rgb(32 32 32 / var(--tw-bg-opacity));
-}
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
@@ -1637,10 +1608,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-.text-gray {
-  --tw-text-opacity: 1;
-  color: rgb(112 112 112 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -2372,10 +2339,6 @@ input:checked + .slider-2:before {
 
   .xl\:flex-row {
     flex-direction: row;
-  }
-
-  .xl\:flex-wrap {
-    flex-wrap: wrap;
   }
 
   .xl\:justify-start {
