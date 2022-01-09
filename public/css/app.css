@@ -1308,6 +1308,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-xs {
   width: 5rem;
 }
+.w-1\/2 {
+  width: 50%;
+}
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1593,6 +1596,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-6 {
   padding-bottom: 1.5rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-left {
   text-align: left;
@@ -2378,6 +2387,10 @@ input:checked + .slider-2:before {
 
   .xl\:h-sm {
     height: 10rem;
+  }
+
+  .xl\:h-auto {
+    height: auto;
   }
 
   .xl\:min-h-screen {
