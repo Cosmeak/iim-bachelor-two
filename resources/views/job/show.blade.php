@@ -1,100 +1,90 @@
 @extends('layout')
 @include('partials/header')
-
 @section('content')
-
-
-
-
-    <div class="text-center text-primary text-4xl my-14">
-        <h1>Proposition d'emploi 1</h1>
-    </div>
-    <div class="moving-gradient p-4 xl:p-10">
-        <div class="flex xl:flex-row flex-col justify-center place-items-center xl:justify-evenly my-8 xl:my-14">
-            <div class="text-center my-4">
-                <div
-                    class="flex flex-col justify-center text-center rounded-2xl bg-white xl:text-6xl text-4xl xl:w-base xl:h-sm p-8 px-10">
-                    <h2>496</h2>
-                </div>
-                <p class="text-white text-2xl xl:mt-5 my-2">Candidatures reçues</p>
-            </div>
-
-            <div class="text-center my-4">
-                <div
-                    class="flex flex-col justify-center text-center rounded-2xl bg-white xl:text-6xl text-4xl xl:w-base xl:h-sm p-8 px-10">
-                    <h2>234</h2>
-                </div>
-                <p class="text-white text-2xl xl:mt-5 my-2">Candidatures pertinentes</p>
-            </div>
+<main class="profile-show">
+    <section class="content-section mt-[32px]">
+        <div class="split-section">
+            <a class="btn-plus z-10" href="{{ route('company.show', [$job->company->id]) }}"><i class="fas fa-chevron-left fa-lg text-white ml-[-4px]"></i></a>
+            <h1 class="text-xl">{{ $job->label }}</h1>
         </div>
-        <p class="text-center text-white text-2xl xl:text-4xl mt-12">Date de publication : 4 Décembre 2021</p>
-
-        <div class="flex flex-col xl:flex-row xl:justify-evenly justify-center place-items-center my-10 xl:my-16">
-            <a href="" class="btn-yellow my-2 ">Suspendre le poste</a>
-            <a href="" class="btn-white my-2 ">Modifier la fiche de poste</a>
-            <a href="" class="btn-red my-2">Supprimer le poste</a>
-        </div>
-    </div>
-
-    <article class="flex flex-col justify-center place-items-center w-10/12 my-8 xl:my-14 m-auto">
-
-        <div class="highlight shadow-md bg-white rounded px-16 py-10 mb-4 xl:mb-14">
-            <h3 class="text-primary text-2xl xl:text-4xl my-5">Point de description 1</h3>
-            <p class="text-justify text-xl xl:text-2xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae
-                lectus vel metus gravida laoreet. Mauris egestas placerat velit tristique ornare. Nulla malesuada felis at
-                mi mattis dapibus eu non lorem. Nulla rhoncus mauris a nunc ornare, eu posuere nibh efficitur. Nam sed ante
-                fringilla, auctor mi vel, luctus erat. Suspendisse potenti. In ultricies posuere ornare. Quisque luctus arcu
-                nulla, id rhoncus diam volutpat eu. In laoreet dictum ligula ut posuere. Aliquam tristique tellus et dapibus
-                fermentum.</p>
-        </div>
-    </article>
-
-    <section class="flex flex-col xl:flex-row justify-around w-10/12 my-4 xl:my-14 m-auto">
-        <div class="flex flex-col justify-center place-items-center ">
-            <div class="job-candidate ">
-                <div class="candidate-name">
-                    <p class="font-bold underline text-2xl mb-2">Candidat</p>
-                    <p class="text-lg xl:text-xl">Nom du candidat</p>
+        <div class="moving-gradient rounded">
+            <div class="flex xl:flex-row flex-col justify-center place-items-center xl:justify-evenly my-8 xl:my-14">
+                <div class="text-center my-4">
+                    <div class="flex flex-col justify-center text-center rounded-2xl bg-white xl:text-6xl text-4xl xl:w-base xl:h-sm p-8 px-10">
+                        <h2>@if (!empty($job->candidate)) {{$job->candidate->count()}} @else 0 @endif </h2>
+                    </div>
+                    <p class="text-white text-2xl xl:mt-5 my-2">Candidatures reçues</p>
                 </div>
-                <div class="candidate-rate">
-                    <p class="font-bold underline text-2xl mb-2">Taux de match</p>
-                    <p class="text-lg xl:text-xl">84%</p>
+
+                <div class="text-center my-4">
+                    <div class="flex flex-col justify-center text-center rounded-2xl bg-white xl:text-6xl text-4xl xl:w-base xl:h-sm p-8 px-10">
+                        <h2>?</h2>
+                    </div>
+                    <p class="text-white text-2xl xl:mt-5 my-2">Candidatures pertinentes</p>
                 </div>
             </div>
-            <div class="job-candidate ">
-                <div class="candidate-name">
-                    <p class="font-bold underline text-2xl mb-2">Candidat</p>
-                    <p class="text-lg xl:text-xl">Nom du candidat</p>
-                </div>
-                <div class="candidate-rate">
-                    <p class="font-bold underline text-2xl mb-2">Taux de match</p>
-                    <p class="text-lg xl:text-xl">94%</p>
-                </div>
-            </div>
+            <p class="text-center text-white text-xl">Date de publication : {{ $job->created_at }}</p>
+            @if (!empty(auth()->user()->company))
+                @if (auth()->user()->company->id == $job->company->id)
+                    <div
+                        class="flex flex-col xl:flex-row xl:justify-evenly justify-center place-items-center my-[16px]">
+                        <button id="stop_job" class="btn-yellow my-2 ">Suspendre le poste</button>
+                        <button id="edit_job" class="btn-white my-2 ">Modifier la fiche de poste</button>
+                        <button id="delete_job" class="btn-red my-2">Supprimer le poste</button>
+                    </div>
+                @endif
+            @endif
         </div>
-        <div class="flex flex-col justify-center place-items-center">
-            <div class="job-candidate ">
-                <div class="candidate-name">
-                    <p class="font-bold underline text-2xl mb-2">Candidat</p>
-                    <p class="text-lg xl:text-xl">Mehdi AL SID CHEIKH</p>
-                </div>
-                <div class="candidate-rate">
-                    <p class="font-bold underline text-2xl mb-2">Taux de match</p>
-                    <p class="text-lg xl:text-xl">78%</p>
-                </div>
+        <div class="subcontent-section">
+            <div class="profile-card">
+                <h3 class="title">Description de la mission</h3>
+                <p class="info-p">{{ $job->description }}</p>
             </div>
-            <div class="job-candidate ">
-                <div class="candidate-name">
-                    <p class="font-bold underline text-2xl mb-2">Candidat</p>
-                    <p class="text-lg xl:text-xl">Abdel-Aziz AL SID CHEIKH</p>
-                </div>
-                <div class="candidate-rate">
-                    <p class="font-bold underline text-2xl mb-2">Taux de match</p>
-                    <p class="text-lg xl:text-xl">76%</p>
+            <div class="profile-card">
+                <p class="title">Information sur la mission</p>
+                <div class="flex flex-col">
+                    <p class="info-p">Secteur: {{ $job->sector->label }}</p>
+                    <p class="info-p">Mode de travail: {{ $job->workingMode->label }}</p>
+                    <p class="info-p">Type de contrat: {{ $job->contractType->label }}</p>
+                    @if (!empty($job->location))
+                        <p class="info-p">Localisation: {{ $job->location->city->label }}, {{ $job->location->country->label }}</p>
+                    @endif
                 </div>
             </div>
         </div>
     </section>
 
-    @include('partials/footer')
+    @if (!empty(auth()->user()->company))
+        @if (auth()->user()->company->id == $job->company->id)
+            <section class="content-section">
+                <div class="split-section">
+                    <p class="title">Candidats postulant</p>
+                </div>
+                <div class="subcontent-section-grid">
+                    <div class="job-candidate">
+                        <div class="candidate-name">
+                            <p class="font-bold underline text-2xl mb-2">Candidat</p>
+                            <p class="text-lg xl:text-xl">Nom du candidat</p>
+                        </div>
+                        <div class="candidate-rate">
+                            <p class="font-bold underline text-2xl mb-2">Taux de match</p>
+                            <p class="text-lg xl:text-xl">84%</p>
+                        </div>
+                    </div>
+                    <div class="job-candidate ">
+                        <div class="candidate-name">
+                            <p class="font-bold underline text-2xl mb-2">Candidat</p>
+                            <p class="text-lg xl:text-xl">Nom du candidat</p>
+                        </div>
+                        <div class="candidate-rate">
+                            <p class="font-bold underline text-2xl mb-2">Taux de match</p>
+                            <p class="text-lg xl:text-xl">94%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+    @endif
+</main>
+@include('partials/footer')
 @endsection

@@ -26,7 +26,7 @@
         @apply w-5/6 xl:w-1/4 h-lg shadow-md hover:shadow-xl bg-white rounded p-10 m-10 relative my-20 xl:my-14 transition duration-300 ease-out hover:ease-in hover:scale-110 hover:bg-primary hover:text-white;
     }
     .btn-form{
-        @apply rounded-xl text-center border shadow-md border-primary bg-primary text-xl xl:text-2xl text-white py-2 px-10 hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in;
+        @apply rounded-xl text-center border shadow-md border-primary bg-primary text-xl text-white py-[4px] px-[16px] hover:text-primary hover:bg-white hover:border hover:border-primary transition duration-300 ease-out hover:ease-in w-fit;
     }
     .btn-edit {
         @apply flex justify-center place-items-center rounded-full bg-primary w-[32px] h-[32px] absolute right-[16px] shadow-inset m-auto z-10
@@ -49,7 +49,7 @@
         @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-[16px]
     }
     .profile-card{
-        @apply h-full xl:h-[300px] w-full  flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[16px] place-items-center
+        @apply h-auto xl:h-[300px] w-full flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[32px]
     }
     .title {
         @apply text-light-blue font-title text-2xl text-center
@@ -65,7 +65,7 @@
     }
 
     .job-candidate {
-        @apply flex flex-row text-primary justify-between highlight shadow-md bg-white rounded my-5 px-8 py-4
+        @apply flex flex-row text-primary justify-between highlight shadow-md bg-white rounded px-8 py-4
     }
 
     .candidate-rate {
@@ -150,6 +150,7 @@ html{ /* Size for desktop */
     position: absolute;
     border-radius: 5px;
     visibility: hidden;
+    z-index: 0;
 
 }
 
@@ -159,6 +160,7 @@ html{ /* Size for desktop */
     transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
     top: 0;
     left: 0;
+    z-index: 0;
 
 }
 
@@ -168,24 +170,34 @@ html{ /* Size for desktop */
     bottom: 0;
     right: 0;
     transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
+    z-index: 0;
+
 }
 
 .highlight:hover {
     animation: pulse 3s ease-out 0.4s;
+    z-index: 0;
+
 }
 
 .highlight:hover:before, .highlight:hover:after {
     width: 100%;
     height: 100%;
     visibility: visible;
+    z-index: 0;
+
 }
 
 .highlight:hover:before {
     transition: width .1s ease, height .1s ease .1s;
+    z-index: 0;
+
 }
 
 .highlight:hover:after {
     transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
+    z-index: 0;
+
 }
 
 

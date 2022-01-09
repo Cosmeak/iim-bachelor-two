@@ -25,8 +25,12 @@ class CandidateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-      return view('candidate.create');
+    { 
+      if(auth()->user()){
+        return view('candidate.create');
+      } else {
+        return redirect()->route('login.index');
+      }
     }
 
     /**
@@ -121,7 +125,7 @@ class CandidateController extends Controller
 
         $candidate->fill($input)->save();
   
-        return redirect()->route('candidate.show', [ 'candidate' => $candidate ]);
+        return redirect()->route('candidate.show', [ 'candidate' => $candidate->id ]);
       } else { 
         return back()->withErrors('error', 'Vous n\'êtes pas la personne possèdant se compte!');
       }
@@ -135,7 +139,6 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-      User::find(auth()->user->id)->delete();
-      return redirect()->route('home');
+      //
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
+use App\Models\Education;
 use Illuminate\Http\Request;
 
 class EducationController extends Controller
@@ -34,7 +36,16 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'label' => ['required'],
+            'start_date' => ['required'],
+            'end_date' => ['required'],
+            'diploma_id' => ['required']
+        ]);
+        $input = $request->input();
+        $input['candidate_id'] = auth()->user()->candidate->id;
+        $education = Education::create($input);
+        return redirect()->route('candidate.show', [ 'candidate' => Candidate::findOrFail(auth()->user()->candidate->id) ]);
     }
 
     /**
@@ -56,7 +67,7 @@ class EducationController extends Controller
      */
     public function edit($id)
     {
-        //
+        //! Don't used
     }
 
     /**
@@ -68,7 +79,16 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'label' => ['required'],
+            'start_date' => ['required'],
+            'end_date' => ['required'],
+            'diploma_id' => ['required']
+        ]);
+        $education = Education::findOrFail($id);
+        $input = $request->input();
+        $education->fill($input)->save();
+        return redirect()->route('candidate.show', [ $education->candidate->id ]);
     }
 
     /**

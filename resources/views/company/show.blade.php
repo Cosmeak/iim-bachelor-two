@@ -13,8 +13,11 @@
         <article class="content-section">
             <div class="split-section">
                 <h1 class="text-2xl">{{ $company->name }}</h1>
-                <button class="btn-edit z-0" id="form_edit_company"><i
-                        class="fas fa-pencil-alt fa-lg text-white"></i></button>
+                @if (!empty(auth()->user()->company))
+                    @if(auth()->user()->company->id == $company->id)
+                        <button class="btn-edit z-0" id="form_edit_company"><i class="fas fa-pencil-alt fa-lg text-white"></i></button>
+                    @endif
+                @endif
             </div>
 
             <div class="subcontent-section">
@@ -66,34 +69,40 @@
                     </div>
                 </div>
             </div>
+            <div class="w-full h-auto m-auto bg-primary text-white p-[32px] rounded gap-y-[8px] shadow-md">
+                <p class="text-xl text-white">Description:</p>
+                <p class="info-p">{{ $company->description }}</p>
+            </div>
         </article>
-
-        
 
         @if ($company->job->count() > 0)
             <article class="content-section">
                 <div class="split-section">
-                    <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
+                    @if (!empty(auth()->user()->company))
+                        @if(auth()->user()->company->id == $company->id)
+                            <button class="btn-plus" id="create_job"><i class="fas fa-plus fa-lg text-white"></i></button>
+                        @endif
+                    @endif
                     <p class="text-2xl">Missions proposées</p>
-                    <button class="btn-edit" id="form_edit_formation"><i
-                            class="fas fa-pencil-alt fa-lg text-white"></i></button>
                 </div>
                 <div class="subcontent-section-grid">
                     @foreach ($company->job as $job)
                         <div class="profile-card">
                             <p class="title">{{ $job->label }}</p>
                             <p class="info-p">{{ $job->description }}</p>
-                            <p class="info-p">{{ $job->sector->label }}</p>
-                            <p class="info-p">{{ $job->workingMode->label }}</p>
-                            <p class="info-p">{{ $job->contractType->label }}</p>
-                            <p class="info-p">{{ $job->salary }}</p>
-                            @if ($company->location) <p class="info-p">{{ $company->location->city->label }}, {{ $company->location->country->label }}</p>@endif
+                            <a href="{{route('job.show', [$job->id])}}" class="btn-form relative mt-auto mx-auto">En savoir plus <i class="fas fa-chevron-right fa-sm ml-[8px]"></i></a>
                         </div>
                     @endforeach
                 </div>
             </article>
         @endif
-        @include('company.edit')
+
+        @if (!empty(auth()->user()->company))
+            @if(auth()->user()->company->id == $company->id)
+                @include('company.edit')
+            @endif
+        @endif
+
     </main>
     @include('partials/footer')
 @endsection

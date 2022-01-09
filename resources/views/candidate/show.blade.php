@@ -80,6 +80,7 @@
                     <p class="info-p">Du {{ $education->start_date }} au {{ $education->end_date }}</p>
                     <p class="info-p">{{ $education->degree->label }},{{ $education->diploma->label }}</p>
                 </div>
+                
             @endforeach
             </div>
         </article>

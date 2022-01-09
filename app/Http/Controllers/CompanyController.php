@@ -26,7 +26,11 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('company.create');
+        if(auth()->user()){
+            return view('company.create');
+        } else {
+            return redirect()->route('login.index');
+        }
     }
 
     /**

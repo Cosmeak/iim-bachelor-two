@@ -637,16 +637,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .btn-form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   border-radius: 0.75rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(56 182 255 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(56 182 255 / var(--tw-bg-opacity));
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -671,13 +674,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(56 182 255 / var(--tw-text-opacity));
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-@media (min-width: 1280px) {
-
-  .btn-form {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 .btn-edit {
   position: absolute;
@@ -775,15 +771,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .profile-card {
   display: flex;
-  height: 100%;
+  height: auto;
   width: 100%;
   flex-direction: column;
-  place-items: center;
   row-gap: 16px;
   border-radius: 10px;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 16px;
+  padding: 32px;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -828,8 +823,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .job-candidate {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -855,6 +848,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     position: absolute;
     border-radius: 5px;
     visibility: hidden;
+    z-index: 0;
 
 }
 .job-candidate:before {
@@ -863,6 +857,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
     top: 0;
     left: 0;
+    z-index: 0;
 
 }
 .job-candidate:after {
@@ -871,21 +866,31 @@ Ensure the default browser behavior of the `hidden` attribute.
     bottom: 0;
     right: 0;
     transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
+    z-index: 0;
+
 }
 .job-candidate:hover {
     -webkit-animation: pulse 3s ease-out 0.4s;
             animation: pulse 3s ease-out 0.4s;
+    z-index: 0;
+
 }
 .job-candidate:hover:before, .job-candidate:hover:after {
     width: 100%;
     height: 100%;
     visibility: visible;
+    z-index: 0;
+
 }
 .job-candidate:hover:before {
     transition: width .1s ease, height .1s ease .1s;
+    z-index: 0;
+
 }
 .job-candidate:hover:after {
     transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
+    z-index: 0;
+
 }
 .candidate-rate {
   margin-left: 2.5rem;
@@ -979,14 +984,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-0 {
   right: 0px;
 }
+.bottom-0 {
+  bottom: 0px;
+}
+.right-\[16px\] {
+  right: 16px;
+}
 .z-10 {
   z-index: 10;
 }
-.z-0 {
-  z-index: 0;
-}
 .z-20 {
   z-index: 20;
+}
+.z-0 {
+  z-index: 0;
 }
 .m-auto {
   margin: auto;
@@ -1086,6 +1097,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.my-\[16px\] {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
 .mx-96 {
   margin-left: 24rem;
   margin-right: 24rem;
@@ -1138,20 +1153,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-1 {
   margin-top: 0.25rem;
 }
+.ml-\[8px\] {
+  margin-left: 8px;
+}
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
-}
 .mt-\[32px\] {
   margin-top: 32px;
+}
+.ml-\[-4px\] {
+  margin-left: -4px;
 }
 .mb-24 {
   margin-bottom: 6rem;
 }
 .ml-4 {
   margin-left: 1rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
 }
 .mt-7 {
   margin-top: 1.75rem;
@@ -1349,6 +1370,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-8 {
   gap: 2rem;
 }
+.gap-y-\[8px\] {
+  row-gap: 8px;
+}
+.place-self-end {
+  place-self: end;
+}
+.self-end {
+  align-self: flex-end;
+}
 .justify-self-end {
   justify-self: end;
 }
@@ -1463,6 +1493,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-10 {
   padding: 2.5rem;
+}
+.p-\[32px\] {
+  padding: 32px;
 }
 .p-12 {
   padding: 3rem;
@@ -1766,6 +1799,7 @@ html{ /* Size for desktop */
     position: absolute;
     border-radius: 5px;
     visibility: hidden;
+    z-index: 0;
 
 }
 
@@ -1775,6 +1809,7 @@ html{ /* Size for desktop */
     transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
     top: 0;
     left: 0;
+    z-index: 0;
 
 }
 
@@ -1784,25 +1819,35 @@ html{ /* Size for desktop */
     bottom: 0;
     right: 0;
     transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
+    z-index: 0;
+
 }
 
 .highlight:hover {
     -webkit-animation: pulse 3s ease-out 0.4s;
             animation: pulse 3s ease-out 0.4s;
+    z-index: 0;
+
 }
 
 .highlight:hover:before, .highlight:hover:after {
     width: 100%;
     height: 100%;
     visibility: visible;
+    z-index: 0;
+
 }
 
 .highlight:hover:before {
     transition: width .1s ease, height .1s ease .1s;
+    z-index: 0;
+
 }
 
 .highlight:hover:after {
     transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
+    z-index: 0;
+
 }
 
 
@@ -2263,11 +2308,6 @@ input:checked + .slider-2:before {
     margin-bottom: 3.5rem;
   }
 
-  .xl\:my-16 {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
-
   .xl\:ml-96 {
     margin-left: 24rem;
   }
@@ -2294,10 +2334,6 @@ input:checked + .slider-2:before {
 
   .xl\:mt-5 {
     margin-top: 1.25rem;
-  }
-
-  .xl\:mb-14 {
-    margin-bottom: 3.5rem;
   }
 
   .xl\:block {
@@ -2438,10 +2474,6 @@ input:checked + .slider-2:before {
 
   .xl\:p-0 {
     padding: 0px;
-  }
-
-  .xl\:p-10 {
-    padding: 2.5rem;
   }
 
   .xl\:px-24 {
