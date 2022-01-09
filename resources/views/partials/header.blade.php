@@ -8,7 +8,7 @@
             <li>
                 @if (!empty(auth()->user()->candidate))
                     <a href="{{ route('candidate.show', [auth()->user()->candidate->id])}}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Mon profil</a>
-                @else
+                @elseif (!empty(auth()->user()->company))
                     <a href="{{ route('company.show', [auth()->user()->company->id])}}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Mon profil</a>
                 @endif
             </li>

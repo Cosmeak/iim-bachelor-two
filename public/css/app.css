@@ -1187,9 +1187,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-40 {
   height: 10rem;
 }
-.h-\[90\%\] {
-  height: 90%;
-}
 .h-\[80\%\] {
   height: 80%;
 }
@@ -1213,6 +1210,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-full {
   height: 100%;
+}
+.h-\[300px\] {
+  height: 300px;
+}
+.h-\[90\%\] {
+  height: 90%;
 }
 .w-screen {
   width: 100vw;

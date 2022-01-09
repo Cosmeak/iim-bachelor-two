@@ -64,13 +64,10 @@ class JobController extends Controller
             'contract_type_id'  => ['required'],
             'sector_id'         => ['required'],
         ]);
-
         $input = $request->input();
         $input['company_id'] = auth()->user()->company->id;
         $input['archive_date'] = Carbon::now();
-
         $job = Job::create($input);
-
         $company_id = $job->company->id;
         // $tag['job_id'] = $job->id;
 
