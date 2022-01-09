@@ -114,7 +114,20 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'label'             => ['required'],
+            'description'       => ['required'],
+            'salary'            => ['nullable'],
+
+            'location_id'       => ['nullable'],
+            'working_mode_id'   => ['required'],
+            'contract_type_id'  => ['required'],
+            'sector_id'         => ['required'],
+        ]);
+        $input = $request->input();
+        $job = Job::findOrFail($id);
+        $job->fill($input)->save();
+        return redirect()->route('job.show', [ $job->id ]);
     }
 
     /**
