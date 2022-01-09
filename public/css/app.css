@@ -981,6 +981,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-0 {
   right: 0px;
 }
+.top-1\/2 {
+  top: 50%;
+}
+.top-full {
+  top: 100%;
+}
+.top-2 {
+  top: 0.5rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -989,6 +998,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .z-0 {
   z-index: 0;
+}
+.z-30 {
+  z-index: 30;
 }
 .m-auto {
   margin: auto;
@@ -1079,6 +1091,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-96 {
   margin-left: 24rem;
   margin-right: 24rem;
+}
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .my-5 {
   margin-top: 1.25rem;
@@ -1268,6 +1284,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-1\/2 {
   width: 50%;
 }
+.w-24 {
+  width: 6rem;
+.w-1\/2 {
+  width: 50%;
+}
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1340,6 +1361,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-y-\[8px\] {
   row-gap: 8px;
+}
+.justify-self-end {
+  justify-self: end;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1450,6 +1474,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-20 {
   padding: 5rem;
+}
+.p-0 {
+  padding: 0px;
 }
 .px-12 {
   padding-left: 3rem;
@@ -1600,6 +1627,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+.text-gray {
+  --tw-text-opacity: 1;
+  color: rgb(112 112 112 / var(--tw-text-opacity));
+}
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -2331,6 +2370,10 @@ input:checked + .slider-2:before {
 
   .xl\:flex-row {
     flex-direction: row;
+  }
+
+  .xl\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .xl\:justify-start {

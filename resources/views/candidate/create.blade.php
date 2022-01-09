@@ -155,7 +155,7 @@
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                         </div>
                     </div> --}}
-{{-- <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
+{{--                <div id ="container_form" class=" mx-16 mt-4"> <!-- Container Formation -->
                         <label for="id_sector_1" class="my-2">Formation</label>
                         <div class="content">
                             <div class=" options flex flex-col items-start mt-4">

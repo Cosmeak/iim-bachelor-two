@@ -2105,6 +2105,24 @@ if (document.getElementById('form_edit_candidate')) {
   });
 }
 
+var btn_formation = document.querySelectorAll('.btn_formation');
+btn_formation.forEach(function (btn) {
+  var attr = btn.getAttribute('name');
+  btn.addEventListener('click', function () {
+    document.getElementById('form_edit_formation_' + attr).style.display = "block";
+  });
+}); // document.querySelectorAll('.btn_formation')[2].addEventListener('click', () => {
+//     document.getElementById('form_edit_formation').style.display = "block";
+// });
+
+var x_formation = document.querySelectorAll('.x_edit_formation');
+x_formation.forEach(function (x) {
+  var attr = x.getAttribute('name');
+  x.addEventListener('click', function () {
+    document.getElementById('form_edit_formation_' + attr).style.display = "none";
+  });
+});
+
 if (document.getElementById('inscription_1')) {
   document.getElementById('inscription_1').addEventListener('click', function () {
     nextInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2');
