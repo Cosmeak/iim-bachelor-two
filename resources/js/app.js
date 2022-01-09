@@ -27,7 +27,6 @@ if (document.getElementById('form_edit')){
     document.getElementById('form_edit_company').addEventListener('click', () =>{
         document.getElementById('form_edit').style.display = "block";
     })
-    
 } 
 
 

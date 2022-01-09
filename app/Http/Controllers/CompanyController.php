@@ -98,7 +98,7 @@ class CompanyController extends Controller
             $request->validate([
                 'name'              => ['required'],
                 'logo'              => ['nullable'],
-                'description'       => ['required'],
+                // 'description'       => ['nullable'],
                 'phone_number'      => ['nullable'],
                 'email'             => ['required'],
                 'website'           => ['nullable'],
@@ -109,10 +109,10 @@ class CompanyController extends Controller
                 'location_id'       => ['nullable'],
                 'company_size_id'   => ['nullable'],
                 'sector_id'         => ['nullable'],
-                'user_id'           => ['required'],
             ]);
             $company = Company::findOrFail(auth()->user()->company->id);
             $input = $request->input();
+            // ddd($input);
             $company->fill($input)->save();
             return redirect()->route('company.show', [ 'company' => $company ]);
         } else { 
