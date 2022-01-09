@@ -23,7 +23,9 @@
 
         <div class="w-full flex flex-col justify-center place-items-center my-12 xl:justify-evenly xl:flex-row">
             <div class="flex justify-center my-14">
-                <iframe class="w-[450px] xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" src="https://www.youtube.com/watch?v=o01l3sotf1Q&list=PLXaH20eIS38afy5jGOV9yRws_UOant1__&index=4"></iframe>
+                <video class="w-[450px] xl:w-[800px] h-[250px] xl:h-[500px] p-4 xl:p-0" controls>
+                    <source src="../img/EasyApply.mp4" type=video/mp4>
+                </video>
             </div>
             <div class="w-5/6 xl:w-1/4 highlight shadow-md bg-white rounded px-10 py-24 relative mx-8 my-14">
                 <div class="flex justify-center place-items-center rounded-full bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-24 w-sm h-sm ">
