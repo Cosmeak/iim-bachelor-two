@@ -105,7 +105,7 @@
             </div>
         </article>
     @endif
-
+    
 </main>
 @include('partials/footer')
 @endsection

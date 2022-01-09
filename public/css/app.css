@@ -827,6 +827,82 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.job-candidate {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(56 182 255 / var(--tw-text-opacity));
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    position: relative;
+    z-index: 0;
+}
+.job-candidate:before, .job-candidate:after {
+    content: '';
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    border-radius: 5px;
+    visibility: hidden;
+
+}
+.job-candidate:before {
+    border-top: 2px solid #38b6ff;
+    border-right: 2px solid #38b6ff;
+    transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
+    top: 0;
+    left: 0;
+
+}
+.job-candidate:after {
+    border-left: 2px solid #38b6ff;
+    border-bottom: 2px solid #38b6ff;
+    bottom: 0;
+    right: 0;
+    transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
+}
+.job-candidate:hover {
+    -webkit-animation: pulse 3s ease-out 0.4s;
+            animation: pulse 3s ease-out 0.4s;
+}
+.job-candidate:hover:before, .job-candidate:hover:after {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+.job-candidate:hover:before {
+    transition: width .1s ease, height .1s ease .1s;
+}
+.job-candidate:hover:after {
+    transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
+}
+.candidate-rate {
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.candidate-name {
+  margin-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .fixed {
   position: fixed;
 }
@@ -1006,9 +1082,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .mx-96 {
   margin-left: 24rem;
@@ -1065,14 +1141,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mb-14 {
-  margin-bottom: 3.5rem;
-}
-.mr-10 {
-  margin-right: 2.5rem;
-}
-.ml-10 {
-  margin-left: 2.5rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 .mt-\[32px\] {
   margin-top: 32px;
@@ -1082,9 +1152,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-4 {
   margin-left: 1rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
 }
 .mt-7 {
   margin-top: 1.75rem;
@@ -1345,13 +1412,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(56 182 255 / var(--tw-border-opacity));
 }
-.border-primary {
-  --tw-border-opacity: 1;
-  border-color: rgb(56 182 255 / var(--tw-border-opacity));
-}
 .border-zinc-700 {
   --tw-border-opacity: 1;
   border-color: rgb(63 63 70 / var(--tw-border-opacity));
+}
+.border-primary {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 182 255 / var(--tw-border-opacity));
 }
 .bg-white-cream {
   --tw-bg-opacity: 1;
@@ -1470,10 +1537,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1488,9 +1551,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-32 {
   padding-top: 8rem;
-}
-.pt-\[80px\] {
-  padding-top: 80px;
 }
 .pt-2 {
   padding-top: 0.5rem;
@@ -2107,13 +2167,13 @@ input:checked + .slider-2:before {
   --tw-bg-opacity: 1;
   background-color: rgb(56 182 255 / var(--tw-bg-opacity));
 }
-.hover\:bg-white:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
@@ -2198,6 +2258,16 @@ input:checked + .slider-2:before {
     margin-bottom: 2.5rem;
   }
 
+  .xl\:my-14 {
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .xl\:my-16 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
   .xl\:ml-96 {
     margin-left: 24rem;
   }
@@ -2224,6 +2294,10 @@ input:checked + .slider-2:before {
 
   .xl\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .xl\:mb-14 {
+    margin-bottom: 3.5rem;
   }
 
   .xl\:block {
@@ -2364,6 +2438,10 @@ input:checked + .slider-2:before {
 
   .xl\:p-0 {
     padding: 0px;
+  }
+
+  .xl\:p-10 {
+    padding: 2.5rem;
   }
 
   .xl\:px-24 {
