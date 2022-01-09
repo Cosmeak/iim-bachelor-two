@@ -15,9 +15,21 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('job.index', ['jobs' => Job::all() ]);
+        $jobs = Job::all();
+
+        // ddd($request);
+
+        if(request('search') || request('sector') || request('working_mode') || request('contract_type')) {
+            $jobs = Job::where('label', 'like', '%' . request('search') . '%')
+            ->orWhere('description', 'like', '%' . request('search') . '%')
+            ->orwhere('sector_id', '=', request('sector'))
+            ->orwhere('working_mode_id', '=', request('working_mode'))
+            ->orwhere('contract_type_id', '=', request('contract_type'))
+            ->get();
+        }
+        return view('job.index', ['jobs' => $jobs ]);
     }
 
     /**

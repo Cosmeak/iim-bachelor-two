@@ -32,7 +32,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: "Helvetica", sans-serif; /* 4 */
+  font-family: Helvetica, sans-serif; /* 4 */
 }
 
 /*
@@ -730,7 +730,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 8px;
   text-align: center;
-  font-family: "Baloo 2", sans-serif;
+  font-family: Baloo 2, sans-serif;
   --tw-text-opacity: 1;
   color: rgb(56 182 255 / var(--tw-text-opacity));
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -791,7 +791,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .title {
   text-align: center;
-  font-family: "Baloo 2", sans-serif;
+  font-family: Baloo 2, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   --tw-text-opacity: 1;
@@ -805,7 +805,7 @@ Ensure the default browser behavior of the `hidden` attribute.
        column-gap: 8px;
 }
 .info-p {
-  font-family: "Baloo 2", sans-serif;
+  font-family: Baloo 2, sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -963,6 +963,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-top-20 {
   top: -5rem;
 }
+.right-0 {
+  right: 0px;
+}
+.top-0 {
+  top: 0px;
+}
 .right-32 {
   right: 8rem;
 }
@@ -972,23 +978,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-\[-23\%\] {
   bottom: -23%;
 }
-.top-0 {
-  top: 0px;
-}
 .right-8 {
   right: 2rem;
-}
-.right-0 {
-  right: 0px;
-}
-.top-1\/2 {
-  top: 50%;
-}
-.top-full {
-  top: 100%;
-}
-.top-2 {
-  top: 0.5rem;
 }
 .z-10 {
   z-index: 10;
@@ -998,9 +989,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .z-0 {
   z-index: 0;
-}
-.z-30 {
-  z-index: 30;
 }
 .m-auto {
   margin: auto;
@@ -1092,10 +1080,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 24rem;
   margin-right: 24rem;
 }
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -1103,6 +1087,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .mt-12 {
   margin-top: 3rem;
@@ -1131,6 +1119,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-\[32px\] {
+  margin-top: 32px;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1142,9 +1133,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-.mt-\[32px\] {
-  margin-top: 32px;
 }
 .ml-\[-4px\] {
   margin-left: -4px;
@@ -1166,9 +1154,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-7 {
   margin-top: 1.75rem;
-}
-.mt-\[64px\] {
-  margin-top: 64px;
 }
 .block {
   display: block;
@@ -1233,11 +1218,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[80px\] {
   height: 80px;
 }
+.h-\[80\] {
+  height: 80;
+}
+.h-28 {
+  height: 7rem;
+}
 .h-full {
   height: 100%;
 }
-.h-\[80\] {
-  height: 80;
+.h-\[300px\] {
+  height: 300px;
 }
 .w-screen {
   width: 100vw;
@@ -1275,25 +1266,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-tiny {
   width: 20rem;
 }
+.w-1\/2 {
+  width: 50%;
+}
 .w-10\/12 {
   width: 83.333333%;
 }
 .w-\[90px\] {
   width: 90px;
 }
-.w-1\/2 {
-  width: 50%;
-}
-.w-24 {
-  width: 6rem;
-}
-.w-1\/2 {
-  width: 50%;
-}
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+.w-28 {
+  width: 7rem;
 }
 .w-xs {
   width: 5rem;
@@ -1360,11 +1348,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-8 {
   gap: 2rem;
 }
+.gap-\[8px\] {
+  gap: 8px;
+}
+.gap-\[16px\] {
+  gap: 16px;
+}
 .gap-y-\[8px\] {
   row-gap: 8px;
-}
-.justify-self-end {
-  justify-self: end;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1476,8 +1467,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-20 {
   padding: 5rem;
 }
-.p-0 {
-  padding: 0px;
+.p-\[16px\] {
+  padding: 16px;
 }
 .px-12 {
   padding-left: 3rem;
@@ -1567,10 +1558,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: justify;
 }
 .font-title {
-  font-family: "Baloo 2", sans-serif;
+  font-family: Baloo 2, sans-serif;
 }
 .font-sans {
-  font-family: "Helvetica", sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 .text-6xl {
   font-size: 3.75rem;
@@ -1632,10 +1623,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
-}
-.text-gray {
-  --tw-text-opacity: 1;
-  color: rgb(112 112 112 / var(--tw-text-opacity));
 }
 .text-red-600 {
   --tw-text-opacity: 1;
@@ -2309,16 +2296,16 @@ input:checked + .slider-2:before {
     height: 50rem;
   }
 
+  .xl\:h-auto {
+    height: auto;
+  }
+
   .xl\:h-\[350px\] {
     height: 350px;
   }
 
   .xl\:h-\[120px\] {
     height: 120px;
-  }
-
-  .xl\:h-auto {
-    height: auto;
   }
 
   .xl\:h-sm {
@@ -2371,10 +2358,6 @@ input:checked + .slider-2:before {
 
   .xl\:flex-row {
     flex-direction: row;
-  }
-
-  .xl\:flex-wrap {
-    flex-wrap: wrap;
   }
 
   .xl\:justify-start {

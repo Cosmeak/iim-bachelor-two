@@ -102,7 +102,6 @@
                 @include('company.edit')
             @endif
         @endif
-
     </main>
     @include('partials/footer')
 @endsection
