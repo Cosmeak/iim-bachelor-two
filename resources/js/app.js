@@ -103,6 +103,16 @@ if (document.getElementById('form_edit_candidate')) {
         })
     });
 
+    // Edit Jobs
+
+    document.getElementById('btn_job').addEventListener('click', () =>{
+        document.getElementById('form_edit_job').style.display = "block";
+    })
+
+    document.getElementById('x_job').addEventListener('click', () =>{
+        document.getElementById('form_edit_job').style.display = "none";
+    })
+
 }
 
 // Inscription
