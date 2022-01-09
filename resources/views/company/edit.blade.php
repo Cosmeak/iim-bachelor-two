@@ -1,5 +1,5 @@
 {{-- Edit 1 --}}
-<form class="fixed bg-stone-800 bg-opacity-90 w-screen h-screen hidden z-20" method="POST" action="{{ route('company.update', [ auth()->user()->id ])}}" id="form_edit">
+<form class="fixed bg-stone-800 bg-opacity-90  w-screen h-screen right-0 top-0 hidden z-20" method="POST" action="{{ route('company.update', [ auth()->user()->id ])}}" id="form_edit">
     @csrf
     @method('PUT')
     <section class="flex flex-col justify-center items-center h-[80%]">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="info text-left my-1 ">
                             <i class="fas fa-map-marker-alt fa-lg text-primary mx-auto"></i>
-                            <input class="btn-primary" value="@if ($company->location) {{ $company->location->country->label }}, {{ $company->location->city->label }}@else Non renseigné @endif">
+                            <input class="btn-primary" @if ($company->location) {{ $company->location->country->label }}, {{ $company->location->city->label }}@else Non renseigné @endif">
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <div class="flex flex-col">
                         <div class="info my-1">
                             <i class="fas fa-phone-square-alt fa-lg text-primary mx-auto"></i>
-                            <input class="btn-primary" value="@if ($company->phone_number){{ $company->phone_number }} @else Non renseigné @endif">
+                            <input class="btn-primary" name="phone_number" value="@if ($company->phone_number){{ $company->phone_number }} @else Non renseigné @endif">
                         </div>
                         <div class="info my-1">
                             <i class="fas fa-envelope fa-lg text-primary mx-auto"></i>
@@ -47,19 +47,19 @@
                         </div>
                         <div class="info my-1">
                             <i class="fab fa-internet-explorer fa-lg text-primary mx-auto"></i>
-                            <input class="btn-primary" value="@if ($company->website){{ $company->website }} @else Non renseigné @endif">
+                            <input class="btn-primary" name="website" value="@if ($company->website){{ $company->website }} @else Non renseigné @endif">
                         </div>
                         <div class="info my-1">
                             <i class="fab fa-linkedin fa-lg text-primary mx-auto"></i>
-                            <input class="btn-primary" value="@if ($company->linkedin){{ $company->linkedin }} @else Non renseigné @endif">
+                            <input class="btn-primary" name="linkedin" value="@if ($company->linkedin){{ $company->linkedin }} @else Non renseigné @endif">
                         </div>
                         <div class="info my-1">
                             <i class="fab fa-instagram fa-lg text-primary mx-auto"></i>
-                            <input class="btn-primary" value="@if ($company->instagram) {{ $company->instagram }} @else Non renseigné @endif">
+                            <input class="btn-primary" name="instagram" value="@if ($company->instagram) {{ $company->instagram }} @else Non renseigné @endif">
                         </div>
                         <div class="info my-1">
                             <i class="fab fa-facebook-square fa-lg text-primary mx-auto"></i>
-                            <input class="btn-primary" value="@if ($company->facebook) {{ $company->facebook }} @else Non renseigné @endif">
+                            <input class="btn-primary" name="facebook" value="@if ($company->facebook) {{ $company->facebook }} @else Non renseigné @endif">
                         </div>
                     </div>
                 </div>
