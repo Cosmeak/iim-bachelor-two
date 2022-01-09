@@ -15,7 +15,7 @@ npm install
 ```
 
 ## Setup de base 
-- Créer une base de donnée nommée **easy-apply-db** dans phpMyAdmin
+- Créer une base de donnée nommée **easy-apply-db** dans votre gestionnaire de base de donnée MySQL
 - Dupliquer le .env.example et le nommer .env
 - Modifier les informations de base de donnée suivante dans le .env
   - User par votre user
