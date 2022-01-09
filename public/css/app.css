@@ -1088,6 +1088,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1220,6 +1224,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-\[80\] {
   height: 80;
 }
+.h-28 {
+  height: 7rem;
+}
+.h-full {
+  height: 100%;
+}
+.h-\[300px\] {
+  height: 300px;
+.h-\[80\] {
+  height: 80;
+}
 .h-full {
   height: 100%;
 }
@@ -1272,6 +1287,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+.w-28 {
+  width: 7rem;
 }
 .w-xs {
   width: 5rem;
@@ -1337,6 +1355,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-\[8px\] {
+  gap: 8px;
+}
+.gap-\[16px\] {
+  gap: 16px;
 }
 .gap-y-\[8px\] {
   row-gap: 8px;
@@ -1450,6 +1474,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-20 {
   padding: 5rem;
+}
+.p-\[16px\] {
+  padding: 16px;
 }
 .px-12 {
   padding-left: 3rem;
