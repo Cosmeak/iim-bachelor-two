@@ -5,8 +5,8 @@
 ``` 
 composer install 
 ``` 
-ou si ça ne marche pas `
-`` 
+ou si ça ne marche pas 
+``` 
 composer install --ignore-platform-req=ext-fileinfo --ignore-platform-req=ext-fileinfo --ignore-platform-req=ext-fileinfo
 ```
 - Dépendance JS: 
@@ -34,5 +34,5 @@ php artisan serve
 ```
 - Le compileur CSS/JS: 
 ``` 
-npm run watch-poll 
+npm run watch
 ```
