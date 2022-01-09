@@ -1,8 +1,18 @@
 # Projet Easy Apply App - le site de recrutement conçu pour les recruteurs !
 
 ## Installation des dépendances
-- Dépendande php : ``` composer install ``` ou si ça ne marche pas ``` composer install --ignore-platform-req=ext-fileinfo --ignore-platform-req=ext-fileinfo --ignore-platform-req=ext-fileinfo```
-- Dépendance JS: ``` npm install ```
+- Dépendande php : 
+``` 
+composer install 
+``` 
+ou si ça ne marche pas `
+`` 
+composer install --ignore-platform-req=ext-fileinfo --ignore-platform-req=ext-fileinfo --ignore-platform-req=ext-fileinfo
+```
+- Dépendance JS: 
+``` 
+npm install 
+```
 
 ## Setup de base 
 - Créer une base de donnée nommée **easy-apply-db** dans phpMyAdmin
@@ -13,8 +23,16 @@
   - database name par **easy-apply-db** créer précédement
 
 ## Creer une clé pour le projet en local. Important
-``` php artisan key:generate ```
+``` 
+php artisan key:generate 
+```
 
 ## Lancer le projet 
-- Le serveur: ``` php artisan serve ```
-- Le compileur CSS/JS: ``` npm run watch-poll ```
+- Le serveur: 
+``` 
+php artisan serve 
+```
+- Le compileur CSS/JS: 
+``` 
+npm run watch-poll 
+```
