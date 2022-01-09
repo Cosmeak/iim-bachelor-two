@@ -48,7 +48,8 @@ Route::group(['middleware' => ['guest']], function() {
 Route::resource('candidate', 'App\Http\Controllers\CandidateController')->except(['index']);
 
 Route::group(['prefix' => 'candidate'], function() {
-  Route::resource('education', 'App\Http\Controllers\EducationController')->except(['index', 'create', 'show']);
+  Route::resource('education', 'App\Http\Controllers\EducationController')->only(['store', 'update', 'destroy']);
+  Route::resource('experience', 'App\Http\Controllers\ExperienceController')->only(['store', 'update', 'destroy']);
 });
 
 /*------------------------------------------------------------------------ 
