@@ -6,6 +6,13 @@
                 <a href="{{ route('home') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
             </li>
             <li>
+                @if (!empty(auth()->user()->candidate))
+                    <a href="{{ route('candidate.show', [auth()->user()->candidate->id])}}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Mon profil</a>
+                @else
+                    <a href="{{ route('company.show', [auth()->user()->company->id])}}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Mon profil</a>
+                @endif
+            </li>
+            <li>
                 <a href="{{ route('contact') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Contact</a>
             </li>
             <li>
@@ -21,8 +28,7 @@
     @else
         <ul class="flex justify-evenly xl:w-1/3 items-center">
             <li>
-                <a href="{{ route('home') }}"
-                   class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
+                <a href="{{ route('home') }}" class="text-xl hover:text-primary transition duration-300 ease-out hover:ease-in">Accueil</a>
             </li>
             <li>
                 <a href="{{ route('job.index') }}" class="btn-white">Recherche</a>
@@ -37,11 +43,9 @@
 <header class="w-full flex xl:hidden h-[80] bg-white sticky top-0 z-20 shadow-md">
     <div class="flex justify-evenly items-center">
         <a href="{{ route('home') }}" class="w-fit ml-4"><img src="../../img/logo.png" alt="logo" class="h-[80px] w-fit object-contain"></a>
-        <i class="fas fa-bars fa-2x fixed right-8 w-xs cursor-pointer transition duration-500 text-primary"
-           id="burger"></i>
+        <i class="fas fa-bars fa-2x fixed right-8 w-xs cursor-pointer transition duration-500 text-primary" id="burger"></i>
     </div>
-    <div class=" xl:hidden w-base h-full rounded-xl p-20 text-3xl flex flex-col items-center fixed right-0 top-0 bg-white translate-x-xl transition duration-500 shadow-2xl"
-         id='menu-burger'>
+    <div class=" xl:hidden w-base h-full rounded-xl p-20 text-3xl flex flex-col items-center fixed right-0 top-0 bg-white translate-x-xl transition duration-500 shadow-2xl" id='menu-burger'>
         <img src="../../img/logo.png" alt="">
         <i class="fas fa-times fa-2x cursor-pointer my-5 text-primary" id="x"></i>
         <ul class="">

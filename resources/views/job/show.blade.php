@@ -87,16 +87,16 @@
     @endif
 
     @if (!empty(auth()->user()->candidate))
-        @if ( empty(auth()->user()->candidate->job->where('id', $job->id) ) ) 
+        @if ( auth()->user()->candidate->job->where('job_id', $job->id)->first() ) 
+            <div class="content-section">
+                <p class="btn-form mx-auto">Vous avez déjà postulé à cette mission</p>
+            </div>
+        @else
             <form action="{{ route('job.addCandidate') }}" method="POST" class="content-section">
                 @csrf
                 <input type="hidden" value="{{ $job->id }}" name="job_id">
                 <button class="btn-form mx-auto">Postuler à la mission</button>
             </form>
-        @else
-            <div class="content-section">
-                <p class="btn-form mx-auto">Vous avez déjà postulé à cette mission</p>
-            </div>
         @endif
     @endif
 </main>
