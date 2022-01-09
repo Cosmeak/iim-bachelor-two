@@ -56,7 +56,6 @@ class CompanyController extends Controller
             'company_size_id'   => ['nullable'],
             'sector_id'         => ['nullable'],
     ]);
-
         $input = $request->input();
         $input['user_id'] = auth()->user()->id;
         $company = Company::create($input);
@@ -116,13 +115,13 @@ class CompanyController extends Controller
             ]);
             $company = Company::findOrFail(auth()->user()->company->id);
             $input = $request->input();
-            // ddd($input);
             $company->fill($input)->save();
             return redirect()->route('company.show', [ 'company' => $company ]);
         } else { 
             return back()->withErrors('error', 'Vous n\'êtes pas la personne possèdant se compte!');
         }
     }
+    
     /**
      * Remove the specified resource from storage.
      *

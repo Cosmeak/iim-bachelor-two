@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\Location;
 use App\Models\WorkingMode;
 use App\Models\ContractType;
+use App\Models\CandidateToJob;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -28,7 +29,7 @@ class Job extends Model
         'sector_id',
     ];
 
-    protected $with = ['location', 'workingMode', 'contractType', 'sector'];
+    protected $with = ['location', 'workingMode', 'contractType', 'sector', 'candidate'];
 
     public function location() {
         return $this->belongsTo(Location::class, 'location_id');
@@ -50,7 +51,11 @@ class Job extends Model
         return $this->belongsTo(Sector::class, 'sector_id');
     }
 
-    public function jobTag() {
+    public function tag() {
         return $this->hasMany(JobTag::class);
+    }
+
+    public function candidate() {
+        return $this->hasMany(CandidateToJob::class);
     }
 }

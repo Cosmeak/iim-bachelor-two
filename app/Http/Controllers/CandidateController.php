@@ -16,7 +16,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-      //! Don't used
+        //! Don't used
     }
 
     /**
@@ -26,11 +26,11 @@ class CandidateController extends Controller
      */
     public function create()
     { 
-      if(auth()->user()){
-        return view('candidate.create');
-      } else {
-        return redirect()->route('login.index');
-      }
+        if(auth()->user()){
+            return view('candidate.create');
+        } else {
+            return redirect()->route('login.index');
+        }
     }
 
     /**
@@ -42,29 +42,29 @@ class CandidateController extends Controller
     public function store(Request $request)
     {
     // Create the user
-    $request->validate([
-      'first_name'      => ['required', 'min:3', 'max:30'],
-      'last_name'       => ['required', 'min:3', 'max:30' ],
-      'birth_date'      => ['nullable'],
-      'phone_number'    => ['nullable'],
-      'profile_picture' => ['nullable'],
-      'cv'              => ['nullable', 'max:50'],
-      'website'         => ['nullable'],
-      'instagram'       => ['nullable','max:50'],
-      'facebook'        => ['nullable','max:50'],
-      'linkedin'        => ['nullable','max:50'],
+        $request->validate([
+            'first_name'      => ['required', 'min:3', 'max:30'],
+            'last_name'       => ['required', 'min:3', 'max:30' ],
+            'birth_date'      => ['nullable'],
+            'phone_number'    => ['nullable'],
+            'profile_picture' => ['nullable'],
+            'cv'              => ['nullable', 'max:50'],
+            'website'         => ['nullable'],
+            'instagram'       => ['nullable','max:50'],
+            'facebook'        => ['nullable','max:50'],
+            'linkedin'        => ['nullable','max:50'],
 
-      'status_id'       => ['nullable'],
-      'location_id'     => ['nullable']
-    ]);
+            'status_id'       => ['nullable'],
+            'location_id'     => ['nullable']
+        ]);
 
-    $input = $request->input();
+        $input = $request->input();
 
-    $input['user_id'] = auth()->user()->id;
-    
-    $candidate = Candidate::create($input);
+        $input['user_id'] = auth()->user()->id;
+        
+        $candidate = Candidate::create($input);
 
-    return redirect()->route('candidate.show', [$candidate->id]);
+        return redirect()->route('candidate.show', [$candidate->id]);
     }
 
     /**
@@ -75,7 +75,7 @@ class CandidateController extends Controller
      */
     public function show($id)
     {
-      return view('candidate.show', [ 'candidate' => Candidate::findOrFail($id) ]);
+        return view('candidate.show', [ 'candidate' => Candidate::findOrFail($id) ]);
     }
 
     /**
@@ -87,9 +87,9 @@ class CandidateController extends Controller
     public function edit($id)
     {
         if(auth()->user()->id == $id){
-          return view('candidate.edit', [ 'candidate' => Candidate::findOrFail(auth()->user()->candidate->id) ]);
+            return view('candidate.edit', [ 'candidate' => Candidate::findOrFail(auth()->user()->candidate->id) ]);
         } else {
-          return redirect()->route('candidate.show', $id)->with('error', 'Vous n\'êtes pas la personne possèdant se compte!');
+            return redirect()->route('candidate.show', $id)->with('error', 'Vous n\'êtes pas la personne possèdant se compte!');
         }
     }
 
@@ -102,33 +102,33 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
-      if(auth()->user()->id == $id) {
-        $request->validate([
-          'first_name'      => ['required', 'min:3', 'max:30'],
-          'last_name'       => ['required', 'min:3', 'max:30' ],
-          'birth_date'      => ['nullable'],
-          'phone_number'    => ['nullable'],
-          'profile_picture' => ['nullable'],
-          'cv'              => ['nullable', 'max:50'],
-          'website'         => ['nullable'],
-          'instagram'       => ['nullable','max:50'],
-          'facebook'        => ['nullable','max:50'],
-          'linkedin'        => ['nullable','max:50'],
+        if(auth()->user()->id == $id) {
+            $request->validate([
+                'first_name'      => ['required', 'min:3', 'max:30'],
+                'last_name'       => ['required', 'min:3', 'max:30' ],
+                'birth_date'      => ['nullable'],
+                'phone_number'    => ['nullable'],
+                'profile_picture' => ['nullable'],
+                'cv'              => ['nullable', 'max:50'],
+                'website'         => ['nullable'],
+                'instagram'       => ['nullable','max:50'],
+                'facebook'        => ['nullable','max:50'],
+                'linkedin'        => ['nullable','max:50'],
 
-          'status_id'       => ['nullable'],
-          'location_id'     => ['nullable']
-        ]);
-  
-        $candidate = Candidate::findOrFail(auth()->user()->candidate->id);
+                'status_id'       => ['nullable'],
+                'location_id'     => ['nullable']
+            ]);
+      
+            $candidate = Candidate::findOrFail(auth()->user()->candidate->id);
 
-        $input = $request->input();
+            $input = $request->input();
 
-        $candidate->fill($input)->save();
-  
-        return redirect()->route('candidate.show', [ 'candidate' => $candidate->id ]);
-      } else { 
-        return back()->withErrors('error', 'Vous n\'êtes pas la personne possèdant se compte!');
-      }
+            $candidate->fill($input)->save();
+      
+            return redirect()->route('candidate.show', [ 'candidate' => $candidate->id ]);
+        } else { 
+            return back()->withErrors('error', 'Vous n\'êtes pas la personne possèdant se compte!');
+        }
     }
 
     /**
@@ -139,6 +139,6 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-      //
+        //
     }
 }

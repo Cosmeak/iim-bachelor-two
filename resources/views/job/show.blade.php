@@ -4,7 +4,7 @@
 <main class="profile-show">
     <section class="content-section mt-[32px]">
         <div class="split-section">
-            <a class="btn-plus z-10" href="{{ route('company.show', [$job->company->id]) }}"><i class="fas fa-chevron-left fa-lg text-white ml-[-4px]"></i></a>
+            <a class="btn-plus z-10" href="{{ url()->previous() }}"><i class="fas fa-chevron-left fa-lg text-white ml-[-4px]"></i></a>
             <h1 class="text-xl">{{ $job->label }}</h1>
         </div>
         <div class="moving-gradient rounded">
@@ -83,6 +83,20 @@
                     </div>
                 </div>
             </section>
+        @endif
+    @endif
+
+    @if (!empty(auth()->user()->candidate))
+        @if ( empty(auth()->user()->candidate->job->where('id', $job->id) ) ) 
+            <form action="{{ route('job.addCandidate') }}" method="POST" class="content-section">
+                @csrf
+                <input type="hidden" value="{{ $job->id }}" name="job_id">
+                <button class="btn-form mx-auto">Postuler à la mission</button>
+            </form>
+        @else
+            <div class="content-section">
+                <p class="btn-form mx-auto">Vous avez déjà postulé à cette mission</p>
+            </div>
         @endif
     @endif
 </main>
