@@ -15,7 +15,7 @@
                 method="POST" action="{{ route('user.store') }}">
                 @csrf {{-- Token check --}}
 
-                <div class=" w-40 h-40 rounded-full mb-6 bg-white shadow-inset absolute -translate-x-1/2 left-1/2 -top-20">
+                <div class=" w-40 h-40 rounded-full mb-6 bg-white shadow-md absolute -translate-x-1/2 left-1/2 -top-20">
                     <img src="../img/logo.png" alt="logo">
                 </div>
 
