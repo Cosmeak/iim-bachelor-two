@@ -43,12 +43,15 @@
         @apply flex flex-row justify-center place-items-center p-[8px] shadow-md w-full m-auto rounded bg-white relative text-center text-light-blue font-title h-auto
     }
     .content-section {
-        @apply h-auto flex flex-col w-10/12 xl:w-6/12 m-auto gap-y-[16px]
+        @apply h-auto flex flex-col w-11/12 xl:w-6/12 m-auto gap-y-[16px]
     }
     .subcontent-section {
         @apply h-full flex flex-col xl:flex-row justify-center place-items-center xl:justify-between gap-[16px]
     }
     .profile-card{
+        @apply h-auto xl:h-[300px] w-full flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[32px] overflow-hidden
+    }
+    .formation-card{
         @apply h-auto xl:h-[300px] w-full flex flex-col gap-y-[16px] shadow-md rounded bg-white p-[32px]
     }
     .title {

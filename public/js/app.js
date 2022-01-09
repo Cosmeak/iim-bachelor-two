@@ -2143,6 +2143,16 @@ if (document.getElementById('form_edit_candidate')) {
       document.getElementById('form_edit_experience_' + attr).style.display = "none";
     });
   });
+}
+
+if (document.getElementById('form_edit_job')) {
+  // Edit Jobs
+  document.getElementById('edit_job').addEventListener('click', function () {
+    document.getElementById('form_edit_job').style.display = "block";
+  });
+  document.getElementById('x_job').addEventListener('click', function () {
+    document.getElementById('form_edit_job').style.display = "none";
+  });
 } // Inscription
 
 

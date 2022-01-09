@@ -11,7 +11,7 @@
             <div
                 class="hidden xl:block rounded-md w-2xl h-2xl bg-primary absolute right-52 top-3/4 border-2 border-blue-400">
             </div>
-            
+
             <form class="flex flex-col px-8 pb-10 pt-32  bg-white relative shadow-md rounded-lg xl:w-xl xl:h-2xl"
                 method="POST" action="{{ route('candidate.store') }}">
                 @csrf
@@ -83,7 +83,7 @@
                             <p class="text-red-500 mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-                    
+
                 </section>
                 <div id="next_inscription_2" class="hidden justify-between mt-auto">
                     <a id="back_1" class=" cursor-pointer btn-blue ">Retour</a>
@@ -92,7 +92,7 @@
 
 
                 <section id="content_inscription_3" class="hidden flex-col justify-center items-center px-16 h-xl">
-                    
+
                     <div class="flex flex-col items-start">
                         <label for="profile_picture" class="my-4">Photo</label>
                         <input type="file"
@@ -113,7 +113,7 @@
                     </div>
                     <div class="flex flex-col items-start my-4">
                         <label for="status" class="my-2">Status</label>
-                        <select class="btn-primary" type="text" placeholder="Status" name="id_status">
+                        <select class="btn-primary" type="text" placeholder="Status" name="status_id">
                             <option value="">--Sélectionnez l'option--</option>
                             @php
                                 $status = App\Models\Status::all();
@@ -129,7 +129,7 @@
                 </section>
                 <div id="next_inscription_3" class="hidden justify-between mt-auto">
                     <a id="back_2" class="cursor-pointer btn-white ">Retour</a>
-                    <button id="inscription_3" type="submit" class=" btn-blue">Valider</button> 
+                    <button id="inscription_3" type="submit" class=" btn-blue">Valider</button>
                 </div>
             </form>
         </section>
@@ -149,7 +149,7 @@
                                         @endforeach
                                 </select>
                             </div>
-                        </div> 
+                        </div>
                         <div class="flex w-tiny justify-center text-white">
                             <input value="Supprimer -" type="button" id="dlt_ss" class="dlt_option cursor-pointer grayscale shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
                             <input value="Ajouter +" type="button" id="add_ss" class="add_option cursor-pointer shadow-md m-2 px-4 py-2 rounded-lg bg-light-blue">
