@@ -20,69 +20,98 @@ if (window.matchMedia("(max-width: 1280px)").matches) {
     close.addEventListener('click', displayyMenu);
 }
 
-if (document.getElementById('form_edit_company')){
-    document.getElementById('x_edit').addEventListener('click', () =>{
+if (document.getElementById('form_edit_company')) {
+    document.getElementById('x_edit').addEventListener('click', () => {
         document.getElementById('form_edit').style.display = "none";
     })
-    document.getElementById('form_edit_company').addEventListener('click', () =>{
+    document.getElementById('form_edit_company').addEventListener('click', () => {
         document.getElementById('form_edit').style.display = "block";
     })
-} 
-if (document.getElementById('form_edit_candidate')){
-    document.getElementById('form_edit_candidate').addEventListener('click', () =>{
+}
+if (document.getElementById('form_edit_candidate')) {
+    document.getElementById('form_edit_candidate').addEventListener('click', () => {
         document.getElementById('form_edit').style.display = "block";
     })
-    document.getElementById('x_edit').addEventListener('click', () =>{
+    document.getElementById('x_edit').addEventListener('click', () => {
         document.getElementById('form_edit').style.display = "none";
     })
 
     // Create formation Candidate
 
+
     document.getElementById('btn_create_formation').addEventListener('click', () => {
         document.getElementById('form_store_formation').style.display = "block";
     })
-    document.getElementById('x_store').addEventListener('click', () =>{
+    document.getElementById('x_store').addEventListener('click', () => {
 
         document.getElementById('form_store_formation').style.display = "none";
     })
+
+
 }
 
+const btn_formation = document.querySelectorAll('.btn_formation');
+btn_formation.forEach((btn) => {
+    var attr = btn.getAttribute('name');
+    btn.addEventListener('click', function () {
+        document.getElementById('form_edit_formation_' + attr).style.display = "block";
+    })
+});
+// document.querySelectorAll('.btn_formation')[2].addEventListener('click', () => {
+//     document.getElementById('form_edit_formation').style.display = "block";
+// });
+
+
+const x_formation = document.querySelectorAll('.x_edit_formation');
+x_formation.forEach((x) => {
+    var attr = x.getAttribute('name');
+    x.addEventListener('click', function () {
+        document.getElementById('form_edit_formation_' + attr).style.display = "none";
+    })
+});
 
 
 
-if(document.getElementById('inscription_1')){
-    document.getElementById('inscription_1').addEventListener('click', function(){
-        nextInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2')});
 
-    document.getElementById('inscription_2').addEventListener('click', function(){
-        nextInscription('next_inscription_2', 'next_inscription_3', 'content_inscription_2', 'content_inscription_3')});
+if (document.getElementById('inscription_1')) {
+    document.getElementById('inscription_1').addEventListener('click', function () {
+        nextInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2')
+    });
 
-    document.getElementById('inscription_3').addEventListener('click', function(){
-        nextInscription('next_inscription_3', 'next_inscription_4', 'content_inscription_3', 'content_inscription_4')});
+    document.getElementById('inscription_2').addEventListener('click', function () {
+        nextInscription('next_inscription_2', 'next_inscription_3', 'content_inscription_2', 'content_inscription_3')
+    });
 
-    document.getElementById('back_1').addEventListener('click', function(){
-        backInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2')});
+    document.getElementById('inscription_3').addEventListener('click', function () {
+        nextInscription('next_inscription_3', 'next_inscription_4', 'content_inscription_3', 'content_inscription_4')
+    });
 
-    document.getElementById('back_2').addEventListener('click', function(){
-        backInscription('next_inscription_2', 'next_inscription_3', 'content_inscription_2', 'content_inscription_3')});
+    document.getElementById('back_1').addEventListener('click', function () {
+        backInscription('next_inscription_1', 'next_inscription_2', 'content_inscription_1', 'content_inscription_2')
+    });
 
-    document.getElementById('back_3').addEventListener('click', function(){
-        backInscription('next_inscription_3', 'next_inscription_4', 'content_inscription_3', 'content_inscription_4')});
-    }
+    document.getElementById('back_2').addEventListener('click', function () {
+        backInscription('next_inscription_2', 'next_inscription_3', 'content_inscription_2', 'content_inscription_3')
+    });
 
-function nextInscription(button_t, button_n, content_t, content_n){
+    document.getElementById('back_3').addEventListener('click', function () {
+        backInscription('next_inscription_3', 'next_inscription_4', 'content_inscription_3', 'content_inscription_4')
+    });
+}
+
+function nextInscription(button_t, button_n, content_t, content_n) {
     document.getElementById(button_t).style.display = "none";
     document.getElementById(button_n).style.display = "flex";
     document.getElementById(content_t).style.display = "none";
     document.getElementById(content_n).style.display = "flex";
 }
 
-function backInscription(button_b, button_t, content_b, content_t){
+function backInscription(button_b, button_t, content_b, content_t) {
     document.getElementById(button_t).style.display = "none";
     document.getElementById(button_b).style.display = "flex";
     document.getElementById(content_t).style.display = "none";
     document.getElementById(content_b).style.display = "flex";
-    
+
 }
 
 
@@ -106,7 +135,7 @@ function backInscription(button_b, button_t, content_b, content_t){
 //             DltOption(container)});
 //         });
 
-        
+
 // // Add Options Inscription
 // function AddOption(container){
 //     const add = document.getElementById(container).getElementsByClassName('add_option')[0];

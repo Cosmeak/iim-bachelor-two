@@ -72,22 +72,25 @@
 
         <article class="content-section">
             <div class="split-section">
-                <button class="btn-plus" id="btn_create_formation"><i class="fas fa-plus fa-lg text-white"></i></button>
+                <button class="btn-plus" id="btn_create_formation"><i
+                        class="fas fa-plus fa-lg text-white"></i></button>
                 <p class="text-2xl">Formation</p>
-                <button class="btn-edit" id=""><i
-                        class="fas fa-pencil-alt fa-lg text-white"></i></button>
+
             </div>
             @if ($candidate->education->count() > 0)
 
                 <div class="subcontent-section-grid">
                     @foreach ($candidate->education as $education)
-                        <div class="profile-card">
-                            <p class="title">{{ $education->label }}</p>
-                            <p class="info-p">Du {{ $education->start_date }} au {{ $education->end_date }}
+                        <div class="profile-card relative">
+                            <button class="btn-edit btn_formation" name="{{$education->id}}"><i class="fas fa-pencil-alt fa-lg text-white" ></i></button>
+                            <p class="title uppercase">{{ $education->label }}</p>
+                            <p class="info-p">Du <span class="text-green-600">{{ $education->start_date }}</span> au <span class=" text-red-600">{{ $education->end_date }}</span>
                             </p>
-                            <p class="info-p">{{ $education->degree->label }},{{ $education->diploma->label }}
+                            <p class="info-p">Type de diplôme : <span class="font-bold">{{ $education->diploma->label }}</span>
                             </p>
+                            <p class="info-p">Description : {{ $education->description }}</p>
                         </div>
+                        @include('candidate/edit-formation') 
                     @endforeach
                 </div>
             @endif
@@ -116,6 +119,7 @@
             </article>
         @endif
         @include('candidate/edit')
+        
         @include('candidate/store-formation')
     </main>
     @include('partials/footer')

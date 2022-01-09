@@ -1,6 +1,6 @@
 {{-- Edit 1 --}}
 <form class="fixed bg-stone-800 bg-opacity-90 w-screen h-screen hidden z-20" method="POST"
-    action="{{ route('candidate.update', [auth()->user()->id]) }}" id="form_edit">
+    action="{{ route('candidate.update', [auth()->user()->id])  }}" id="form_edit">
     @csrf
     @method('PUT')
     <section class="flex flex-col justify-center items-center h-[80%]">
