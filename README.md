@@ -27,6 +27,11 @@ npm install
 php artisan key:generate 
 ```
 
+## Récupérer la base de donnée + les fausses informations pour les tests
+```
+php artisan migration:fresh --seed
+```
+
 ## Lancer le projet 
 - Le serveur: 
 ``` 
