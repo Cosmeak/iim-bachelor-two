@@ -11,31 +11,35 @@
                 <div class="info my-1">
                     <i class="fas fa-file-signature fa-lg text-primary mx-auto"></i>
                     <input class="btn-primary" type="text" name="label" placeholder="Nom de la formation" required>
-                    @error('label')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
+                    
                 </div>
+                @error('label')
+                        <p class="text-red-500">{{ $message }}</p>
+                    @enderror
                 <div class="info my-1">
                     <i class="far fa-calendar-plus fa-lg text-primary mx-auto"></i>
                     <input class="btn-primary" type="date" name="start_date" placeholder="Date de début - jj/mm/aaaa" required>
-                    @error('start_date')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
+                    
                 </div>
+                @error('start_date')
+                        <p class="text-red-500">{{ $message }}</p>
+                    @enderror
                 <div class="info my-1">
                     <i class="far fa-calendar-minus fa-lg text-primary mx-auto""></i>
                     <input class="btn-primary" type="date" name="end_date" placeholder="Date de fin - jj/mm/aaaa" required>
-                    @error('end_date')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
+                    
                 </div>
+                @error('end_date')
+                        <p class="text-red-500">{{ $message }}</p>
+                    @enderror
                 <div class="info my-1">
-                    <i class="far fa-calendar-minus fa-lg text-primary mx-auto"></i>
-                    <textarea class="btn-primary" name="description" id="" cols="30" rows="10" placeholder="Description de la formation" required></textarea>
-                    @error('description')
-                        <p class="text-red-500 mt-2">{{ $message }}</p>
-                    @enderror
+                    <i class="fas fa-pencil-alt fa-lg text-primary mx-auto"></i>
+                    <textarea class="btn-primary resize-none" name="description" id="" cols="30" rows="10" placeholder="Description de la formation (120 caractères max)" maxlength="120" required></textarea>
+                    
                 </div>
+                @error('description')
+                        <p class="text-red-500">{{ $message }}</p>
+                    @enderror
                 
                 <div class="info my-1">
                     <i class="fas fa-user-graduate fa-lg text-primary mx-auto"></i>
@@ -48,10 +52,11 @@
                             <option option value="{{ $diploma->id }}">{{ $diploma->label }}</option>
                         @endforeach
                     </select>
-                    @error('diploma_id')
-                    <p class="text-red-500 mt-2">{{ $message }}</p>
-                @enderror
+                    
                 </div>
+                @error('diploma_id')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
                 
             </div>
             </div>
