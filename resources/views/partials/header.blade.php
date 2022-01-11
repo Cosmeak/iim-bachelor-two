@@ -56,12 +56,13 @@
                 <li class="py-4 hover:bg-slate-200 w-base text-center transition">Recherche</li>
             </a>
             @auth
+                <form method="POST" action="{{ route('user.logout') }}" class="btn-blue btn-blue w-base">
+                    @csrf
+                    <button type="submit">Se déconnecter</button>
+                </form>
+            @else
                 <a href="{{ route('login.index') }}">
                     <li class="py-4 hover:bg-slate-200 w-base text-center transition">Connexion</li>
-                </a>
-            @else
-                <a href="/logout">
-                    <li class="btn-blue w-base">Déconnexion</li>
                 </a>
             @endauth
         </ul>
