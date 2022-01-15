@@ -1,70 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
-    <title>Guillaume FINE - Projects</title>
+  <!-- Set all meta  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
+  <title>Portfolio - Guillaume Fine</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <header class="other-pages">
-        <nav>
-            <p>Guillaume FINE</p>
-            <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-        
-    <h2 class="title-page">My projects</h2>
-    <div class="grid">
+  <!-- Navigation -->
+  <header class="toggle">
+    <nav>
+      <p>Guillaume FINE</p>
+      <div class="burger"> <span></span> <span></span> <span></span> </div>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projects.html" class="active">Mes projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="cards" style="opacity: 1;">
-            <div>
-                <img src="img/easyapply-logo.png" alt="easyapply logo">
-            </div>
-            <div>
-                <h2>easyapply.fr</h2>
-                <p>Resumé: Nous devons créer une version beta du site easyapply, qui est un projet de plateforme de recrutement principalement pensé pour les recruteurs...</p>
-            </div>
-        </div>
+  <section class="projects">
+    <!-- Search bar -->
+    <div class="search">
+      <select id="language">
+        <option value="">── Language ──</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="scss">SCSS</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="mysql">MySQL</option>
+        <option value="swift">Swift</option>
+      </select>
 
-        <div class="cards" style="opacity: 1;">
-            <div>
-                <img src="img/LogoCityBlock.png" alt="">
-            </div>
-            <div>
-                <h2>CityBlock</h2>
-                <p>Résumé: Il s'agit d'un jeu de plateau basé sur le pôle Léonard De Vinci et ses alentours permettant au élèves du pôle et/ou les visiteurs d'en savoir plus et de découvrir notre zone universitaire en s'amusant...</p>
-            </div>
-        </div>
+      <div class="search-bar">
+        <input type="text" id="search-project" placeholder="Entrer un mot clé">
+        <button>Rechercher</button>
+      </div>
 
-        <div class="cards" style="opacity: 1;">
-            <div>
-                <img src="img/LogoDreziaEsport.png" alt="">
-            </div>
-            <div>
-                <h2>Drezia Esport</h2>
-                <p>Résumé: Site de l'équipe Esport Drezia. Il s'agit d'une petite équipe, qui souhaiter avoir son propre site. Il a été mon projet d'année 1 à l'IIM pour satisfaire les conditions de passage...</p>
-            </div>
-        </div>
-
+      <select id="framework">
+        <option value="">── Framework ──</option>
+        <option value="laravel">Laravel</option>
+        <option value="symfony">Symfony</option>
+        <option value="tailwind">TailwindCSS</option>
+        <option value="nodejs">NodeJS</option>
+        <option value="react">React</option>
+        <option value="react-native">React Native</option>
+        <option value="wordpress">Wordpress</option>
+        <option value="vuejs">VueJS</option>
+      </select>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy All right reserved Guillaume FINE - 2021
-    </footer>
+    <!-- Grid of projects -->
+    <div class="projects-grid">
+      <article class="cards">
+        <div>
+          <img src="img/easyapply-logo.png" alt="">
+        </div>
+        <div>
+          <h2>easyapply.fr</h2>
+          <p>Resumé: Nous devons créer une version beta du site easyapply, qui est un projet de plateforme de
+            recrutement principalement pensé pour les recruteurs...</p>
 
-    <!-- Import Javascript -->
-    <script src="js/header.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/projects.js"></script>
+        </div>
+      </article>
+
+      <article class="cards">
+        <div>
+          <img src="img/LogoCityBlock.png" alt="">
+        </div>
+        <div>
+          <h2>CityBlock</h2>
+          <p>Résumé: Il s'agit d'un jeu de plateau basé sur le pôle Léonard De Vinci et ses alentours permettant au
+            élèves du pôle et/ou les visiteurs d'en savoir plus et de découvrir notre zone universitaire en
+            s'amusant...</p>
+        </div>
+      </article>
+
+      <article class="cards">
+        <div>
+          <img src="img/LogoDreziaEsport.png" alt="">
+        </div>
+        <div>
+          <h2>Drezia Esport</h2>
+          <p>Résumé: Site de l'équipe Esport Drezia. Il s'agit d'une petite équipe, qui souhaiter avoir son propre
+            site. Il a été mon projet d'année 1 à l'IIM pour satisfaire les conditions de passage...</p>
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <!-- Import Javascript -->
+  <script src="js/header.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </body>
 </html>

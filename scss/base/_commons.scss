@@ -1,0 +1,51 @@
+.toggle {
+  background-color: $white;
+  box-shadow: 0 0 5px $gray;
+  transition: 0.3s;
+
+  a {
+    color: $black;
+
+    &::before {
+      background-color: $secondary;
+    }
+  }
+}
+
+a.active {
+  text-decoration: underline;
+  color: $secondary;
+}
+
+.deco-square {
+  width: 800px;
+  height: 800px;
+  border-radius: 225px;
+  overflow-x: visible;
+  transform: rotate(-70deg);
+  position: absolute;
+  z-index: -1;
+  @include bg-gradiant($primary);
+  @include moving-gradiant($primary);
+}
+
+.deco-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 48px;
+  position: absolute;
+  z-index: -1;
+  background-color: $secondary;
+  box-shadow: 0 3px 6px $shadow;
+}
+
+a.link {
+  color: $secondary;
+  text-decoration: underline;
+  transition: 0.3s;
+  font-weight: bold;
+  
+  &:hover {
+    transform: scale(120%);
+  }
+}

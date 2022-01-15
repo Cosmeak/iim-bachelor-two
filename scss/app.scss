@@ -1,0 +1,16 @@
+@import 'abstracts/variables',
+        'abstracts/mixins';
+
+@import 'base/reset',
+        'base/fonts',
+        'base/base',
+        'base/commons';
+
+@import 'components/header',
+        'components/footer',
+        'components/cards';
+
+@import 'pages/index',
+        'pages/projects',
+        'pages/project',
+        'pages/contact';
