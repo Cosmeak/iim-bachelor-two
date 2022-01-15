@@ -276,12 +276,13 @@ span.deco-line {
 .cards {
   max-width: 400px;
   height: 500px;
-  background-color: #525ecc;
+  background-color: white;
   color: #f4f5f8;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.16);
   transition: 0.3s;
+  padding: 8px;
 }
 .cards:hover {
   transform: scale(110%);
@@ -290,7 +291,6 @@ span.deco-line {
 .cards div:first-of-type {
   width: 100%;
   height: 200px;
-  background-color: white;
   padding: 16px;
 }
 .cards div:first-of-type > img {
@@ -300,15 +300,21 @@ span.deco-line {
 }
 .cards div:last-of-type {
   width: 100%;
-  height: 300px;
+  height: 286px;
+  border-radius: 10px;
+  background-color: #525ecc;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  box-shadow: inset 0 0 10px rgba(40, 40, 40, 0.3);
 }
-.cards div:last-of-type h3 {
+.cards div:last-of-type > h3 {
   text-align: center;
   font-size: 1.5rem;
+}
+.cards div:last-of-type > p {
+  text-align: justify;
 }
 
 .presentation {
@@ -409,6 +415,7 @@ span.deco-line {
 .last-projects {
   flex-direction: column;
   gap: 64px;
+  margin-bottom: 64px;
 }
 .last-projects > h2 {
   font-size: 1.8rem;
