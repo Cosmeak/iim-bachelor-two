@@ -352,7 +352,7 @@ span.deco-line {
   height: 365px;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.16);
   overflow: hidden;
 }
 .presentation .pres-img img {
