@@ -11,7 +11,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <header class="toggle">
+  <header class="header-alt">
     <nav>
       <p>Guillaume FINE</p>
       <div class="burger"> <span></span> <span></span> <span></span> </div>
@@ -23,8 +23,8 @@
     </nav>
   </header>
 
-  <section class="projects">
-    <!-- Search bar -->
+  <section class="projects" style="padding-top: 100px;">
+    <!-- *futur feature
     <div class="search">
       <select id="language">
         <option value="">── Language ──</option>
@@ -54,7 +54,8 @@
         <option value="wordpress">Wordpress</option>
         <option value="vuejs">VueJS</option>
       </select>
-    </div>
+    </div> 
+    -->
 
     <!-- Grid of projects -->
     <div class="projects-grid">
@@ -63,10 +64,9 @@
           <img src="img/easyapply-logo.png" alt="">
         </div>
         <div>
-          <h2>easyapply.fr</h2>
-          <p>Resumé: Nous devons créer une version beta du site easyapply, qui est un projet de plateforme de
-            recrutement principalement pensé pour les recruteurs...</p>
-
+          <h3>Easy Apply</h3>
+          <p>Resumé: Nous devons créer une version beta du site easyapply, qui est un projet de plateforme de recrutement principalement pensé pour les recruteurs...</p>
+          <a href="" class="btn">Aller voir ></a>
         </div>
       </article>
 
@@ -75,10 +75,9 @@
           <img src="img/LogoCityBlock.png" alt="">
         </div>
         <div>
-          <h2>CityBlock</h2>
-          <p>Résumé: Il s'agit d'un jeu de plateau basé sur le pôle Léonard De Vinci et ses alentours permettant au
-            élèves du pôle et/ou les visiteurs d'en savoir plus et de découvrir notre zone universitaire en
-            s'amusant...</p>
+          <h3>CityBlock</h3>
+          <p>Résumé: Il s'agit d'un jeu de plateau basé sur le pôle Léonard De Vinci et ses alentours permettant au élèves du pôle et/ou les visiteurs d'en savoir plus et de découvrir notre zone universitaire en s'amusant...</p>
+          <a href="" class="btn">Aller voir ></a>
         </div>
       </article>
 
@@ -87,14 +86,35 @@
           <img src="img/LogoDreziaEsport.png" alt="">
         </div>
         <div>
-          <h2>Drezia Esport</h2>
-          <p>Résumé: Site de l'équipe Esport Drezia. Il s'agit d'une petite équipe, qui souhaiter avoir son propre
-            site. Il a été mon projet d'année 1 à l'IIM pour satisfaire les conditions de passage...</p>
+          <h3>Drezia Esport</h3>
+          <p>Résumé: Site de l'équipe Esport Drezia. Il s'agit d'une petite équipe, qui souhaiter avoir son propre site. Il a été mon projet d'année 1 à l'IIM pour satisfaire les conditions de passage...</p>
+          <a href="" class="btn">Aller voir ></a>
         </div>
       </article>
     </div>
 
   </section>
+
+  <footer>
+    <section>
+      <div>
+        <ul>
+          <li class="footer-title">Mes contacts</li>
+          <li><a href="mailto: contact@guillaume-fine.xyz"><i class="fas fa-envelope"></i> contact@guillaume-fine.xyz</a></li>
+          <li><i class="fas fa-phone-square-alt"></i> 06.51.13.70.21</li>
+          <li><a href="https://github.com/guillaume-fine" target="_blank"><i class="fab fa-github-square"></i> Github</a></li>
+          <li><a href="https://www.linkedin.com/in/guillaumefine/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+        <ul>
+          <li class="footer-title">Navigation</li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projects.html">Mes projets</a></li>
+          <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+      </div>
+      <div class="deco-line"></div>
+    </section>
+  </footer>
 
   <!-- Import Javascript -->
   <script src="js/header.js"></script>

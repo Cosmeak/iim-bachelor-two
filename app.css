@@ -55,11 +55,11 @@ table {
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 120px;
   background-color: #f4f5f8;
   overflow-x: hidden;
 }
@@ -79,12 +79,9 @@ body {
 }
 
 section {
-  width: 100%;
-  padding: 0 280px;
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
-}
-section:first-of-type {
-  height: 100vh;
 }
 @media screen and (max-width: 1024px) {
   section {
@@ -92,23 +89,6 @@ section:first-of-type {
     justify-content: center !important;
     padding: 128px;
   }
-}
-
-.toggle {
-  background-color: #f4f5f8;
-  box-shadow: 0 0 5px #92949c;
-  transition: 0.3s;
-}
-.toggle a {
-  color: #282828;
-}
-.toggle a::before {
-  background-color: #ffa500;
-}
-
-a.active {
-  text-decoration: underline;
-  color: #ffa500;
 }
 
 .deco-square {
@@ -230,6 +210,9 @@ header nav ul li a {
   position: relative;
   color: #f4f5f8;
 }
+header nav ul li a:hover {
+  color: #ffa500;
+}
 header nav ul li a::before {
   content: "";
   position: absolute;
@@ -237,7 +220,7 @@ header nav ul li a::before {
   width: 100%;
   height: 1px;
   bottom: 0;
-  background-color: #f4f5f8;
+  background-color: #ffa500;
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -252,29 +235,78 @@ header nav ul li a:hover::before {
   }
 }
 
-footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.toggle, .header-alt {
+  background-color: #f4f5f8;
+  box-shadow: 0 0 5px #92949c;
+  transition: 0.3s;
 }
-footer div {
+.toggle a, .header-alt a {
+  color: #282828;
+}
+.toggle a:hover, .header-alt a:hover {
+  color: #ffa500;
+}
+.toggle a::before, .header-alt a::before {
+  background-color: #ffa500;
+}
+
+a.active {
+  text-decoration: underline;
+  color: #ffa500;
+}
+
+footer {
   width: 100%;
   height: auto;
   background-color: #282828;
   color: #f4f5f8;
+  padding: 32px;
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16);
+}
+footer section {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+footer section > div {
+  display: flex;
+  justify-content: space-between;
+}
+footer section > div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+footer section > div ul:last-of-type {
+  text-align: right;
+}
+footer section > div ul li {
+  transition: 0.3s;
+}
+footer section > div ul li:not(:first-child):hover {
+  color: #525ecc;
+  text-decoration: underline;
 }
 
-span.deco-line {
-  width: 500px;
+.deco-line {
+  width: 100%;
   height: 2px;
+  border-radius: 50px;
   margin: 0 auto;
   background-color: #ffa500;
-  z-index: 1;
+  z-index: 99;
+}
+
+.footer-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding-bottom: 8px;
+  color: #ffa500;
 }
 
 .cards {
   max-width: 400px;
-  height: 500px;
+  height: 550px;
   background-color: white;
   color: #f4f5f8;
   border-radius: 10px;
@@ -282,10 +314,6 @@ span.deco-line {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.16);
   transition: 0.3s;
   padding: 8px;
-}
-.cards:hover {
-  transform: scale(110%);
-  cursor: pointer;
 }
 .cards div:first-of-type {
   width: 100%;
@@ -299,10 +327,10 @@ span.deco-line {
 }
 .cards div:last-of-type {
   width: 100%;
-  height: 286px;
+  height: 336px;
   border-radius: 10px;
   background-color: #525ecc;
-  padding: 32px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -316,10 +344,26 @@ span.deco-line {
   text-align: justify;
 }
 
+.btn {
+  width: fit-content;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: white;
+  color: #525ecc;
+  place-self: center;
+  margin-top: auto;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #ffa500;
+}
+
 .presentation {
-  justify-content: space-around;
+  justify-content: space-between;
   place-items: center;
   gap: 32px;
+  height: 100vh;
 }
 .presentation .pres-text {
   width: 40vw;
@@ -364,7 +408,7 @@ span.deco-line {
 }
 
 .competence {
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 32px;
 }
 .competence .comp-grid {
@@ -418,8 +462,7 @@ span.deco-line {
 
 .last-projects {
   flex-direction: column;
-  gap: 64px;
-  margin-bottom: 64px;
+  gap: 32px;
 }
 .last-projects > h2 {
   font-size: 1.8rem;
@@ -430,11 +473,6 @@ span.deco-line {
   background-color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
-}
-.last-projects > div {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
 }
 
 .projects {

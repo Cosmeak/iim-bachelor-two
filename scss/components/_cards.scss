@@ -1,6 +1,6 @@
 .cards {
   max-width: 400px;
-  height: 500px;
+  height: 550px;
   background-color: white;
   color: $white;
   border-radius: 10px;
@@ -8,11 +8,6 @@
   box-shadow: inset 0 0 6px $shadow;
   transition: 0.3s;
   padding: 8px;
-
-  &:hover {
-    transform: scale(110%);
-    cursor: pointer;
-  }
 
   div {
 
@@ -30,10 +25,10 @@
 
     &:last-of-type {
       width: 100%;
-      height: 286px;
+      height: 336px;
       border-radius: 10px;
       background-color: $primary;
-      padding: 32px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -48,5 +43,21 @@
         text-align: justify;
       } 
     }
+  }
+}
+
+.btn {
+  width: fit-content;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: white;
+  color: $primary;
+  place-self: center;
+  margin-top: auto;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $secondary;
   }
 }
