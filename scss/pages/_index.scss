@@ -3,6 +3,7 @@
   place-items: center;
   gap: 32px;
   height: 100vh;
+  width: 100%;
 
   .pres-text {
     width: 40vw;
@@ -64,6 +65,7 @@
 
     @include for-mobiles {
       grid-template-columns: repeat(3, 1fr);
+      grid-gap: 16px;
     }
 
     i {

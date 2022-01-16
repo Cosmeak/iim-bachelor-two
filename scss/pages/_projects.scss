@@ -1,6 +1,5 @@
 .projects {
   flex-direction: column;
-  padding-top: 60px;
   gap: 64px;
 }
 
@@ -47,7 +46,7 @@
   grid-gap: 32px;
 
   @include for-tablets {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   }
 
   @include for-mobiles {

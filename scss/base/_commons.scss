@@ -7,6 +7,12 @@
   z-index: -1;
   @include bg-gradiant($primary);
   @include moving-gradiant($primary);
+
+  @include for-tablets {
+    width: 500px;
+    height: 500px;
+    border-radius: 125px;
+  }
 }
 
 .deco-dot {
@@ -28,4 +34,8 @@ a.link {
   &:hover {
     transform: scale(120%);
   }
+}
+
+.first-section {
+  padding-top: 80px;
 }
