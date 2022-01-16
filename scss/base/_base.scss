@@ -2,6 +2,10 @@
 :root {
   font-size: 16px;
   font-family: 'Comfortaa', sans-serif;
+
+  @include for-mobiles {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -12,6 +16,10 @@ body {
   gap: 120px;
   background-color: $white;
   overflow-x: hidden;
+
+  @include for-tablets {
+    gap: 64px;
+  }
 }
 
 // Scroll bar
@@ -35,8 +43,9 @@ section {
   display: flex;
 
   @include for-tablets {
+    width: 100%;
     flex-direction: column-reverse;
     justify-content: center !important;
-    padding: 128px;
+    padding: 32px;
   }
 }

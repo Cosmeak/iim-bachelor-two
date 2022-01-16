@@ -6,6 +6,7 @@ header {
   position: fixed;
   z-index: 5;
   font-weight: bold;
+  z-index: 1;
 
   // font-size: 1.25rem;
   @include for-tablets {
@@ -64,6 +65,7 @@ header {
         margin-top: 60px;
         width: 100vw;
         box-shadow: 0 5px 5px $gray;
+        z-index: -1;
       }
 
       li {
@@ -100,10 +102,6 @@ header {
       }
     }
   }
-}
-
-.header-alt {
-  @extend .toggle;
 }
 
 .toggle {

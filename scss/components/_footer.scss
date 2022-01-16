@@ -11,14 +11,29 @@ footer {
     flex-direction: column;
     gap: 64px;
 
+    @include for-mobiles {
+      flex-direction: column;
+      gap: 32px;
+      padding: 0;
+    }
+
     >div {
       display: flex;
       justify-content: space-between;
+
+      @include for-mobiles {
+        flex-direction: column;
+        gap: 32px;
+      }
   
       ul {
         display: flex;
         flex-direction: column;
         gap: 4px;
+
+        @include for-mobiles {
+          gap: 16px;
+        }
 
         &:last-of-type {
           text-align: right;
