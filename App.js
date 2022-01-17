@@ -1,31 +1,28 @@
 // Imports
-const express = require("express");
-const bodyparser = require('body-parser');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 const cors = require('cors');
+require('./models/db-config');
 const apiRouter = require('./routes/apiRouter');
 
-// Constants (Need to be configured if you want to use this API)
-const serverPort = 3000;
+//Constants 
 const apiUrl = '/api/v1/';
+const port = 3000;
 
-// Instantiate app
-const app = express();
+//Body Parser Config 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-// Body Parser configuration
-app.use(bodyparser.urlencoded({ extended: true }));
-app.use(bodyparser.json());
-
-// Cors configuration
+// Cors config
 app.use(cors()); //* To open API
 
-// Configure routes
+// Routes 
 app.get(apiUrl, (request, response) => { // Home of API => Just to show it's online
   response.status(200).json({ status: 'API is online!'})
 });
 
 app.use(apiUrl, apiRouter);
 
-// Run app
-app.listen(serverPort, () => {
-  console.log(`Serveur running at port: ${serverPort}`);
-});
+// Start app
+app.listen(port, () => {console.log(`Server starded at port:${port} !`)}); // callback to know if it run

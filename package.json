@@ -1,23 +1,27 @@
 {
   "name": "cityblock-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "devDependencies": {},
   "scripts": {
-    "start": "nodemon App.js"
+    "start": "nodemon app.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillaume-fine/Cityblock-API.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillaume-fine/Cityblock-API/issues"
+  },
+  "homepage": "https://github.com/guillaume-fine/Cityblock-API#readme",
+  "description": "",
   "dependencies": {
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.12.4",
-    "sequelize-cli": "^6.3.0"
-  },
-  "devDependencies": {
+    "mongoose": "^6.1.6",
     "nodemon": "^2.0.15"
   }
 }
