@@ -18,7 +18,8 @@ const ObjectSchema = mongoose.Schema({
     required: false,
   },
   score: {
-    type: array
+    type: Array,
+    required: false,
   },
   user_id: {
     type: Number, 
@@ -30,6 +31,6 @@ const ObjectSchema = mongoose.Schema({
   }
 });
 
-const ObjectModel = mongoose.model('Object', ObjectSchema);
+const Object = mongoose.model('Object', ObjectSchema);
 
-module.exports = { ObjectModel };
+module.exports = { Object };

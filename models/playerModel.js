@@ -1,40 +1,40 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const PlayerSchema = mongoose.Schema({
-  id: {
-    type: Number,
-    required: true,
-  }, 
+  // id: {
+  //   type: Number,
+  //   required: true,
+  // }, 
   username: {
     type: String,
     required: true,
   },
   workforces: {
     type: Number,
-    required: false,
+    required: true,
   },
   materials: {
     type: Number,
-    required: false,
+    required: true,
   }, 
   money: {
     type: Number,
-    required: false,
+    required: true,
   },
   score: {
     type: Number, 
-    required: false,
+    required: true,
   },
   play_date: {
     type: Date,
-    required: false,
+    default: Date.now
   },
   objects: {
     type: Array,
     required: false,
   },
-});
+})
 
-const PlayerModel = mongoose.model('Player', PlayerSchema);
+const Player = mongoose.model('Player', PlayerSchema)
 
-module.exports = { PlayerModel }; 
+module.exports = { Player }
