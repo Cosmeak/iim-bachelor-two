@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
-require('./models/db-config')
+require('./database/db-config')
 const apiRouter = require('./routes/apiRouter')
 
 //Constants 
