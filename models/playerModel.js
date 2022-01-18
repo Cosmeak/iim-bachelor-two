@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
 const PlayerSchema = mongoose.Schema({
-  // id: {
-  //   type: Number,
-  //   required: true,
-  // }, 
   username: {
     type: String,
     required: true,
@@ -25,16 +21,15 @@ const PlayerSchema = mongoose.Schema({
     type: Number, 
     required: true,
   },
-  play_date: {
-    type: Date,
-    default: Date.now
-  },
-  objects: {
-    type: Array,
-    required: false,
-  },
+  objects: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Object',
+      required: false,
+    }
+  ],
+}, {
+  timestamps: true,
 })
 
-const Player = mongoose.model('Player', PlayerSchema)
-
-module.exports = { Player }
+module.exports = mongoose.model('Player', PlayerSchema)

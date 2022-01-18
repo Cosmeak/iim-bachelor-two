@@ -1,36 +1,64 @@
 const mongoose = require('mongoose');
 
 const ObjectSchema = mongoose.Schema({
-  id: {
-    type: Number, 
-    required: true,
-  },
   name:  {
     type: String,
     required: true,
   },
-  benefit: {
-    type: Array,
-    required: false,
+  benefit: { 
+    workforces : { 
+      type: Number,
+      required: true,
+    },
+    materials: {
+      type: Number, 
+      required: true,
+    },
+    money: {
+      type: Number,
+      required: true,
+    }
   },
-  cost: {
-    type: Array,
-    required: false,
-  },
+  cost:{ 
+      workforces : { 
+        type: Number,
+        required: true,
+      },
+      materials: {
+        type: Number, 
+        required: true,
+      },
+      money: {
+        type: Number,
+        required: true,
+      }
+    },
   score: {
-    type: Array,
+    level_1: {
+      type: Number, 
+      required: false,
+    },
+    level_1: {
+      type: Number, 
+      required: false,
+    },
+    level_1: {
+      type: Number, 
+      required: false,
+    },
+  },
+  player: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Player', 
     required: false,
   },
-  user_id: {
-    type: Number, 
+  position: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Position', 
     required: false,
   },
-  position_id: {
-    type: Number,
-    required: true,
-  }
-});
+}, {
+  timestamps: true,
+})
 
-const Object = mongoose.model('Object', ObjectSchema);
-
-module.exports = { Object };
+module.exports = mongoose.model('Object', ObjectSchema);

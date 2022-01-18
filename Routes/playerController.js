@@ -1,7 +1,5 @@
 // Imports
-const { Player } = require('../models/playerModel')
-
-//Constants
+const Player  = require('../models/playerModel')
 
 //Functions
 exports.index = (request, response) => {
@@ -37,12 +35,13 @@ exports.create = (request, response) => {
 exports.show = (request, response) => {
   Player.findById(request.params.id, (error, docs) => {
     if(error) {
-      response.status(404).json({ status: 'Failure', reason: 'Player Not Found'})
+      response.status(404).json({ status: 'Failure', reason: 'Player Not Found' })
     }
     else {
       response.status(200).json({ status: 'Success', data: docs})
     }
   })
+  // .populate('Object') //* -> Sert pour lier à un autre item d'une autre collection
 } 
 
 exports.update = (request, response) => {
