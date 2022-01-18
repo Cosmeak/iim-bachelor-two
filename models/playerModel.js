@@ -21,13 +21,11 @@ const PlayerSchema = mongoose.Schema({
     type: Number, 
     required: true,
   },
-  objects: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Object',
-      required: false,
-    }
-  ],
+  objects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Object',
+    required: false,
+  }],
 }, {
   timestamps: true,
 })

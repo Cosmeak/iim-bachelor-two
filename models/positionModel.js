@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const PositionSchema = mongoose.Schema({
   box: {
@@ -14,8 +14,8 @@ const PositionSchema = mongoose.Schema({
     ref: 'Object', 
     required: false,
   },
-});
+}, {
+  timestamps: true,
+})
 
-const PositionModel = mongoose.model('Position', PositionSchema);
-
-module.exports = { PositionModel };
+module.exports = mongoose.model('Position', PositionSchema)

@@ -20,19 +20,19 @@ const ObjectSchema = mongoose.Schema({
     }
   },
   cost:{ 
-      workforces : { 
-        type: Number,
-        required: true,
-      },
-      materials: {
-        type: Number, 
-        required: true,
-      },
-      money: {
-        type: Number,
-        required: true,
-      }
+    workforces : { 
+      type: Number,
+      required: true,
     },
+    materials: {
+      type: Number, 
+      required: true,
+    },
+    money: {
+      type: Number,
+      required: true,
+    }
+  },
   score: {
     level_1: {
       type: Number, 
