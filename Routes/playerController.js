@@ -5,7 +5,7 @@ const { Player } = require('../models/playerModel')
 
 //Functions
 exports.index = (request, response) => {
-  Player.get( error, docs => {
+  Player.find( (error, docs) => {
     if(error) {
       response.status(500).json({ status: 'Failure', reason: error })
     } 
