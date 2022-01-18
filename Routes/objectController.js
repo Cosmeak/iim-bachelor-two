@@ -32,14 +32,11 @@ exports.create = (request, response) => {
 }
 
 exports.show = (request, response) => {
-  Object.findById( request.params.id, (error, docs) => {
-    if(error) {
-      response.status(404).json({ status: 'Failure', reason: 'No object find!'})
-    }
-    else {
-      response.status(200).json({ status: 'Success', data: docs })
-    }
+  const data = Object.findById( request.params.id, (error, docs) => {
+    if(error) { response.status(404).json({ status: 'Failure', reason: 'No object find!'}) }
   })
+
+  response.status(200).json({ status: 'Success', data: data })
 }
 
 exports.update = (request, response) => {
