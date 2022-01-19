@@ -14,7 +14,8 @@ const QuestionSchema = mongoose.Schema({
       is_right: {
         type: Boolean,
         required: true
-      }
+      },
+      required: true,
     },
     2: {
       content: {
@@ -24,7 +25,8 @@ const QuestionSchema = mongoose.Schema({
       is_right: {
         type: Boolean,
         required: true
-      }
+      },
+      required: true,
     },
     3: {
       content: {
@@ -34,7 +36,8 @@ const QuestionSchema = mongoose.Schema({
       is_right: {
         type: Boolean,
         required: true
-      }
+      },
+      required: false,
     },
     4: {
       content: {
@@ -45,6 +48,7 @@ const QuestionSchema = mongoose.Schema({
         type: Boolean,
         required: true
       },
+      required: false,
     },
     required:true,
   },
