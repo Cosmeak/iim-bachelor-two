@@ -3,12 +3,13 @@ const Player  = require('../models/playerModel')
 const Object  = require('../models/objectModel')
 
 //Functions
-// *
-// * Display a listing of the resource.
-// *
-// * @params request
-// * @return response
-// *
+
+/**
+* Display a listing of the resource.
+*
+* @params request
+* @return response
+*/
 exports.index = (request, response) => {
   Player.find( (error, docs) => {
     if(error) {
@@ -20,12 +21,12 @@ exports.index = (request, response) => {
   })
 }
 
-// * 
-// * Store a newly created resource in storage.
-// *
-// * @params request
-// * @return response
-// *
+/** 
+* Store a newly created resource in storage.
+*
+* @params request
+* @return response
+*/
 exports.create = (request, response) => {
   const newPlayer = new Player({
     username    : request.body.username,
@@ -75,11 +76,6 @@ exports.update = (request, response) => {
     money       : request.body.money,
     score       : request.body.score,
   }
-  const objects = Object.findById( request.body.objects[0], (error, docs) => {
-    if(error){ response.status(404).json({ status: 'Failure', reason: 'Object Not Found!'})}
-  })
-  
-  update.objects = objects
 
   Player.findByIdAndUpdate(
     request.params.id,
