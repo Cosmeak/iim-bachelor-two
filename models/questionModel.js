@@ -5,57 +5,64 @@ const QuestionSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  answer: {
+  answers: {
     1: {
       content: {
         type: String,
-        required: true
+        required: true,
       },
       is_right: {
         type: Boolean,
-        required: true
+        required: true,
       },
       required: true,
     },
     2: {
       content: {
         type: String,
-        required: true
+        required: true,
       },
       is_right: {
         type: Boolean,
-        required: true
+        required: true,
       },
       required: true,
     },
     3: {
       content: {
         type: String,
-        required: true
+        required: true,
       },
       is_right: {
         type: Boolean,
-        required: true
+        required: true,
       },
       required: false,
     },
     4: {
       content: {
         type: String,
-        required: true
+        required: true,
       },
       is_right: {
         type: Boolean,
-        required: true
+        required: true,
       },
       required: false,
     },
     required:true,
   },
-  anecdote: {
-    type: String,
+  anecdotes: [{
+    name: {
+      type: String,
+      required:true,
+    },
+    content: {
+      type: String,
+      required: true,
+    },
     required: false,
-  }
+  }]
 }, {
   timestamps: true,
 })

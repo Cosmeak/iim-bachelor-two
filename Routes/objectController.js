@@ -78,5 +78,5 @@ exports.update = (request, response) => {
 * @return response
 */
 exports.destroy = (request, response) => {
-
+  
 }
