@@ -1,7 +1,14 @@
 // Imports
 const Player  = require('../models/playerModel')
+const Object  = require('../models/objectModel')
 
 //Functions
+// *
+// * Display a listing of the resource.
+// *
+// * @params request
+// * @return response
+// *
 exports.index = (request, response) => {
   Player.find( (error, docs) => {
     if(error) {
@@ -13,6 +20,12 @@ exports.index = (request, response) => {
   })
 }
 
+// * 
+// * Store a newly created resource in storage.
+// *
+// * @params request
+// * @return response
+// *
 exports.create = (request, response) => {
   const newPlayer = new Player({
     username    : request.body.username,
@@ -32,18 +45,29 @@ exports.create = (request, response) => {
   })
 }
 
+/** 
+* Display the specified resource.
+*
+* @params request
+* @params :id
+* @return response
+*/
 exports.show = (request, response) => {
-  Player.findById(request.params.id, (error, docs) => {
+  const data = Player.findById(request.params.id, (error, docs) => {
     if(error) {
       response.status(404).json({ status: 'Failure', reason: 'Player Not Found' })
-    }
-    else {
-      response.status(200).json({ status: 'Success', data: docs})
-    }
-  })
-  // .populate('Object') //* -> Sert pour lier à un autre item d'une autre collection
+    } 
+  }).populate('Object')
+  response.status(200).json({ status: 'Success', data: data })
 } 
 
+/**
+* Update the specified resource in storage.
+*
+* @params request
+* @params :id
+* @return response
+*/
 exports.update = (request, response) => {
   const update = {
     workforces  : request.body.workforces,
@@ -51,6 +75,11 @@ exports.update = (request, response) => {
     money       : request.body.money,
     score       : request.body.score,
   }
+  const objects = Object.findById( request.body.objects[0], (error, docs) => {
+    if(error){ response.status(404).json({ status: 'Failure', reason: 'Object Not Found!'})}
+  })
+  
+  update.objects = objects
 
   Player.findByIdAndUpdate(
     request.params.id,
@@ -67,6 +96,13 @@ exports.update = (request, response) => {
   )
 }
 
+/**
+* Remove the specified resource from storage.
+*
+* @params request
+* @params :id
+* @return response
+*/
 exports.destroy = (request, response) => {
   Player.findByIdAndRemove(
     request.params.id,

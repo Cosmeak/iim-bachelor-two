@@ -38,11 +38,11 @@ const ObjectSchema = mongoose.Schema({
       type: Number, 
       required: false,
     },
-    level_1: {
+    level_2: {
       type: Number, 
       required: false,
     },
-    level_1: {
+    level_3: {
       type: Number, 
       required: false,
     },

@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Cors config
-app.use(cors()) //* To open API
+app.use(cors())
 
 // Routes 
 app.get(apiUrl, (request, response) => { // Home of API => Just to show it's online
