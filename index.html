@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="left">
+    <h1>Star Wars Wiki</h1>
+    <div>
+      <article>
+        <h2>Wiki</h2>
+        <ul class="wiki-nav"></ul>
+      </article>
+      <article>
+        <h2>Translator</h2>
+        <ul>
+          <li><button value="yoda-translator" class="btn-nav active">Yoda Translator</button></li>
+          <li><button value="jjbinks-translator" class="btn-nav">Jar-Jar Binks Translator</button></li>
+          <li><button value="sith-translator" class="btn-nav">Sith Translator</button></li>
+        </ul>
+      </article>
+    </div>
+  </nav>
+    
+  <main class="right">
+    <section class="wiki">
+      <div class="main">
+        <form class="search">
+          <select name="" id="wiki-select">
+            <option value="">Choose an option</option>
+          </select>
+          <input type="search" id="wiki-search" placeholder="Search for something?">
+          <button type="submit">Submit</button>
+        </form>
+        <div class="pages"></div>
+        <div class="grid"></div>
+      </div>
+      <div class="info"></div>
+    </section>
+
+    <section class="yoda-translator">
+      <form>
+        <h2>Yoda Translator</h2>
+        <textarea type="search" id="yoda"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>  
+
+    <section class="jjbinks-translator">
+      <form>
+        <h2>Gungan Translator</h2>
+        <textarea type="search" id="jjbinks"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+      
+    <section class="sith-translator">
+      <form>
+        <h2>Sith Translator</h2>
+        <textarea type="search" id="sith"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
