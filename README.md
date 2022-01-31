@@ -1,7 +1,7 @@
 ﻿# Star Wars Wiki
 
 This website is dedicated to Star Wars Univers
-Link to the website => http://js-api.guillaume-fine.xyz
+Link to the website => http://api-js.guillaume-fine.xyz
 
 ## Features 
 - You can search about a film, people, planet, vehicle, starship and a species with the search bar at the top of website, select in what category you need to search and enter what you search
