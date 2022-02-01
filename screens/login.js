@@ -3,13 +3,13 @@ import { ImageBackground, StyleSheet, Text, View, Image, SafeAreaView, TextInput
 import { Input } from 'react-native-elements';
 
 
-const App = () => (
+const Login = () => (
   <View style={styles.container}>
-    <ImageBackground source={require('./assets/bg_cb.png') } resizeMode="cover" style={styles.image}>
+    <ImageBackground source={require('../assets/bg_cb.png') } resizeMode="cover" style={styles.image}>
       <View style={styles.rond}>
         <Image
           style={styles.logo}
-          source={require('./assets/logo_cb.png')}
+          source={require('../assets/logo_cb.png')}
         />
       </View>
       <Input 
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default Login;
