@@ -100,7 +100,7 @@ class User
     public function store(): void
     {
         $db = new Database();
-        $request = $db->getConnection()->prepare('INSERT INTO users(`firstname`, `lastname`, `email`, `password`) VALUE (?,?,?,?)');
+        $request = $db->getConnection()->prepare('INSERT INTO users(`firstname`, `lastname`, `email`, `password`) VALUES (?,?,?,?)');
         $request->execute([$this->firstname, $this->lastname, $this->email, $this->password]);
     }
 

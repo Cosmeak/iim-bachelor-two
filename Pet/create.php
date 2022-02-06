@@ -13,7 +13,7 @@ include '../includes/header.php';
 $categories = new PetCategory();
 $categories = $categories->index();
 ?>
-<main>
+<main class="create">
     <form action="create.php" method="post">
         <input type="text" name="name" placeholder="Your pet name..." required/>
         <select name="category" required>

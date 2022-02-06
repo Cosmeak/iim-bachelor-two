@@ -49,8 +49,10 @@ class PetCategory
         return $categories;
     }
 
-    public function show(int $id): string
+    public function store(): void
     {
-
+        $db = new Database();
+        $request = $db->getConnection()->prepare('INSERT INTO categories (label) VALUE(?)');
+        $request->execute([$this->label]);
     }
 }
