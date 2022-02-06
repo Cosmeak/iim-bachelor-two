@@ -5,22 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style.css">
     <title>Register</title>
 </head>
-<body>
-    <h2>Create User</h2>
+<body class="login-register">
     <form action="create.php" method="post">
-        <label for="firstname">Firstname</label>
+        <img src="../img/logo.png" alt="">
+        <h2>Register</h2>
         <input type="text" name="firstname" placeholder="Your firstname..." />
-        <label for="lastname">Lastname</label>
         <input type="text" name="lastname" placeholder="Your lastname..." />
-        <label for="email">Email</label>
         <input type="email" name="email" placeholder="Your email..." />
-        <label for="password">Password</label>
         <input type="password" name="password" placeholder="Your password..." />
-        <label for="password">Confirm password</label>
         <input type="password" name="check_password" placeholder="Confirm your password..." />
         <button type="submit">Submit</button>
+        <a href="login.php">Have an account ?</a>
     </form>
 
 </body>

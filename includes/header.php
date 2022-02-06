@@ -21,11 +21,11 @@ else {
     <nav>
         <ul>
             <li><i class="fas fa-user-circle"></i><a href="../user/show.php?id=<?= $session->getId() ?>">My profile</a></li>
-            <li><i class="fas fa-users"></i><a href="../user/index.php">All Users</a></li>
-            <li><i class="fas fa-paw"></i><a href="../pet/index.php">All pets</a></li>
+            <?php echo $session->getAdmin() == 1 ? '<li><i class="fas fa-users"></i><a href="../user/index.php">All Users</a></li>' : "" ?>
+            <?php echo $session->getAdmin() == 1 ? '<li><i class="fas fa-paw"></i><a href="../pet/index.php">All pets</a></li>' : "" ?>
             <li><i class="fas fa-egg"></i><a href="../pet/create.php">Add pet</a></li>
-            <li><i class="fas fa-box-open"></i><a href="../category/index.php">All Pet Categories</a></li>
-            <li><i class="fas fa-parachute-box"></i><a href="../category/create.php">Create Pet Categories</a></li>
+            <?php echo $session->getAdmin() == 1 ? '<li><i class="fas fa-box-open"></i><a href="../category/index.php">All Pet Categories</a></li>' : "" ?>
+            <?php echo $session->getAdmin() == 1 ? '<li><i class="fas fa-parachute-box"></i><a href="../category/create.php">Create Pet Categories</a></li>' : "" ?>
             <li><i class="fas fa-sign-out-alt"></i><a href="../user/logout.php">Logout</a></li>
         </ul>
     </nav>

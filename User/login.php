@@ -5,15 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style.css">
     <title>Login</title>
 </head>
-<body>
+<body class="login-register">
     <form action="login.php" method="post">
-        <label for="email">Email</label>
+        <img src="../img/logo.png" alt="">
+        <h2>Login</h2>
         <input type="email" name="email" placeholder="Your email...">
-        <label for="password">Password</label>
         <input type="password" name="password" placeholder="Your password...">
         <button type="submit">Submit</button>
+        <a href="create.php">Need an account ?</a>
     </form>
 </body>
 </html>
