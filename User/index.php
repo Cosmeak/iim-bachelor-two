@@ -8,7 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<?php require_once '../includes/header.php' ?>
+<?php
+require_once '../includes/header.php';
+if(isset($session) && $session->getAdmin() == 0)
+{
+    session_destroy();
+    header('Location: ../index.php');
+}
+?>
 <main>
     <table>
         <thead>
@@ -32,11 +39,9 @@
                 <td><?= $user->getEmail() ?></td>
                 <td><?= $user->getFirstname() ?></td>
                 <td><?= $user->getLastname() ?></td>
-                <?php if(isset($session) && $session->getAdmin()) { ?>
-                    <td><a class="show" href="show.php?id=<?= $user->getId() ?>">Show</a></td>
-                    <td><a class="update" href="update.php?id=<?= $user->getId() ?>">Update</a></td>
-                    <td><a class="destroy" href="destroy.php?id=<?= $user->getId() ?>">Delete</a></td>
-               <?php }?>
+                <td><a class="show" href="show.php?id=<?= $user->getId() ?>">Show</a></td>
+                <td><a class="update" href="update.php?id=<?= $user->getId() ?>">Update</a></td>
+                <td><a class="destroy" href="destroy.php?id=<?= $user->getId() ?>">Delete</a></td>
             </tr>
         <?php } ?>
         </tbody>

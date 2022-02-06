@@ -8,7 +8,14 @@
     <title>All pets</title>
 </head>
 <body>
-<?php require_once '../includes/header.php' ?>
+<?php
+require_once '../includes/header.php' ;
+if(isset($session) && $session->getAdmin() == 0)
+{
+    session_destroy();
+    header('Location: ../index.php');
+}
+?>
 <main>
     <table>
         <thead>
@@ -32,11 +39,9 @@
                 <td><?= $pet->getName() ?></td>
                 <td><?= $pet->getCategory() ?></td>
                 <td><?= $pet->getUser() ?></td>
-                <?php if(isset($session) && $session->getAdmin()) { ?>
-                    <td><a class="show" href="show.php?id=<?= $pet->getId() ?>">Show</a></td>
-                    <td><a class="update" href="update.php?id=<?= $pet->getId() ?>">Update</a></td>
-                    <td><a class="destroy" href="destroy.php?id=<?= $pet->getId() ?>">Delete</a></td>
-                <?php }?>
+                <td><a class="show" href="show.php?id=<?= $pet->getId() ?>">Show</a></td>
+                <td><a class="update" href="update.php?id=<?= $pet->getId() ?>">Update</a></td>
+                <td><a class="destroy" href="destroy.php?id=<?= $pet->getId() ?>">Delete</a></td>
             </tr>
         <?php } ?>
         </tbody>

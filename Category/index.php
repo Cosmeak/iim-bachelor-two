@@ -8,7 +8,14 @@
     <title>All Pet Categories</title>
 </head>
 <body>
-<?php require_once '../includes/header.php' ?>
+<?php
+require_once '../includes/header.php';
+if(isset($session) && $session->getAdmin() == 0)
+{
+    session_destroy();
+    header('Location: ../index.php');
+}
+?>
 <main>
     <table>
         <thead>

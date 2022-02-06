@@ -10,6 +10,11 @@
 <body>
 <?php
 include '../includes/header.php';
+if(isset($session) && $session->getAdmin() == 0)
+{
+    session_destroy();
+    header('Location: ../index.php');
+}
 ?>
 <main class="create">
     <form action="create.php" method="post">
