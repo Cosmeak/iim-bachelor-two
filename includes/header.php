@@ -2,6 +2,7 @@
 require_once '../class/Database.php';
 require_once '../class/User.php';
 require_once '../class/Pet.php';
+require_once '../class/PetCategory.php';
 session_start();
 if (isset($_SESSION['user'])) {
     $session = unserialize($_SESSION['user']);
@@ -15,13 +16,17 @@ else {
 <header>
     <div>
         <img src="../img/logo.png" alt="">
-        <p><?= $session->getCompleteName() ?></p>
+        <p><?= $session->getCompleteName().'<br>'.($session->getAdmin() == 1 ? 'Admin' : 'User') ?></p>
     </div>
     <nav>
         <ul>
-            <li><i class="fas fa-user-circle"></i><a href="show.php?id=<?= $session->getId() ?>">My profile</a></li>
-            <li><i class="fas fa-paw"></i><a href="">Adopt an animal</a></li>
-            <li><i class="fas fa-sign-out-alt"></i><a href="logout.php">Logout</a></li>
+            <li><i class="fas fa-user-circle"></i><a href="../user/show.php?id=<?= $session->getId() ?>">My profile</a></li>
+            <li><i class="fas fa-users"></i><a href="../user/index.php">All Users</a></li>
+            <li><i class="fas fa-paw"></i><a href="../pet/index.php">All pets</a></li>
+            <li><i class="fas fa-egg"></i><a href="../pet/create.php">Add pet</a></li>
+            <li><i class="fas fa-box-open"></i><a href="../category/index.php">All Pet Categories</a></li>
+            <li><i class="fas fa-parachute-box"></i><a href="../category/create.php">Create Pet Categories</a></li>
+            <li><i class="fas fa-sign-out-alt"></i><a href="../user/logout.php">Logout</a></li>
         </ul>
     </nav>
 </header>

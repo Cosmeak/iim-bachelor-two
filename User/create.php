@@ -38,9 +38,7 @@ if ($_POST) {
         $user->setFirstname($_POST['firstname']);
         $user->setLastname($_POST['lastname'] );
         $user = $user->store();
-        session_start();
-        $_SESSION['user'] = serialize($user);
-        header('Location: index.php');
+        header('Location: login.php');
     } else {
         $error = "Passwords aren't the same";
     }

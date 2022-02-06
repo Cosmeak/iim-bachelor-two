@@ -11,30 +11,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><?= $user->getCompleteName() ?> Profile</title>
 </head>
 <body>
 <?php require_once '../includes/header.php' ?>
-<main>
-    <h2>User</h2>
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>Email</td>
-            <td>Firstname</td>
-            <td>Lastname</td>
-        </tr>
-        <tr>
-            <td><?= $user->getId() ?></td>
-            <td><?= $user->getEmail() ?></td>
-            <td><?= $user->getFirstname() ?></td>
-            <td><?= $user->getLastname() ?></td>
-        </tr>
-    </table>
-    <h2>Pets</h2>
+<main class="profile">
+    <article class="card-profile">
+        <div class="top-card"></div>
+        <div class="middle-card">
+            <p>Email: <?= $user->getEmail() ?></p>
+            <p>Firstname: <?= $user->getFirstname() ?></p>
+            <p>Lastname: <?= $user->getLastname() ?></p>
+        </div>
+        <div class="bottom-card">
+            <?php if (isset($session) && $session->getId() == $_GET['id']) { ?>
+                <a class="update" href="update.php?id=<?= $user->getId() ?>">Update</a>
+                <a class="destroy" href="destroy.php?id=<?= $user->getId() ?>">Delete</a>
+            <?php } ?>
+        </div>
+    </article>
+    </div>
+    <div class="pet">
+        <h2>Pets</h2>
+        <div class="list"></div>
+    </div>
 </main>
 </body>
 </html>

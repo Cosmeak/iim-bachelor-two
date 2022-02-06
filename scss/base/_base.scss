@@ -10,12 +10,11 @@ body {
 
 main {
   width: 100%;
-  margin: 64px 32px;
+  margin: 32px;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
+  font-size: 1.5rem;
 }
 
 table {
@@ -28,11 +27,11 @@ table {
   thead {
     th {
       color: #ffffff;
-      background: #4FC3A1;
+      background: #eb651c;
 
       &:nth-child(odd) {
         color: #ffffff;
-        background: #324960;
+        background: #222222;
       }
     }
   }

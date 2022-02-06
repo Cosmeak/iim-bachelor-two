@@ -46,7 +46,6 @@ class User
     /*------------------------------------------------
      * GET FUNCTIONS
      ------------------------------------------------*/
-
     public function getId(): int
     {
         return $this->id;
@@ -154,10 +153,8 @@ class User
     /*------------------------------------------------
      * OTHERS FUNCTIONS
      ------------------------------------------------*/
-
     public function getCompleteName(): string
     {
         return $this->lastname.' '.$this->firstname;
     }
 }
-

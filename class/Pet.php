@@ -1,11 +1,13 @@
 <?php
-
+require_once 'Database.php';
 class Pet
 {
     private int $id;
     private string $name;
-    private int $category;
-    private int $user;
+    private int $category_id;
+    private string $category;
+    private int $user_id;
+    private string $user;
 
     /*------------------------------------------------
      * SET FUNCTIONS
@@ -20,14 +22,32 @@ class Pet
         $this->name = $name;
     }
 
-    public function setCategory(int $category): void
+    public function setCategoryId(int $category_id): void
     {
-        $this->category = $category;
+        $this->category_id = $category_id;
     }
 
-    public function setUser(int $user): void
+    public function setCategory(int $category_id): void
     {
-        $this->user = $user;
+        $db = new Database();
+        $request = $db->getConnection()->prepare('SELECT * FROM categories WHERE id = ?');
+        $request->execute([$category_id]);
+        $response = $request->fetch();
+        $this->category = $response['label'];
+    }
+
+    public function setUserId(int $user_id): void
+    {
+        $this->user_id = $user_id;
+    }
+
+    public function setUser(int $user_id): void
+    {
+        $db = new Database();
+        $request = $db->getConnection()->prepare('SELECT * FROM users WHERE id = ?');
+        $request->execute([$user_id]);
+        $response = $request->fetch();
+        $this->user = $response['lastname'].' '.$response['firstname'];
     }
 
     /*------------------------------------------------
@@ -39,19 +59,19 @@ class Pet
         return $this->id;
     }
 
-    public function getName(string $name): string
+    public function getName(): string
     {
-        return $this->name = $name;
+        return $this->name;
     }
 
-    public function getCategory(int $category): int
+    public function getCategory(): string
     {
-        return $this->category = $category;
+        return $this->category;
     }
 
-    public function getUser(int $user): int
+    public function getUser(): string
     {
-        return $this->user = $user;
+        return $this->user;
     }
 
     /*------------------------------------------------
@@ -61,20 +81,45 @@ class Pet
     {
         $pets = [];
         $db = new Database();
-        $request = $db->connect()->query('SELECT * from pets');
+        $request = $db->getConnection()->query('SELECT * from pets');
         foreach ($request as $element)
         {
             $pet = new Pet();
             $pet->setId($element['id']);
             $pet->setName($element['name']);
-            if(isset($element['category_id'])) {
-                $pet->setCategory($element['category_id']);
-            }
-            if(isset($element['user_id']))
-            {
-                $pet->setUser($element['user_id']);
-            }
+            $pet->setCategory($element['category_id']);
+            $pet->setUser($element['user_id']);
+            array_push($pets, $pet);
         }
         return $pets;
+    }
+
+    public function store(): void
+    {
+        $db = new Database();
+        $request = $db->getConnection()->prepare('INSERT INTO pets(`name`, `user_id`, `category_id`) VALUES (?,?,?)');
+        $request->execute([$this->name, $this->user_id, $this->category_id ]);
+    }
+
+    public function show(int $id): object
+    {
+        $db = new Database();
+        $request = $db->getConnection()->prepare('SELECT * FROM pets where id = ?');
+        $request->execute([$id]);
+        $response = $request->fecth();
+        $pet = new Pet();
+        $pet->setId($response['id']);
+        $pet->setName($response['name']);
+        $pet->setCategory($response['category_id']);
+        $pet->setUser($response['user_id']);
+        print_r($pet);
+        return $pet;
+    }
+
+    public function destroy(int $id): void
+    {
+        $db = new Database();
+        $request = $db->getConnection()->prepare('DELETE FROM pets WHERE id = ?');
+        $request->execute([$id]);
     }
 }

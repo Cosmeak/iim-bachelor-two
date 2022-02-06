@@ -10,7 +10,6 @@
 <body>
 <?php require_once '../includes/header.php' ?>
 <main>
-    <h2>Users</h2>
     <table>
         <thead>
             <tr>
@@ -18,6 +17,9 @@
                 <th>Email</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
+                <th>Show</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>

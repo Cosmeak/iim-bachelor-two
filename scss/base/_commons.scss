@@ -1,0 +1,22 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .informations {
+    position: sticky;
+    top: 32px;
+  }
+
+  .list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pet {
+    scroll-behavior: auto;
+  }
+}
+

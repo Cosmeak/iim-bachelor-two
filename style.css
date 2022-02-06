@@ -61,12 +61,11 @@ body {
 
 main {
   width: 100%;
-  margin: 64px 32px;
+  margin: 32px;
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
+  font-size: 1.5rem;
 }
 
 table {
@@ -78,11 +77,11 @@ table {
 }
 table thead th {
   color: #ffffff;
-  background: #4FC3A1;
+  background: #eb651c;
 }
 table thead th:nth-child(odd) {
   color: #ffffff;
-  background: #324960;
+  background: #222222;
 }
 table tr:nth-child(even) {
   background: #F8F8F8;
@@ -97,6 +96,25 @@ table th {
   padding: 8px;
   color: #ffffff;
   background: #4FC3A1;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.profile .informations {
+  position: sticky;
+  top: 32px;
+}
+.profile .list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.profile .pet {
+  scroll-behavior: auto;
 }
 
 header {
@@ -174,6 +192,43 @@ header nav ul li:hover {
 }
 .destroy:hover {
   background-color: #990000;
+}
+
+.card-profile {
+  width: 300px;
+  height: 350px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  color: #222;
+  border: 1px solid white;
+  overflow: hidden;
+  position: relative;
+}
+.card-profile .top-card {
+  width: 100%;
+  height: 25%;
+  background-color: #222;
+}
+.card-profile .middle-card {
+  width: 100%;
+  padding: 16px;
+}
+.card-profile .bottom-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 16px;
+}
+
+.card-pet {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #222;
+  color: white;
+  padding: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */
