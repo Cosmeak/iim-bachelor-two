@@ -1,0 +1,32 @@
+.btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 6px lightgrey;
+  color: white;
+  transition: 0.3s;
+}
+
+.show {
+  @extend .btn;
+  background-color: limegreen;
+  &:hover {
+    background-color: darken(limegreen, 20%);
+  }
+}
+
+.update {
+  @extend .btn;
+  background-color: deepskyblue;
+  &:hover {
+    background-color: darken(deepskyblue, 20%);
+  }
+}
+
+.destroy {
+  @extend .btn;
+  background-color: red;
+  &:hover {
+    background-color: darken(red, 20%);
+  }
+}
