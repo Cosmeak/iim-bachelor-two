@@ -1,3 +1,15 @@
+<?php
+session_start();
+if($_POST)
+{
+    require_once '../class/User.php';
+    $user = new User;
+    $user = $user->login($_POST['email'],$_POST['password']);
+    $_SESSION['user'] = serialize($user);
+    header('Location: show.php?id='.$user->getId());
+    exit();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,13 +31,3 @@
     </form>
 </body>
 </html>
-<?php
-if($_POST)
-{
-    require_once '../class/User.php';
-    $user = new User;
-    $user = $user->login($_POST['email'],$_POST['password']);
-    session_start();
-    $_SESSION['user'] = serialize($user);
-    header('Location: show.php?id='.$user->getId());
-}

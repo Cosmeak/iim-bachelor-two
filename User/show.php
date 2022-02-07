@@ -1,10 +1,11 @@
 <?php
-    require_once '../class/User.php';
+    require_once "../includes/import.php";
     $user = new User();
     $user = $user->show($_GET['id']);
     if($user == null)
     {
         header('Location: index.php');
+        exit();
     }
 ?>
 <!doctype html>

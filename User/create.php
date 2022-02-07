@@ -1,3 +1,25 @@
+<?php
+require_once '../class/User.php';
+require_once '../class/Database.php';
+if ($_POST) {
+    if($_POST['password'] === $_POST['check_password'])
+    {
+        $user = new User();
+        $user->setEmail($_POST['email'] );
+        $user->setPassword($_POST['password'] );
+        $user->setFirstname($_POST['firstname']);
+        $user->setLastname($_POST['lastname'] );
+        $user = $user->store();
+        header('Location: login.php');
+        exit();
+    } else {
+        $error = "Passwords aren't the same";
+    }
+}
+if (isset($error)) {
+    echo $error;
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,25 +45,3 @@
 
 </body>
 </html>
-
-<?php
-require_once '../class/User.php';
-require_once '../class/Database.php';
-if ($_POST) {
-    if($_POST['password'] === $_POST['check_password'])
-    {
-        $user = new User();
-        $user->setEmail($_POST['email'] );
-        $user->setPassword($_POST['password'] );
-        $user->setFirstname($_POST['firstname']);
-        $user->setLastname($_POST['lastname'] );
-        $user = $user->store();
-        header('Location: login.php');
-    } else {
-        $error = "Passwords aren't the same";
-    }
-}
-if (isset($error)) {
-    echo $error;
-}
-

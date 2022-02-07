@@ -1,3 +1,11 @@
+<?php
+require_once '../includes/import.php';
+if ($_POST) {
+    $petCategory = new PetCategory();
+    $petCategory->setlabel($_POST['label']);
+    $petCategory->store();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,10 +32,3 @@ if(isset($session) && $session->getAdmin() == 0)
 </main>
 </body>
 </html>
-
-<?php
-if ($_POST) {
-    $petCategory = new PetCategory();
-    $petCategory->setlabel($_POST['label']);
-    $petCategory->store();
-}

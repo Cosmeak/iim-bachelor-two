@@ -1,14 +1,10 @@
 <?php
-require_once '../class/Database.php';
-require_once '../class/User.php';
-require_once '../class/Pet.php';
-require_once '../class/PetCategory.php';
-session_start();
 if (isset($_SESSION['user'])) {
     $session = unserialize($_SESSION['user']);
 }
 else {
     header('Location: ../user/login.php');
+    exit();
 }
 ?>
 <link rel="stylesheet" href="../style.css">

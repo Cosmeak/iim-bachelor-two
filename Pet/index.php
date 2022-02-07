@@ -1,3 +1,4 @@
+<?php require_once '../includes/import.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +15,7 @@ if(isset($session) && $session->getAdmin() == 0)
 {
     session_destroy();
     header('Location: ../index.php');
+    exit();
 }
 ?>
 <main>
