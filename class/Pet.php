@@ -112,7 +112,6 @@ class Pet
         $pet->setName($response['name']);
         $pet->setCategory($response['category_id']);
         $pet->setUser($response['user_id']);
-        print_r($pet);
         return $pet;
     }
 

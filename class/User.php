@@ -131,6 +131,9 @@ class User
         $request->execute([$id]);
     }
 
+    /*------------------------------------------------
+     * OTHERS FUNCTIONS
+     ------------------------------------------------*/
     public function login(string $email, string $password) : object
     {
         $user = new User();
@@ -150,9 +153,24 @@ class User
         return $user;
     }
 
-    /*------------------------------------------------
-     * OTHERS FUNCTIONS
-     ------------------------------------------------*/
+    public function getUserPets() : array
+    {
+        $pets = [];
+        $db = new Database();
+        $request = $db->getConnection()->prepare('SELECT * FROM pets WHERE user_id = ?');
+        $request->execute([$this->id]);
+       foreach ($request->fetchAll() as $element)
+       {
+           $pet = new Pet();
+           $pet->setId($element['id']);
+           $pet->setName($element['name']);
+           $pet->setCategory($element['category_id']);
+           $pet->setUser($element['user_id']);
+           array_push($pets, $pet);
+       }
+        return $pets;
+    }
+
     public function getCompleteName(): string
     {
         return $this->lastname.' '.$this->firstname;

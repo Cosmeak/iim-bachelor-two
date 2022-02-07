@@ -26,7 +26,7 @@
             <p>Lastname: <?= $user->getLastname() ?></p>
         </div>
         <div class="bottom-card">
-            <?php if (isset($session) && $session->getId() == $_GET['id']) { ?>
+            <?php if (isset($session) && ($session->getId() == $_GET['id'] || $session->getAdmin() == 1)) { ?>
                 <a class="update" href="update.php?id=<?= $user->getId() ?>">Update</a>
                 <a class="destroy" href="destroy.php?id=<?= $user->getId() ?>">Delete</a>
             <?php } ?>
@@ -35,7 +35,34 @@
     </div>
     <div class="pet">
         <h2>Pets</h2>
-        <div class="list"></div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>Category</th>
+                <th>Show</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($user->getUserPets() as $pet)
+            { ?>
+                <tr>
+                    <td><?= $pet->getId() ?></td>
+                    <td><?= $pet->getName() ?></td>
+                    <td><?= $pet->getCategory() ?></td>
+                <?php if (isset($session) && ($session->getId() == $_GET['id'] || $session->getAdmin() == 1)) { ?>
+                    <td><a class="show" href="../pet/show.php?id=<?= $pet->getId() ?>">Show</a></td>
+                    <td><a class="update" href="../pet/update.php?id=<?= $pet->getId() ?>">Update</a></td>
+                    <td><a class="destroy" href="../pet/destroy.php?id=<?= $pet->getId() ?>">Delete</a></td>
+                <?php } ?>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
     </div>
 </main>
 </body>
