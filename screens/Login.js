@@ -17,11 +17,8 @@ const App = () => (
           placeholderTextColor="#ffffff80"
           underlineColorAndroid='transparent'
         /> 
-          <Pressable style = {styles.button} onPress={() => alert('Bouffon CALME TOI MERDE')}>
-            <Text style={styles.textButton}>Entrer dans le jeu</Text>
-          </Pressable>
-
-          <Pressable style={styles.admin}><Text>Administrateur ?</Text></Pressable>
+          <Pressable style = {styles.button} onPress={() => alert('Bouffon CALME TOI MERDE')}> <Text style={styles.textButton}> Entrer dans le jeu </Text> </Pressable>
+          <Pressable style={styles.admin}> <Text>Administrateur ?</Text> </Pressable>
     </ImageBackground>
   </View>  
 );
