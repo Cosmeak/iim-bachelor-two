@@ -214,9 +214,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="foooter_hr"></div>
             </div>
             <div class="footer_mentions_text">
-                <p>Lorem ipsum dolor sit amet. Et voluptas quidem et dignissimos tempore ea voluptatem aliquam sit quia tempora eum galisum explicabo. Qui harum voluptates est harum deleniti est consequatur accusantium sed suscipit similique. Eum error minus aut ducimus dolorem ea provident commodi rem blanditiis quis et officiis explicabo sit necessitatibus voluptate eum enim tenetur.  Et nobis explicabo in autem inventore 33 consequatur explicabo sit veniam numquam et Quis ducimus.</p>
-                <p>Non galisum neque vel minima omnis et quis quos aut suscipit omnis eum magnam illum. Hic amet enim est obcaecati omnis sed magni excepturi qui ullam omnis et exercitationem deleniti qui sunt amet.
-                    Vel consequuntur atque aut quasi rerum est consequatur aperiam eum voluptatem ipsum! Ut delectus possimus in doloribus voluptatem in enim facilis.</p>
+                <p>Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions.
+<br><br>
+Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par courriel, à l’adresse contact@anthedesign.fr, en décrivant le problème de la manière la plus précise possible (page posant problème, type d’ordinateur et de navigateur utilisé, …).
+<br><br>
+Tout contenu téléchargé se fait aux risques et périls de l’utilisateur et sous sa seule responsabilité. En conséquence, ne saurait être tenu responsable d’un quelconque dommage subi par l’ordinateur de l’utilisateur ou d’une quelconque perte de données consécutives au téléchargement.
+<br><br>
+De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour.
+<br><br>
+Les liens hypertextes mis en place dans le cadre du présent site internet en direction d’autres ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de SARL ANTHEDESIGN.</p>
+<br><br>
             </div>
         </div>
     </footer>
