@@ -47,11 +47,11 @@ table {
   font-size: 16px; }
 
 body {
-  overflow-x: hidden;
   background-color: #F9F9F9; }
 
 section {
   width: 100%;
+  max-width: 100vw;
   height: 100vh; }
 
 img {
@@ -181,9 +181,17 @@ p {
   background: linear-gradient(-45deg, #F67520, #F5A11A);
   background: -webkit-linear-gradient(-45deg, #F67520, #F5A11A);
   background: -moz-linear-gradient(-45deg, #F67520, #F5A11A);
-  background: -ms-linear-gradient(-45deg, #F67520, #F5A11A); }
+  background: -ms-linear-gradient(-45deg, #F67520, #F5A11A);
+  display: flex;
+  justify-content: center;
+  place-items: center; }
+  .second .slider {
+    width: 100vw;
+    display: flex;
+    gap: 0; }
 
 .third {
+  width: 100%;
   height: auto;
   margin-bottom: 128px; }
   .third h2 {
@@ -253,5 +261,42 @@ footer {
 .footer_mentions_text {
   text-align: center;
   opacity: 60%; }
+
+.card, .card-back-one, .card-back-two {
+  width: 400px;
+  min-width: 400px;
+  height: 525px;
+  background-color: aqua;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; }
+  .card .card-top, .card-back-one .card-top, .card-back-two .card-top {
+    display: flex;
+    place-items: center;
+    gap: 16px; }
+    .card .card-top i, .card-back-one .card-top i, .card-back-two .card-top i {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      place-items: center;
+      background-color: white;
+      border-radius: 10px; }
+  .card .card-middle, .card-back-one .card-middle, .card-back-two .card-middle {
+    width: 100%;
+    height: 40%;
+    background-color: white;
+    border-radius: 10px; }
+  .card .card-bottom p, .card-back-one .card-bottom p, .card-back-two .card-bottom p {
+    font-size: 1rem; }
+
+.card-back-one, .card-back-two {
+  background-color: coral;
+  transform: scale(80%); }
+
+.card-back-two {
+  transform: scale(70%); }
 
 /*# sourceMappingURL=style.css.map */

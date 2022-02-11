@@ -114,9 +114,19 @@
 
 .second {
   @include background-gradiant($primary, $secondary);
+  display: flex;
+  justify-content: center;
+  place-items: center;
+
+  .slider {
+    width: 100vw;
+    display: flex;
+    gap: 0;
+  }
 }
 
 .third {
+  width: 100%;
   height: auto;
   margin-bottom: 128px;
   h2 {
@@ -197,4 +207,60 @@ footer {
 .footer_mentions_text {
   text-align: center;
   opacity: 60%;
+}
+
+.card {
+  width: 400px;
+  min-width: 400px;
+  height: 525px;
+  background-color: aqua;
+  padding: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 3;
+
+  .card-top {
+    display: flex;
+    place-items: center;
+    gap: 16px;
+
+    i {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      place-items: center;
+      background-color: white;
+      border-radius: 10px;
+    }
+  }
+
+  .card-middle {
+    width: 100%;
+    height: 40%;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .card-bottom {
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.card-back-one {
+  @extend .card;
+  background-color: coral;
+  transform: scale(80%);
+  z-index: 2;
+  
+}
+
+.card-back-two {
+  @extend .card-back-one;
+  transform: scale(70%);
+  z-index: 1;
 }

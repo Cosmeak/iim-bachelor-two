@@ -46,7 +46,105 @@
 
 
   <section class="second" id="formations">
+    <button id="previous">Previous</button>
+    <div class="slider">
     
+    <article class="card-back-two">
+        <div class="card-top">
+          <i class="fab fa-css3 fa-lg"></i>
+          <div>
+            <h3>Base CSS</h3>
+            <p>Styliser une page web</p>
+          </div>
+        </div>
+        <div class="card-middle">
+          
+        </div>
+        <div class="card-bottom">
+          <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+        </div>
+      </article>
+      <article class="card-back-one">
+        <div class="card-top">
+          <i class="fab fa-css3 fa-lg"></i>
+          <div>
+            <h3>Base CSS</h3>
+            <p>Styliser une page web</p>
+          </div>
+        </div>
+        <div class="card-middle">
+          
+        </div>
+        <div class="card-bottom">
+          <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <i class="fab fa-css3 fa-lg"></i>
+          <div>
+            <h3>Base CSS</h3>
+            <p>Styliser une page web</p>
+          </div>
+        </div>
+        <div class="card-middle">
+          
+        </div>
+        <div class="card-bottom">
+          <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+        </div>
+      </article>
+
+      <article class="card-back-one">
+        <div class="card-top">
+          <i class="fab fa-css3 fa-lg"></i>
+          <div>
+            <h3>Base CSS</h3>
+            <p>Styliser une page web</p>
+          </div>
+        </div>
+        <div class="card-middle">
+          
+        </div>
+        <div class="card-bottom">
+          <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+        </div>
+      </article>
+
+      <article class="card-back-two">
+        <div class="card-top">
+          <i class="fab fa-css3 fa-lg"></i>
+          <div>
+            <h3>Base CSS</h3>
+            <p>Styliser une page web</p>
+          </div>
+        </div>
+        <div class="card-middle">
+          
+        </div>
+        <div class="card-bottom">
+          <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          </p>
+        </div>
+      </article>
+
+    </div>
+    <button id="next">Next</button>
   </section>
 
   <section class="third" id="form">
