@@ -187,8 +187,7 @@ p {
   place-items: center; }
   .second .slider {
     width: 100vw;
-    display: flex;
-    gap: 0; }
+    display: flex; }
 
 .third {
   width: 100%;
@@ -271,7 +270,8 @@ footer {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 16px; }
+  gap: 16px;
+  z-index: 3; }
   .card .card-top, .card-back-one .card-top, .card-back-two .card-top {
     display: flex;
     place-items: center;
@@ -292,11 +292,14 @@ footer {
   .card .card-bottom p, .card-back-one .card-bottom p, .card-back-two .card-bottom p {
     font-size: 1rem; }
 
-.card-back-one, .card-back-two {
+.card-back-one {
   background-color: coral;
-  transform: scale(80%); }
+  transform: scale(80%);
+  z-index: 2; }
 
 .card-back-two {
-  transform: scale(70%); }
+  transform: scale(70%);
+  background-color: white;
+  z-index: 1; }
 
 /*# sourceMappingURL=style.css.map */
