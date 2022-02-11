@@ -46,10 +46,10 @@
 
 
   <section class="second" id="formations">
-    <button id="previous">Previous</button>
+    <!-- <button id="previous">Previous</button> -->
     <div class="slider">
     
-    <article class="card-back-two">
+    <article class="card-back-two left">
         <div class="card-top">
           <i class="fab fa-css3 fa-lg"></i>
           <div>
@@ -67,7 +67,7 @@
           </p>
         </div>
       </article>
-      <article class="card-back-one">
+      <article class="card-back-one left">
         <div class="card-top">
           <i class="fab fa-css3 fa-lg"></i>
           <div>
@@ -105,7 +105,7 @@
         </div>
       </article>
 
-      <article class="card-back-one">
+      <article class="card-back-one right">
         <div class="card-top">
           <i class="fab fa-css3 fa-lg"></i>
           <div>
@@ -124,7 +124,7 @@
         </div>
       </article>
 
-      <article class="card-back-two">
+      <article class="card-back-two right">
         <div class="card-top">
           <i class="fab fa-css3 fa-lg"></i>
           <div>
@@ -144,7 +144,7 @@
       </article>
 
     </div>
-    <button id="next">Next</button>
+    <!-- <button id="next">Next</button> -->
   </section>
 
   <section class="third" id="form">
@@ -199,4 +199,4 @@
     </footer>
 </body>
 </html>
-<?php
+<?php 

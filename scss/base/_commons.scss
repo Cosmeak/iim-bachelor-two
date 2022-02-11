@@ -119,8 +119,20 @@
   place-items: center;
   
   .slider {
-    width: 100vw;
-    display: flex;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 525px;
+
+    .left {
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
+
+    .right {
+      grid-row: 1/2;
+      grid-column: -2/-1;
+    }
   }
 }
 
@@ -260,6 +272,14 @@ footer {
 .card-back-two {
   @extend .card;
   transform: scale(70%);
-  background-color: white;
+  background-color: blue;
   z-index: 1;
+  &.right {
+    position: relative;
+    left: 80px;
+  }
+  &.left {
+    position: relative;
+    right: 80px;
+  }
 }
