@@ -186,9 +186,12 @@ p {
   place-items: center; }
   .second .slider {
     width: 90%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 525px; }
+    grid-template-rows: 525px;
+    justify-content: center;
+    place-items: center; }
     .second .slider .left {
       grid-row: 1/2;
       grid-column: 1/2; }
