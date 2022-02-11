@@ -348,7 +348,8 @@ footer {
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: 14px; }
+  font-size: 14px;
+  color: white; }
 
 .footer_mentions_hr {
   height: 2px;
