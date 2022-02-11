@@ -187,14 +187,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="footer_symbole">
             <article class="footer_symbole_article">
               <i class="far fa-handshake fa-7x "></i>
-                <h3 class='descend'>Il nous font confiance</h3>
-                <p class="footer_symbole_texte"> Plus de 20 grande entreprise nous font confiance</p>
+                <h3 class='descend'>Ils nous font confiance</h3>
+                <p class="footer_symbole_texte"> Plus de 20 grandes entreprisesnous font confiance</p>
             </article>
             <article class="footer_symbole_article">
                 <i class="fas fa-trophy fa-7x"></i>
-                <h3 class='descend'>Numéro 1 des école française du digital</h3>
-                <p class="footer_symbole_texte">Les % de nos élèves trouvent un travail apres
-                    leur diplome avec un salaire moyen de k.</p>
+                <h3 class='descend'>Numéro 1 des écoles française du digital</h3>
+                <p class="footer_symbole_texte">Les 80% de nos élèves trouvent un travail en 3 mois
+                    leur diplome avec un salaire moyen de 42k € par an.</p>
             </article>
             <article class="footer_symbole_article ">
                 <i class="fas fa-graduation-cap fa-7x"></i>
