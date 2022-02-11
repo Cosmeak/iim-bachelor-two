@@ -1,0 +1,200 @@
+.deco-top {
+  background-color: aqua;
+  width: 100%;
+  height: auto;
+  position: relative;
+  
+  h1 {
+    float: right;
+  }
+  
+  .dotted-circle {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    position: absolute;
+    top:  -370px;
+    left: -370px;
+    @include circle(860px);
+    border: dashed  1px  #F67520;
+    z-index: -1;
+
+    .circle {
+      @include circle(640px);
+      background: linear-gradient(143.04deg, #F5A11A 42.12%, #F67520 78.4%);
+      display: flex;
+      justify-content: center;
+      place-items: center;
+      box-shadow: inset 0px 0px 6px 2px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  .part1{
+    display:flex;
+    width: 70%;
+    gap: 80px;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  .learn{
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      .button{
+        display: flex;
+        gap:4%;
+     
+      .button_orange{
+        @include background-gradiant($primary, $secondary);
+        border-radius: 26px;
+        padding: 4px 16px;
+        color: white;
+        filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.15));
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .button_white{
+        background-color: white;
+        border-radius: 26px;
+        padding: 4px 16px;
+        color: $secondary;
+        filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.15));
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+  .test{
+    width: fit-content;
+      .circle1 {
+        @include circle(502px);
+        border:1px dashed#F67520;
+        stroke-dasharray:18;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        .circle2{
+            @include circle(343px);
+            background-color: #F5A11A;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            box-shadow: inset 0px 0px 6px 2px rgba(0, 0, 0, 0.25);
+            .circle3{
+                @include circle(237px);
+                background-color: #ffffff;
+                box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.25);
+                display: flex;
+                justify-content: center;
+                place-items: center;
+                .circle4{
+                    @include circle(80px);
+                    background-color: #F5A11A;
+                    display: flex;
+                    justify-content: center;
+                    place-items: center;
+                    box-shadow: inset 0px 0px 6px 2px rgba(0, 0, 0, 0.25);
+                    p{
+                        font-size : 2rem;
+                    }
+                }
+            }
+        }
+      }
+  }
+  
+}
+
+.second {
+  @include background-gradiant($primary, $secondary);
+}
+
+.third {
+  height: auto;
+  margin-bottom: 128px;
+  h2 {
+    padding: 64px 0;
+    text-align: center;
+  }
+  form {
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.25);
+    @include background-gradiant($primary, $secondary);
+
+    input {
+      font-size: 1rem;
+      border-radius: 5px;
+      padding: 4px 8px;
+    }
+
+    select {
+      font-size: 1rem;
+      background-color: $background;
+      border-radius: 5px;
+      padding: 2px 8px; 
+
+      option {
+        font-size: 1rem;
+      }
+    }
+
+    button {
+      width: 30%;
+      margin: 0 auto;
+      margin-top: 32px;
+      border: none;
+      padding: 4px 16px;
+      background-color: $background;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+
+
+footer {
+  width: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.footer_symbole {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+.footer_symbole_article {
+  width: 30%;
+}
+.footer_symbole_texte {
+  opacity: 60%;
+}
+.footer_mentions_title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 14px;
+}
+.footer_mentions_hr{
+  height: 2px;
+  width: 100%;
+  background-color: orange;
+}
+.footer_mentions_text {
+  text-align: center;
+  opacity: 60%;
+}
