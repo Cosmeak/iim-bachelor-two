@@ -30,3 +30,7 @@
   background: -moz-linear-gradient(-45deg, $color1, $color2);
   background: -ms-linear-gradient(-45deg, $color1, $color2);
 }
+
+@mixin color-gradiant($color1, $color2) {
+  color: linear-gradient(-45deg,$color1, $color2);
+}

@@ -6,9 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WP7QFXC');</script>
+<!-- End Google Tag Manager -->
   <title>Les formations Coding & Digital Innovation</title>
 </head>
 <body>
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP7QFXC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div class="deco-top">
     <div class='dotted-circle'>
       <div class='circle'>
@@ -31,10 +42,22 @@
       </div>
       <div class='test'> 
         <div class='circle1'>
-          <i class="fab fa-css3-alt relative testing"></i>
-          <i class="fab fa-js relative "></i>
-          <i class="fab fa-php relative "></i>
+          <div class='relative rond'>
+            <i class="fab fa-css3-alt fa-3x "></i>
+          </div>
+          <div class='relative2 rond'>
+            <i class="fab fa-js fa-3x "></i>
+          </div>
+          <div class='relative3 rond'>
+            <i class="fab fa-php fa-3x "></i>
+          </div>
           <div class='circle2'>
+            <div class='relative4 rond2'>
+              <i class="fab fa-html5 fa-2x"></i>
+            </div>
+            <div class='relative5 rond2'>
+              <i class="fab fa-python fa-2x"></i>
+            </div>
             <div class='circle3'>
               <div class='circle4'><p>💻</p></div>
             </div>
@@ -65,19 +88,19 @@
   <footer>
         <div class="footer_symbole">
             <article class="footer_symbole_article">
-                <img src="footer_one.png" alt="img">
-                <h3></h3>
-                <p class="footer_symbole_texte"></p>
+              <i class="far fa-handshake fa-7x "></i>
+                <h3 class='descend'>Il nous font confiance</h3>
+                <p class="footer_symbole_texte"> Plus de 20 grande entreprise nous font confiance</p>
             </article>
             <article class="footer_symbole_article">
-                <img src="footer_two.png" alt="img_classement">
-                <h3>Numéro 1 des école française du digital</h3>
+                <i class="fas fa-trophy fa-7x"></i>
+                <h3 class='descend'>Numéro 1 des école française du digital</h3>
                 <p class="footer_symbole_texte">Les % de nos élèves trouvent un travail apres
                     leur diplome avec un salaire moyen de k.</p>
             </article>
-            <article class="footer_symbole_article">
-                <img src="footer_three.png" alt="img_mastère">
-                <h3>2 Mastères reconnu par l’état</h3>
+            <article class="footer_symbole_article ">
+                <i class="fas fa-graduation-cap fa-7x"></i>
+                <h3 class='descend'>2 Mastères reconnu par l’état</h3>
                 <p class="footer_symbole_texte">Nos élèves auront le choix entre
                     Ingénierie web et mobile
                     et un double diplôme
@@ -87,7 +110,7 @@
         </div>
         <div class="footer_mentions">
             <div class="footer_mentions_title">
-                <h2>Afficher les mentions légales</h2>
+                <h2>Mentions légales</h2>
             </div>
             <div class="footer_mentions_hr">
                 <div class="foooter_hr"></div>

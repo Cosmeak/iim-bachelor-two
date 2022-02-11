@@ -6,6 +6,8 @@
   
   h1 {
     float: right;
+    font-size: 2rem;
+    color: $primary;
   }
   
   .dotted-circle {
@@ -80,6 +82,7 @@
         display: flex;
         justify-content: center;
         place-items: center;
+        position: relative;
         .circle2{
             @include circle(343px);
             background-color: #F5A11A;

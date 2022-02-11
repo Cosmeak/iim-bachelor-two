@@ -80,88 +80,8 @@ p {
 
 .relative {
   position: absolute;
-  top: 20px;
-  left: 50px;
-  color: #1572B6;
-}
-
-.relative2 {
-  position: absolute;
-  right: -30px;
-  color: #FFDF06;
-}
-
-.relative3 {
-  position: absolute;
-  bottom: -30px;
-  left: 120px;
-  color: #8993BE;
-}
-
-.relative4 {
-  position: absolute;
-  top: 100px;
+  bottom: 200.05px;
   right: 100px;
-  color: #FFFFFF;
-}
-
-.relative5 {
-  position: absolute;
-  bottom: 200px;
-  left: 60px;
-  color: #FFC331;
-}
-
-.rond {
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
-  background-color: #FFFFFF;
-  border: 1px #F67520 solid;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-}
-
-.rond2 {
-  width: 52px;
-  height: 52px;
-  border-radius: 52px;
-  background-color: #F67520;
-  border: 1px #FFFFFF solid;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-.footer_symbole_texte {
-  font-size: 1rem;
-}
-
-.descend {
-  margin-top: 30px;
-}
-
-.footer_mentions {
-  margin-top: 3%;
-}
-.footer_mentions .footer_mentions_hr {
-  margin-top: 2%;
-}
-.footer_mentions .footer_mentions_text {
-  margin-top: 2%;
-}
-.footer_mentions p {
-  font-size: 1rem;
-}
-
-footer {
-  padding-top: 50px;
-  background-color: white;
 }
 
 .deco-top {
@@ -172,8 +92,6 @@ footer {
 }
 .deco-top h1 {
   float: right;
-  font-size: 2rem;
-  color: #F67520;
 }
 .deco-top .dotted-circle {
   display: flex;
@@ -255,7 +173,6 @@ footer {
   display: flex;
   justify-content: center;
   place-items: center;
-  position: relative;
 }
 .first .test .circle1 .circle2 {
   width: 343px;
