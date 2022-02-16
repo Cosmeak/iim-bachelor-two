@@ -28,6 +28,10 @@ class Recipe
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Comment::class)]
     private $comments;
 
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'recipes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $category;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -107,5 +111,17 @@ class Recipe
     public function __toString(): string
     {
         return $this->getName();
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
     }
 }

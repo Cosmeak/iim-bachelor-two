@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -14,6 +15,24 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <div class="menu">
+                <a href="{{ path('app') }}"><img src="" alt=""></a>
+                <div class="search-bar">
+                    <form action="">
+                        <input type="search" placeholder="Search a recipe...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <a href=""><i class="fas fa-user"></i></a>
+            </div>
+            <ul class="submenu">
+                <li><a href="{{ path('app') }}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ path('recipe_index') }}"><i class="fas fa-address-book"></i> My Recipe</a></li>
+            </ul>
+        </header>
+        <main class="container">
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
