@@ -1,0 +1,17 @@
+<header class="w-full h-[72px] flex bg-cs_yellow justify-center place-items-center sticky top-0 rounded-b-3xl backdrop-blur-sm shadow">
+    <div class="w-full h-full flex justify-center place-items-center gap-[32px]">
+        <a href="{{ path('app') }}"><img src="{{ asset('images/logo_stroke.png') }}" alt="" class="h-[64px] object-contain"></a>
+        <form action="" class="flex w-1/4">
+            <input type="search" placeholder="Search a recipe..." class="rounded-l-full w-full">
+            <button type="submit" class="bg-cs_blue rounded-r-full px-[16px] py-[8px] ml-[-6px]"><i class="fas fa-search"></i></button>
+        </form>
+        <button><i class="fas fa-bars fa-2x"></i></button>
+    </div>
+    <ul class="flex gap-[8px] justify-center hidden">
+        <li><a href="{{ path('app') }}"><i class="fas fa-home"></i> Home</a></li>
+        <li>
+            <a href="{{ path('recipe_index') }}"><i class="fas fa-address-book"></i>Recipes</a>
+            {# TODO: Make submenu #}
+        </li>
+    </ul>
+</header>

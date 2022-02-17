@@ -1,17 +1,29 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CookingSheep • Register</title>
+    <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('images/logo.png') }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
-{% block title %}Register{% endblock %}
-
-{% block body %}
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-
-        <button type="submit" class="btn">Register</button>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="w-full h-screen text-cs_black text-white" style="background-image: url('{{ asset('images/bg_register-login-desktop.jpg') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; backdrop-filter: blur(2px)">
+    {{ form_start(registrationForm, {'attr': {'class': 'w-full h-screen flex flex-col gap-[16px] justify-center place-items-center'}}) }}
+    <img src="{{ asset('images/logo.png') }}" alt="sheep logo" class="w-1/2 h-1/3 object-contain mr-[-48px]">
+    <h1 class="text-3xl font-bold">Register</h1>
+    <div class="w-1/5 flex flex-col gap-[4px] font-black">
+        {{ form_row(registrationForm.username, {'attr': {'class': 'w-full flex flex-col gap-[4px]', 'placeholder': 'Sheepy'}}) }}
+        {{ form_row(registrationForm.email, {'attr': {'class': 'w-full flex flex-col gap-[4px]', 'placeholder': 'cooking@sheep.com'} }) }}
+        {{ form_row(registrationForm.plainPassword, {label : 'Password', 'attr': {'class': 'w-full flex flex-col gap-[4px]', 'placeholder': '••••••••'} }) }}
+    </div>
+    <button type="submit" class="btn-submit">Register</button>
+    <p class="font-bold">Have an account? <a href="{{ path('app_login') }}" class="text-cs_blue">Login</a></p>
     {{ form_end(registrationForm) }}
-{% endblock %}
+</body>
+</html>
