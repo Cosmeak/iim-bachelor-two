@@ -8,22 +8,6 @@
 }
 
 /*------------------------
-*      Scroll Bar
-------------------------*/
-
-::-webkit-scrollbar {
-    @apply bg-transparent w-[6px];
-}
-
-::-webkit-scrollbar-track {
-    @apply bg-transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    @apply bg-cs_blue rounded-full;
-}
-
-/*------------------------
         Nav bar
 ------------------------*/
 li:hover > ul {
@@ -33,18 +17,27 @@ li:hover > ul {
 /*------------------------
         Forms
 ------------------------*/
-input, textarea {
-    @apply rounded px-[16px] py-[4px] rounded focus:outline-none focus:shadow-inner text-cs_black shadow-inner;
+input, textarea, select {
+    @apply rounded px-[16px] py-[4px] rounded focus:outline-none text-cs_black shadow-inner;
+}
+
+textarea {
+    min-height: 400px;
+    max-height: 400px;
 }
 
 .form_style {
-    @apply w-1/2 bg-cs_blue flex flex-col justify-center place-content-center;
+    @apply w-full flex flex-col justify-center place-content-center;
 }
 .form_style > div {
     @apply flex flex-col gap-[16px];
 }
 .form_style > div > div {
     @apply flex flex-col gap-[4px];
+}
+
+.form_style label {
+    @apply font-bold;
 }
 
 /*------------------------
@@ -62,7 +55,7 @@ input, textarea {
         Cards
 ------------------------*/
 .recipe_card {
-    @apply rounded-lg shadow overflow-hidden w-[300px] h-[300px] relative justify-center;
+    @apply rounded-lg overflow-hidden h-[300px] relative justify-center bg-cs_yellow-full;
 }
 .recipe_card > img {
     @apply w-full h-full object-cover;

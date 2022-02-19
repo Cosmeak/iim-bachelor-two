@@ -14,8 +14,29 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </head>
-<body class="w-full h-auto text-cs_black">
-    {{ include('includes/header.html.twig') }}
-    {% block body %}{% endblock %}
+<body class="w-full h-auto text-cs_black bg-gray-100">
+
+    <header class="w-full h-auto flex flex-col bg-cs_yellow-80 sticky top-0 backdrop-blur-[2px] z-50">
+        <div class="w-full h-full flex justify-between place-items-center gap-[32px] px-[32px] py-[4px] relative">
+            <a href="{{ path('app') }}" class="flex justify-center place-content-center gap-[8px]"><img src="{{ asset('images/logo_stroke.png') }}" alt="" class="h-[48px] object-contain"><p class="m-auto font-bold text-xl">CookingSheep</p></a>
+            <nav class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
+                <ul class="flex place-items-center justify-center gap-[24px]">
+                    <li><a href="{{ path('app') }}" class="text-lg">Home</a></li>
+                    <li>
+                        <a href="{{ path('recipe_index') }}" class="text-lg">Recipes <i class="fas fa-caret-down"></i></a>
+                        <ul class="flex flex-col gap-[8px] hidden absolute bg-cs_yellow-80">
+                            <li class="w-max p-[8px]"><a href="{{ path('recipe_new') }}">New Recipe</a></li>
+                            {# TODO: Make a submenu with all recipe categories #}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a href="{{ path('app_login') }}" class="font-bold text-lg bg-cs_blue px-[16px] py-[4px] rounded-full text-white hover:bg-cs_black duration-300">Login</a>
+        </div>
+    </header>
+
+    <main class="w-1/2 min-h-full flex flex-col place-items-center gap-[32px] bg-white mx-auto p-[32px] rounded-lg my-[16px]">
+        {% block body %}{% endblock %}
+    </main>
 </body>
 </html>

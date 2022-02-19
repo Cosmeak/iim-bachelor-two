@@ -3,19 +3,19 @@
 {% block title %}Recipe index{% endblock %}
 
 {% block body %}
-    <main class="w-full h-auto flex flex-col place-items-center gap-[32px]">
+
         <h1 class="text-3xl font-bold">Recipe index</h1>
 
-        <div class="w-1/2 h-auto grid grid-cols-3 auto-rows-max mx-auto gap-[16px]">
+        <div class="w-full h-auto grid grid-cols-3 auto-rows-max mx-auto gap-[16px]">
             {% for recipe in recipes %}
-                <article class="recipe_card">
-                    <img src="{{ asset('images/'.recipe.image) }}" alt="">
+                <a class="recipe_card" href="{{ path('recipe_show', {'id': recipe.id}) }}">
+                    {# <img src="{{ asset('images/'. recipe.image) }}" alt=""> #}
                     <p>{{ recipe.name }}</p>
-                </article>
+                </a>
             {% else %}
                 <p class="text-red-500 col-start-2 text-center font-bold text-lg bg-cs_black rounded-lg">No records found!</p>
             {% endfor %}
         </div>
         <a href="{{ path('recipe_new') }}" class="mx-auto text-lg bg-cs_yellow-80 backdrop-blur-sm px-[16px] py-[4px] rounded-full hover:bg-cs_black hover:text-white duration-300">Create new</a>
-    </main>
+
 {% endblock %}

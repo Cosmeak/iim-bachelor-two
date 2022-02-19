@@ -24,9 +24,13 @@ class Food
     #[ORM\ManyToMany(targetEntity: Allergy::class, mappedBy: 'food')]
     private $allergies;
 
+    #[ORM\ManyToMany(targetEntity: Recipe::class, mappedBy: 'food')]
+    private $recipes;
+
     public function __construct()
     {
         $this->allergies = new ArrayCollection();
+        $this->recipes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -88,5 +92,32 @@ class Food
     public function __toString(): string
     {
         return $this->getLabel();
+    }
+
+    /**
+     * @return Collection|Recipe[]
+     */
+    public function getRecipes(): Collection
+    {
+        return $this->recipes;
+    }
+
+    public function addRecipe(Recipe $recipe): self
+    {
+        if (!$this->recipes->contains($recipe)) {
+            $this->recipes[] = $recipe;
+            $recipe->addFood($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecipe(Recipe $recipe): self
+    {
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeFood($this);
+        }
+
+        return $this;
     }
 }

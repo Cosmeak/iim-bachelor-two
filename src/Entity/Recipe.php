@@ -45,9 +45,13 @@ class Recipe
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
 
+    #[ORM\ManyToMany(targetEntity: Food::class, inversedBy: 'recipes')]
+    private $food;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->food = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -164,5 +168,29 @@ class Recipe
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return Collection|Food[]
+     */
+    public function getFood(): Collection
+    {
+        return $this->food;
+    }
+
+    public function addFood(Food $food): self
+    {
+        if (!$this->food->contains($food)) {
+            $this->food[] = $food;
+        }
+
+        return $this;
+    }
+
+    public function removeFood(Food $food): self
+    {
+        $this->food->removeElement($food);
+
+        return $this;
     }
 }
