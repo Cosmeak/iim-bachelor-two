@@ -3,9 +3,11 @@
 {% block title %}New Recipe{% endblock %}
 
 {% block body %}
-    <h1>Create new Recipe</h1>
+    <main class="w-full h-auto flex flex-col place-items-center gap-[32px]">
+        <h1 class="text-3xl font-bold">Create new Recipe</h1>
 
-    {{ include('recipe/_form.html.twig') }}
+        {{ include('recipe/_form.html.twig') }}
 
-    <a href="{{ path('recipe_index') }}">back to list</a>
+        <a href="{{ path('recipe_index') }}" class="mx-auto text-lg bg-cs_yellow-80 backdrop-blur-sm px-[16px] py-[4px] rounded-full hover:bg-cs_black hover:text-white duration-300">Back to list</a>
+    </main>
 {% endblock %}

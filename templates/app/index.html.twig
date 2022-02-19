@@ -3,18 +3,44 @@
 {% block title %}CookingSheep • Home{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="w-1/2 h-auto grid grid-cols-3 auto-rows-max mx-auto gap-[16px]">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <article class="col-span-full h-[100px] rounded-lg shadow overflow-hidden relative" >
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="" class="w-full h-full object-cover">
+            <div class="w-full h-full absolute top-0 left-0 text-white text-lg bg-cs_black/15 backdrop-blur-sm flex flex-col justify-center place-items-center">
+                <p class="font-bold text-3xl text-cs_black">Today's discover</p>
+            </div>
+        </article>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/guill/Documents/CookingSheepApp/src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/guill/Documents/CookingSheepApp/templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <article class="recipe_card">
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="">
+            <p>Recipe name by <span>username</span></p>
+        </article>
+
+        <article class="recipe_card">
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="">
+            <p>Recipe name by <span>username</span></p>
+        </article>
+
+        <article class="recipe_card">
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="">
+            <p>Recipe name by <span>username</span></p>
+        </article>
+
+        <article class="recipe_card">
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="">
+            <p>Recipe name by <span>username</span></p>
+        </article>
+
+        <article class="recipe_card">
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="">
+            <p>Recipe name by <span>username</span></p>
+        </article>
+
+        <article class="recipe_card">
+            <img src="{{ asset('images/day_recipe.jpg') }}" alt="">
+            <p>Recipe name by <span>username</span></p>
+        </article>
+
+    </section>
 {% endblock %}

@@ -7,16 +7,70 @@
     font-family: 'Raleway', sans-serif;
 }
 
-input {
-    @apply rounded px-[16px] py-[4px] rounded focus:outline-none focus:shadow-inner text-cs_black;
+/*------------------------
+*      Scroll Bar
+------------------------*/
+
+::-webkit-scrollbar {
+    @apply bg-transparent w-[6px];
 }
 
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-cs_blue rounded-full;
+}
+
+/*------------------------
+        Nav bar
+------------------------*/
+li:hover > ul {
+    display: block;
+}
+
+/*------------------------
+          Forms
+------------------------*/
+input, textarea {
+    @apply rounded px-[16px] py-[4px] rounded focus:outline-none focus:shadow-inner text-cs_black shadow-inner;
+}
+
+.form_style {
+    @apply w-1/2 bg-cs_blue flex flex-col justify-center place-content-center;
+}
+.form_style > div {
+    @apply flex flex-col gap-[16px];
+}
+.form_style > div > div {
+    @apply flex flex-col gap-[4px];
+}
+
+/*------------------------
+       Components
+------------------------*/
 .btn-seemore {
-    @apply px-[8px] py-[4px] bg-cs_yellow font-medium;
+    @apply px-[8px] py-[4px] bg-cs_yellow-full font-medium;
 }
 
 .btn-submit {
-    @apply px-[64px] py-[4px] bg-cs_blue rounded-full text-white text-lg font-medium border
-     duration-300  hover:bg-cs_yellow
-    ;
+    @apply px-[64px] py-[4px] bg-cs_blue rounded-full text-white text-lg font-medium border duration-300 hover:bg-cs_yellow-full;
 }
+
+/*------------------------
+         Cards
+------------------------*/
+.recipe_card {
+    @apply rounded-lg shadow overflow-hidden w-[300px] h-[300px] relative justify-center;
+}
+.recipe_card > img {
+    @apply w-full h-full object-cover;
+}
+.recipe_card > p {
+    @apply w-max absolute bottom-2 left-[50%] text-white text-lg bg-cs_black/50 rounded-lg backdrop-blur-sm -translate-x-1/2 py-[4px] px-[16px];
+}
+.recipe_card > p > span {
+    @apply font-bold;
+}
+

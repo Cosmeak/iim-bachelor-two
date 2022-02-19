@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'cs_yellow': '#FFD765',
+        'cs_yellow': {
+          full: '#FFD765',
+          80: 'rgba(255, 214, 101, 0.8)',
+        },
         'cs_black': '#4A4841',
         'cs_blue': '#84D9CE',
       }
