@@ -31,7 +31,7 @@ li:hover > ul {
 }
 
 /*------------------------
-          Forms
+        Forms
 ------------------------*/
 input, textarea {
     @apply rounded px-[16px] py-[4px] rounded focus:outline-none focus:shadow-inner text-cs_black shadow-inner;
@@ -48,7 +48,7 @@ input, textarea {
 }
 
 /*------------------------
-       Components
+        Components
 ------------------------*/
 .btn-seemore {
     @apply px-[8px] py-[4px] bg-cs_yellow-full font-medium;
@@ -59,7 +59,7 @@ input, textarea {
 }
 
 /*------------------------
-         Cards
+        Cards
 ------------------------*/
 .recipe_card {
     @apply rounded-lg shadow overflow-hidden w-[300px] h-[300px] relative justify-center;
