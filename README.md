@@ -1,4 +1,4 @@
-# symfony-partie-1-Cosmeak
+# CookingSheep Project by Guillaume FINE
 
 ## Installation
 
