@@ -1,31 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recipe index{% endblock %}
+{% block title %}Recipe of {{ category.label }}{% endblock %}
 
 {% block body %}
-<main class="base">
-        <h1 class="text-3xl font-bold">Recipe index</h1>
-
-        <div class="w-full flex flex-wrap gap-[8px]">
-                {% for category in categories %}
-                <a href="{{ path('recipe_category_show', {'id': category.id }) }}" class="btn-classic">{{ category.label }}</a>
-                {% endfor %}
-        </div>
-
+    <main class="base">
+        <h1 class="font-bold text-2xl">{{ category.label }}</h1>
         <div class="w-full h-auto grid grid-cols-3 auto-rows-max mx-auto gap-[16px]">
             {% for recipe in recipes %}
                 <a class="recipe_card" href="{{ path('recipe_show', {'id': recipe.id}) }}">
                     {% if recipe.image is not null %}
                         <img src="{{ asset('/uploads/'~recipe.image) }}" alt="">
                     {% endif %}
-                    <p class="max-w-full text-center">{{ recipe.name }}</p>
+                    <p class="max-w-full">{{ recipe.name }}</p>
                 </a>
             {% else %}
                 <p class="text-red-500 col-start-2 text-center font-bold text-lg bg-cs_black rounded-lg">No records found!</p>
             {% endfor %}
         </div>
-        {% if app.user.username is defined %}
-        <a href="{{ path('recipe_new') }}" class="btn-classic">Create new</a>
-        {% endif %}
-</main>
+        <div class="flex">
+            <a href="{{ path('recipe_index') }}" class="btn-classic">Back to list</a>
+        </div>
+    </main>
 {% endblock %}

@@ -14,13 +14,33 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </head>
-<body class="w-full h-auto text-cs_black bg-gray-100 flex">
+<body class="w-full h-auto text-cs_black bg-gray-100 flex raleway">
 
-    <header class="w-full h-auto flex flex-col bg-cs_yellow-80 sticky top-0 backdrop-blur-[2px] z-50">
+    <header class="w-[250px] h-screen bg-cs_black relative text-white sticky top-0">
+        <div class="h-[60px] w-full flex gap-[8px] place-items-center p-[8px] bg-black/30">
+            <img src="{{ asset('images/logo_stroke.png') }}" alt="" class="h-full object-contain">
+            <p class="text-xl font-bold">CookingSheep</p>
+        </div>
 
+        <div class="middle">
+            <nav>
+                <ul>
+                    <li><a href="{{ path('admin_index') }}"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="{{ path('admin_user') }}"><i class="fas fa-users"></i> Users</a></li>
+                    <li><a href=""><i class="fas fa-comments"></i> Comments</a></li>
+                    <li><a href=""><i class="fas fa-book-open"></i> Recipes</a></li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="absolute bottom-0 left-0 h-[80px] w-full flex flex-col gap-[8px] p-[8px] bg-black/30">
+            <p>{{ app.user.username }}</p>
+            <a href="{{ path('app') }}" class="btn-classic"><i class="fas fa-caret-left"></i> Go back</a>
+        </div>
     </header>
 
-    <main class="w-1/2 min-h-full flex flex-col place-items-center gap-[32px] bg-white mx-auto p-[32px] rounded-lg my-[16px]">
+    <main class="w-full min-h-full bg-white p-[32px] ">
         {% block body %}{% endblock %}
     </main>
 </body>

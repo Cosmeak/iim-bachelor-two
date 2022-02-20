@@ -4,9 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
-* {
+.comfortaa {
     font-family: 'Comfortaa', sans-serif;
 }
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
 .wysiwyg > h2 {
     @apply text-xl font-bold pb-[4px];
 }
@@ -18,11 +22,34 @@
     line-height: 1.5rem;
 }
 
+.base {
+    @apply w-1/2 min-h-full flex flex-col place-items-center gap-[32px] bg-white mx-auto p-[32px] rounded-lg my-[16px];
+}
+
 /*------------------------
         Nav bar
 ------------------------*/
 li:hover > ul {
     display: block;
+}
+
+/*------------------------
+      Dashboard Menu
+------------------------*/
+.middle {
+    @apply p-[8px] w-full h-auto text-lg;
+}
+.middle > nav {
+    @apply w-full h-auto;
+}
+.middle > nav > ul {
+    @apply w-full h-auto flex flex-col gap-[4px];
+}
+.middle > nav > ul > li {
+    @apply w-full flex;
+}
+.middle > nav > ul > li > a {
+    @apply w-full hover:bg-black/30 px-[8px] py-[4px] rounded-lg;
 }
 
 /*------------------------
@@ -69,15 +96,17 @@ textarea {
         Cards
 ------------------------*/
 .recipe_card {
-    @apply rounded-lg overflow-hidden h-[300px] relative justify-center bg-cs_yellow-full hover:bg-cs_black duration-300;
+    @apply rounded-lg h-[300px] relative justify-center bg-cs_yellow-full hover:bg-cs_black duration-300 overflow-hidden;
 }
 .recipe_card > img {
     @apply w-full h-full object-cover hover:scale-110 duration-300;
 }
 .recipe_card > p {
-    @apply w-max absolute bottom-2 left-[50%] text-white text-lg bg-cs_black/50 rounded-lg backdrop-blur-sm -translate-x-1/2 py-[4px] px-[16px];
+    @apply w-fit absolute bottom-2 left-[50%] text-white text-lg bg-cs_black/50 rounded-lg backdrop-blur-sm -translate-x-1/2 py-[4px] px-[16px];
 }
 .recipe_card > p > span {
     @apply font-bold;
 }
+
+
 
