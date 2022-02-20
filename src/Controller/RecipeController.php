@@ -30,6 +30,12 @@ class RecipeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('image')->getData();
+            $file = md5(uniqid()) . '.' . $image->guessExtensions();
+            $image->move($this->getParameter('images_directory'), $file);
+            $recipe->setImage($file);
+
             $entityManager->persist($recipe);
             $entityManager->flush();
 
@@ -57,6 +63,12 @@ class RecipeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('image')->getData();
+            $file = md5(uniqid()) . '.' . $image->getExtension();
+            $image->move($this->getParameter('images_directory'), $file);
+            $recipe->setImage($file);
+
             $entityManager->flush();
 
             return $this->redirectToRoute('recipe_index', [], Response::HTTP_SEE_OTHER);

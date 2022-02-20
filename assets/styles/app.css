@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 * {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
+}
+.wysiwyg > h2 {
+    @apply text-xl font-bold pb-[4px];
+}
+.wysiwyg > h3 {
+    @apply text-lg font-medium pb-[4px];
+}
+.wysiwyg > p {
+    @apply text-base;
+    line-height: 1.5rem;
 }
 
 /*------------------------
@@ -20,7 +31,6 @@ li:hover > ul {
 input, textarea, select {
     @apply rounded px-[16px] py-[4px] rounded focus:outline-none text-cs_black shadow-inner;
 }
-
 textarea {
     min-height: 400px;
     max-height: 400px;
@@ -43,22 +53,26 @@ textarea {
 /*------------------------
         Components
 ------------------------*/
-.btn-seemore {
-    @apply px-[8px] py-[4px] bg-cs_yellow-full font-medium;
+.btn-classic {
+    @apply px-[16px] py-[4px] bg-cs_yellow-full rounded-lg text-white hover:bg-cs_black duration-300;
 }
 
 .btn-submit {
-    @apply px-[64px] py-[4px] bg-cs_blue rounded-full text-white text-lg font-medium border duration-300 hover:bg-cs_yellow-full;
+    @apply bg-green-400 px-[16px] py-[4px] rounded-lg text-white hover:bg-cs_black duration-300;
+}
+
+.btn-delete {
+    @apply bg-red-500 px-[16px] py-[4px] rounded-lg text-white hover:bg-cs_black duration-300;
 }
 
 /*------------------------
         Cards
 ------------------------*/
 .recipe_card {
-    @apply rounded-lg overflow-hidden h-[300px] relative justify-center bg-cs_yellow-full;
+    @apply rounded-lg overflow-hidden h-[300px] relative justify-center bg-cs_yellow-full hover:bg-cs_black duration-300;
 }
 .recipe_card > img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-cover hover:scale-110 duration-300;
 }
 .recipe_card > p {
     @apply w-max absolute bottom-2 left-[50%] text-white text-lg bg-cs_black/50 rounded-lg backdrop-blur-sm -translate-x-1/2 py-[4px] px-[16px];
