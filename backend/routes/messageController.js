@@ -30,5 +30,22 @@ exports.index = (request, response) => {
 */
 exports.create = (request, response) => {
   // Params
+  const user = request.body.user
+  const message = request.body.message
 
+  User.findById(user, (error, docs) => {
+    const newMessage = new Message({
+      user: docs,
+      message: message
+    })
+
+    newMessage.save(error => {
+      if(error) {
+        return response.status(400).json({ status: 'Failure', reason: error })
+      }
+      else {
+        return response.status(200).json({ status: 'Succes', data: newMessage })
+      }
+    })
+  })
 }

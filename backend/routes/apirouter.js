@@ -13,20 +13,21 @@ router.use(function timeLog (request, response, next) {
 
 // User CRUD
 router.route('/user')
-  .get(userController.index)
-  .post(userController.create)
+    .get(userController.index)
+    .post(userController.create)
 
 router.route('/user/:id')
-  .get(userController.show)
-  .patch(userController.update)
-  .put(userController.update)
-  .delete(userController.destroy)
+    .get(userController.show)
+    .patch(userController.update)
+    .put(userController.update)
+    .delete(userController.destroy)
 
 router.route('/login').post(userController.login)
 
 // Message CRUD
 router.route('/message')
-  .get(messageController.index)
+    .get(messageController.index)
+    .post(messageController.create)
 
 // Export all routes
 module.exports = router;

@@ -65,6 +65,7 @@ exports.create = (request, response) => {
       return response.status(400).json({status: 'Failure', reason: 'Email already used'})
     }
   })
+      .catch(error => response.status(400).json({ status: 'Failure', reason: error }))
 }
 
 /** 
