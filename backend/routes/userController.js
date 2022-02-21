@@ -31,6 +31,7 @@ exports.create = (request, response) => {
   const username = request.body.username
   const email = request.body.email
   const password = request.body.password
+  const isAdmin = 0
 
   // Check if all field are full 
   if(username == null || email == null || password == null || username == '' || email == '' || password == '') {
@@ -46,7 +47,8 @@ exports.create = (request, response) => {
         const newUser = new User({
           username: username,
           email: email,
-          password: encryptedPassword
+          password: encryptedPassword,
+          isAdmin: isAdmin,
         })
 
         newUser.save(error => {
@@ -132,7 +134,7 @@ exports.destroy = (request, response) => {
 }
 
 /**
-* Remove the specified resource from storage.
+* Check login data and return the user if it's good
 *
 * @params request
 * @return response
@@ -154,11 +156,13 @@ exports.login = (request, response) => {
       bcrypt.compare(password, docs.password, (errBcrypt, resBcrypt) => {
         if (resBcrypt) {
           return response.status(201).json({status: 'Success', data: docs})
-        } else {
+        } 
+        else {
           return response.status(403).json({status: 'Failure', reason: 'Wrong password!'})
         }
       })
-    } else {
+    } 
+    else {
       return response.status(404).json({status: 'Failure', reason: 'No user found!'})
     }
   })

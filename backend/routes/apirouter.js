@@ -24,5 +24,9 @@ router.route('/user/:id')
 
 router.route('/login').post(userController.login)
 
+// Message CRUD
+router.route('/message')
+  .get(messageController.index)
+
 // Export all routes
 module.exports = router;
