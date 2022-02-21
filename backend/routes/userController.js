@@ -130,3 +130,14 @@ exports.destroy = (request, response) => {
     }
   )
 }
+
+/**
+* Remove the specified resource from storage.
+*
+* @params request
+* @return response
+*/
+
+exports.login = (request, response) => {
+  
+}
