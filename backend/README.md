@@ -111,7 +111,7 @@ ___
 >- Data (if success) = array object message of this user / Reason (if error)
 
 
-**Update** [PUT, PATCH] : ```/api/:id```
+**Update** [PUT, PATCH] : ```/api/message/:id```
 >**Request Header Parameter:**
 > - :id (in url)
 
@@ -123,7 +123,7 @@ ___
 >- Data (if success) = object message / Reason (if error)
 
 
-**Destroy** [DELETE] : ```/api/user/:id```
+**Destroy** [DELETE] : ```/api/message/:id```
 >**Header Parameter:**
 > - :id (in url)
 
