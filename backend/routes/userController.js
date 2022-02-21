@@ -40,31 +40,31 @@ exports.create = (request, response) => {
 
   // Check if we have no user like this in the database 
   User.findOne({ email: email })
-  .then(docs => {
-    // Check if we have a return null / empty and then if it is, do next things
-    if(docs === null) {
-      bcrypt.hash(password, 5, (error, encryptedPassword) => {
-        const newUser = new User({
-          username: username,
-          email: email,
-          password: encryptedPassword,
-          isAdmin: isAdmin,
-        })
+      .then(docs => {
+        // Check if we have a return null / empty and then if it is, do next things
+        if(docs === null) {
+          bcrypt.hash(password, 5, (error, encryptedPassword) => {
+            const newUser = new User({
+              username: username,
+              email: email,
+              password: encryptedPassword,
+              isAdmin: isAdmin,
+            })
 
-        newUser.save(error => {
-          if(error) {
-            return response.status(400).json({ status: 'Failure', reason: error })
-          }
-          else {
-            return response.status(200).json({ status: 'Success', data: newUser })
-          }
-        })
+            newUser.save(error => {
+              if(error) {
+                return response.status(400).json({ status: 'Failure', reason: error })
+              }
+              else {
+                return response.status(200).json({ status: 'Success', data: newUser })
+              }
+            })
+          })
+
+        } else {
+          return response.status(400).json({status: 'Failure', reason: 'Email already used'})
+        }
       })
-      
-    } else {
-      return response.status(400).json({status: 'Failure', reason: 'Email already used'})
-    }
-  })
       .catch(error => response.status(400).json({ status: 'Failure', reason: error }))
 }
 
@@ -99,17 +99,17 @@ exports.update = (request, response) => {
   }
 
   User.findByIdAndUpdate(
-    request.params.id,
-    { $set: update },
-    { new: true },
-    (error, docs) => {
-      if(error) {
-        return response.status(500).json({ status: 'Failure', reason: error })
+      request.params.id,
+      { $set: update },
+      { new: true },
+      (error, docs) => {
+        if(error) {
+          return response.status(500).json({ status: 'Failure', reason: error })
+        }
+        else {
+          return response.status(200).json({ status: 'Success', data: docs })
+        }
       }
-      else {
-        return response.status(200).json({ status: 'Success', data: docs })
-      }
-    }
   )
 }
 
