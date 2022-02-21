@@ -1,2 +1,5 @@
+# Dependencies
 /node_modules/
+
+# Database connection
 /database/db-config.js
