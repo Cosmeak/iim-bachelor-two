@@ -14,10 +14,10 @@ const jwt = require('jsonwebtoken')
 exports.index = (request, response) => {
   User.find( (error, docs) => {
     if(error) {
-      response.status(500).json({ status: 'Failure', reason: error })
+      return response.status(500).json({ status: 'Failure', reason: error })
     }
     else {
-      response.status(200).json({ status: 'Success', data: docs })
+      return response.status(200).json({ status: 'Success', data: docs })
     }
   })
 }
@@ -29,13 +29,14 @@ exports.index = (request, response) => {
 * @return response
 */
 exports.create = (request, response) => {
+  // Params
   const username = request.body.username
   const email = request.body.email
   const password = request.body.password
 
   // Check if all field are full 
   if(username == null || email == null || password == null || username == '' || email == '' || password == '') {
-    response.status(400).json({status: 'Failure', reason: 'Missing parameters'})
+    return response.status(400).json({status: 'Failure', reason: 'Missing parameters'})
   }
 
   // Check if we have no user like this in the database 
@@ -52,16 +53,16 @@ exports.create = (request, response) => {
 
         newUser.save(error => {
           if(error) {
-            response.status(400).json({ status: 'Failure', reason: error })
+            return response.status(400).json({ status: 'Failure', reason: error })
           }
           else {
-            response.status(200).json({ status: 'Success', data: newUser })
+            return response.status(200).json({ status: 'Success', data: newUser })
           }
         })
       })
       
     } else {
-      response.status(400).json({status: 'Failure', reason: 'Email already used'})
+      return response.status(400).json({status: 'Failure', reason: 'Email already used'})
     }
   })
 }
@@ -75,10 +76,11 @@ exports.create = (request, response) => {
 */
 exports.show = (request, response) => {
   const data = User.findById( request.params.id, (error, docs) => {
-    if(error) { response.status(404).json({ status: 'Failure', reason: 'No User find!'}) }
+    if(error) { 
+      return response.status(404).json({ status: 'Failure', reason: 'No User find!'}) }
   })
 
-  response.status(200).json({ status: 'Success', data: data })
+  return response.status(200).json({ status: 'Success', data: data })
 }
 
 /**
@@ -101,10 +103,10 @@ exports.update = (request, response) => {
     { new: true },
     (error, docs) => {
       if(error) {
-        response.status(500).json({ status: 'Failure', reason: error })
+        return response.status(500).json({ status: 'Failure', reason: error })
       }
       else {
-        response.status(200).json({ status: 'Success', data: docs })
+        return response.status(200).json({ status: 'Success', data: docs })
       }
     }
   )
@@ -122,10 +124,10 @@ exports.destroy = (request, response) => {
     request.params.id,
     (error, docs) => {
       if(error){
-        response.status(500).json({ status: 'Failure', reason: error })
+        return response.status(500).json({ status: 'Failure', reason: error })
       }
       else {
-        response.status(200).json({ status: 'Success', data: docs})
+        return response.status(200).json({ status: 'Success', data: docs})
       }
     }
   )
@@ -139,5 +141,27 @@ exports.destroy = (request, response) => {
 */
 
 exports.login = (request, response) => {
-  
+  // Params
+  var email    = request.body.email;
+  var password = request.body.password;
+
+  if (email == null ||  password == null || email == '' || password == '') {
+    return response.status(400).json({ status: 'Failure', reason: 'missing parameters' });
+  }
+
+  // Find the user
+  User.findOne({ email: email })
+  .then(docs => {
+    if(docs !== null) {
+      bcrypt.compare(password, docs.password, (errBcrypt, resBcrypt) => {
+        if (resBcrypt) {
+          return response.status(201).json({status: 'Success', data: docs})
+        } else {
+          return response.status(403).json({status: 'Failure', reason: 'Wrong password!'})
+        }
+      })
+    } else {
+      return response.status(404).json({status: 'Failure', reason: 'No user found!'})
+    }
+  })
 }

@@ -22,5 +22,7 @@ router.route('/user/:id')
   .put(userController.update)
   .delete(userController.destroy)
 
+router.route('/login').post(userController.login)
+
 // Export all routes
 module.exports = router;

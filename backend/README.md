@@ -29,11 +29,11 @@ npm run dev
 >- password
 
 **Show** [GET] : ```/api/user/:id```
->Header Parameter:
+>Request Header Parameter:
 > - :id (in url)
 
 **Update** [PUT, PATCH] : ```/api/:id```
->Header Parameter:
+>Request Header Parameter:
 > - :id (in url)
 
 >Request Body:
