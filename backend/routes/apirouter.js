@@ -29,6 +29,11 @@ router.route('/message')
     .get(messageController.index)
     .post(messageController.create)
 
+router.route('/message/:id')
+    .put(messageController.update)
+    .patch(messageController.update)
+    .delete(messageController.destroy)
+
 router.route('/message/user/:id').get(messageController.show)
 
 // Export all routes

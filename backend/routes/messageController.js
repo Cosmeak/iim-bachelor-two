@@ -1,5 +1,4 @@
 // Imports
-const { response } = require('express')
 const Message = require('../models/messageModel')
 const User = require('../models/userModel')
 
@@ -67,4 +66,52 @@ exports.show = (request, response) => {
       return response.status(200).json({ status: 'Success', data: docs })
     }
   })
+}
+
+/**
+* Update the specified resource in storage.
+*
+* @params request
+* @params :id
+* @return response
+*/
+exports.update = (request, response) => {
+  const update = {
+    message: request.body.message,
+  }
+
+  Message.findByIdAndUpdate(
+    request.params.id,
+    { $set: update },
+    { new: true },
+    (error, docs) => {
+      if(error) {
+        return response.status(500).json({ status: 'Failure', reason: error })
+      }
+      else {
+        return response.status(200).json({ status: 'Success', data: docs })
+      }
+    }
+  )
+}
+
+/**
+* Remove the specified resource from storage.
+*
+* @params request
+* @params :id
+* @return response
+*/
+exports.destroy = (request, response) => {
+  Message.findByIdAndRemove(
+    request.params.id,
+    (error, docs) => {
+      if(error){
+        return response.status(500).json({ status: 'Failure', reason: error })
+      }
+      else {
+        return response.status(200).json({ status: 'Success', data: docs})
+      }
+    }
+  )
 }

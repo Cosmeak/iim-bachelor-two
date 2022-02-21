@@ -116,7 +116,6 @@ ___
 > - :id (in url)
 
 >**Request Body:**
->- user (user id)
 >- message
 
 >**Response:**
