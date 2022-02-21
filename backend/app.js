@@ -1,16 +1,24 @@
 // Imports
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 require('./database/db-config')
+const apiRouter = require('./routes/apiRouter')
 
-//Constants
-const url = '/'
+//Constants 
+const apiUrl = '/api/'
 const serverPort = 3000
 
+//Body Parser Config 
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
 // Routes 
-app.get(url, (request, response) => { // Home of API => Just to show it's online
-  response.status(200).json({ status: 'It run!'})
+app.get(apiUrl, (request, response) => { // Home of API => Just to show it's online
+  response.status(200).json({ status: 'API is online!'})
 })
+
+app.use(apiUrl, apiRouter)
 
 // Start app
 app.listen(serverPort, () => {
