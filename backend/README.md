@@ -27,7 +27,7 @@ ___
 **Index** [GET] : ```/api/user```
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = array of user object / Reason (if error)
+>- Data (if success) = array of object user / Reason (if error)
 
 
 **Create** [POST] : ```/api/user```
@@ -38,7 +38,7 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = user object / Reason (if error)
+>- Data (if success) = object user / Reason (if error)
 
 
 **Show** [GET] : ```/api/user/:id```
@@ -47,7 +47,7 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = user object / Reason (if error)
+>- Data (if success) = object user / Reason (if error)
 
 
 **Update** [PUT, PATCH] : ```/api/:id```
@@ -61,7 +61,7 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = user object / Reason (if error)
+>- Data (if success) = object user / Reason (if error)
 
 
 **Destroy** [DELETE] : ```/api/user/:id```
@@ -70,7 +70,7 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = user object / Reason (if error)
+>- Data (if success) = object user / Reason (if error)
 
 
 **Login** [POST] : ```/api/login```
@@ -80,35 +80,35 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = user object / Reason (if error)
+>- Data (if success) = object user / Reason (if error)
 
 ___
 
 ### Message
 
-**Index** [GET] : ```/api/user```
+**Index** [GET] : ```/api/message```
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = array of message object / Reason (if error)
+>- Data (if success) = array of object message / Reason (if error)
 
 
-**Create** [POST] : ```/api/user```
+**Create** [POST] : ```/api/message``
 >**Request Body:**
 >- user (user id)
 >- message
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = user object / Reason (if error)
+>- Data (if success) = object message / Reason (if error)
 
 
-**Show** [GET] : ```/api/user/:id```
+**Show** [GET] : ```/api/message/user/:id```
 >**Request Header Parameter:**
 > - :id (in url)
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = message object / Reason (if error)
+>- Data (if success) = array object message of this user / Reason (if error)
 
 
 **Update** [PUT, PATCH] : ```/api/:id```
@@ -121,7 +121,7 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = message object / Reason (if error)
+>- Data (if success) = object message / Reason (if error)
 
 
 **Destroy** [DELETE] : ```/api/user/:id```
@@ -130,5 +130,5 @@ ___
 
 >**Response:**
 >- Status (Success or Failure)
->- Data (if success) = message object / Reason (if error)
+>- Data (if success) = object message / Reason (if error)
 

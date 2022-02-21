@@ -40,31 +40,31 @@ exports.create = (request, response) => {
 
   // Check if we have no user like this in the database 
   User.findOne({ email: email })
-      .then(docs => {
-        // Check if we have a return null / empty and then if it is, do next things
-        if(docs === null) {
-          bcrypt.hash(password, 5, (error, encryptedPassword) => {
-            const newUser = new User({
-              username: username,
-              email: email,
-              password: encryptedPassword,
-              isAdmin: isAdmin,
-            })
+  .then(docs => {
+    // Check if we have a return null / empty and then if it is, do next things
+    if(docs === null) {
+      bcrypt.hash(password, 5, (error, encryptedPassword) => {
+        const newUser = new User({
+          username: username,
+          email: email,
+          password: encryptedPassword,
+          isAdmin: isAdmin,
+        })
 
-            newUser.save(error => {
-              if(error) {
-                return response.status(400).json({ status: 'Failure', reason: error })
-              }
-              else {
-                return response.status(200).json({ status: 'Success', data: newUser })
-              }
-            })
-          })
-
-        } else {
-          return response.status(400).json({status: 'Failure', reason: 'Email already used'})
-        }
+        newUser.save(error => {
+          if(error) {
+            return response.status(400).json({ status: 'Failure', reason: error })
+          }
+          else {
+            return response.status(200).json({ status: 'Success', data: newUser })
+          }
+        })
       })
+
+    } else {
+      return response.status(400).json({status: 'Failure', reason: 'Email already used'})
+    }
+  })
       .catch(error => response.status(400).json({ status: 'Failure', reason: error }))
 }
 
@@ -76,12 +76,13 @@ exports.create = (request, response) => {
 * @return response
 */
 exports.show = (request, response) => {
-  const data = User.findById( request.params.id, (error, docs) => {
+  User.findById( request.params.id, (error, docs) => {
     if(error) { 
       return response.status(404).json({ status: 'Failure', reason: 'No User find!'}) }
+    else {
+      return response.status(200).json({ status: 'Success', data: docs })
+    }
   })
-
-  return response.status(200).json({ status: 'Success', data: data })
 }
 
 /**
@@ -99,17 +100,17 @@ exports.update = (request, response) => {
   }
 
   User.findByIdAndUpdate(
-      request.params.id,
-      { $set: update },
-      { new: true },
-      (error, docs) => {
-        if(error) {
-          return response.status(500).json({ status: 'Failure', reason: error })
-        }
-        else {
-          return response.status(200).json({ status: 'Success', data: docs })
-        }
+    request.params.id,
+    { $set: update },
+    { new: true },
+    (error, docs) => {
+      if(error) {
+        return response.status(500).json({ status: 'Failure', reason: error })
       }
+      else {
+        return response.status(200).json({ status: 'Success', data: docs })
+      }
+    }
   )
 }
 

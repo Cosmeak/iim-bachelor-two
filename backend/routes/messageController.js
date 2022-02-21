@@ -1,4 +1,5 @@
 // Imports
+const { response } = require('express')
 const Message = require('../models/messageModel')
 const User = require('../models/userModel')
 
@@ -47,5 +48,23 @@ exports.create = (request, response) => {
         return response.status(200).json({ status: 'Succes', data: newMessage })
       }
     })
+  })
+}
+
+/** 
+* Display all message of a user.
+*
+* @params request
+* @params :id (user.id)
+* @return response
+*/
+exports.show = (request, response) => {
+  Message.find({ user: request.params.id }, (error, docs) => {
+    if(error) {
+      return response.status(400).json({ status: 'Failure', reason: error })
+    }
+    else {
+      return response.status(200).json({ status: 'Success', data: docs })
+    }
   })
 }

@@ -7,8 +7,8 @@ const messageController = require('./messageController')
 
 // Time logger
 router.use(function timeLog (request, response, next) {
-  console.log('\x1b[36m%s\x1b[0m', `Request at: ${Date()}`)
-  next()
+    console.log('\x1b[36m%s\x1b[0m', `Request at: ${Date()}`)
+    next()
 })
 
 // User CRUD
@@ -28,6 +28,8 @@ router.route('/login').post(userController.login)
 router.route('/message')
     .get(messageController.index)
     .post(messageController.create)
+
+router.route('/message/user/:id').get(messageController.show)
 
 // Export all routes
 module.exports = router;
