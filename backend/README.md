@@ -18,7 +18,7 @@ npm run dev
 
 ## How to use ?
 
-###User
+### User
 
 **Index** [GET] : ```/api/user```
 
