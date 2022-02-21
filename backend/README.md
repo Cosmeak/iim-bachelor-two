@@ -92,7 +92,7 @@ ___
 >- Data (if success) = array of object message / Reason (if error)
 
 
-**Create** [POST] : ```/api/message``
+**Create** [POST] : ```/api/message```
 >**Request Body:**
 >- user (user id)
 >- message
