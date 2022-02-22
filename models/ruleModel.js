@@ -17,4 +17,4 @@ const RuleSchema = mongoose.Schema({
   timestamps: true,
 })
 
-modules.exports = mongoose.model('Rule', RuleSchema)
+module.exports = mongoose.model('Rule', RuleSchema)

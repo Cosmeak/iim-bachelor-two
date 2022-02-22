@@ -4,6 +4,8 @@ const router = express.Router();
 
 const playerController = require('./playerController')
 const objectController = require('./objectController')
+const questionController = require('./questionController')
+const ruleController = require('./ruleController')
 
 // Time logger
 router.use(function timeLog (request, response, next) {
@@ -22,6 +24,7 @@ router.route('/player/:id')
   .put(playerController.update)
   .delete(playerController.destroy)
 
+
 // Object CRUD
 router.route('/object')
   .get(objectController.index)
@@ -33,6 +36,33 @@ router.route('/object/:id')
   .put(objectController.update)
   .delete(objectController.destroy)
 
+router.route('/object/:id/player')
+  .put(objectController.updatePlayer)
+  .patch(objectController.updatePlayer)
+
+
+// Question CRUD
+router.route('/player')
+  .get(questionController.index)
+  .post(questionController.create)
+
+router.route('/player/:id')
+  .get(questionController.show)
+  .patch(questionController.update)
+  .put(questionController.update)
+  .delete(questionController.destroy)
+
+
+// Rule CRUD
+router.route('/player')
+  .get(ruleController.index)
+  .post(ruleController.create)
+
+router.route('/player/:id')
+  .get(ruleController.show)
+  .patch(ruleController.update)
+  .put(ruleController.update)
+  .delete(ruleController.destroy)
 
 // Exports API routes
 module.exports = router;

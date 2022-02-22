@@ -2,9 +2,12 @@
   "name": "cityblock-api",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,6 @@
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "mongoose": "^6.1.6",
-    "nodemon": "^2.0.15"
+    "mongoose": "^6.1.6"
   }
 }

@@ -9,7 +9,7 @@ const PositionSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  position: {
+  object: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Object', 
     required: false,

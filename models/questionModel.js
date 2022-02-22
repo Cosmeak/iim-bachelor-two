@@ -15,7 +15,7 @@ const QuestionSchema = mongoose.Schema({
         type: Boolean,
         required: true,
       },
-      required: true,
+
     },
     2: {
       content: {
@@ -26,7 +26,7 @@ const QuestionSchema = mongoose.Schema({
         type: Boolean,
         required: true,
       },
-      required: true,
+
     },
     3: {
       content: {
@@ -50,7 +50,6 @@ const QuestionSchema = mongoose.Schema({
       },
       required: false,
     },
-    required:true,
   },
   anecdotes: [{
     name: {

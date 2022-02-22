@@ -1,9 +1,7 @@
 // Imports
-const Player  = require('../models/playerModel')
-const Object  = require('../models/objectModel')
+const Question = require('../models/questionModel')
 
-//Functions
-
+// Functions 
 /**
 * Display a listing of the resource.
 *
@@ -11,7 +9,7 @@ const Object  = require('../models/objectModel')
 * @return response
 */
 exports.index = (request, response) => {
-  Player.find( (error, docs) => {
+  Question.find( (error, docs) => {
     if(error) {
       response.status(500).json({ status: 'Failure', reason: error })
     } 
@@ -28,20 +26,18 @@ exports.index = (request, response) => {
 * @return response
 */
 exports.create = (request, response) => {
-  const newPlayer = new Player({
-    username    : request.body.username,
-    workforces  : 0,
-    materials   : 0,
-    money       : 0,
-    score       : 0,
+  const newQuestion = new Question({
+    question: request.body.question,
+    answers: request.body.answers,
+    anecdotes: request.body.anecdotes,
   })
 
-  newPlayer.save( error => {
+  newQuestion.save( error => {
     if(error) {
       response.status(400).json({ status: 'Failure', reason: error })
     }
     else {
-      response.status(200).json({ status: 'Success', data: newPlayer })
+      response.status(200).json({ status: 'Success', data: newQuestion })
     }
   })
 }
@@ -54,9 +50,9 @@ exports.create = (request, response) => {
 * @return response
 */
 exports.show = (request, response) => {
-  Player.findById(request.params.id, (error, docs) => {
+  Question.findById(request.params.id, (error, docs) => {
     if(error) {
-      response.status(404).json({ status: 'Failure', reason: 'Player Not Found' })
+      response.status(404).json({ status: 'Failure', reason: 'Question Not Found' })
     } 
     else {
       response.status(200).json({ status: 'Success', data: docs })
@@ -73,13 +69,12 @@ exports.show = (request, response) => {
 */
 exports.update = (request, response) => {
   const update = {
-    workforces  : request.body.workforces,
-    materials   : request.body.materials,
-    money       : request.body.money,
-    score       : request.body.score,
+    question: request.body.question,
+    answers: request.body.answers,
+    anecdotes: request.body.anecdotes,
   }
 
-  Player.findByIdAndUpdate(
+  Question.findByIdAndUpdate(
     request.params.id,
     { $set: update },
     { new: true },
@@ -102,7 +97,7 @@ exports.update = (request, response) => {
 * @return response
 */
 exports.destroy = (request, response) => {
-  Player.findByIdAndRemove(
+  Question.findByIdAndRemove(
     request.params.id,
     (error, docs) => {
       if(error){
