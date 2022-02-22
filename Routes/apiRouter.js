@@ -6,6 +6,7 @@ const playerController = require('./playerController')
 const objectController = require('./objectController')
 const questionController = require('./questionController')
 const ruleController = require('./ruleController')
+const adminController = require('./adminController')
 
 // Time logger
 router.use(function timeLog (request, response, next) {
@@ -63,6 +64,10 @@ router.route('/rule/:id')
   .patch(ruleController.update)
   .put(ruleController.update)
   .delete(ruleController.destroy)
+
+// Admin: Register and Login
+router.route('/register').post(adminController.register)
+router.route('/login').post(adminController.login)
 
 // Exports API routes
 module.exports = router;
