@@ -42,11 +42,11 @@ router.route('/object/:id/player')
 
 
 // Question CRUD
-router.route('/player')
+router.route('/question')
   .get(questionController.index)
   .post(questionController.create)
 
-router.route('/player/:id')
+router.route('/question/:id')
   .get(questionController.show)
   .patch(questionController.update)
   .put(questionController.update)
@@ -54,11 +54,11 @@ router.route('/player/:id')
 
 
 // Rule CRUD
-router.route('/player')
+router.route('/rule')
   .get(ruleController.index)
   .post(ruleController.create)
 
-router.route('/player/:id')
+router.route('/rule/:id')
   .get(ruleController.show)
   .patch(ruleController.update)
   .put(ruleController.update)
