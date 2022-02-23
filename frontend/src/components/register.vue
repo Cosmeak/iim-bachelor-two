@@ -7,7 +7,7 @@
       <div class="flex flex-col justify-center">
         <input class="p-4 w-96 border-slate-700 rounded-t-xl border-2" name="username" v-model="username" placeholder="username">
         <input class="p-4 w-96 border-slate-700 border-2" name="email" v-model="email" placeholder="email" type="email">
-        <input class="p-4 w-96 border-slate-700 border-2 rounded-b-xl" name="password" v-model="password" placeholder="password">
+        <input class="p-4 w-96 border-slate-700 border-2 rounded-b-xl" type="password" name="password" v-model="password" placeholder="password">
       </div>
       <div class="mt-8 h-12 rounded-xl bg-gray-700 flex justify-center text-white">
         <input type="submit" value="register">
@@ -27,6 +27,11 @@ export default {
     };
   },
   methods: {
+    mounted() {
+      axios
+      .get('http://localhost:3000/api/message')
+      .then(response => console.log(response))
+    },
   }
 };
 </script>
