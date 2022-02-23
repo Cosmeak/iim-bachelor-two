@@ -468,7 +468,96 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
+.mt-64 {
+  margin-top: 16rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-36 {
+  height: 9rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-slate-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(51 65 85 / var(--tw-border-opacity));
+}
+
 .bg-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }

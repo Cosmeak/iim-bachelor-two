@@ -1,12 +1,14 @@
 <template>
-  <div class="bg-blue-500">
+  <div class="bg-gray-700 text-white text-3xl font-bold h-20 flex justify-center">
     <h1>Créer un compte</h1>
   </div>
-  <div id="app">
+  <div class="mt-64">
     <form>
-      <input name="username" v-model="username" placeholder="username">
-      <input name="email" v-model="email" placeholder="email" type="email">
-      <input name="password" v-model="password" placeholder="password">
+      <div class="flex-col justify-center rounded-xl border-slate-700	border-2">
+        <input name="username" v-model="username" placeholder="username">
+        <input name="email" v-model="email" placeholder="email" type="email">
+        <input name="password" v-model="password" placeholder="password">
+      </div>
       <input type="submit" value="register">
     </form>
   </div>
@@ -28,13 +30,4 @@ export default {
 </script>
 
 <style>
-.bg-nav {
-  background-color: #374151;
-  color: white;
-}
-form {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-}
 </style>
