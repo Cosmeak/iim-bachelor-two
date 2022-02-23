@@ -34,19 +34,24 @@ exports.create = (request, response) => {
   const message = request.body.message
 
   User.findById(user, (error, docs) => {
-    const newMessage = new Message({
-      user: docs,
-      message: message
-    })
-
-    newMessage.save(error => {
-      if(error) {
-        return response.status(400).json({ status: 'Failure', reason: error })
-      }
-      else {
-        return response.status(200).json({ status: 'Succes', data: newMessage })
-      }
-    })
+    if(docs) {
+      const newMessage = new Message({
+        user: docs,
+        message: message
+      })
+  
+      newMessage.save(error => {
+        if(error) {
+          return response.status(400).json({ status: 'Failure', reason: error })
+        }
+        else {
+          return response.status(200).json({ status: 'Succes', data: newMessage })
+        }
+      })
+    }
+    else {
+      return response.status(400).json({ status: 'Failure', reason: 'No user found with this id!' })
+    }
   })
 }
 
