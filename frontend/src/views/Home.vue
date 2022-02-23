@@ -5,10 +5,12 @@
       <h1>Discussion général</h1>
       <p class="text-sm">button</p>
     </div>
-    <div class="h-4/5">
-      <article class="bg-gray-300 w-1/5 ml-16 rounded-xl"> <!-- block for the messages -->
-        <p class="p-4"></p>
-      </article>
+    <div class="flex justify-center w-5/6 h-4/5">
+      <div class="w-full ml-32">
+        <article class="bg-gray-300 rounded-xl w-1/3"> <!-- block for the messages -->
+          <p class="p-4">dsf</p>
+        </article>
+      </div>
     </div>
     <div class="flex justify-center">
       <input class="p-4 w-5/6 border-slate-700 border-2 rounded-xl" name="password" v-model="password" placeholder="Écrivez votre message">

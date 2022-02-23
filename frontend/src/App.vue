@@ -1,14 +1,14 @@
 <template class="m-0 p-0">
-  <Home />
+  <router-view />
 </template>
 
 <script>
-import Home from "./components/Home";
 
 export default {
   name: 'App',
-  components: {
-    Home
-  }
+  components: {},
+  data: () => ({
+    //
+  }),
 }
 </script>
