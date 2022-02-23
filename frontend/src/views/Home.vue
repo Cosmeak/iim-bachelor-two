@@ -14,6 +14,7 @@
     </div>
     <div class="flex justify-center">
       <input class="p-4 w-5/6 border-slate-700 border-2 rounded-xl" name="password" v-model="password" placeholder="Écrivez votre message">
+      <button @buttonClick="validate()"></button>
     </div>
   </div>
 </template>
@@ -26,6 +27,16 @@ export default {
     };
   },
   methods: {
+    validate: function () {
+      this.axios
+          .post("")
+          .then((response) => {
+            console.log(response)
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    }
   }
 };
 </script>

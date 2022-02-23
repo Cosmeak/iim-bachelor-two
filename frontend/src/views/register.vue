@@ -28,9 +28,6 @@ export default {
   },
   methods: {
     mounted() {
-      axios
-      .get('/message')
-      .then(response => console.log(response))
     },
   }
 };
