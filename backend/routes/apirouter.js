@@ -2,8 +2,12 @@
 const express = require('express')
 const router = express.Router()
 
-const userController = require('./userController')
-const messageController = require('./messageController')
+// Controllers
+const userController = require('../controllers/userController')
+const messageController = require('../controllers/messageController')
+
+// Middlewares
+const auth = require('../middlewares/auth')
 
 // Time logger
 router.use(function timeLog (request, response, next) {
@@ -17,24 +21,24 @@ router.route('/user')
     .post(userController.create)
 
 router.route('/user/:id')
-    .get(userController.show)
-    .patch(userController.update)
-    .put(userController.update)
-    .delete(userController.destroy)
+    .get(auth, userController.show)
+    .patch(auth, userController.update)
+    .put(auth, userController.update)
+    .delete(auth, userController.destroy)
 
 router.route('/login').post(userController.login)
 
 // Message CRUD
 router.route('/message')
-    .get(messageController.index)
-    .post(messageController.create)
+    .get(auth, messageController.index)
+    .post(auth, messageController.create)
 
 router.route('/message/:id')
-    .put(messageController.update)
-    .patch(messageController.update)
-    .delete(messageController.destroy)
+    .put(auth, messageController.update)
+    .patch(auth, messageController.update)
+    .delete(auth, messageController.destroy)
 
-router.route('/message/user/:id').get(messageController.show)
+router.route('/message/user/:id').get(auth, messageController.show)
 
 // Export all routes
 module.exports = router;

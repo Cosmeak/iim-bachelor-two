@@ -1,6 +1,7 @@
 // Imports
 const User = require('../models/userModel')
 const bcrypt = require('bcrypt')
+const webtoken = require('jsonwebtoken')
 
 // Functions
 /**
@@ -56,7 +57,7 @@ exports.create = (request, response) => {
             return response.status(400).json({ status: 'Failure', reason: error })
           }
           else {
-            return response.status(200).json({ status: 'Success', data: newUser })
+            return response.status(200).json({ status: 'Success', data: newUser, token: webtoken.sign({userId: user._id}, 'secretToken', {expiresIn: '6h'}) })
           }
         })
       })
@@ -157,7 +158,7 @@ exports.login = (request, response) => {
     if(docs !== null) {
       bcrypt.compare(password, docs.password, (errBcrypt, resBcrypt) => {
         if (resBcrypt) {
-          return response.status(201).json({status: 'Success', data: docs})
+          return response.status(201).json({status: 'Success', data: docs, token: webtoken.sign({userId: user._id}, 'secretToken', {expiresIn: '6h'}) })
         } 
         else {
           return response.status(403).json({status: 'Failure', reason: 'Wrong password!'})
@@ -168,4 +169,5 @@ exports.login = (request, response) => {
       return response.status(404).json({status: 'Failure', reason: 'No user found!'})
     }
   })
+  .catch(error => response.status(500).json({ status: 'Failure', reason: error }))
 }
