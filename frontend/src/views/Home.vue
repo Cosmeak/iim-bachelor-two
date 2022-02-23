@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <input class="p-4 w-4/6 border-slate-700 border-2 rounded-xl" name="password" v-model="password" placeholder="Écrivez votre message">
+      <textarea v-model="hismessage" placeholder="ajoutez plusieurs lignes" class="p-4 w-4/6 border-slate-700 border-2 rounded-xl"></textarea>
       <button class="bg-gray-700 w-32 text-white rounded-xl" @buttonClick="validate()">Send</button>
     </div>
   </div>
@@ -22,16 +22,19 @@
 <script>
 export default {
   name: "Home",
-  data() {
-    return {
-    };
-  },
-  methods: {
+  data: () => ({
+    hismessage: []
+  }),
+    methods: {
     validate: function () {
       this.axios
-          .post("")
+          .post("", {
+            message: this.hismessage,
+          })
           .then((response) => {
             console.log(response)
+            console.log(this.hismessage)
+            this.$router.push("/home")
           })
           .catch((err) => {
             console.log(err);

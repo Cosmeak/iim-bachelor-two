@@ -19,13 +19,11 @@
 <script>
 export default {
   name: "register",
-  data() {
-    return {
-      username: "",
-      email: "",
-      password: "",
-    };
-  },
+  data: () => ({
+    username : [],
+    email : [],
+    password: []
+  }),
   methods: {
     mounted() {
     },
