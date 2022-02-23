@@ -29,7 +29,7 @@ export default {
   methods: {
     mounted() {
       axios
-      .get('http://localhost:3000/api/message')
+      .get('/message')
       .then(response => console.log(response))
     },
   }
