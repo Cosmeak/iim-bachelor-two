@@ -1,18 +1,12 @@
 <template>
+  <div class="bg-blue-500">
+    <h1>Créer un compte</h1>
+  </div>
   <div id="app">
-    <form @submit.prevent="login">
-      <div>
-        <label>username</label>
-        <input name="username" v-model="username" placeholder="username">
-      </div>
-      <div>
-        <label>email</label>
-        <input name="email" v-model="email" placeholder="email" type="email">
-      </div>
-      <div>
-        <label>first name</label>
-        <input name="firstName" v-model="firstName" placeholder="first name">
-      </div>
+    <form>
+      <input name="username" v-model="username" placeholder="username">
+      <input name="email" v-model="email" placeholder="email" type="email">
+      <input name="password" v-model="password" placeholder="password">
       <input type="submit" value="register">
     </form>
   </div>
@@ -32,3 +26,15 @@ export default {
   }
 };
 </script>
+
+<style>
+.bg-nav {
+  background-color: #374151;
+  color: white;
+}
+form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+</style>
