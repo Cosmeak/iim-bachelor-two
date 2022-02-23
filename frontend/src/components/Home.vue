@@ -7,7 +7,7 @@
     </div>
     <div class="flex justify-center w-5/6 h-4/5">
       <div class="w-full ml-32">
-        <article class="bg-gray-300 rounded-xl"> <!-- block for the messages -->
+        <article class="bg-gray-300 rounded-xl w-1/3"> <!-- block for the messages -->
           <p class="p-4">dsf</p>
         </article>
       </div>
