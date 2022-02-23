@@ -528,6 +528,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 24rem;
 }
 
+.w-4\/6 {
+  width: 66.666667%;
+}
+
+.w-2\/6 {
+  width: 33.333333%;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
 .flex-col {
   flex-direction: column;
 }

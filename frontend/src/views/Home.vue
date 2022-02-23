@@ -8,13 +8,13 @@
     <div class="flex justify-center w-5/6 h-4/5">
       <div class="w-full ml-32">
         <article class="bg-gray-300 rounded-xl w-1/3"> <!-- block for the messages -->
-          <p class="p-4">dsf</p>
+          <p class="p-4">test</p>
         </article>
       </div>
     </div>
     <div class="flex justify-center">
-      <input class="p-4 w-5/6 border-slate-700 border-2 rounded-xl" name="password" v-model="password" placeholder="Écrivez votre message">
-      <button @buttonClick="validate()"></button>
+      <input class="p-4 w-4/6 border-slate-700 border-2 rounded-xl" name="password" v-model="password" placeholder="Écrivez votre message">
+      <button class="bg-gray-700 w-32 text-white rounded-xl" @buttonClick="validate()">Send</button>
     </div>
   </div>
 </template>
