@@ -1,7 +1,7 @@
 // Imports
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser') // Sert à parser (découpe le corps de la requête) le corps du requête
 require('./database/db-config')
 
 //Constants 
@@ -13,6 +13,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Routes 
+app.use((request, response, next) => {
+  response.setHeader('Access-Control-Allow-Origin','*')
+  response.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content,Accept,Content-Type,Authorization')
+  response.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,DELETE')
+  next()
+})
+
 app.get(apiUrl, (request, response) => { // Home of API => Just to show it's online
   response.status(200).json({ status: 'API is online!'})
 })
