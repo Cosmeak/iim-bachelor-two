@@ -9,20 +9,40 @@
         <input class="p-4 w-96 border-slate-700 border-2 rounded-b-xl" v-model="password" placeholder="password" />
       </div>
       <div class="mt-8 h-12 rounded-xl bg-gray-700 flex justify-center text-white">
-        <input type="submit" value="register">
+        <buttonconnection @buttonClick="validate()" />
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import Buttonconnection from "@/components/buttonconnection";
+
 export default {
   name: "register",
+  components: { Buttonconnection },
   data: () => ({
     email : [],
     password: []
   }),
   methods: {
+    validate: function () {
+      console.log("test");
+      this.axios
+          .get("localhost:3000/api/user")
+          .then((response) => {
+            console.log(response)
+            if (response.data.user) {
+              console.log(response.data.user);
+              console.log("biteee")
+            } else {
+              console.log("Not in this fucking fuck database aka db in french base de donnee")
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    }
   }
 };
 </script>
