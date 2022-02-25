@@ -8,7 +8,7 @@
     <div class="flex justify-center w-5/6 h-4/5">
       <div class="w-full ml-32">
         <article class="bg-gray-300 rounded-xl w-1/3"> <!-- block for the messages -->
-          <p class="p-4">test</p>
+          <p id='app' class="p-4">{{name}}{{message}}</p>
         </article>
       </div>
     </div>
@@ -22,25 +22,32 @@
 <script>
 export default {
   name: "Home",
-  data: () => ({
-    hismessage: []
-  }),
-    methods: {
-    validate: function () {
-      this.axios.post("", {
-            message: this.hismessage,
-          })
-          .then((response) => {
-            console.log(response)
-            console.log(this.hismessage)
-            this.$router.push("/home")
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+    el: '#app',
+  data () {
+    return {
+      message: null,
+      name: null
     }
+  },
+  mounted () {
+    const axios = require('axios')
+    
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjEzYTk0YzlmODc0YmJmYTRlZjU2MTciLCJpYXQiOjE2NDU3NzQzNDAsImV4cCI6MTY0NTc5NTk0MH0.E2eGtO1uXpP3TLElzCPlL1W6wjD0yyyqaPgNL33oR30'
+    const url = 'http://localhost:3000/api/message'
+    const body = {
+      userId: '6213a94c9f874bbfa4ef5617'
+    }
+    const headers = {
+      "Authorization": "Bearer " + token,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+    
+    axios({ method: 'GET', url: url, data: body, headers: headers })
+      .then(response => (this.message = response.data.data[0].message, this.name = response.data.data[0].user))
   }
 };
+
 </script>
 
 <style scoped>
