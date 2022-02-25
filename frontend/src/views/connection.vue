@@ -29,7 +29,7 @@ export default {
     validate: function () {
       console.log("test");
       this.axios
-          .get("localhost:3000/api/user")
+          .get("http://localhost:3000/api/user", )
           .then((response) => {
             console.log(response)
             if (response.data.user) {
