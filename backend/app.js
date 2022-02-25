@@ -16,19 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Routes 
-app.use((request, response, next) => {
-  response.setHeader('Access-Control-Allow-Origin','*')
-  response.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content,Accept,Content-Type,Authorization')
-  response.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,DELETE')
-  next()
-})
-
 app.get(apiUrl, (request, response) => { // Home of API => Just to show it's online
   response.status(200).json({ status: 'API is online!'})
 })
 
 app.use(apiUrl, apiRouter)
-
 
 // Start app
 app.set('port', serverPort)
@@ -38,14 +30,17 @@ server.on('listening', () => {
   console.log('\x1b[32m%s\x1b[0m', `Serveur running at port: ${serverPort}`)
 })// callback to know if it run and when it's open
 
-server.listen(process.env.PORT || serverPort)
-
 const options = {
-  path: apiUrl
+  path: apiUrl,
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE']
+  }
 }
-
-const io = require("socket.io")(server, options);
+const io = socket(server, options)
 
 io.on("connection", socket => {
-  console.log(socket.id);
+  console.log(socket.id)
 })
+
+server.listen(process.env.PORT || serverPort)  
