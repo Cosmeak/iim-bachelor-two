@@ -1,7 +1,7 @@
 // Imports
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser') // Sert à parser (découpe le corps de la requête) le corps du requête
 require('./database/db-config')
 const apiRouter = require('./routes/apiRouter')
 
