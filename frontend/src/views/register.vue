@@ -10,7 +10,7 @@
         <input class="p-4 w-96 border-slate-700 border-2 rounded-b-xl" type="password" name="password" v-model="password" placeholder="password">
       </div>
       <div class="mt-8 h-12 rounded-xl bg-gray-700 flex justify-center text-white">
-        <input type="submit" value="register">
+        <input type="submit" value="register" @buttonClick="validate()">
       </div>
     </form>
   </div>
@@ -25,7 +25,16 @@ export default {
     password: []
   }),
   methods: {
-    mounted() {
+    validate() {
+      this.axios
+          .post("")
+          .then((response) => {
+            console.log(response)
+            this.$router.push("/connection")
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     },
   }
 };
