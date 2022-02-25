@@ -1,8 +1,11 @@
 // Imports
+const http = require('http')
+const socket = require('socket.io')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser') // Sert à parser (découpe le corps de la requête) le corps du requête
 require('./database/db-config')
+const apiRouter = require('./routes/apirouter')
 
 //Constants 
 const apiUrl = '/api'
@@ -28,19 +31,21 @@ app.use(apiUrl, apiRouter)
 
 
 // Start app
-const httpServer = require("http").createServer()
+app.set('port', serverPort)
+const server = http.createServer(app)
+server.on('listening', () => {
+  console.log('\x1b[36m%s\x1b[0m', `Launch at: ${Date()}`)
+  console.log('\x1b[32m%s\x1b[0m', `Serveur running at port: ${serverPort}`)
+})// callback to know if it run and when it's open
+
+server.listen(process.env.PORT || serverPort)
+
 const options = {
   path: apiUrl
-};
-const io = require("socket.io")(httpServer, options);
+}
+
+const io = require("socket.io")(server, options);
 
 io.on("connection", socket => {
   console.log(socket.id);
-});
-
-httpServer.listen(3000);
-
-app.listen(serverPort, () => {
-  console.log('\x1b[36m%s\x1b[0m', `Launch at: ${Date()}`)
-  console.log('\x1b[32m%s\x1b[0m', `Serveur running at port: ${serverPort}`)
-}) // callback to know if it run and when it's open
+})
