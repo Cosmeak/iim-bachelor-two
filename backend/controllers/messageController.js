@@ -30,7 +30,7 @@ exports.index = (request, response) => {
 */
 exports.create = (request, response) => {
   // Params
-  const user = request.body.user
+  const user = request.body.userId
   const message = request.body.message
 
   User.findById(user, (error, docs) => {

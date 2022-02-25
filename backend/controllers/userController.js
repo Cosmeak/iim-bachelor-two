@@ -158,7 +158,7 @@ exports.login = (request, response) => {
     if(docs !== null) {
       bcrypt.compare(password, docs.password, (errBcrypt, resBcrypt) => {
         if (resBcrypt) {
-          return response.status(201).json({status: 'Success', data: docs, token: webtoken.sign({userId: user._id}, 'secretToken', {expiresIn: '6h'}) })
+          return response.status(201).json({status: 'Success', data: docs, token: webtoken.sign({userId: docs._id}, 'secretToken', {expiresIn: '6h'}) })
         } 
         else {
           return response.status(403).json({status: 'Failure', reason: 'Wrong password!'})
