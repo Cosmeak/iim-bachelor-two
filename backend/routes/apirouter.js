@@ -17,7 +17,7 @@ router.use(function timeLog (request, response, next) {
 
 // User CRUD
 router.route('/user')
-    .get(userController.index)
+    .get(auth, userController.index)
     .post(userController.create)
 
 router.route('/user/:id')

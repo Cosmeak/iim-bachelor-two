@@ -25,6 +25,12 @@ ___
 ### User
 
 **Index** [GET] : ```/api/user```
+>**Request Headers:**
+>- Authorization : your token
+
+>**Request Body:**
+>- userId
+
 >**Response:**
 >- Status (Success or Failure)
 >- Data (if success) = array of object user / Reason (if error)
@@ -42,8 +48,14 @@ ___
 
 
 **Show** [GET] : ```/api/user/:id```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Request Header Parameter:**
 > - :id (in url)
+
+>**Request Body:**
+>- userId
 
 >**Response:**
 >- Status (Success or Failure)
@@ -51,6 +63,9 @@ ___
 
 
 **Update** [PUT, PATCH] : ```/api/:id```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Request Header Parameter:**
 > - :id (in url)
 
@@ -58,6 +73,7 @@ ___
 >- username
 >- email
 >- password
+>- userId
 
 >**Response:**
 >- Status (Success or Failure)
@@ -65,8 +81,14 @@ ___
 
 
 **Destroy** [DELETE] : ```/api/user/:id```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Header Parameter:**
 > - :id (in url)
+
+>**Request Body:**
+>- userId
 
 >**Response:**
 >- Status (Success or Failure)
@@ -87,14 +109,23 @@ ___
 ### Message
 
 **Index** [GET] : ```/api/message```
+>**Request Headers:**
+>- Authorization : your token
+
+>**Request Body:**
+>- userId
+
 >**Response:**
 >- Status (Success or Failure)
 >- Data (if success) = array of object message / Reason (if error)
 
 
 **Create** [POST] : ```/api/message```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Request Body:**
->- user (user id)
+>- userId
 >- message
 
 >**Response:**
@@ -103,6 +134,9 @@ ___
 
 
 **Show** [GET] : ```/api/message/user/:id```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Request Header Parameter:**
 > - :id (in url)
 
@@ -112,11 +146,15 @@ ___
 
 
 **Update** [PUT, PATCH] : ```/api/message/:id```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Request Header Parameter:**
 > - :id (in url)
 
 >**Request Body:**
 >- message
+>- userId
 
 >**Response:**
 >- Status (Success or Failure)
@@ -124,8 +162,14 @@ ___
 
 
 **Destroy** [DELETE] : ```/api/message/:id```
+>**Request Headers:**
+>- Authorization : your token
+
 >**Header Parameter:**
 > - :id (in url)
+
+>**Request Body:**
+>- userId
 
 >**Response:**
 >- Status (Success or Failure)

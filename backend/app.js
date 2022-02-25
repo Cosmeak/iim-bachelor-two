@@ -6,7 +6,7 @@ require('./database/db-config')
 const apiRouter = require('./routes/apiRouter')
 
 //Constants 
-const apiUrl = '/api/'
+const apiUrl = '/api'
 const serverPort = 3000
 
 //Body Parser Config 
