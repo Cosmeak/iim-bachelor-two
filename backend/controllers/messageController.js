@@ -45,6 +45,8 @@ exports.create = (request, response) => {
           return response.status(400).json({ status: 'Failure', reason: error })
         }
         else {
+          const io = request.app.get('socketio')
+          io.emit('message', newMessage)
           return response.status(200).json({ status: 'Succes', data: newMessage })
         }
       })

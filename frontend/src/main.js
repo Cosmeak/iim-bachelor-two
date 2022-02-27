@@ -4,12 +4,12 @@ import router from './router'
 import './style.css'
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:3000", {
+const socket = io("http://localhost:3001", {
     path: "/api"
 })
 
-socket.on("connect", () => {
-    console.log(socket.id); 
+socket.on("message", (message) => {
+    console.log(message); 
 });
 
 createApp(App).use(router).mount('#app')
