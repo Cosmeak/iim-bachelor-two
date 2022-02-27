@@ -29,6 +29,7 @@ export default {
     password: []
   }),
   methods: {
+<<<<<<< HEAD
     validate: function (e) {
       console.log("ok")
       e.preventDefault()
@@ -40,6 +41,24 @@ export default {
       axios.post("http://localhost:3000/api/user")
       .then(u => console.log(u))
       .catch(err => console.log(err))
+=======
+    validate: function () {
+      console.log("test");
+      this.axios
+          .get("http://localhost:3000/api/user", )
+          .then((response) => {
+            console.log(response)
+            if (response.data.user) {
+              console.log(response.data.user);
+              console.log("biteee")
+            } else {
+              console.log("Not in this fucking fuck database aka db in french base de donnee")
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+>>>>>>> 09a089c45b333cc61ed08244a0e5253cd23ab882
     }
   }
 };

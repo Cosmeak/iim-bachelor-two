@@ -43,8 +43,8 @@ export default {
       'Content-Type': 'application/json'
     }
     
-    axios({ method: 'GET', url: url, data: body, headers: headers })
-      .then(response => (this.message = response.data.data[0].message, this.name = response.data.data[0].user))
+    axios({ method: 'GET', mode: 'cors', url: url, data: body, headers: headers })
+      .then(response => console.log(response))
   }
 };
 

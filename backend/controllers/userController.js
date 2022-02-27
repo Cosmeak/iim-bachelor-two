@@ -57,7 +57,7 @@ exports.create = (request, response) => {
             return response.status(400).json({ status: 'Failure', reason: error })
           }
           else {
-            return response.status(200).json({ status: 'Success', data: newUser, token: webtoken.sign({userId: user._id}, 'secretToken', {expiresIn: '6h'}) })
+            return response.status(200).json({ status: 'Success', data: newUser, token: webtoken.sign({userId: newUser._id}, 'secretToken', {expiresIn: '6h'}) })
           }
         })
       })
