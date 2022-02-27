@@ -30,7 +30,7 @@ router.route('/login').post(userController.login)
 
 // Message CRUD
 router.route('/message')
-    .get(auth, messageController.index)
+    .get( messageController.index)
     .post(auth, messageController.create)
 
 router.route('/message/:id')
