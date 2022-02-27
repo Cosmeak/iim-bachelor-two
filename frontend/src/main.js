@@ -12,8 +12,5 @@ socket.on("message", (message) => {
     console.log(message); 
 });
 
-import axios from "axios";
-import VueAxios from 'vue-axios'
 
-
-createApp(App).use(router, axios, VueAxios).mount('#app')
+createApp(App).use(router).mount('#app')

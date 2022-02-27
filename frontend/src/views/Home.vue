@@ -45,6 +45,25 @@ export default {
     
     axios({ method: 'GET', mode: 'cors', url: url, data: body, headers: headers })
       .then(response => console.log(response))
+  },
+  methods: {
+    validate: function(){
+      const axios = require('axios')
+      const token = ""
+      const url = "http://localhost:3000/api/message"
+      const headers = {
+        'Authorization': "Bearer " + token,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+      const body = {
+        userId: "", 
+        message: this.message
+      }
+      axios({ method: 'POST', mode: 'cors', url: url, data: body, headers: headers })
+        .then(response => console.log(response))
+        .then(this.$router.push("/home"))
+    }
   }
 };
 
