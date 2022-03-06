@@ -20,13 +20,12 @@
 </template>
 
 <script>
-
 export default {
   name: "register",
   components: {  },
   data: () => ({
     email : [],
-    password: []
+    password: [],
   }),
   methods: {
     validate: function () {
@@ -41,9 +40,10 @@ export default {
         password: this.password
       }
       axios({ method: 'POST', mode: 'cors', url: url, data: body, headers: headers })
-        .then(response => console.log(response))
         .then(this.$router.push("/home"))
-    }
-  }
+        .then(response => this.$router.push({ name: 'Home', params: { user_token: JSON.stringify(response.data.token), user_id: JSON.stringify(response.data.data._id) }}))
+    },
+  },
 };
+
 </script>

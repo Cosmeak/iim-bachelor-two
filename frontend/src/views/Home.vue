@@ -9,12 +9,13 @@
       <div class="w-full ml-32">
         <article  v-for='message in messages' :key="message" class="bg-gray-300 mr-32 rounded-xl w-1/3"> <!-- block for the messages -->
           <p id='app' class="p-4">{{name}}{{message.message}}</p>
+          <p v-text="$route.params.user_id"></p>
         </article>
       </div>
     </div>
     <div class="flex justify-center">
-      <textarea v-model="hismessage" placeholder="ajoutez plusieurs lignes" class="p-4 w-4/6 border-slate-700 border-2 rounded-xl"></textarea>
-      <button class="bg-gray-700 w-32 text-white rounded-xl" @buttonClick="validate()">Send</button>
+      <textarea ref="sendMessage" v-model="hismessage" placeholder="ajoutez plusieurs lignes" class="p-4 w-4/6 border-slate-700 border-2 rounded-xl"></textarea>
+      <button class="bg-gray-700 w-32 text-white rounded-xl" @click="validate()">Send</button>
     </div>
   </div>
 </template>
@@ -31,8 +32,8 @@ export default {
   },
   mounted () {
     const axios = require('axios')
+    const token = this.$route.params.user_token
     
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjEzYTk0YzlmODc0YmJmYTRlZjU2MTciLCJpYXQiOjE2NDU3NzQzNDAsImV4cCI6MTY0NTc5NTk0MH0.E2eGtO1uXpP3TLElzCPlL1W6wjD0yyyqaPgNL33oR30'
     const url = 'http://localhost:3000/api/message'
     const body = {
       userId: '6213a94c9f874bbfa4ef5617'
@@ -49,20 +50,20 @@ export default {
   methods: {
     validate: function(){
       const axios = require('axios')
-      const token = ""
+      const token = this.$route.params.user_token
       const url = "http://localhost:3000/api/message"
       const headers = {
         'Authorization': "Bearer " + token,
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
+      console.log(token)
       const body = {
-        userId: "", 
-        messages: this.messages
+        userId: this.$route.params.user_id, 
+        message: this.$refs.sendMessage.value
       }
       axios({ method: 'POST', mode: 'cors', url: url, data: body, headers: headers })
         .then(response => console.log(response))
-        .then(this.$router.push("/home"))
     }
   }
 };
