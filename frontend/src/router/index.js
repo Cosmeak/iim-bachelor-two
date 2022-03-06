@@ -7,7 +7,7 @@ import Admin from "@/views/Admin";
 const routes = [
     {
         path: "/",
-        name: "Register",
+        name: "base",
         component: Register,
     },
     {

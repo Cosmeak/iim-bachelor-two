@@ -32,6 +32,7 @@ exports.create = (request, response) => {
   // Params
   const user = request.body.userId
   const message = request.body.message
+  console.log(message)
 
   User.findById(user, (error, docs) => {
     if(docs) {
@@ -42,12 +43,12 @@ exports.create = (request, response) => {
   
       newMessage.save(error => {
         if(error) {
-          return response.status(400).json({ status: 'Failure', reason: error })
+          return response.status(500).json({ status: 'Failure', reason: error })
         }
         else {
           const io = request.app.get('socketio')
           io.emit('message', newMessage)
-          return response.status(200).json({ status: 'Succes', data: newMessage })
+          return response.status(200).json({ status: 'Success', data: newMessage })
         }
       })
     }

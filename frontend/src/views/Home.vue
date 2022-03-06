@@ -9,7 +9,6 @@
       <div class="w-full ml-32">
         <article  v-for='message in messages' :key="message" class="bg-gray-300 mr-32 rounded-xl w-1/3"> <!-- block for the messages -->
           <p id='app' class="p-4">{{name}}{{message.message}}</p>
-          <p v-text="$route.params.user_id"></p>
         </article>
       </div>
     </div>
@@ -32,16 +31,15 @@ export default {
   },
   mounted () {
     const axios = require('axios')
-    const token = this.$route.params.user_token
-    
+    const token =  "Bearer " + this.$route.params.user_token
     const url = 'http://localhost:3000/api/message'
     const body = {
-      userId: '6213a94c9f874bbfa4ef5617'
+      userId: this.$route.params.user_id
     }
     const headers = {
-      "Authorization": "Bearer " + token,
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      "Authorization": token.split('"').join(''),
+      "Accept": "application/json",
+      "Content-Type": "application/json"
     }
     
     axios({ method: 'GET', mode: 'cors', url: url, data: body, headers: headers })
@@ -50,20 +48,21 @@ export default {
   methods: {
     validate: function(){
       const axios = require('axios')
-      const token = this.$route.params.user_token
+      const token = "Bearer " + this.$route.params.user_token
       const url = "http://localhost:3000/api/message"
       const headers = {
-        'Authorization': "Bearer " + token,
+        'Authorization': token.split('"').join(''),
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-      console.log(token)
       const body = {
-        userId: this.$route.params.user_id, 
+        userId: this.$route.params.user_id.split('"').join(''), 
         message: this.$refs.sendMessage.value
       }
+      console.log(body)
       axios({ method: 'POST', mode: 'cors', url: url, data: body, headers: headers })
         .then(response => console.log(response))
+        location.reload();
     }
   }
 };
