@@ -7,8 +7,8 @@
     </div>
     <div class="flex justify-center w-5/6 h-4/5">
       <div class="w-full ml-32">
-        <article class="bg-gray-300 rounded-xl w-1/3"> <!-- block for the messages -->
-          <p id='app' class="p-4">{{name}}{{message}}</p>
+        <article  v-for='message in messages' :key="message" class="bg-gray-300 mr-32 rounded-xl w-1/3"> <!-- block for the messages -->
+          <p id='app' class="p-4">{{name}}{{message.message}}</p>
         </article>
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
     el: '#app',
   data () {
     return {
-      message: null,
+      messages: null,
       name: null
     }
   },
@@ -44,7 +44,7 @@ export default {
     }
     
     axios({ method: 'GET', mode: 'cors', url: url, data: body, headers: headers })
-      .then(response => console.log(response))
+      .then(response => this.messages = response.data.data)
   },
   methods: {
     validate: function(){
@@ -58,7 +58,7 @@ export default {
       }
       const body = {
         userId: "", 
-        message: this.message
+        messages: this.messages
       }
       axios({ method: 'POST', mode: 'cors', url: url, data: body, headers: headers })
         .then(response => console.log(response))
