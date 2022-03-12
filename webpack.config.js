@@ -70,6 +70,9 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
+
+    //* Add PostCss Loader for tailwind
+    .enablePostCssLoader()
 ;
 
 module.exports = Encore.getWebpackConfig();
