@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ReviewRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: ReviewRepository::class)]
 class Review
@@ -19,11 +20,16 @@ class Review
     #[ORM\Column(type: 'text')]
     private $review;
 
+    #[Gedmo\Timestampable(on: 'create')]
     #[ORM\Column(type: 'datetime')]
     private $createdAt;
 
+    #[Gedmo\Timestampable(on: 'update')]
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $stars;
 
     public function getId(): ?int
     {
@@ -74,6 +80,18 @@ class Review
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getStars(): ?float
+    {
+        return $this->stars;
+    }
+
+    public function setStars(?float $stars): self
+    {
+        $this->stars = $stars;
 
         return $this;
     }

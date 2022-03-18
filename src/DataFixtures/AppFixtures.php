@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Brand;
 use App\Entity\Product;
 use App\Entity\ProductCategory;
 use App\Entity\User;
@@ -17,7 +18,16 @@ class AppFixtures extends Fixture
     }
     public function load(ObjectManager $manager): void
     {
+        $brandList = ['MSI', 'ASUS', 'ASROCK', 'GIGABYTE', 'AORUS', 'EVGA', 'KFA2', 'ZOTAC'];
         $productCategorylist = ['Motherboard', 'Graphic Card', 'RAM', 'SDD', 'HDD', 'WIFI Card', 'Sound Card', 'Processor', 'Watercooling', 'Air Cooling', 'Power Supply'];
+        foreach ($brandList as $item) {
+            $brand = new Brand();
+            $brand->setName($item);
+            $brand->setImage('NULL');
+            $manager->persist($brand);
+        }
+        $manager->flush();
+        $brands = $manager->getRepository(Brand::class)->findAll();
         foreach ($productCategorylist as $item) {
             $productCategory = new ProductCategory();
             $productCategory->setName($item);
@@ -29,6 +39,7 @@ class AppFixtures extends Fixture
                 $product->setPrice(random_int(10, 1000));
                 $product->setStock(random_int(0,100));
                 $product->setDescription('Voici une description');
+                $product->setBrand($brands[random_int(0,7)]);
                 $manager->persist($product);
             }
         }

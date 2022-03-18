@@ -3,36 +3,17 @@
 {% block title %}Product Categories{% endblock %}
 
 {% block body %}
-<main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-4">
+<main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-6 ">
     {# Display all categories of object #}
     <section class="w-full flex flex-col gap-2">
-        <div class="flex gap-4">
-            {% for category in categories %}
-                <article class="w-[300px] h-[220px] flex flex-col bg-[#333] text-white">
-                    <div class="h-1/2">
-                        {{ category.image }}
-                    </div>
-                    <p>{{ category.name }}</p>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">See more</a>
-                </article>
-            {% endfor %}
-        </div>
-    </section>
-
-    {# Display the 12 last products add #}
-    <section class="w-full flex flex-col gap-2">
-        <div class="flex justify-between items-center">
-            <h2 class="text-3xl font-bold text-neutral-800">Recent Discounts</h2>
-            <a href="{{ path('product_index') }}" class="px-3 py-1 rounded hover:bg-rose-700 hover:text-white duration-300">View All Products</a>
-        </div>
+        <h2 class="text-3xl font-bold text-polarNight-400">All our categories</h2>
         <div class="grid gap-4 grid-cols-4 ">
-            {% for product in lastProducts %}
-                <article class="flex flex-col bg-gray-200 rounded-lg">
-                    <img class="h-[200px] object-contain" src="{{ asset('{{product.image}}') }}" />
+            {% for category in categories %}
+                <article class="flex flex-col bg-snowStorm-300 rounded-lg">
+                    <img class="h-[200px] object-contain" src="{% if category.image %}{{ asset(category.image) }}{% endif %}" />
                     <div class="flex flex-col gap-1 p-4">
-                        <p class="text-lg">{{ product.name }}</p>
-                        <p class="text-blue-topachat font-bold text-xl">$ {{ product.price }}</p>
-                        <p class="{%  if product.stock == 1 or product.stock == 0 %} text-red-600 {% elseif product.stock <= 50 %} text-orange-400 {% else %} text-green-500 {% endif %}">{{ product.stock }} available in stock</p>
+                        <p class="text-lg font-medium text-polarNight-400">{{ category.name }}</p>
+                        <a class="bg-polarNight-100 rounded text-snowStorm-100 py-1 hover:bg-frost-300 duration-300 text-center" href="{{ path('category_show', { 'id': category.id }) }}">See Products</a>
                     </div>
                 </article>
             {% endfor %}

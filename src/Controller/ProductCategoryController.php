@@ -17,7 +17,6 @@ class ProductCategoryController extends AbstractController
     {
         return $this->render('product_category/index.html.twig', [
             'categories' => $categoryRepository->findAll(),
-            'lastProducts' => $productRepository->findBy([], ['createdAt' => 'DESC'], 12)
         ]);
     }
 
