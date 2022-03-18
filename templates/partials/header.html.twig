@@ -1,0 +1,18 @@
+<header class="h-[60px] bg-blue-topachat flex justify-center items-center ">
+    <div class="w-3/5 flex justify-between items-center">
+        <a href="/"><img class="h-[50px] object-contain" src="{{ asset('assets/images/logo-topachat@2x.png') }}" alt=""></a>
+        <nav class="">
+
+        </nav>
+        <div class="flex justify-center items-center gap-4 text-white">
+            <a class="flex items-center justify-center gap-1" href="{# TODO: Implement path for shopping cart #}"><i class="fas fa-shopping-cart"></i>Cart</a>
+            {% if app.user %}
+                <a class="flex items-center justify-center gap-1" href="{#  TODO : Implement profile page #}"><i class="fas fa-user-alt"></i>{{ app.user.username }}</a>
+            {% else %}
+                <a class="flex items-center justify-center gap-1" href="{{ path('app_login') }}"><i class="fas fa-user-alt-slash"></i>Login</a>
+            {% endif %}
+        </div>
+    </div>
+
+
+</header>

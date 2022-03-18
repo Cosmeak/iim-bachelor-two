@@ -2,17 +2,20 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\User;
+use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class UserCrudController extends AbstractCrudController
+class ProductCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return User::class;
+        return Product::class;
     }
 
     public function configureFields(string $pageName): iterable
@@ -20,7 +23,9 @@ class UserCrudController extends AbstractCrudController
         return [
             IdField::new('id'),
             TextField::new('name'),
-            TextField::new('email'),
+            TextEditorField::new('description'),
+            NumberField::new('price'),
+            IntegerField::new('stock'),
             DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),
         ];

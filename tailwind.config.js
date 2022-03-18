@@ -4,7 +4,11 @@ module.exports = {
     'assets/js/**/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-topachat': '#184C7C'
+      }
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-6">
+        {# Display all products in the category #}
+        <section class="w-full flex flex-col gap-2">
+            <div class="flex justify-between items-center">
+                <h2 class="text-3xl font-bold text-neutral-800">Recent Discounts</h2>
+                <a href="{{ path('product_index') }}" class="px-3 py-1 rounded hover:bg-rose-700 hover:text-white duration-300">View All Products</a>
+            </div>
+            <div class="grid gap-4 grid-cols-4 ">
+                {% for product in products %}
+                    <article class="flex flex-col bg-gray-200 rounded-lg">
+                        <img class="h-[200px] object-contain" src="{{ asset('{{product.image}}') }}" />
+                        <div class="flex flex-col gap-1 p-4">
+                            <p class="text-lg">{{ product.name }}</p>
+                            <p class="text-blue-topachat font-bold text-xl">$ {{ product.price }}</p>
+                            <p class="{%  if product.stock == 1 or product.stock == 0 %} text-red-600 {% elseif product.stock <= 50 %} text-orange-400 {% else %} text-green-500 {% endif %}">{{ product.stock }} available in stock</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}
