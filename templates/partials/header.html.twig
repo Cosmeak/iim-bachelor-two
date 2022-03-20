@@ -8,7 +8,7 @@
                 <button type="submit" class="bg-snowStorm-100 text-polarNight-400 px-3 py-1 rounded-r"><i class="fas fa-search"></i></button>
             </form>
             <div class="flex justify-center items-center gap-4 text-polarNight-400">
-                <a class="flex items-center justify-center gap-1 px-3 py-1 bg-snowStorm-100 rounded hover:bg-frost-400 hover:text-snowStorm-100 duration-300" href="{# TODO: Make path for shopping cart #}"><i class="fas fa-shopping-cart"></i>Cart</a>
+                <a class="flex items-center justify-center gap-1 px-3 py-1 bg-snowStorm-100 rounded hover:bg-frost-400 hover:text-snowStorm-100 duration-300" href="{{ path('app_cart') }}"><i class="fas fa-shopping-cart"></i>Cart</a>
                 {% if app.user %}
                     <a class="flex items-center justify-center gap-1 px-3 py-1 bg-snowStorm-100 rounded hover:bg-frost-400 hover:text-snowStorm-100 duration-300" href="{#  TODO : Implement profile page #}"><i class="fas fa-user-alt"></i>{{ app.user.username }}</a>
                 {% else %}

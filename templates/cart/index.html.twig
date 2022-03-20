@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Top Achat: Shopping Cart{% endblock %}
+
+{% block body %}
+    {% if cart | length > 0 %}
+        <table>
+            <thead>
+                <tr class="text-left">
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="text-left">
+            {% for product in cart%}
+                <tr>
+                    <td>{{ product.product.name }}</td>
+                    <td>{{ product.product.price }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.product.price * product.quantity }}$</td>
+                    <td class="flex gap-4">
+                        <a href="{{ path('app_cart_add', {'id': product.product.id}) }}" class="flex items-center justify-center gap-1 px-3 py-1 bg-aurora-green rounded hover:opacity-75 duration-300 text-snowStorm-100"><i class="fas fa-plus"></i>Add</a>
+                        <a href="{{ path('app_cart_delete', {'id': product.product.id }) }}" class="flex items-center justify-center gap-1 px-3 py-1 bg-aurora-orange rounded hover:opacity-75 duration-300 text-snowStorm-100"><i class="fas fa-minus"></i>Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td class="text-right">Total:</td>
+                <td>{{ total }}$</td>
+                <td class="flex gap-4">
+                    <a href="{{ path('app_cart_confirmOrder') }}" class="flex w-fit items-center justify-center gap-1 px-3 py-1 bg-frost-400 rounded hover:opacity-75 duration-300 text-snowStorm-100">Confirm & Pay</a>
+                    <a href="{{ path('app_cart_deleteAll') }}" class="flex w-fit items-center justify-center gap-1 px-3 py-1 bg-aurora-red rounded hover:opacity-75 duration-300 text-snowStorm-100"><i class="fas fa-trash"></i>Delete Cart</a>
+                </td>
+            </tr>
+            </tfoot>
+
+        </table>
+    {% endif %}
+{% endblock %}

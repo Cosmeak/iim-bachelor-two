@@ -16,6 +16,10 @@ class AppFixtures extends Fixture
     {
         $this->hasher = $hasher;
     }
+
+    /**
+     * @throws \Exception
+     */
     public function load(ObjectManager $manager): void
     {
         $brandList = ['MSI', 'ASUS', 'ASROCK', 'GIGABYTE', 'AORUS', 'EVGA', 'KFA2', 'ZOTAC'];

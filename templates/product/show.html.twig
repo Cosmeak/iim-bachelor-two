@@ -23,9 +23,10 @@
             </div>
             {# Add to cart, price and stock #}
             {# TODO: Need to go to right of the box #}
-            <div class="">
+            <div class="flex flex-col gap-4">
                 <p>$ {{ product.price }}</p>
                 <p>{{ product.stock }} available</p>
+                <a href="{{ path('app_cart_add', {'id': product.id}) }}">Add to cart</a>
             </div>
         </div>
         {# Description of it #}
