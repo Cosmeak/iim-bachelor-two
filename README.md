@@ -44,3 +44,12 @@ For the page that show all the product and the page that show all the product of
 - It show you if the product is new (add in the last 7 days)
 - Show if it's the last in stock 
 - Show how many product we have in stock
+
+## 3 - Source and build with
+
+- My template of a base for symfony with tailwind project -> [You can find it  😁](https://github.com/Cosmeak/symfony-tailwind)
+- https://www.youtube.com/watch?v=_tWL-QDFuQ4
+- https://dev.to/qferrer/introduction-building-a-shopping-cart-with-symfony-f7h
+- https://symfony.com/doc/current/service_container/factories.html
+- https://symfony.com/doc/current/session.html
+- The course of [@Pierre Grimaud](https://github.com/pgrimaud) (The best in last! 😊)
