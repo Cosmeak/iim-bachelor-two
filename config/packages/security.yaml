@@ -37,7 +37,7 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: /cart, roles: IS_AUTHENTICATED }
+        - { path: /cart, roles: ROLE_USER }
         # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
