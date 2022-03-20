@@ -6,7 +6,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'blue-topachat': '#184C7C',
         // Color of Nord palette
         'polarNight': {
           '100': '#4C566A',
@@ -34,7 +33,7 @@ module.exports = {
         }
       },
       boxShadow: {
-        'outside': '0 0 8px rgba(76,86,106,0.50)'
+        'outside': '0 0 6px rgba(76,86,106,0.30)'
       }
     },
   },

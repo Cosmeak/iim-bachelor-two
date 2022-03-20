@@ -1,23 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product Categories{% endblock %}
+{% block title %}Top Achat: Hardware at the best price!{% endblock %}
 
 {% block body %}
-<main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-6 ">
     {# Display all categories of object #}
     <section class="w-full flex flex-col gap-2">
         <h2 class="text-3xl font-bold text-polarNight-400">All our categories</h2>
         <div class="grid gap-4 grid-cols-4 ">
             {% for category in categories %}
                 <article class="flex flex-col bg-snowStorm-300 rounded-lg">
-                    <img class="h-[200px] object-contain" src="{% if category.image %}{{ asset(category.image) }}{% endif %}" />
+                    <img class="h-[200px] object-contain rounded-t-lg" src="{% if category.image %}/uploads/productCategory/{{ category.image }}{% endif %}" alt=""/>
                     <div class="flex flex-col gap-1 p-4">
                         <p class="text-lg font-medium text-polarNight-400">{{ category.name }}</p>
-                        <a class="bg-polarNight-100 rounded text-snowStorm-100 py-1 hover:bg-frost-300 duration-300 text-center" href="{{ path('category_show', { 'id': category.id }) }}">See Products</a>
+                        <a class="bg-polarNight-100 rounded text-snowStorm-100 py-1 hover:bg-frost-400 duration-300 text-center" href="{{ path('category_show', { 'id': category.id }) }}">See Products</a>
                     </div>
                 </article>
             {% endfor %}
         </div>
     </section>
-</main>
 {% endblock %}

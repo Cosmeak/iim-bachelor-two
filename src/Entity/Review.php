@@ -31,6 +31,9 @@ class Review
     #[ORM\Column(type: 'float', nullable: true)]
     private $stars;
 
+    #[ORM\ManyToOne(targetEntity: Product::class, inversedBy: 'reviews')]
+    private $product;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +95,18 @@ class Review
     public function setStars(?float $stars): self
     {
         $this->stars = $stars;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
 
         return $this;
     }

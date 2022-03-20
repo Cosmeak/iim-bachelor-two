@@ -3,35 +3,79 @@
 {% block title %}{{ product.brand }} {{ product.name }} - TopAchat{% endblock %}
 
 {% block body %}
-<main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-4">
-    <section>
-        {% if product.image %}
-            <img src="{{ asset(product.image) }}" alt="">
-        {% endif %}
-        <p>{{ product.brand }}</p>
-        <p>{{ product.name }}</p>
-        <p>$ {{ product.price }}</p>
-        <p>{{ product.stock }} available</p>
-        <p>{{ product.description }}</p>
+    <section class=" flex flex-col gap-4 bg-white rounded-lg p-4">
+        <div class="flex gap-6">
+            {# Image of the product #}
+            <img class="w-1/4 h-auto object-contain rounded-lg" src="{% if product.image %}/uploads/product/{{ product.image }}{% endif %}" alt="">
+            {# first information of it #}
+            <div class="pt-2 text-polarNight-300 flex flex-col gap-2">
+                <div>
+                    <p class="font-bold text-2xl">{{ product.brand }}</p>
+                    <p class="font-medium text-xl">{{ product.name }}</p>
+                </div>
+                <div class="flex gap-2">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            {# Add to cart, price and stock #}
+            {# TODO: Need to go to right of the box #}
+            <div class="">
+                <p>$ {{ product.price }}</p>
+                <p>{{ product.stock }} available</p>
+            </div>
+        </div>
+        {# Description of it #}
+        <div>
+            <p class="text-lg font-medium underline">Description:</p>
+            {{ product.description|raw }}
+        </div>
     </section>
+
+    {# Section for reviews #}
+    <hr class="border-2 border-snowStorm-300 rounded">
+    <section class="w-ful flex flex-col gap-4">
+        <h2 class="text-3xl font-bold text-neutral-800">Customers reviews for this product</h2>
+        {% for review in product.reviews %}
+            <div class="bg-white rounded-lg p-4">
+                <p>{{ review.user.name }}</p>
+                <div>
+                    {{ review.review }}
+                </div>
+            </div>
+        {% endfor %}
+        {% if product.reviews is empty %}
+            <p class="bg-white rounded-lg p-4">
+                {% if app.user is not null %}
+                    Be the first to give a review!
+                {% else %}
+                    Please <a href="{{ path('app_login') }}" class="text-frost-400 underline">login</a> to give a review!
+                {% endif %}
+            </p>
+        {% endif %}
+    </section>
+
+    {# Section for similar products #}
     <section class="w-full flex flex-col gap-8">
         <div class="flex justify-between items-center">
             <h2 class="text-3xl font-bold text-neutral-800">Similar products</h2>
-            <a href="{{ path('category_show', {'id': product.category.id }) }}" class="px-3 py-1 rounded hover:bg-blue-topachat hover:text-white duration-300">View All Products</a>
+            <a href="{{ path('category_show', {'id': product.category.id }) }}" class="px-3 py-1 rounded hover:bg-frost-400 hover:text-white duration-300">View All Products</a>
         </div>
         <div class="grid gap-4 grid-cols-4 ">
             {%  for similarProduct in similarProducts %}
-                <a class="flex flex-col bg-gray-200 rounded-lg hover:shadow-xl duration-300" href="{{ path('product_show', { 'id': similarProduct.id }) }}">
-                    <img class="h-[200px] object-contain" src="{{ asset('{{product.image}}') }}" />
+                <a class="flex flex-col bg-gray-200 rounded-lg hover:shadow-outside duration-300" href="{{ path('product_show', { 'id': similarProduct.id }) }}">
+                    <img class="h-[200px] object-contain" src="{% if product.image %}/uploads/product/{{ similarProduct.image }}{% endif %}" alt=""/>
                     <div class="flex flex-col gap-1 p-4">
                         <p class="text-base text-gray-500">{{ similarProduct.brand }}</p>
                         <p class="text-lg">{{ similarProduct.name }}</p>
                         <p class="text-blue-topachat font-bold text-xl">$ {{ similarProduct.price }}</p>
-                        <p class="{%  if similarProduct.stock == 1 or similarProduct.stock == 0 %} text-red-600 {% elseif product.stock <= 50 %} text-orange-400 {% else %} text-green-500 {% endif %}">{{ similarProduct.stock }} available in stock</p>
+                        <p class="{%  if similarProduct.stock == 1 or similarProduct.stock == 0 %} text-red-600 {% elseif similarProduct.stock <= 50 %} text-orange-400 {% else %} text-green-500 {% endif %}">{{ similarProduct.stock }} available in stock</p>
                     </div>
                 </a>
             {% endfor %}
         </div>
     </section>
-</main>
 {% endblock %}

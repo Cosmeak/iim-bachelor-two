@@ -3,26 +3,40 @@
 {% block title %}All our {{ category.name }} for the best price!{% endblock %}
 
 {% block body %}
-    <main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-6">
-        {# Display all products in the category #}
-        <section class="w-full flex flex-col gap-8">
-            <h2 class="text-3xl font-bold text-neutral-800 text-center">All our {{ category.name }} for the best price!</h2>
-            <div class="grid gap-4 grid-cols-4 ">
-                {% for product in products %}
-                    <a class="flex flex-col bg-snowStorm-300 rounded-lg hover:shadow-outside duration-300 relative" href="{{ path('product_show', { 'id': product.id }) }}">
-                        {% if product.stock == 1 %}
-                            <p class="absolute top-1 left-1 bg-aurora-red text-snowStorm-100 px-2 py-1 rounded">Last in Stock!</p>
-                        {% endif %}
-                        <img class="h-[200px] object-contain" src="{% if product.image %}{{ asset(product.image) }}{% endif %}" />
-                        <div class="flex flex-col gap-1 p-4">
-                            <p class="text-base text-frost-400">{{ product.brand }}</p>
-                            <p class="text-lg">{{ product.name }}</p>
-                            <p class="text-frost-400 font-bold text-xl">$ {{ product.price }}</p>
-                            <p class="{%  if product.stock <= 10 %} text-aurora-red {% elseif product.stock <= 50 %} text-aurora-orange {% else %} text-aurora-green {% endif %} font-medium">{{ product.stock }} available in stock</p>
-                        </div>
-                    </a>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
+{# Display all products in the category #}
+<section class="w-full flex flex-col gap-8">
+    <h2 class="text-3xl font-bold text-neutral-800 text-center">All our {{ category.name }} for the best price!</h2>
+    <div>
+        <label for="">Sort By:</label>
+        <select name="" id="" onchange="window.location = '/category/{{ category.id }}?sortBy='+this.value">
+            <option>Default</option>
+            <option value="ASC" {% if sortBy == 'ASC' %} selected{% endif %}>ASC</option>
+            <option value="DESC" {% if sortBy == 'DESC' %} selected{% endif %}>DESC</option>
+        </select>
+    </div>
+    <div class="grid gap-4 grid-cols-4 ">
+        {% for product in products %}
+            <a class="flex flex-col bg-snowStorm-300 rounded-lg hover:shadow-outside border border-transparent hover:border-frost-100/30 duration-300 relative" href="{{ path('product_show', { 'id': product.id }) }}">
+                {# Check the difference between actual date and the date the product was create to know if it was the last 7 days and if it is, tell to customers it's new #}
+                {% set difference = date(product.createdAt).diff(date('now'|date)) %}
+                {% set leftDays = difference.days %}
+                {% if leftDays <= 7 %}
+                    <p class="absolute top-1 left-1 bg-aurora-green text-snowStorm-100 px-2 py-1 rounded-lg">New ✴</p>
+                {% endif %}
+
+                {# Check if it's the last product in stock to tell it to custumers #}
+                {% if product.stock == 1 %}
+                    <p class="absolute top-1 right-1 bg-aurora-red text-snowStorm-100 px-2 py-1 rounded-lg">Last in Stock!</p>
+                {% endif %}
+                <img class="h-[200px] object-contain" src="{% if product.image %}/uploads/product/{{ product.image }}{% endif %}" alt=""/>
+                <div class="flex flex-col gap-1 p-4">
+                    <p class="text-base text-frost-400">{{ product.brand }}</p>
+                    <p class="text-lg">{{ product.name }}</p>
+                    <p class="text-frost-400 font-bold text-xl">$ {{ product.price }}</p>
+                    <p class="{%  if product.stock <= 10 %} text-aurora-red {% elseif product.stock <= 50 %} text-aurora-orange {% else %} text-aurora-green {% endif %} font-medium">{{ product.stock }} available in stock</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

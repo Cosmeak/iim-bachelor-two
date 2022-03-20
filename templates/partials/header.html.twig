@@ -1,18 +1,35 @@
-<header class="w-full h-[60px] bg-blue-topachat flex justify-center items-center sticky top-0 shadow-lg z-50">
-    <div class="w-3/5 flex justify-between items-center">
-        <a href="/"><img class="h-[50px] object-contain" src="{{ asset('assets/images/logo-topachat@2x.png') }}" alt=""></a>
-        <nav class="">
-
-        </nav>
-        <div class="flex justify-center items-center gap-4 text-snowStorm-100">
-            <a class="flex items-center justify-center gap-1" href="{# TODO: Implement path for shopping cart #}"><i class="fas fa-shopping-cart"></i>Cart</a>
-            {% if app.user %}
-                <a class="flex items-center justify-center gap-1" href="{#  TODO : Implement profile page #}"><i class="fas fa-user-alt"></i>{{ app.user.username }}</a>
-            {% else %}
-                <a class="flex items-center justify-center gap-1" href="{{ path('app_login') }}"><i class="fas fa-user-alt-slash"></i>Login</a>
-            {% endif %}
+<header class="w-full h-auto sticky top-0 z-50">
+    {# Top header => Search bar, account and cart #}
+    <section class="w-full h-[60px] bg-polarNight-400 flex justify-center items-center">
+        <div class="w-3/5 flex justify-between items-center">
+            <a href="/"><img class="h-[50px] object-contain" src="{{ asset('assets/images/logo-topachat@2x.png') }}" alt=""></a>
+            <form action="" class="w-4/6 flex justify-center items-center">
+                <input type="search" class="bg-snowStorm-100 text-polarNight-400 px-3 py-1 rounded-l"/>
+                <button type="submit" class="bg-snowStorm-100 text-polarNight-400 px-3 py-1 rounded-r"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="flex justify-center items-center gap-4 text-polarNight-400">
+                <a class="flex items-center justify-center gap-1 px-3 py-1 bg-snowStorm-100 rounded hover:bg-frost-400 hover:text-snowStorm-100 duration-300" href="{# TODO: Make path for shopping cart #}"><i class="fas fa-shopping-cart"></i>Cart</a>
+                {% if app.user %}
+                    <a class="flex items-center justify-center gap-1 px-3 py-1 bg-snowStorm-100 rounded hover:bg-frost-400 hover:text-snowStorm-100 duration-300" href="{#  TODO : Implement profile page #}"><i class="fas fa-user-alt"></i>{{ app.user.username }}</a>
+                {% else %}
+                    <a class="flex items-center justify-center gap-1 px-3 py-1 bg-snowStorm-100 rounded hover:bg-frost-400 hover:text-snowStorm-100 duration-300" href="{{ path('app_login') }}"><i class="fas fa-user-alt-slash"></i>Login</a>
+                {% endif %}
+            </div>
         </div>
-    </div>
+    </section>
 
-
+    {# Bottom header nav => categoriers fast access #}
+    <section class="w-full h-[30px] bg-snowStorm-300 flex justify-center items-center shadow-lg font-medium">
+        <nav class="w-3/5 flex justify-center items-center">
+            <ul class="flex list-none gap-1">
+                <p>|</p>
+                <li><a href="{{ path('home') }}" class="hover:bg-frost-400 px-2 py-1 rounded duration-300 hover:text-snowStorm-100">Home</a></li>
+                <p>|</p>
+                <li><a href="{{ path('category_index') }}" class="hover:bg-frost-400 px-2 py-1 rounded duration-300 hover:text-snowStorm-100">Categories</a></li>
+                <p>|</p>
+                <li><a href="{{ path('product_index') }}" class="hover:bg-frost-400 px-2 py-1 rounded duration-300 hover:text-snowStorm-100">Products</a></li>
+                <p>|</p>
+            </ul>
+        </nav>
+    </section>
 </header>

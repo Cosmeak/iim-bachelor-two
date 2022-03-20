@@ -3,22 +3,26 @@
 {% block title %}All products{% endblock %}
 
 {% block body %}
-<main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-8">
-    <div class="grid gap-4 grid-cols-4 ">
-        {% for product in products %}
-            <a class="flex flex-col bg-snowStorm-300 rounded-lg hover:shadow-outside duration-300 relative" href="{{ path('product_show', { 'id': product.id }) }}">
-                {% if product.stock == 1 %}
-                    <p class="absolute top-1 left-1 bg-aurora-red text-snowStorm-100 px-2 py-1 rounded">Last in Stock!</p>
-                {% endif %}
-                <img class="h-[200px] object-contain" src="{{ asset('{{product.image}}') }}" />
-                <div class="flex flex-col gap-1 p-4">
-                    <p class="text-base text-frost-400">{{ product.brand }}</p>
-                    <p class="text-lg">{{ product.name }}</p>
-                    <p class="text-frost-400 font-bold text-xl">$ {{ product.price }}</p>
-                    <p class="{%  if product.stock <= 10 %} text-aurora-red {% elseif product.stock <= 50 %} text-aurora-orange {% else %} text-aurora-green {% endif %} font-medium">{{ product.stock }} available in stock</p>
-                </div>
-            </a>
-        {% endfor %}
-    </div>
-</main>
+
+<div class="grid gap-4 grid-cols-4 ">
+    {% for product in products %}
+        <a class="flex flex-col bg-snowStorm-300 rounded-lg hover:shadow-outside duration-300 relative" href="{{ path('product_show', { 'id': product.id }) }}">
+            {% set difference = date(product.createdAt).diff(date('now'|date)) %}
+            {% set leftDays = difference.days %}
+            {% if leftDays <= 7 %}
+                <p class="absolute top-1 left-1 bg-aurora-green text-snowStorm-100 px-2 py-1 rounded-lg">New ✴</p>
+            {% endif %}
+            {% if product.stock == 1 %}
+                <p class="absolute top-1 right-1 bg-aurora-red text-snowStorm-100 px-2 py-1 rounded">Last in Stock!</p>
+            {% endif %}
+            <img class="h-[200px] object-contain" src="{% if product.image %}/uploads/product/{{ product.image }}{% endif %}" alt=""/>
+            <div class="flex flex-col gap-1 p-4">
+                <p class="text-base text-frost-400">{{ product.brand }}</p>
+                <p class="text-lg">{{ product.name }}</p>
+                <p class="text-frost-400 font-bold text-xl">$ {{ product.price }}</p>
+                <p class="{%  if product.stock <= 10 %} text-aurora-red {% elseif product.stock <= 50 %} text-aurora-orange {% else %} text-aurora-green {% endif %} font-medium">{{ product.stock }} available in stock</p>
+            </div>
+        </a>
+    {% endfor %}
+</div>
 {% endblock %}

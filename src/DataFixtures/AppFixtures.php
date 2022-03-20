@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
             $productCategory = new ProductCategory();
             $productCategory->setName($item);
             $manager->persist($productCategory);
-            for ($index=1; $index <= 10; $index++) {
+            for ($index=1; $index <= 20; $index++) {
                 $product = new Product();
                 $product->setName($item . $index);
                 $product->setCategory($productCategory);
@@ -44,7 +44,7 @@ class AppFixtures extends Fixture
             }
         }
         $manager->flush();
-        for ($index=1; $index <= 10; $index++) {
+        for ($index=1; $index <= 50; $index++) {
             $user = new User();
             $user->setEmail('user'.$index.'@mail.com');
             $user->setUsername('User N°'.$index);
