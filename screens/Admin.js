@@ -85,4 +85,10 @@ const styles = StyleSheet.create({
   },
 });
 
+const color = StyleSheet.create({
+  white: {
+    color : 'white',
+},
+});
+
 export default Admin;

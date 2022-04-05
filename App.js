@@ -22,7 +22,7 @@ function HomeScreen({ navigation }) {
         placeholderTextColor="#ffffff80"
         underlineColorAndroid='transparent'
       /> 
-        <Pressable style = {styles.button} onPress={() => alert('Bouffon CALME TOI MERDE')}><Text style={styles.textButton}>Entrer dans le jeu</Text></Pressable>
+        <Pressable style = {styles.button} onPress={() => navigation.navigate('Game')}><Text style={styles.textButton}>Entrer dans le jeu</Text></Pressable>
         <Pressable style={styles.admin} onPress={() => navigation.navigate('Admin')}><Text style={color.white}>Administrateur ?</Text></Pressable>
   </ImageBackground>
   </View>
@@ -63,6 +63,42 @@ function AdminScreen({ navigation }) {
 }
 
 
+function GameView({navigation}){
+  return(
+    <View style={styles.container}>
+      <ImageBackground source={require('./assets/game_bg.png') } resizeMode="cover" style={styles.image}>
+        <View style={[game.part1 , margin.mtbar, game.bg, border.br5]}>
+          <Text style={color.white}></Text>
+        </View>
+        <View style={[game.part2 , margin.mt5, game.bg, border.br5]}>
+          <Text style={color.white}></Text>
+        </View>
+        <View style={[game.part4 , margin.mt5, game.bg, border.brF]}>
+          <Button
+          title="Ressource"
+          onPress={() => navigation.navigate('Ressource')}
+        />
+        </View>
+      </ImageBackground>
+    </View>
+  )
+}
+
+function RessourcePlayer({navigation}){
+  return(
+    <View style={styles.container}>
+    <ImageBackground source={require('./assets/game_bg.png') } resizeMode="cover" style={styles.image}>
+      <Text style={[styles.text, margin.mt]}>BIG Ressource</Text>
+      <Button
+          title="Game"
+          onPress={() => navigation.navigate('Game')}
+        />
+    </ImageBackground>
+    </View>
+  )
+}
+
+
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -71,6 +107,8 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
         <Stack.Screen name="Admin" component={AdminScreen} options={{headerShown:false}} />
+        <Stack.Screen name="Game" component={GameView} options={{headerShown:false}} />
+        <Stack.Screen name="Ressource" component={RessourcePlayer} options={{headerShown:false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -160,6 +198,7 @@ const styles = StyleSheet.create({
 const color = StyleSheet.create({
   white: {
     color : 'white',
+    opacity : 1
 },
 });
 
@@ -168,8 +207,51 @@ const margin = StyleSheet.create({
     marginTop : "20%"
   },
   mt5: {
-    marginTop : "5%"
+    marginTop : "4%"
+  },
+  mtbar:{
+    marginTop : '12%'
   }
+})
+
+const border = StyleSheet.create({
+  br5:{
+    borderRadius : 10
+  },
+  brF:{
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+  }
+})
+
+const game = StyleSheet.create({
+  bg: {
+    backgroundColor : '#00000070',
+  },
+
+  part1 : {
+    width : '95%',
+    height : '6%',
+    alignSelf: 'center',
+  },
+  part2 : {
+    width : '95%',
+    height : '75%',
+    alignSelf: 'center',
+  },
+
+  part3 : {
+    width : '90%',
+    height : '20%',
+    alignSelf: 'center',
+  },
+  part4 : {
+    width : '95%',
+    height : '8%',
+    alignSelf: 'center',
+  },
 })
 
 export default App;
