@@ -12,8 +12,6 @@ const Admin = () => (
           source={require('../assets/logo_cb.png')}
         />
       </View>
-       
-          
     </ImageBackground>
   </View>  
 );
@@ -85,12 +83,6 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 150/2,
   },
-});
-
-const color = StyleSheet.create({
-  white: {
-    color : 'white',
-},
 });
 
 export default Admin;
