@@ -1,20 +1,42 @@
 import React from "react";
+import reactDom from "react-dom";
 import { Dimensions, ImageBackground, StyleSheet, Text, TextInput, View, Image, Pressable } from "react-native";
 
 
 
-const Admin = () => (
-  <View style={styles.container}>
-    <ImageBackground source={require('../assets/bg_cb.png') } resizeMode="cover" style={styles.image}>
-      <View style={styles.rond}>
-        <Image
-          style={styles.logo}
-          source={require('../assets/logo_cb.png')}
+class Admin extends React.Component{
+  render(){
+    return (
+      <View style={styles.container}>
+      <ImageBackground source={require('../assets/bg_cb.png') } resizeMode="cover" style={styles.image}>
+        <View style={styles.rond}>
+          <Image
+            style={styles.logo}
+            source={require('../assets/logo_cb.png')}
+          />
+        </View>
+        <TextInput
+          style={[styles.inputt, margin.mt]}
+          placeholder="Email"
+          placeholderTextColor="#ffffff80"
+          underlineColorAndroid='transparent'
         />
-      </View>
-    </ImageBackground>
-  </View>  
-);
+        <TextInput
+          style={[styles.inputt, margin.mt5]}
+          placeholder="Mot de passe "
+          placeholderTextColor="#ffffff80"
+          underlineColorAndroid='transparent'
+        />
+        <Button
+          title="Go to Details... again"
+          onPress={() => navigation.navigate('Home')}
+        />
+      </ImageBackground>
+    </View> 
+    )
+  }
+}
+
 
 const styles = StyleSheet.create({
   container: {
