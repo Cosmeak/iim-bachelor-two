@@ -9,16 +9,10 @@ import Admin from "./screens/Admin";
 import RessourcePlayer from './screens/GamePlay/RessourcePlayer';
 import WaitingRoom from './screens/WaitingRoom';
 
-
 const Tab = createBottomTabNavigator();
-
 const HomeStack = createNativeStackNavigator();
 
-
-
-
-
-function HomeStackScreen(){
+const HomeStackScreen = () => {
   return(
       <HomeStack.Navigator>
         <HomeStack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
@@ -26,13 +20,11 @@ function HomeStackScreen(){
         <HomeStack.Screen name="Game" component={GameView} options={{headerShown:false}} />
         <HomeStack.Screen name="Ressource" component={RessourcePlayer} options={{headerShown:false}} />
         <HomeStack.Screen name="Waiting" component={WaitingRoom} options={{headerShown:false}} />
-        <HomeStack.Screen name="AdminPanel" component={AdminPanel} options={{headerShown:false}} />
       </HomeStack.Navigator>
   )
 }
 
-
-const Navigation = () =>{
+const Navigation = () => {
   return(
     <NavigationContainer>
       <Tab.Navigator>
@@ -42,7 +34,5 @@ const Navigation = () =>{
     </NavigationContainer>
   )
 }
-
-
 
 export default Navigation;

@@ -1,6 +1,6 @@
 import React from "react"
 import { Dimensions, ImageBackground, StyleSheet, Text, View, Button } from "react-native"
-import GameView from './GamePlay/RessourcePlayer'
+import RessourcePlayer from './GamePlay/RessourcePlayer'
 
 
 class GameView extends React.Component{ 
@@ -15,10 +15,6 @@ class GameView extends React.Component{
                   <Text style={color.white}></Text>
                 </View>
                 <View style={[game.part4 , margin.mt5, game.bg, border.brF]}>
-                  <Button
-                  title="Ressource"
-                  onPress={() => navigation.navigate('Ressource')}
-                />
                 </View>
               </ImageBackground>
             </View>
@@ -26,19 +22,15 @@ class GameView extends React.Component{
     }
 }
 
-
-
 const Navigation = () =>{
   return(
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Game" component={GameView} options={{headerShown:false}} />
-
+        <Tab.Screen name="RessourcePlayer" component={RessourcePlayer} options={{headerShown:false}} />
       </Tab.Navigator>
     </NavigationContainer>
   )
 }
-
 
 const styles = StyleSheet.create({
     container: {

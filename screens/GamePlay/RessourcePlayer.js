@@ -5,19 +5,13 @@ class RessourcePlayer extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-            <ImageBackground source={require('../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
+            <ImageBackground source={ require('../../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
               <Text style={[styles.text, margin.mt]}>BIG Ressource</Text>
-              <Button
-                  title="Game"
-                  onPress={() => navigation.navigate('Game')}
-                />
             </ImageBackground>
             </View>
         )
     }
-    
 }
-
 
 const styles = StyleSheet.create({
     container: {
