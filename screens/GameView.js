@@ -1,9 +1,5 @@
-import { def } from "@vue/shared";
-import React from "react";
-import reactDom from "react-dom";
-import { Button, View, Text } from 'react-native';
-import { Dimensions, ImageBackground, StyleSheet, Text, TextInput, View, Image, Pressable, Button } from "react-native";
-
+import React from "react"
+import { Dimensions, ImageBackground, StyleSheet, Text, View, Button } from "react-native"
 import GameView from './GamePlay/RessourcePlayer'
 
 
@@ -28,7 +24,6 @@ class GameView extends React.Component{
             </View>
         )
     }
-   
 }
 
 

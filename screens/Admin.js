@@ -1,7 +1,5 @@
 import React from "react";
-import reactDom from "react-dom";
-import { Dimensions, ImageBackground, StyleSheet, Text, TextInput, View, Image, Pressable } from "react-native";
-import { Button, View, Text } from 'react-native';
+import { Dimensions, ImageBackground, StyleSheet, TextInput, View, Image } from "react-native";
 
 
 

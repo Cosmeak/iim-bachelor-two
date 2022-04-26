@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -37,8 +36,6 @@ const Navigation = () =>{
   return(
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeStackScreen} options={{headerShown:false}} />
-        <Tab.Screen name="Admin" component={Admin} options={{headerShown:false}} />
         <Tab.Screen name="Game" component={GameView} options={{headerShown:false}} />
         <Tab.Screen name="Ressource" component={RessourcePlayer} options={{headerShown:false}} />
       </Tab.Navigator>

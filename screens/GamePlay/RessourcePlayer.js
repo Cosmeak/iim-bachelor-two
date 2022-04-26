@@ -1,9 +1,5 @@
-import { def } from "@vue/shared";
 import React from "react";
-import reactDom from "react-dom";
-import { Button, View, Text } from 'react-native';
-
-import { Dimensions, ImageBackground, StyleSheet, Text, TextInput, View, Image, Pressable } from "react-native";
+import { Dimensions, ImageBackground, StyleSheet, Text, View } from "react-native";
 
 class RessourcePlayer extends React.Component{
     render(){

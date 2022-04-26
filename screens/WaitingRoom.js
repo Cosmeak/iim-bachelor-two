@@ -1,7 +1,5 @@
 import React from "react";
-import reactDom from "react-dom";
-import { Dimensions, ImageBackground, StyleSheet, Text, TextInput, View, Image, Pressable } from "react-native";
-import { Button, View, Text } from 'react-native';
+import { ImageBackground, StyleSheet, View } from "react-native";
 
 class WaitingRoom extends React.Component{
     render(){
