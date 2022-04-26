@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,7 +7,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import GameView from './screens/GameView';
 import Admin from "./screens/Admin";
-import RessourcePlayer from './screens/RessourcePlayer';
+import RessourcePlayer from './screens/GamePlay/RessourcePlayer';
+import WaitingRoom from './screens/WaitingRoom';
 
 
 const Tab = createBottomTabNavigator();
@@ -25,6 +26,8 @@ function HomeStackScreen(){
         <HomeStack.Screen name="Admin" component={Admin} options={{headerShown:false}} />
         <HomeStack.Screen name="Game" component={GameView} options={{headerShown:false}} />
         <HomeStack.Screen name="Ressource" component={RessourcePlayer} options={{headerShown:false}} />
+        <HomeStack.Screen name="Waiting" component={WaitingRoom} options={{headerShown:false}} />
+        <HomeStack.Screen name="AdminPanel" component={AdminPanel} options={{headerShown:false}} />
       </HomeStack.Navigator>
   )
 }

@@ -5,25 +5,25 @@ import { Button, View, Text } from 'react-native';
 
 
 
-class Admin extends React.Component{
+class AdminHome extends React.Component{
   render(){
     return (
       <View style={styles.container}>
-      <ImageBackground source={require('../assets/bg_cb.png') } resizeMode="cover" style={styles.image}>
+      <ImageBackground source={require('../../assets/bg_cb.png') } resizeMode="cover" style={styles.image}>
         <View style={styles.rond}>
           <Image
             style={styles.logo}
-            source={require('../assets/logo_cb.png')}
+            source={require('../../assets/logo_cb.png')}
           />
         </View>
         <TextInput
-          style={[styles.inputt, margin.mt]}
+          style={[ margin.mt]}
           placeholder="Email"
           placeholderTextColor="#ffffff80"
           underlineColorAndroid='transparent'
         />
         <TextInput
-          style={[styles.inputt, margin.mt5]}
+          style={[margin.mt5]}
           placeholder="Mot de passe "
           placeholderTextColor="#ffffff80"
           underlineColorAndroid='transparent'
@@ -114,4 +114,4 @@ const color = StyleSheet.create({
 },
 });
 
-export default Admin;
+export default AdminHome;

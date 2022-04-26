@@ -2,6 +2,7 @@ import React from "react";
 import GameView from "./GameView";
 import Admin from "./Admin";
 import reactDom from "react-dom";
+import { Button, View, Text } from 'react-native';
 import { Dimensions, ImageBackground, StyleSheet, Text, TextInput, View, Image, Pressable } from "react-native";
 
 class HomeScreen extends React.Component{
