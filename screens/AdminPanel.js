@@ -11,7 +11,7 @@ import Question from './Admin/Question'
 
 const Stack = createStackNavigator();
 
-export default function MyStack() {
+function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Admin" component={Admin} />
@@ -22,3 +22,4 @@ export default function MyStack() {
   );
 }
 
+export default MyStack;
