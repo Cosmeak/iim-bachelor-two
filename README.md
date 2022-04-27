@@ -4,12 +4,12 @@
 
 First thing you need to do is clone this project with :
 ```
-git clone https://github.com/IIM-Creative-Technology/symfony-partie-1-Cosmeak.git
+git clone https://github.com/IIM-Creative-Technology/symfony-partie-2-Cosmeak.git
 ```
 After that we need to install dependencies:
 ```
 composer install
-npm intall
+npm install
 ```
 Now you need to create the database:
 ```
