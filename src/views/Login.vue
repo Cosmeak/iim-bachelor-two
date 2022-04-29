@@ -4,24 +4,14 @@
     >
         <div class="max-w-md w-full space-y-8">
             <div>
-                <img
-                    class="mx-auto h-16 w-auto"
-                    src="../assets/images/logo.png"
-                    alt="cityblock logo"
-                />
-                <h2
-                    class="mt-6 text-center text-3xl font-extrabold text-gray-900"
-                >
-                    Connectez-vous à votre compte
-                </h2>
+                <img class="mx-auto h-16 w-auto" src="../assets/images/logo.png" alt="cityblock logo"/>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900"> Connectez-vous à votre compte</h2>
             </div>
-            <form class="mt-8 space-y-6" action="#" method="POST">
+            <form class="mt-8 space-y-6" @submit.prevent="login">
                 <input type="hidden" name="remember" value="true" />
                 <div class="rounded-md shadow-sm -space-y-px">
                     <div>
-                        <label for="email-address" class="sr-only"
-                            >Email address</label
-                        >
+                        <label for="email-address" class="sr-only">Email address</label>
                         <input
                             id="email-address"
                             name="email"
@@ -30,6 +20,7 @@
                             required
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                             placeholder="email@cityblock.fr"
+                            v-model="email"
                         />
                     </div>
                     <div>
@@ -42,6 +33,7 @@
                             required
                             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                             placeholder="Mot de passe..."
+                            v-model="password"
                         />
                     </div>
                 </div>
@@ -78,7 +70,29 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
-    name: 'Login'
+    name: 'Login',
+    data() {
+        return {
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        login() {
+            axios.post('http://localhost:8000/api/v1/login', {
+                email: this.email,
+                password: this.password
+            })
+            .then(response => {
+                console.log(response)
+                if(response.data.status == "Success") {
+                    localStorage.setItem("user", JSON.stringify(response.data.data))
+                    this.$router.push({ name: 'UsersIndex' })
+                }
+            })
+        }
+    }
 }
 </script>
