@@ -18,7 +18,7 @@ class HomeScreen extends React.Component{
             placeholderTextColor="#ffffff80"
             underlineColorAndroid='transparent'
             /> 
-            <Pressable style = {styles.button} onPress={() => this.props.navigation.navigate('Game')}><Text style={styles.textButton}>Entrer dans le jeu</Text></Pressable>
+            <Pressable style = {styles.button} onPress={() => this.props.navigation.navigate('WaitingRoom')}><Text style={styles.textButton}>Entrer dans le jeu</Text></Pressable>
             <Pressable style={styles.admin} onPress={() =>this.props.navigation.navigate('Admin')}><Text style={color.white}>Administrateur ?</Text></Pressable>
         </ImageBackground>
         </View>
