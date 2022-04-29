@@ -1,65 +1,91 @@
 import React from "react"
 import { Dimensions, ImageBackground, StyleSheet, Text, View, Button, Pressable } from "react-native"
 import { FlatGrid } from 'react-native-super-grid';
-import RessourcePlayer from './GamePlay/RessourcePlayer'
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
-export default function GameView({ navigation }) {
-      const [items, setItems] = React.useState([
-        { name: 'brown', code: '#BE6605' },
-        { name: 'black', code: '#000000' },
-        { name: 'black', code: '#000000' },
-        { name: 'black', code: '#000000' },
-        { name: 'brown', code: '#BE6605' },
-        { name: 'yellow', code: '#FFE600' },
-        { name: 'white', code: '#BE6605' },
-        { name: 'black', code: '#000000' },
-        { name: 'black', code: '#000000' },
-        { name: 'brown', code: '#BE6605' },
-        { name: 'brown', code: '#BE6605' },
-        
+  function GameView(){
+        const [items, setItems] = React.useState([
+          { name: 'brown', code: '#BE6605' },
+          { name: 'black', code: '#000000' },
+          { name: 'black', code: '#000000' },
+          { name: 'black', code: '#000000' },
+          { name: 'brown', code: '#BE6605' },
+          { name: 'yellow', code: '#FFE600' },
+          { name: 'white', code: '#BE6605' },
+          { name: 'black', code: '#000000' },
+          { name: 'black', code: '#000000' },
+          { name: 'brown', code: '#BE6605' },
+          { name: 'brown', code: '#BE6605' },
+          
 
-      ]);
-        return(
-            <View style={styles.container}>
-              <ImageBackground source={require('../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
-                <View style={[game.part1 , margin.mtbar, game.bg, border.br5]}>
-                  <Text style={color.white}></Text>
+        ]);
+          return(
+              <View style={styles.container}>
+                <ImageBackground source={require('../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
+                  <View style={[game.part1 , margin.mtbar, game.bg, border.br5]}>
+                    <Text style={color.white}></Text>
+                  </View>
+                  <View style={[game.part2 , margin.mt5, game.bg, border.br5]}>
+                  <FlatGrid
+                    itemDimension={35}
+                    data={items}
+                    style={styles.gridView}
+                    // staticDimension={300}
+                    // fixed
+                    spacing={1}
+                    renderItem={({ item }) => (
+                      <View style={[styles.hexagon , styles.itemContainer] }>
+                      <View style={[styles.hexagonInner , {backgroundColor: item.code}]} />
+                      <View style={[styles.hexagonBefore ,  {borderBottomColor:item.code}]} />
+                      <View style={[styles.hexagonAfter ,{borderTopColor:item.code}]} />
+                    </View> 
+                      
+        )}
+      />
+                  </View>
+                  <View style={[game.part4 , margin.mt5, game.bg, border.brF]}>
+                  </View>
+                </ImageBackground>
+              </View>
+          )
+      }
+
+
+      function RessourcePlayer(){
+            return(
+                <View style={styles.container}>
+                <ImageBackground source={ require('../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
+                  <Text style={[styles.text, margin.mt]}>BIG Ressource</Text>
+                </ImageBackground>
                 </View>
-                <View style={[game.part2 , margin.mt5, game.bg, border.br5]}>
-                <FlatGrid
-                  itemDimension={100}
-                  data={items}
-                  style={styles.gridView}
-                  // staticDimension={300}
-                  // fixed
-                  spacing={30}
-                  renderItem={({ item }) => (
-                    <View style={[styles.hexagon , styles.itemContainer] }>
-                    <View style={[styles.hexagonInner , {backgroundColor: item.code}]} />
-                    <View style={[styles.hexagonBefore ,  {borderBottomColor:item.code}]} />
-                    <View style={[styles.hexagonAfter ,{borderTopColor:item.code}]} />
-                  </View> 
-                    
-      )}
-    />
-                </View>
-                <View style={[game.part4 , margin.mt5, game.bg, border.brF]}>
-                </View>
+            )
+        }
+
+        function Batiment(){
+          return(
+              <View style={styles.container}>
+              <ImageBackground source={ require('../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
+                <Text style={[styles.text, margin.mt]}>BIG Batiment</Text>
               </ImageBackground>
-            </View>
-        )
-    }
+              </View>
+          )
+      }
 
-const Navigation = () =>{
-  return(
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="RessourcePlayer" component={RessourcePlayer} options={{headerShown:false}} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  )
+      const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Jeu" component={GameView} options={{headerShown:false}}/>
+      <Tab.Screen name="Règles" component={RessourcePlayer} options={{headerShown:false}}/>
+      <Tab.Screen name="Batiment" component={Batiment} options={{headerShown:false}}/>
+    </Tab.Navigator>
+  );
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -67,15 +93,15 @@ const styles = StyleSheet.create({
   },
   hexagon: {
     width: 40,
-    height: 15,
+    height: 25,
   },
 
   itemContainer: {
-    marginTop: 10,
+    marginTop: 20,
   },
   hexagonInner: {
     width: 40,
-    height: 15,
+    height: 25,
     backgroundColor: "red",
   },
   hexagonAfter: {
@@ -108,6 +134,9 @@ const styles = StyleSheet.create({
   },
     image: {
       height: Dimensions.get("window").height,
+  },
+  gridView: {
+    marginTop: 13,
   },
     text: {
       color: "white",
@@ -243,5 +272,9 @@ const styles = StyleSheet.create({
   })
 
   
-    
+  export default function App() {
+    return (
+        <MyTabs />
+    );
+  }   
   
