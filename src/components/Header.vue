@@ -49,7 +49,7 @@
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
                             <div class="ml-3 relative">    
-                                <a class="text-white px-3 py-2 font-medium cursor-pointer hover:bg-gray-700 rounded-md">Se déconnecter</a>
+                                <button class="text-white px-3 py-2 font-medium cursor-pointer hover:bg-gray-700 rounded-md" @click="disconnect">Se déconnecter</button>
                             </div>
                         </div>
                     </div>
@@ -126,16 +126,9 @@
                         >Calendar</a
                     >
 
-                    <a
-                        href="#"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >Reports</a
-                    >
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
 
-                    <a
-                        href="#"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >Se déconnecter</a
+                    <button class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" @click="disconnect">Se déconnecter</button
                     >
                 </div>
             </div>
@@ -157,6 +150,13 @@ export default {
         return {
             page: "Dashboard",
             buttonAddLink: "#"
+        }
+    },
+    methods: {
+        disconnect() {
+            console.log('cc')
+            localStorage.removeItem('user')
+            this.$router.push({name: 'Login'})
         }
     }
 };

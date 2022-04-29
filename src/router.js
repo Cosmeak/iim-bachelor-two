@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 
+import DefaultLayout from "./layouts/DefaultLayout.vue"
+
 import Login from "./views/Login.vue"
 
 import UsersIndex from "./views/users/Index.vue"
@@ -24,70 +26,102 @@ const routes = [
         component: Login,
         path: '/login',
     },
+
+    {
+        path:'/',
+        redirect: to => {
+            return {path: '/login'}
+        }
+    },
     
     {
         name: 'UsersIndex',
         component: UsersIndex,
         path: '/users',
-    },
-    {
-        name: 'UsersCreate',
-        component: UsersCreate,
-        path: '/users/create',
-    },
-    {
-        name: 'UsersEdit',
-        component: UsersEdit,
-        path: '/users/{id}/edit',
+        meta: { layout: DefaultLayout },
+        children: [
+            {
+                name: 'UsersCreate',
+                component: UsersCreate,
+                path: 'create',
+                meta: { layout: DefaultLayout },
+                
+            },
+            {
+                name: 'UsersEdit',
+                component: UsersEdit,
+                path: ':id/edit',
+                meta: { layout: DefaultLayout },
+            },
+        ]
     },
 
     {
         name: 'ObjectsIndex',
         component: ObjectsIndex,
         path: '/objects',
-    },
-    {
-        name: 'ObjectsCreate',
-        component: ObjectsCreate,
-        path: '/objects/create',
-    },
-    {
-        name: 'ObjectsEdit',
-        component: ObjectsEdit,
-        path: '/objects/{id}/edit',
+        meta: { layout: DefaultLayout },
+        children: [
+            {
+                name: 'ObjectsCreate',
+                component: ObjectsCreate,
+                path: 'create',
+                meta: { layout: DefaultLayout },
+                
+            },
+            {
+                name: 'ObjectsEdit',
+                component: ObjectsEdit,
+                path: ':id/edit',
+                meta: { layout: DefaultLayout },
+            },
+        ]
     },
 
     {
         name: 'RulesIndex',
         component: RulesIndex,
         path: '/rules',
-    },
-    {
-        name: 'RulesCreate',
-        component: RulesCreate,
-        path: '/rules/create',
-    },
-    {
-        name: 'RulesEdit',
-        component: RulesEdit,
-        path: '/rules/{id}/edit',
+        meta: { layout: DefaultLayout },
+        children: [
+            {
+                name: 'RulesCreate',
+                component: RulesCreate,
+                path: 'create',
+                meta: { layout: DefaultLayout },
+                
+            },
+            {
+                name: 'RulesEdit',
+                component: RulesEdit,
+                path: ':id/edit',
+                meta: { layout: DefaultLayout },
+            },
+        ]
     },
 
     {
         name: 'QuestionIndex',
         component: QuestionIndex,
         path: '/questions',
+        meta: { layout: DefaultLayout },
+        children: [
+            {
+                name: 'QuestionCreate',
+                component: QuestionCreate,
+                path: 'create',
+                meta: { layout: DefaultLayout },
+                
+            },
+            {
+                name: 'QuestionEdit',
+                component: RuleQuestionEditEdit,
+                path: ':id/edit',
+                meta: { layout: DefaultLayout },
+            },
+        ]
     },
-    {
-        name: 'QuestionCreate',
-        component: QuestionCreate,
-        path: '/questions/create',
-    },
-    {
-        name: 'QuestionEdit',
-        component: QuestionEdit,
-        path: '/questions/{id}/edit',
-    },
+    
 ]
 
 const router = createRouter({

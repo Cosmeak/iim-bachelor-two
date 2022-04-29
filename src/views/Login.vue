@@ -1,6 +1,7 @@
 <template>
+<div class="w-full h-screen flex justify-center items-center">
     <div
-        class="min-h-full w-fit mx-auto flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white rounded-lg shadow"
+        class="h-fit w-fit mx-auto flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-white rounded-lg shadow"
     >
         <div class="max-w-md w-full space-y-8">
             <div>
@@ -67,6 +68,7 @@
             </form>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -79,6 +81,11 @@ export default {
             password: ''
         }
     },
+    mounted() {
+        if(localStorage.getItem('user')) {
+            this.$router.push({name: 'UsersIndex'})
+        }
+    },
     methods: {
         login() {
             axios.post('http://localhost:8000/api/v1/login', {
@@ -89,7 +96,7 @@ export default {
                 console.log(response)
                 if(response.data.status == "Success") {
                     localStorage.setItem("user", JSON.stringify(response.data.data))
-                    this.$router.push({ name: 'UsersIndex' })
+                    this.$router.push({ name:'UsersIndex' })
                 }
             })
         }

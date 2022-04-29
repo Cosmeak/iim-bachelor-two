@@ -12,11 +12,16 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from '../components/Header.vue'
 export default {
     name: 'ContentLayout',
     components: {
         Header
+    },
+    mounted() {
+        if(localStorage.getItem('user') === null) {
+            this.$router.push({name: 'Login'})
+        }
     }
 }
 </script>
