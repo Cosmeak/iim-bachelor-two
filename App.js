@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import Admin from "./screens/Admin";
 import WaitingRoom from './screens/WaitingRoom';
+import GameView from './screens/GameView';
 
 
 const HomeStack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ const HomeStackScreen = () => {
           <HomeStack.Screen name="Home" component={HomeScreen} options={{headerShown:false}} />
           <HomeStack.Screen name="Admin" component={Admin} options={{headerShown:false}} />
           <HomeStack.Screen name="WaitingRoom" component={WaitingRoom} options={{headerShown:false}} />
+          <HomeStack.Screen name="GameView" component={GameView} options={{headerShown:false}} />
         </HomeStack.Navigator>
       </NavigationContainer>
   )

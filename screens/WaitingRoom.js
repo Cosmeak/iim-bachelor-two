@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, ImageBackground,Dimensions } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground,Dimensions, Pressable } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 
-export default function WaitingRoom() {
+export default function WaitingRoom({ navigation }) {
   const [items, setItems] = React.useState([
     { name: 'TURQUOISE', code: '#1abc9c' },
     { name: 'EMERALD', code: '#2ecc71' },
@@ -28,6 +28,7 @@ export default function WaitingRoom() {
         </View>
       )}
     />
+    <Pressable style = {styles.button} onPress={() => navigation.navigate('GameView')}><Text style={styles.textButton}>Entrer dans le jeu</Text></Pressable>
     </ImageBackground>
   );
 }
@@ -44,8 +45,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     borderRadius: 5,
     padding: 10,
-    height: 164,
-    width: 164,
+    height: 154,
+    width: 154,
   },
   itemName: {
     fontSize: 16,

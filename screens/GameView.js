@@ -1,10 +1,25 @@
 import React from "react"
-import { Dimensions, ImageBackground, StyleSheet, Text, View, Button } from "react-native"
+import { Dimensions, ImageBackground, StyleSheet, Text, View, Button, Pressable } from "react-native"
+import { FlatGrid } from 'react-native-super-grid';
 import RessourcePlayer from './GamePlay/RessourcePlayer'
 
 
-class GameView extends React.Component{ 
-    render(){
+export default function GameView({ navigation }) {
+      const [items, setItems] = React.useState([
+        { name: 'brown', code: '#BE6605' },
+        { name: 'black', code: '#000000' },
+        { name: 'black', code: '#000000' },
+        { name: 'black', code: '#000000' },
+        { name: 'brown', code: '#BE6605' },
+        { name: 'yellow', code: '#FFE600' },
+        { name: 'white', code: '#BE6605' },
+        { name: 'black', code: '#000000' },
+        { name: 'black', code: '#000000' },
+        { name: 'brown', code: '#BE6605' },
+        { name: 'brown', code: '#BE6605' },
+        
+
+      ]);
         return(
             <View style={styles.container}>
               <ImageBackground source={require('../assets/game_bg.png') } resizeMode="cover" style={styles.image}>
@@ -12,7 +27,22 @@ class GameView extends React.Component{
                   <Text style={color.white}></Text>
                 </View>
                 <View style={[game.part2 , margin.mt5, game.bg, border.br5]}>
-                  <Text style={color.white}></Text>
+                <FlatGrid
+                  itemDimension={100}
+                  data={items}
+                  style={styles.gridView}
+                  // staticDimension={300}
+                  // fixed
+                  spacing={30}
+                  renderItem={({ item }) => (
+                    <View style={[styles.hexagon , styles.itemContainer] }>
+                    <View style={[styles.hexagonInner , {backgroundColor: item.code}]} />
+                    <View style={[styles.hexagonBefore ,  {borderBottomColor:item.code}]} />
+                    <View style={[styles.hexagonAfter ,{borderTopColor:item.code}]} />
+                  </View> 
+                    
+      )}
+    />
                 </View>
                 <View style={[game.part4 , margin.mt5, game.bg, border.brF]}>
                 </View>
@@ -20,7 +50,6 @@ class GameView extends React.Component{
             </View>
         )
     }
-}
 
 const Navigation = () =>{
   return(
@@ -35,6 +64,47 @@ const Navigation = () =>{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+  },
+  hexagon: {
+    width: 40,
+    height: 15,
+  },
+
+  itemContainer: {
+    marginTop: 10,
+  },
+  hexagonInner: {
+    width: 40,
+    height: 15,
+    backgroundColor: "red",
+  },
+  hexagonAfter: {
+    position: "absolute",
+    bottom: -25,
+    left: 0,
+    width: 0,
+    height: 0,
+    borderStyle: "solid",
+    borderLeftWidth: 20,
+    borderLeftColor: "transparent",
+    borderRightWidth: 20,
+    borderRightColor: "transparent",
+    borderTopWidth: 20,
+    borderTopColor: "red",
+  },
+  hexagonBefore: {
+    position: "absolute",
+    top: -25,
+    left: 0,
+    width: 0,
+    height: 0,
+    borderStyle: "solid",
+    borderLeftWidth: 20,
+    borderLeftColor: "transparent",
+    borderRightWidth: 20,
+    borderRightColor: "transparent",
+    borderBottomWidth: 20,
+    borderBottomColor: "red",
   },
     image: {
       height: Dimensions.get("window").height,
@@ -172,5 +242,6 @@ const styles = StyleSheet.create({
     },
   })
 
-export default GameView;
+  
+    
   
