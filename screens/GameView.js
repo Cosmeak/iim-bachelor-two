@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   hexagonAfter: {
     position: "absolute",
-    bottom: -25,
+    bottom: -20,
     left: 0,
     width: 0,
     height: 0,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   hexagonBefore: {
     position: "absolute",
-    top: -25,
+    top: -20,
     left: 0,
     width: 0,
     height: 0,
