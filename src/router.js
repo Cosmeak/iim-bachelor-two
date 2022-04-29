@@ -115,7 +115,7 @@ const routes = [
             },
             {
                 name: 'QuestionEdit',
-                component: RuleQuestionEditEdit,
+                component: QuestionEdit,
                 path: ':id/edit',
                 meta: { layout: DefaultLayout },
             },
