@@ -33,6 +33,10 @@
                                 <div class=" leading-5 font-medium text-gray-700">{{ question.question }}</div>
                             </td>
 
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 max-w-2/5">
+                                <div class=" leading-5 font-medium text-gray-700" v-for="answer in question.answers">{{ answer }}</div>
+                            </td>
+
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 <div class="text-sm leading-5 text-gray-500">{{ question.createdAt }}</div>
                             </td>
