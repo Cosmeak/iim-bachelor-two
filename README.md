@@ -34,7 +34,7 @@ That's it !! 👌
 - [x] Navigation bottom bar
 - [x] Routes
 - [ ] Socket implementation
-- [ ] API call to get data
+- [ ] API call to get, post and update data
 - [ ] 3D Models for the board, the buildings and the pawns
 
 
