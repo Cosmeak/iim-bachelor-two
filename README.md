@@ -25,6 +25,7 @@ Nothing to say more it's just a dashboard. 🙂
 ### Features
 
 - [x] Header
+- [x] Navigation
 - [x] Login Page
 - [ ] Logout
 - [x] Index Page for Questions
