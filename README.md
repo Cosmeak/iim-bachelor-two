@@ -19,21 +19,23 @@
 
 ## About the project
 This project has been created by the Devinci Fablab to introduce the university center to the new students or everyone who have insterest to go in one of the three schools. 🎒
+
 The goal is to create a boardgame that interact with our application, like the movement of pawns on the board or the evolution of our building, yes buildings, because our game is a mix of Monopoly and Trival pursuit. ♟️
+
 To win the game you need to collect a maximum of building and for that you need to answer the question correctly. 🤯
 
 That's it !! 👌
 
 ### Features
 
-[x] Username creation page 
-[x] Waiting Room
-[x] Board view page
-[x] Navigation bottom bar
-[x] Routes
-[ ] Socket implementation
-[ ] API call to get data
-[ ] 3D Models for the board, the buildings and the pawns
+- [x] Username creation page 
+- [x] Waiting Room
+- [x] Board view page
+- [x] Navigation bottom bar
+- [x] Routes
+- [ ] Socket implementation
+- [ ] API call to get data
+- [ ] 3D Models for the board, the buildings and the pawns
 
 
 ## Techs
