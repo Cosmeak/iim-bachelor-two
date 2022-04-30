@@ -1,36 +1,58 @@
-# Cityblock-API
+# CityBlock - The API
 
-API for the board game Cityblock
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project 📁</a>
+      <ul>
+        <li><a href="#features">Features 📑</a></li>
+        <li><a href="#how">How to use it 📡</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#Techs">Techs 💻</a>
+    </li>
+    <li><a href="#build-setup">Build Setup 🧑🏻‍💻</a></li>
+    <li><a href="#contributors">Contributors 👥</a></li>
+  </ol>
+</details>
 
-It's build with nodejs, express and mongodb (mongoose).
 
-## How to install and run the project
+## About the project
+This project is the API of the main project [CityBlock](https://github.com/Cosmeak/CityBlock-V2).
 
-First step: clone the projet
-```
-git clone https://github.com/Cosmeak/Cityblock-API.git
-```
+Nothing to say more it's just an API. 🙂
 
-Second step: intall dependencies
-```
-npm install
-```
 
-Last step: launch the server
-```
-npm start
-```
-or if you want to have an auto update when you modify the project
-```
-npm run dev
-```
+### Features
 
-## How to use this API 
+- [x] Setup Server
+- [ ] Setup Socket
+- [ ] Set Web Token
+- [x] Connection with the database
+- [x] Model for Questions
+- [x] Model for Rules
+- [x] Model for Game Objects
+- [x] Model for Administrators
+- [x] Model for Players
+- [x] Routes for Questions
+- [x] Routes for Rules
+- [x] Routes for Game Objects
+- [x] Routes for Administrators
+- [x] Routes for Players
+- [x] Controller with CRUD for Questions
+- [x] Controller with CRUD for Rules
+- [x] Controller with CRUD for Game Objects
+- [x] Controller for Administrators
+- [x] Controller with CRUD for Players
+- [x] Online Database
+- [ ] Online API
 
-All the response of this API are in json.
+And one things more: Add emit with socket for the application
 
-In update, you don't have to send all the keys, just the one you want.
 
+### How to use it
 ---
 
 | Admin    | URI                  | HTTP Request | Parameters Request | Body Request                                        | Response             |
@@ -88,3 +110,40 @@ In update, you don't have to send all the keys, just the one you want.
 | Show     | ``/api/v1/position/:id`` | GET          | :id (position ID)  |              |          | 
 | Update   | ``/api/v1/position/:id`` | PUT or PATCH | :id (position ID)    |              |          | 
 | Delete   | ``/api/v1/position/:id`` | DELETE       | :id (position ID)    |              |          |
+
+
+## Techs
+
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/fr/)
+- [Mongoose](https://mongoosejs.com/) -> [MongoDB](https://www.mongodb.com/fr-fr)
+- [Socket.io](https://socket.io/)
+
+
+## Build Setup
+
+```bash
+# install dependencies
+$ npm install
+# or
+$ yarn install
+
+# then just run for development:     
+$ npm run dev
+# or
+$ yarn dev
+
+# then just run for production:     
+$ npm start
+# or
+$ yarn start
+
+
+```
+## Contributors
+
+- [Guillaume FINE](https://github.com/Cosmeak)
+- [Steven MADI](https://github.com/Oxyzal)
+- [Quentin LEGERON](https://github.com/QuentinLegeron)
+
+**README inspired by [Clément DUVIVIER](https://github.com/ClemOurs)**
