@@ -7,7 +7,7 @@
       <a href="#about-the-project">About The Project 📁</a>
       <ul>
         <li><a href="#features">Features 📑</a></li>
-        <li><a href="#how">How to use it 📡</a></li>
+        <li><a href="#how-to-use-it">How to use it 📡</a></li>
       </ul>
     </li>
     <li>
