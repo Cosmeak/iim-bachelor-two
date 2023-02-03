@@ -66,6 +66,7 @@ INNER JOIN attribute_category ON `attribute`.attribute_category_id = attribute_c
 WHERE asset.name LIKE 'Utopian Unicorn #934';
 
 -- Part 3
+-- a.
 SELECT asset.name, contract.name, COUNT(`order`.id) AS sells, AVG(`order`.price) AS Moy_sell FROM `order`
 INNER JOIN asset ON `order`.asset_id = asset.id
 INNER JOIN contract ON asset.contract_id = contract.id
@@ -73,6 +74,7 @@ GROUP BY asset.id
 ORDER BY sells DESC
 LIMIT 1;
 
+-- b.
 -- Si attribute unrevealed comprit :
 SELECT contract.name AS contract_name, attribute.value AS attribute_name, COUNT(attribute.id) AS nb_use
 FROM attribute_asset
