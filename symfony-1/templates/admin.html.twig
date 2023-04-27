@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('images/logo.png') }}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="w-full h-auto text-cs_black bg-gray-100 flex raleway">
+
+    <header class="w-[250px] h-screen bg-cs_black relative text-white sticky top-0">
+        <div class="h-[60px] w-full flex gap-[8px] place-items-center p-[8px] bg-black/30">
+            <img src="{{ asset('images/logo_stroke.png') }}" alt="" class="h-full object-contain">
+            <p class="text-xl font-bold">CookingSheep</p>
+        </div>
+
+        <div class="middle">
+            <nav>
+                <ul>
+                    <li><a href="{{ path('admin_index') }}"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="{{ path('admin_user') }}"><i class="fas fa-users"></i> Users</a></li>
+                    <li><a href=""><i class="fas fa-comments"></i> Comments</a></li>
+                    <li><a href=""><i class="fas fa-book-open"></i> Recipes</a></li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="absolute bottom-0 left-0 h-[80px] w-full flex flex-col gap-[8px] p-[8px] bg-black/30">
+            <p>{{ app.user.username }}</p>
+            <a href="{{ path('app') }}" class="btn-classic"><i class="fas fa-caret-left"></i> Go back</a>
+        </div>
+    </header>
+
+    <main class="w-full min-h-full bg-white p-[32px] ">
+        {% block body %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Recipe{% endblock %}
+
+{% block body %}
+    <main class="base">
+        <h1 class="text-3xl font-bold">Add your recipe in our website!</h1>
+
+        {{ include('recipe/_form.html.twig') }}
+
+        <a href="{{ path('recipe_index') }}" class="mx-auto text-lg bg-cs_yellow-80 backdrop-blur-sm px-[16px] py-[4px] rounded-full hover:bg-cs_black hover:text-white duration-300">Back to list</a>
+    </main>
+{% endblock %}

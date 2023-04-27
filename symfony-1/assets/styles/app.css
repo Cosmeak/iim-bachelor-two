@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+.comfortaa {
+    font-family: 'Comfortaa', sans-serif;
+}
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.wysiwyg > h2 {
+    @apply text-xl font-bold pb-[4px];
+}
+.wysiwyg > h3 {
+    @apply text-lg font-medium pb-[4px];
+}
+.wysiwyg > p {
+    @apply text-base;
+    line-height: 1.5rem;
+}
+
+.base {
+    @apply w-1/2 min-h-full flex flex-col place-items-center gap-[32px] bg-white mx-auto p-[32px] rounded-lg my-[16px];
+}
+
+/*------------------------
+        Nav bar
+------------------------*/
+li:hover > ul {
+    display: block;
+}
+
+/*------------------------
+      Dashboard Menu
+------------------------*/
+.middle {
+    @apply p-[8px] w-full h-auto text-lg;
+}
+.middle > nav {
+    @apply w-full h-auto;
+}
+.middle > nav > ul {
+    @apply w-full h-auto flex flex-col gap-[4px];
+}
+.middle > nav > ul > li {
+    @apply w-full flex;
+}
+.middle > nav > ul > li > a {
+    @apply w-full hover:bg-black/30 px-[8px] py-[4px] rounded-lg;
+}
+
+/*------------------------
+        Forms
+------------------------*/
+input, textarea, select {
+    @apply rounded px-[16px] py-[4px] rounded focus:outline-none text-cs_black shadow-inner;
+}
+textarea {
+    min-height: 400px;
+    max-height: 400px;
+}
+
+.form_style {
+    @apply w-full flex flex-col justify-center place-content-center;
+}
+.form_style > div {
+    @apply flex flex-col gap-[16px];
+}
+.form_style > div > div {
+    @apply flex flex-col gap-[4px];
+}
+
+.form_style label {
+    @apply font-bold;
+}
+
+/*------------------------
+        Components
+------------------------*/
+.btn-classic {
+    @apply px-[16px] py-[4px] bg-cs_yellow-full rounded-lg text-white hover:bg-cs_black duration-300;
+}
+
+.btn-submit {
+    @apply bg-green-400 px-[16px] py-[4px] rounded-lg text-white hover:bg-cs_black duration-300;
+}
+
+.btn-delete {
+    @apply bg-red-500 px-[16px] py-[4px] rounded-lg text-white hover:bg-cs_black duration-300;
+}
+
+/*------------------------
+        Cards
+------------------------*/
+.recipe_card {
+    @apply rounded-lg h-[300px] relative justify-center bg-cs_yellow-full hover:bg-cs_black duration-300 overflow-hidden;
+}
+.recipe_card > img {
+    @apply w-full h-full object-cover hover:scale-110 duration-300;
+}
+.recipe_card > p {
+    @apply w-fit absolute bottom-2 left-[50%] text-white text-lg bg-cs_black/50 rounded-lg backdrop-blur-sm -translate-x-1/2 py-[4px] px-[16px];
+}
+.recipe_card > p > span {
+    @apply font-bold;
+}
+
+
+

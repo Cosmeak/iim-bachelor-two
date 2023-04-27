@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CookingSheep • Login</title>
+    <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('images/logo.png') }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body class="w-full h-screen text-cs_black">
+    <form method="post" class="w-full h-screen flex flex-col gap-[16px] justify-center place-items-center text-white" style="background-image: url('{{ asset('images/bg_register-login-desktop.jpg') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; backdrop-filter: blur(2px)">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3 font-bold text-2xl">
+                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}" class="text-red-500">Logout</a>
+            </div>
+        {% endif %}
+        <img src="{{ asset('images/logo.png') }}" alt="sheep logo" class="w-1/2 h-1/3 object-contain mr-[-48px]">
+        <h1 class="text-3xl font-bold">Please sign in</h1>
+        <div class="w-1/5 flex flex-col gap-[4px]">
+            <label for="inputEmail" class="font-bold">Email</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="cooking@sheep.com" required autofocus>
+        </div>
+        <div class="w-1/5 flex flex-col gap-[4px]">
+            <label for="inputPassword" class="font-bold">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="••••••••" required>
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+        #}
+
+        <button class="btn-submit" type="submit">
+            Sign in
+        </button>
+        <p class="font-bold">No account? <a href="{{ path('app_register') }}" class="text-cs_blue">Register</a></p>
+    </form>
+</body>
+</html>
