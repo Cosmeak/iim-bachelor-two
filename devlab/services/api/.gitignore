@@ -1,0 +1,8 @@
+# Denpendancies
+node_modules
+
+# Database config
+database/db-config.js
+
+# env
+.idea
