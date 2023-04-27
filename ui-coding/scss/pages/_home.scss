@@ -1,0 +1,193 @@
+.under-header {
+    height: 100vh;
+    @include bg-img ('img/Hero_BG.png');
+    color: $light;
+    flex-direction: row;
+    justify-content: center;
+
+    @include for-tablets {
+    flex-direction: column-reverse;
+    }
+
+    img {
+        width: 40%;
+        height: auto;
+        object-fit: contain;
+
+        @include for-tablets {
+            width: 400px;
+        }
+    }
+
+    .buttons--alternative {
+        height: 55px;
+
+        @include for-tablets {
+            margin-top: 15px;
+        }
+    }
+}
+
+.why-us {
+    > div{
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        gap: 10%;
+        padding-right: 100px;
+
+        @include for-tablets {
+            padding-right: 0;
+        }
+        
+        > div {
+            width: 40%;
+            
+            &:first-of-type {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+
+                article {
+                    display: flex;
+                    gap: 30px;
+                }
+    
+                img {
+                    height: 70px;
+                    object-fit: contain;
+                }
+                
+                p {
+                    font-size: 1.1rem;
+                    margin-top: 24px;
+                }
+
+                @include for-tablets {
+                    width: 90%;
+                }
+            }
+
+            &:last-of-type {
+                @include for-tablets {
+                    display: none;
+                }
+            }
+
+            .dot-square {
+                position: absolute;
+            }
+        }
+    }
+}
+
+.supports {
+    background-color: $light-blue;
+
+    > div{
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        gap: 106px;
+
+        @include for-tablets {
+            flex-direction: column;
+        }
+    }
+}
+
+.services {
+    height: auto;
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        gap: 56px;
+
+        @include for-tablets {
+            margin-top: 0;
+        }
+    }
+}
+
+.testimonials {
+    background-color: $light-blue;
+
+    > div {
+        &:first-of-type {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            gap: 131px;
+
+            @include for-tablets {
+                flex-direction: column;
+                margin-top: 0;
+            }
+
+            article {
+                display: flex;
+                margin: 0 auto;
+                gap: 31px;
+                width: 34%;
+
+                @include for-tablets {
+                    width: 80%;
+                    flex-direction: column;
+                }
+
+                img {
+                    object-fit: contain;
+                    height: fit-content;
+                    
+                    @include for-tablets {
+                        margin: 0 auto;
+                    }
+                }
+
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    line-height: 2;
+                    
+                    q {
+                        font-style: italic;
+                    }
+
+                    img {
+                        width: 135px;
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+
+        &:last-of-type {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-top: 67px;
+        }
+    }
+}
+
+.clients {
+    div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 148px;
+    
+        @include for-tablets{
+            gap: 50px;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    a {
+        margin-top: 70px;
+    }
+}

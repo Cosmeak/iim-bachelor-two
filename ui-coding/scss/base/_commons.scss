@@ -1,0 +1,69 @@
+.subtitle {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    opacity: 80%;
+    z-index: 0;
+}
+
+.dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    background-color: $primary;
+    opacity: 38%;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(160%);
+        background-color: $secondary;
+        opacity: 100%;
+    }
+
+    &+ .dot-active {
+        @extend .dot, :hover;
+    }
+}
+
+.search-bar {
+    margin-top: 45px;
+    width: 420px;
+    height: 55px;
+    padding: 0 17px;
+    display: inline-block;
+    background-color: darken($secondary, 8);
+    border-radius: 5px;
+
+    @include for-tablets {
+        margin-top: 0;
+    }
+
+    @include for-mobiles {
+        width: 350px;
+    }
+
+    input {
+        width: 75%;
+        height: 100%;
+        background: none;
+        color: $light;
+        
+        &::placeholder {
+            color: $light;
+        }
+    }
+
+    select {
+        width: 20%;
+        height: 100%;
+        background: none;
+        border: none;
+        color: $light;
+
+        appearance: none;
+        cursor: pointer;
+        border-left: 1px solid $secondary;
+        padding-left: 17px;
+    }
+}

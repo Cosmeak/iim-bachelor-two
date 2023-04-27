@@ -1,0 +1,25 @@
+.buttons {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: $light;
+    color: $primary;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit ;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.buttons--alternative {
+    @extend .buttons;
+    color: $light;
+    background-color: $primary;
+}
+
+.buttons--spec {
+    @extend .buttons;
+    background-color: $light-blue;
+}
