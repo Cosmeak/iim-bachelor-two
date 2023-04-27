@@ -1,0 +1,67 @@
+.cards {
+  max-width: 400px;
+  height: 550px;
+  background-color: white;
+  color: $white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 6px $shadow;
+  transition: 0.3s;
+  padding: 8px;
+  margin: 0 auto;
+
+  div {
+
+    &:first-of-type {
+      width: 100%;
+      height: 200px;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      place-items: center;
+
+      >img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+
+      >i {
+        color: $secondary;
+      }
+    }
+
+    &:last-of-type {
+      width: 100%;
+      height: 336px;
+      border-radius: 10px;
+      background-color: $primary;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: inset 0 0 10px transparentize($black, 0.7);
+
+      >h3 {
+        text-align: center;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.btn {
+  width: fit-content;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: white;
+  color: $primary;
+  place-self: center;
+  margin-top: auto;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}

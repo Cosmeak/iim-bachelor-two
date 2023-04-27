@@ -1,0 +1,15 @@
+@import 'abstracts/variables',
+        'abstracts/mixins';
+
+@import 'base/reset',
+        'base/fonts',
+        'base/base',
+        'base/commons';
+
+@import 'components/header',
+        'components/footer',
+        'components/cards',
+        'components/form';
+
+@import 'pages/index',
+        'pages/projects';

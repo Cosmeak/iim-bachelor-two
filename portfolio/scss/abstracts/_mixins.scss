@@ -1,0 +1,56 @@
+// Mixin for linear gradiant background for all web browser
+@mixin bg-gradiant($color) {
+  background: linear-gradient($color, darken($color, 20%));
+  background: -webkit-linear-gradient(left, $color, darken($color, 20%));
+  background: -moz-linear-gradient(left, $color, darken($color, 20%));
+  background: -ms-linear-gradient(left, $color, darken($color, 20%));
+}
+
+// Mixin for transform in all web browser
+@mixin transform($property, $value) {
+  transform: $property($value);
+  -webkit-transform: $property($value);
+  -moz-transform: $property($value);
+  -ms-transform: $property($value);
+}
+
+// mixin for mobiles designs
+@mixin for-mobiles() {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+// mixin for tablets designs
+@mixin for-tablets() {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin query($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin moving-gradiant($color) {
+  /*gradient animation*/
+  background: linear-gradient(45deg, lighter$color, 20% 0%, darken($color, 20%) 100%);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}

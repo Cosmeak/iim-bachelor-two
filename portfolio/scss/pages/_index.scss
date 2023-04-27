@@ -1,0 +1,130 @@
+.presentation {
+  justify-content: space-between;
+  place-items: center;
+  gap: 32px;
+  height: 100vh;
+
+  .pres-text {
+    width: 40vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    line-height: 1.25;
+    font-size: 1.15rem;
+    padding: 32px;
+    border-radius: 10px;
+    color: $black;
+    box-shadow: inset 0 3px 10px $shadow;
+    background-color: white;
+    
+    >h2 {
+      color: $secondary;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    @include for-tablets {
+      width: 100%;
+    }
+  }
+
+  .pres-img {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: inset 0 3px 10px $shadow;
+    padding: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+}
+
+.competence {
+  justify-content: space-between;
+  gap: 32px;
+  
+  .comp-grid {
+    width: 416px;
+    height: 416px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 32px;
+    margin: 0 auto;
+
+    @include for-mobiles {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 16px;
+    }
+
+    i {
+      display: flex;
+      justify-content: center;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 100px;
+      background-color: white;
+      box-shadow: inset 0 3px 10px $shadow;
+      color: $secondary;
+      transition: 0.3s;
+
+
+      &:hover {
+        transform: scale(115%);
+        box-shadow: 0 0 5px $shadow;
+      }
+    }
+  }
+
+  .comp-text{
+    width: 50%;
+    height: fit-content;
+    padding: 32px;
+    color: $black;
+    box-shadow: inset 0 3px 10px $shadow;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    >h2 {
+      color: $secondary;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @include for-tablets {
+      width: 100%;
+    }
+  }
+}
+
+.last-projects {
+  flex-direction: column;
+  gap: 32px;
+
+  >h2 {
+    font-size: 1.8rem;
+    color: $secondary;
+    font-weight: bold;
+    margin: 0 auto;
+
+    padding: 8px 32px 4px  32px;
+    background-color: white;
+    box-shadow: inset 0 3px 6px $shadow;
+    border-radius: 10px;
+  }
+}
