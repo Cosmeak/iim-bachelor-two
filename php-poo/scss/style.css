@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .form {
+    @apply flex flex-col gap-[16px];
+  }
+
+  .card-form {
+    @apply h-[50vh] flex flex-col gap-[32px] p-[32px] bg-dark-1 text-white rounded-lg;
+  }
+  .card-form h2 {
+    @apply text-center text-2xl;
+  }
+
+  .input-form {
+    @apply px-[8px] py-[4px] rounded text-dark-1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

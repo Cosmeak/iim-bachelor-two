@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.25;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* :focus {
+  outline: none;
+}
+
+:root {
+  font-size: 16px;
+  line-height: 1.25rem;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+main {
+  width: 100%;
+  margin: 32px;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+table {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  background-color: aliceblue;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+table thead th {
+  color: #ffffff;
+  background: #eb651c;
+}
+table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #222222;
+}
+table tr:nth-child(even) {
+  background: #F8F8F8;
+}
+table td {
+  text-align: center;
+  padding: 8px;
+  border-right: 1px solid #f8f8f8;
+}
+table th {
+  text-align: center;
+  padding: 8px;
+  color: #ffffff;
+  background: #4FC3A1;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.profile .informations {
+  position: sticky;
+  top: 32px;
+}
+.profile .list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.profile .pet {
+  scroll-behavior: auto;
+}
+
+.login-register {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  background-color: #222;
+}
+.login-register form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+.login-register form img {
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+.login-register form h2 {
+  text-align: center;
+}
+.login-register form input {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+.login-register form button {
+  width: 100%;
+  background-color: #daaf39;
+  color: #ffffff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+.login-register form button:hover {
+  background-color: #e08632;
+}
+.login-register form a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+.create {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+.create > form {
+  width: 30%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.create > form input {
+  width: 100%;
+  color: black;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+}
+.create > form button {
+  width: 100%;
+  background-color: #daaf39;
+  color: #ffffff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+.create > form button:hover {
+  background-color: #e08632;
+}
+
+header {
+  width: 225px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 4px 0 6px lightgrey;
+}
+header > div {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  gap: 8px;
+  place-items: center;
+  justify-content: center;
+  border-bottom: 1px solid white;
+}
+header > div > img {
+  width: 25%;
+  object-fit: contain;
+}
+header nav {
+  width: 100%;
+  height: auto;
+}
+header nav ul {
+  width: 100%;
+  height: auto;
+}
+header nav ul li {
+  width: 100%;
+  display: flex;
+  place-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+header nav ul li:hover {
+  background-color: white;
+  color: #222;
+}
+
+.btn, .destroy, .update, .show {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 6px lightgrey;
+  color: white;
+  transition: 0.3s;
+}
+
+.show {
+  background-color: limegreen;
+}
+.show:hover {
+  background-color: #1e7b1e;
+}
+
+.update {
+  background-color: deepskyblue;
+}
+.update:hover {
+  background-color: #007399;
+}
+
+.destroy {
+  background-color: red;
+}
+.destroy:hover {
+  background-color: #990000;
+}
+
+.card-profile {
+  width: 300px;
+  height: 350px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  color: #222;
+  border: 1px solid white;
+  overflow: hidden;
+  position: relative;
+}
+.card-profile .top-card {
+  width: 100%;
+  height: 25%;
+  background-color: #222;
+}
+.card-profile .middle-card {
+  width: 100%;
+  padding: 16px;
+}
+.card-profile .bottom-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 16px;
+}
+
+.card-pet {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: #222;
+  color: white;
+  padding: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

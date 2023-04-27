@@ -1,0 +1,27 @@
+// Mixin for transform in all web browser
+@mixin transform($property, $value) {
+  transform: $property($value);
+  -webkit-transform: $property($value);
+  -moz-transform: $property($value);
+  -ms-transform: $property($value);
+}
+
+// mixin for mobiles designs
+@mixin for-mobiles() {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+// mixin for tablets designs
+@mixin for-tablets() {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin query($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
