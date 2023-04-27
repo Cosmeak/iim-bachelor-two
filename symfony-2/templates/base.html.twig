@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}TopAchat.com{% endblock %}</title>
+        <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}">
+        {# Import FontAwesome #}
+        <script src="https://kit.fontawesome.com/28c63ecd3f.js" crossorigin="anonymous"></script>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="bg-snowStorm-100 text-polarNight-400">
+        {# Import Header #}
+        {% include('/partials/header.html.twig') %}
+
+        {# All extension of body are inside this block below #}
+        <main class="w-3/5 h-auto flex flex-col gap-16 mx-auto my-6">
+            {% block body %}{% endblock %}
+        </main>
+        {# Import Footer #}
+        {% include('/partials/footer.html.twig') %}
+    </body>
+</html>
