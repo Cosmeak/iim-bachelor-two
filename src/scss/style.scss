@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import Lato font
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+// Import Source sans pro font
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
+
+html {
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+}
+
+section {
+	margin-bottom: 80px;
+}
