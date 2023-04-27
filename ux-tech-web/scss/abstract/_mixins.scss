@@ -1,0 +1,36 @@
+// mixin for mobiles designs
+@mixin for-mobiles() {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+
+// mixin for tablets designs
+@mixin for-tablets() {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin query($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+}
+
+@mixin background-gradiant($color1, $color2) {
+  background: linear-gradient(-45deg,$color1, $color2);
+  background: -webkit-linear-gradient(-45deg, $color1, $color2);
+  background: -moz-linear-gradient(-45deg, $color1, $color2);
+  background: -ms-linear-gradient(-45deg, $color1, $color2);
+}
+
+@mixin color-gradiant($color1, $color2) {
+  color: linear-gradient(-45deg,$color1, $color2);
+}
