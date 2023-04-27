@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --black: #2e2e2e;
+    --white: rgb(219, 220, 220);
+}
+
+.override_body .fc-event .fc-bg {
+    background: #565656;
+    opacity: 1;
+}
