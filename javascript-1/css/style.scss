@@ -1,0 +1,223 @@
+@import 'base/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'Sterilict';
+  src: url('../assets/fonts/Sterilict.ttf');
+}
+
+$dark: #202020;
+$yellow: #FFE300;
+$text-shadow: #1a1a1a 1px 1px, #1a1a1a -1px 1px, #1a1a1a -1px -1px, #1a1a1a 1px -1px;
+
+:root {
+  font-size: 16px;
+  font-family: 'Roboto';
+  color: whitesmoke;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+button {
+  font-family: 'Roboto';
+  font-size: 14px;
+  transition: 0.3s;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: $yellow;
+    border: 1px solid black;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Sterilict', 'Roboto', Tahoma, Verdana, sans-serif;
+  color: $yellow;
+}
+
+h2{
+  font-family: 'Sterilict', 'Roboto', Tahoma, Verdana, sans-serif;
+  font-size: 18px;
+}
+
+.left {
+  background-color: $dark;
+  min-width: 185px;
+  width: 15%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 16px;
+  > div {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    > article {
+      ul {
+        margin-top: 4px;
+        li {
+          button {
+            width: 100%;
+            padding: 8px 4px;
+            border: 1px solid black;
+            margin-bottom: -1px;
+            border-radius: 0;
+          }
+          &:first-child > button {
+            border-radius: 4px 4px 0 0;
+          }
+          &:last-child > button {
+            border-radius: 0 0 4px 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background-color: $yellow !important;
+}
+
+.right{
+  width: 85%;
+  height: auto;
+  background-color: lighten($dark,10%);
+
+  section {
+    width: 100%;
+    min-height: 100vh;
+
+    > form {
+      padding-top: 64px;
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      textarea {
+        min-width: 70vw;
+        max-width: 70vw;
+        min-height: 150px;
+        padding: 16px;
+        font-family: 'Roboto';
+        border-radius: 5px;
+      }
+      button {
+        width: 20%;
+        margin: 32px auto;
+      }
+    }
+    > p {
+      width: 70vw;
+      margin: 0 auto;
+      padding: 8px 16px ;
+      border-radius: 10px;
+      background-color: $dark;
+    }
+  }
+}
+
+.search {
+  width: min-content;
+  display: flex;
+  gap: 4px;
+  padding-top: 16px;
+  margin: 0 auto;
+
+  select, input {
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: $dark;
+    font-size: 14px;
+  }
+
+  input {
+    width: 500px;
+  }
+}
+
+.pages {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 16px;
+  position: sticky;
+  top: 16px;
+  .btn-pages {
+    width: 75px;
+    padding: 4px 0;
+  }
+}
+
+.grid {
+  margin: 64px auto;
+  display: grid;
+  grid-template-columns: repeat(3,300px);
+  grid-auto-rows: auto;
+  grid-gap: 16px;
+  justify-content: center;
+
+  .card {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: solid 1px $yellow;
+    background-color: $yellow;
+
+    > div {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      h2{
+        text-shadow: $text-shadow;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.info {
+  width: 100%;
+  .top-info {
+    padding: 64px;
+    display: flex;
+    gap: 16px;
+    h2 {
+      color: $yellow;
+      font-size: 24px;
+    }
+    img {
+      width: 400px;
+      height: 100%;
+      min-height: 400px;
+      background-color: $yellow;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    ul{
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+}
+
