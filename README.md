@@ -4,7 +4,7 @@ This repository contain all my project from my second year at [IIM](https://www.
 
 Each repository contain a README with it own explanation about the project. You can take the time to check it all. BUT I advise you to not use them in production or other things, they are only made for the purpose of learning.
 
-For each of the projects we had a week to carry them out.
+For each project we had a week to carry it out.
 
 ## Brief description of each project
 
